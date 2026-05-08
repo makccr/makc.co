@@ -85,13 +85,13 @@ img {
 :root { /* Base Settings */
   --fg-color: #fff;
   --fg2-color: #D1D5DB;
-  --link-color: #fb4934;
-  --link-hover: #cc241d;
+  --link-color: #1288ef;
+  --link-hover: #1288ef;
   --mid-accent: #404040;
   --bg-color: #000000;
   --bg-color-lighter: #181818;
-  --button-color: #dc3232;
-  --button-hover: #cc241d;
+  --button-color: #1269c7;
+  --button-hover: #1288ef;
   --code-aqua: #8ec07c; 
   --code-green: #b8bb26;
   --code-purple: #d3869b; 
@@ -100,6 +100,8 @@ img {
   --code-red: #fb4934; 
   --code-orange: #fe8019; 
   --code-gray: #a89984; 
+  --button-text: #fff; 
+  --button-text-hover: #def; 
 } /* Defining color scheme */
 
 * { /* Base Settings */
@@ -450,6 +452,7 @@ footer ul { text-align: center; }
     font-weight: 600;
     font-size: 1rem;
     cursor: pointer;
+    color: var(--button-text); 
     background-color: var(--button-color);
     border: none;
     padding: 1rem 2rem;
@@ -457,7 +460,12 @@ footer ul { text-align: center; }
     transition: all .3s;
     margin: 1rem .2rem;
     margin-bottom: 2em;
-} button:hover {background-color: var(--button-hover);}
+} 
+button:hover {
+    background-color: var(--button-hover);
+    color: var(--button-text-hover); 
+}
+
 button i, button i:hover{ 
   background-color: inherit; 
   transition: all .3s;
@@ -671,12 +679,13 @@ blockquote { font-size: 1.1rem; }
   :root {
     --fg-color: #444;
     --fg2-color: #666;
-    --link-color: #dc3232;
-    --link-hover: #dc3232;
+  --button-text: #444; 
+    --link-color: #1288ef;
+    --link-hover: #1288ef;
     --bg-color: #fff;
     --button-color: #eee;
-    --button-hover: #ccc;
-  --mid-accent: #eee;
+    --button-hover: #1288ef;
+  --mid-accent: #ccc;
   --bg-color-lighter: #e8e8e8;
   }
 

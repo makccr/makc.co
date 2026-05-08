@@ -6,12 +6,12 @@
    id="Layer_1"
    x="0px"
    y="0px"
-   viewBox="0 0 329 92"
+   viewBox="0 0 329 150"
    xml:space="preserve"
    sodipodi:docname="github-header.svg"
    inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
    width="329"
-   height="92"
+   height="150"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -55,7 +55,7 @@
 
 <g
    id="g22"
-   transform="matrix(1.3131777,0,0,1.3131777,-393.54253,-59.474095)"><g
+   transform="matrix(1.3131777,0,0,1.3131777,-393.54253,-1.4740946)"><g
      id="g7"
      transform="matrix(0.74634205,0,0,0.74634205,299.36259,30.056207)">
 	
@@ -166,4 +166,13 @@
    id="path20" />
 	</g>
 </g></g>
-</svg>
+<text
+   xml:space="preserve"
+   id="text21"
+   style="line-height:0.9;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect21);display:inline;fill:#000000"
+   transform="matrix(3.4894716,0,0,3.4894716,-160.81377,201.93362)"><tspan
+     x="51.681641"
+     y="-48.633378"
+     id="tspan4"><tspan
+       style="font-weight:600;font-family:Montserrat;-inkscape-font-specification:'Montserrat Semi-Bold';fill:#808080"
+       id="tspan3">Read also at: </tspan></tspan></text></svg>
