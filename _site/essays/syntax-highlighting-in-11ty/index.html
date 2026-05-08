@@ -83,7 +83,7 @@
     </script>
 
     <header>
-        <a href="/index"><picture><source type="image/webp" srcset="/.11ty/image/?src=images%2Fm.svg&width=1000&format=webp&via=transform 1000w"><img class="logo" src="/.11ty/image/?src=images%2Fm.svg&width=1000&format=jpeg&via=transform" alt="HOME" width="1000" height="1000"></picture></a>
+        <a href="/index"><picture><source type="image/webp" srcset="/img/Es_hZy2Cb8-1000.webp 1000w"><img class="logo" src="/img/Es_hZy2Cb8-1000.jpeg" alt="HOME" width="1000" height="1000"></picture></a>
             <div class="bars" onclick="mobileMenu()">
                 <i class="nf nf-md-menu"></i>
             </div>
@@ -139,7 +139,7 @@
     }
 }
 </style>
-    <picture><source type="image/webp" srcset="/.11ty/image/?src=essays%2Fimg%2F2025-12-31.jpg&width=5805&format=webp&via=transform 5805w"><img class="hero" src="/.11ty/image/?src=essays%2Fimg%2F2025-12-31.jpg&width=5805&format=jpeg&via=transform" alt="" width="5805" height="3020"></picture>
+    <picture><source type="image/webp" srcset="/essays/syntax-highlighting-in-11ty/NcCTASmlop-5805.webp 5805w"><img class="hero" src="/essays/syntax-highlighting-in-11ty/NcCTASmlop-5805.jpeg" alt="" width="5805" height="3020"></picture>
     <h1>Custom Syntax Highlighting With 11ty</h1>
     <h3>December 30, 2025</h3>
 
@@ -166,7 +166,7 @@ console.log("some code");
 console.log("some code");
 '''</code></pre>
 <p>It turns out that the syntax highlighting plugin from 11ty only supports the third option: a full code block with a label at the top line declaring the language to which the syntax highlighting needs to be applied. Unfortunately for me, this is how I had already formatted damn near all of my code blocks site-wide. So I went ahead and took a closer look:</p>
-<picture><source type="image/webp" srcset="/.11ty/image/?src=essays%2Fimg%2F2025-12-31-A.jpg&width=2185&format=webp&via=transform 2185w"><img src="/.11ty/image/?src=essays%2Fimg%2F2025-12-31-A.jpg&width=2185&format=jpeg&via=transform" alt="Firefox inspector window proving that the plugin was working" class="fifty" width="2185" height="1437"></picture>
+<picture><source type="image/webp" srcset="/essays/syntax-highlighting-in-11ty/SodShE-7yq-1374.webp 1374w"><img src="/essays/syntax-highlighting-in-11ty/SodShE-7yq-1374.jpeg" alt="Firefox inspector window proving that the plugin was working" class="fifty" width="1374" height="720"></picture>
 <p>After taking a look at the inspector window in Firefox, it became clear to me that the PrismJS plugin was doing quite a bit. When rendering the HTML document for my site, 11ty no longer was simply putting all of the text in a generic <em>code</em> block, but was instead creating individual CSS classes for <em>language-javascript</em>, <em>language-shell</em>, and so on - as well as breaking down the contents of the block even further into classes for <em>punctuation, string, operator, comment</em> and several other elements that made up the blocks. The only problem? The text in the code block was still the same color as generic text, no styling at all. This was odd, but it also wasn’t the worst thing in the world. Knowing myself, I knew I’d eventually want a way to customize the colors and makeup of the individual elements myself anyway, so I began the process of trying to compile a concrete list of every class that the syntax highlighting plugin would create for every single one of the nearly 300 languages that PrismJS supports -- no easy task.</p>
 <p>But, before I break down how I solved that problem, it is worth noting that 11ty’s plugin should automatically add syntax highlighting when it is installed. I have since confirmed that the only reason this was not happening on my site is that I had previously added customization to the “<em>code”</em> and “<em>pre”</em> CSS classes, changing the text color. After removing that customization, the syntax highlighting worked as expected. But unfortunately, I didn’t confirm that this was the case until after I had already spent nearly a full workday figuring out a way more complex workaround, which just happens to add a higher level of customization.</p>
 <p>It only took me a matter of minutes to find a way to isolate every one of these class names that PrismJS was creating. Simply opening the Console in Firefox and typing the following showed me every class being rendered on an individual page.</p>
