@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>MAKC.CO - Creating a Private Git Server</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/modern-normalize@v3.0.1 /modern-normalize.min.css" rel="stylesheet">
+<link rel="stylesheet" href="/bundle.css">
+<script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=67e8d81386189a0019fafdf7&product=inline-share-buttons&source=platform" async="async"></script>
+<link href="/images/favicon.ico" rel="icon" type="image/ico">
+<link href="/images/favicon.png" rel="icon" type="image/png">
+<link href="/images/apple-touch-icon.png" rel="apple-touch-icon">
+<link href="/images/ios-ipad-144x144.png" sizes="144x144" rel="apple-touch-icon-precomposed">
+<link href="/images/ios-iphone-114x144.png" sizes="114x114" rel="apple-touch-icon-precomposed">
+<link href="/images/ios-default-homescreen-57x57.png" sizes="57x57" rel="apple-touch-icon-precomposed">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "MAKC.CO",
+  "url": "https://makc.co",
+  "logo": "https://makc.co/images/favicon.png"
+}
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-7MJC70LJ18"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7MJC70LJ18');
+</script>
+
+<meta property="og:image" content="https://makc.co/images/favicon.png">
+<meta property="og:title" content="MAKC.CO - Welcome">
+<meta property="og:description" content="The personal site of Makc Criswell. A propagandist for pickled red onions, rare meat activist, barely-monetizable YouTuber and Captian of the sailling vessel Argo.">
+
+<meta name="keywords" content="art, design, tech, downloads, essay, author, youtuber, vidoes, multi-media, fonts, after, effects, vim, linux, command, line, philosophy, history, policitcs">
+<meta name="description" content="The personal website of Makc Criswell. A propagandist for pickled red onions, a rare meat activist, barely-monetizable YouTuber and Captain of the sailing vessel Argo.">
+<meta name="subject" content="Design">
+<meta name="copyright" content="Makc Criswell">
+<meta name="language" content="ES">
+<meta name="robots" content="index,follow">
+<meta name="topic" content="Design">
+<meta name="summary" content="The personal website of Makc Criswell. A propagandist for pickled red onions, a rare meat activist, barely-monetizable YouTuber and Captain of the sailing vessel Argo.">
+<meta name="Classification" content="Application">
+<meta name="author" content="Makc Criswell, m@makc.co">
+<meta name="designer" content="Makc Criswell, m@makc.co">
+<meta name="copyright" content="Makc Criswell">
+<meta name="reply-to" content="m@makc.co">
+<meta name="owner" content="Makc Criswell, m@makc.co">
+<meta name="url" content="https://makc.co">
+<meta name="identifier-URL" content="https://makc.co">
+<meta name="directory" content="submission">
+<meta name="category" content="Art">
+<meta name="coverage" content="Worldwide">
+<meta name="distribution" content="Global">
+<meta name="rating" content="General">
+<meta name="revisit-after" content="7 days">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@makccr">
+<meta name="twitter:title" content="MAKC.CO - Creating a Private Git Server">
+<meta name="twitter:description" content="Im a propagandist for pickled red onions, a rare meat activist, barely-monetizable YouTuber and Captain of the sailing vessel Knox. Ive been creating content online for well over a decade now, but delivering to a very small audience. Undoubtedly, youve discovered this website by mistake, but thanks for stopping by anyway-and, feel free to browse around.">
+<meta name="twitter:image" content="https://makc.co/images/bg-head.jpg">
+
+</head>
+<body>
+    <script>
+    function mobileMenu() {
+        var x = document.getElementById("mobile-links")
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+    </script>
+
+    <header>
+        <a href="/index"><picture><source type="image/webp" srcset="/img/wFNTedeVhW-1000.webp 1000w"><img class="logo" src="/img/wFNTedeVhW-1000.jpeg" alt="HOME" width="1000" height="1000"></picture></a>
+            <div class="bars" onclick="mobileMenu()">
+                <i class="nf nf-md-menu"></i>
+            </div>
+            <p class="links">
+                <a href="/videos">Videos</a>
+                <a href="/essays">Essays</a>
+                <a href="/docs">Documentation</a>
+                <a href="/downloads">Downloads & Apps</a>
+            </p>
+    </header>
+
+<div id="mobile-links">
+    <div class="mobile-links-container">
+        <ul>
+            <p class="mobile"><a href="/videos">Videos</a></p>
+            <p class="mobile"><a href="/essays">Essays</a></p>
+            <p class="mobile"><a href="/docs">Documentation</a></p>
+            <p class="mobile"><a href="/downloads">Downloads & Apps</a></p>
+        </ul>
+    </div>
+</div>
+    
+    <main>
+        
+<style>
+    header p { 
+        font-family: 'Open Sans', sans-serif;
+        font-size: 1.1em;
+    } h1 { margin-top: 1em; }
+
+    p,ol,ul {
+        padding: 1em;
+        text-align: left;
+        width: 60%;
+        align: center; 
+        margin: auto; 
+    } h4 {text-align: center;}
+
+@media only screen and (max-width: 850px) { 
+    p,ol,ul {
+        margin-left: .5em; 
+        margin-right: .5em;
+        width: 90%;
+        align: center; 
+        margin: auto;
+    }
+    h1,h2,h3,h4,h5,h6 {
+        margin-left: .5em; 
+        margin-right: .5em;
+    }
+
+}
+</style>
+    <img class="hero" src="" alt="">
+    <h1>Creating a Private Git Server</h1>
+    <h3>Last Updated <br> May 7, 2026</h3>
+
+<div class="essayContainer"> 
+<p>As <a href="https://github.com">GitHub</a> becomes <a href="https://mrshu.github.io/github-statuses/">increasingly less reliable</a> (not to mention riddled with AI slop), many are looking for alternatives. This documentation will walk through the process of setting up a private Git server for any non public-facing repositories.</p>
+<h2>Required Hardware</h2>
+<ul>
+<li>A server. The required software is available on virtually every OS and should run on any modern CPU architecture. This documentation provides instructions for a POSIX-style shell.</li>
+<li>A client machine to <em>push</em> to the server, once again, virtually any OS or CPU architecture will work.</li>
+</ul>
+<h2>Required Software</h2>
+<ul>
+<li><a href="https://www.openssh.org/">Open SSH</a></li>
+<li><a href="https://git-scm.com/">Git</a></li>
+<li>A VPN software, this guide uses: <a href="https://tailscale.com/">Tailscale</a></li>
+</ul>
+<h1>Required set-up for both devices</h1>
+<p>On both the server and any machine you intend to push changes from, you will need to set-up a VPN connection and install OpenSSH, as well as an <em>optional</em> SSH key. The process is identical for each system:</p>
+<h3>Install Tailscale</h3>
+<pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-fsSL</span> https://tailscale.com/install.sh <span class="token operator">|</span> <span class="token function">sh</span></code></pre>
+<p>Authenticate your user account when prompted, or set up a new account on first use.</p>
+<h3>Install OpenSSH</h3>
+<pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> pacman <span class="token parameter variable">-S</span> openssh  <span class="token comment"># Arch Linux</span>
+
+<span class="token function">sudo</span> <span class="token function">apt</span> update <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> openssh-server <span class="token comment"># Debian &amp; Ubuntu</span>
+
+<span class="token function">sudo</span> dnf <span class="token function">install</span> openssh-server  <span class="token comment"># Fedora</span>
+
+<span class="token function">sudo</span> pkg <span class="token function">install</span> openssh  <span class="token comment"># FreeBSD</span>
+
+brew <span class="token function">install</span> openssh  <span class="token comment"># Homebrew</span>
+
+nix profile <span class="token function">install</span> nixpkgs<span class="token comment">#openssh  # Nix</span>
+</code></pre>
+<h1>Server Set-up</h1>
+<p>Remote into the server using SSH and the server's Tailscale generated IP address. This documentation will use the user name: &quot;user&quot; &amp; a fake IP address of &quot;100.27&quot;.</p>
+<pre class="language-bash"><code class="language-bash">tailscale status  <span class="token comment"># To locate the server's IP</span>
+
+<span class="token function">ssh</span> user@100.27</code></pre>
+<ol>
+<li>Set up a location in which to store Git repositories</li>
+<li>Create a directory with the name of the repository</li>
+<li>Initiate a bare git repository</li>
+</ol>
+<pre class="language-bash"><code class="language-bash"><span class="token function">mkdir</span> Repos <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">cd</span> Repos
+<span class="token function">mkdir</span> <span class="token string">"REPO-NAME"</span> <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">cd</span> <span class="token string">"REPO-NAME"</span>
+
+<span class="token function">git</span> init <span class="token parameter variable">--bare</span></code></pre>
+<h1>Client Set-up</h1>
+<p>Create an empty directory with the same name (REPO-NAME) anywhere on the client system.</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">mkdir</span> REPO-NAME <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">cd</span> REPO-NAME</code></pre>
+<p>Once inside of that directory run the following commands:</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">git</span> init  <span class="token comment"># Initiates the new repository</span>
+<span class="token function">git</span> <span class="token function">add</span> <span class="token parameter variable">-A</span>   <span class="token comment"># Stages all files</span>
+<span class="token function">git</span> commit <span class="token parameter variable">-m</span> <span class="token string">"Initial commit"</span>  <span class="token comment"># Commit's those changes</span>
+
+<span class="token function">git</span> remote <span class="token function">add</span> origin user@100.27:/home/user/Repos/REPO-NAME/
+
+<span class="token function">git</span> branch  <span class="token comment"># Depending on Git version, changes might be commited to the "main" or "master" branch by default. Note which branch this repository defaulted to.</span>
+
+<span class="token function">git</span> push <span class="token parameter variable">-u</span> origin master 
+<span class="token comment"># or</span>
+<span class="token function">git</span> push <span class="token parameter variable">-u</span> origin main</code></pre>
+<p>After this set-up any new changes can be pushed to the private server with the standard <em>git push</em> command, with no additional flags or options required.</p>
+<p><strong>Note</strong>: Git will only accept one origin to push to. If a typo or other error is made while running <em>remote add origin</em>, this can be fixed by running:</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">git</span> remote set-url origin user@server:/home/user/Repo/REPO-NAME/
+
+<span class="token function">git</span> remote <span class="token parameter variable">-v</span>  <span class="token comment"># Can be used to confirm that a typo was made upon initial set-up as well</span></code></pre>
+<h1>Cloning Repo on a New Client</h1>
+<p>Ensure SSH and Tailscale are installed and configured on any new machine, and then run:</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">git</span> clone user@100.27:/home/user/Repos/REPO-NAME/</code></pre>
+<hr>
+<h2>Authentication with a SSH key</h2>
+<p>Authenticating transfers and remote operation via SSH keys is not only much more secure than a standard password, but also much better for any sort of CI, CD or cron job automation that a user might want to set up in the future. Luckily the <em>ssh-keygen</em> utility is packaged with <em>OpenSSH</em> upon install. This makes it very easy to create a SSH key on both the server and client.</p>
+<pre class="language-bash"><code class="language-bash">ssh-keygen <span class="token parameter variable">-t</span> ed25519 <span class="token parameter variable">-C</span> <span class="token string">"you@mail.com"</span>
+
+<span class="token comment"># if you are using a legacy system that does not support the Ed25519 hash algorithm use rsa</span>
+ssh-keygen <span class="token parameter variable">-t</span> rsa <span class="token parameter variable">-b</span> <span class="token number">4096</span> <span class="token parameter variable">-C</span> <span class="token string">"you@mail.com"</span></code></pre>
+<p>After creating the key, add the client's public SSH key to the server's list of authorized keys. This can be done by manually copying and pasting the full public key, but OpenSSH has a built in utility that makes the process much easier.</p>
+<pre class="language-bash"><code class="language-bash">ssh-copy-id user@100.27</code></pre>
+<p><strong>Note</strong>: If a repository was initially cloned or initiated using HTTPS, it might be necessary to add the <em>ssh://</em> prefix to the URL. This is not necessary when using the instructions provided here and pushing to origin via a VPN connection, but still helpful information to have access to.</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">git</span> remote set-url origin ssh://makc@100.27:/home/user/Repo/REPO-NAME/</code></pre>
+
+</div> 
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+    </main>
+    <footer>
+        <div class="socialIcons"> 
+            <a title="Github" target="_blank" href="https://github.com/makccr">
+                <i class="nf nf-dev-github"></i>
+            </a>
+            <a title="YouTube" target="_blank" href="https://www.youtube.com/@makc">
+                <i class="nf nf-fa-youtube"></i>
+            </a>
+            <a title="Sitemap" target="_blank" href="https://makc.co/sitemap.xml">
+                <i class="nf nf-fa-sitemap"></i>
+            </a>
+            
+            <a title="Essay RSS" target="_blank" href="https://makc.co/feed.xml">
+                <i class="nf nf-fa-rss"></i>
+            </a>
+        </div>
+        <br>
+        <ul>
+            <li>&copy; 2012-<script>document.write(/\d{4}/.exec(Date())[0])</script> <i>Mackenzie Criswell</i>.</li>
+            <li><a href="/terms">Terms & Privacy</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+    </footer>
+</body>
+</html>
