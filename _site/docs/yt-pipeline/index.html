@@ -139,14 +139,15 @@
 </style>
     <img class="hero" src="" alt="">
     <h1>Recording & Transcoding 2:1 Screen-caps on Linux</h1>
-    <h3>Last Updated <br> January 21, 2026</h3>
+    <h3>Last Updated <br> May 8, 2026</h3>
 
 <div class="essayContainer"> 
 <p>Some notes on setting up a custom display resolution on X11, transcoding H.264 media using ffmpeg, editing in Davinci Resolve, and then transcoding screen capture videos to the VP9 codec for delivery to YouTube &amp; other video platforms.</p>
 <h2>Required Software</h2>
 <ul>
 <li><a href="https://ffmpeg.org/">ffmpeg</a>: For transcoding media</li>
-<li><a href="https://www.x.org/wiki/Projects/XRandR/">xrandr</a>: For setting a custom display resolution</li>
+<li><a href="https://www.x.org/wiki/Projects/XRandR/">xrandr</a>: For setting a custom display resolution on X11</li>
+<li><a href="https://github.com/emersion/wlr-randr">wlr-randr</a>: For setting a custom display resolution on Wayland</li>
 </ul>
 <h4>Optional</h4>
 <ul>
@@ -184,7 +185,9 @@ xrandr <span class="token parameter variable">--output</span> DP-2 <span class="
 <span class="token number">629.75</span>  <span class="token number">3840</span> <span class="token number">4144</span> <span class="token number">4560</span> <span class="token number">5280</span>  <span class="token number">1920</span> <span class="token number">1923</span> <span class="token number">1933</span> <span class="token number">1989</span> <span class="token parameter variable">-hsync</span> +vsync </code></pre>
 <p>However, if using a display port connection, or a modern laptop that uses an eDP display, it is very often not possible to set a fully custom resolution. However, X11's tools for display scaling can be exploited to achieve virtually the same thing. In the case of the Thinkpad P1 that was used for this documentation, the native resolution is 3840x2160. The desired output video resolution is at a 2:1 aspect ratio, 3840x1920. Dividing the desired vertical resolution by the original vertical resolution, <em>1920 ÷ 2160</em>, gives a result of <em>0.888888888889</em>, which can be used as the vertical scale factor in <em>xrandr</em>.</p>
 <pre class="language-bash"><code class="language-bash">xrandr <span class="token parameter variable">--output</span> DP-2 <span class="token parameter variable">--mode</span> 3840x2160 <span class="token parameter variable">--scale</span> 1x0.8889</code></pre>
-<p><strong>Note</strong>: The scale factor will have to be reset after any screen recording.</p>
+<p><strong>Notes</strong>:
+* The <em>wlr-randr</em> command functions as a clone of xrandr for Wayland, and will accomplish the same goal in Wayland window managers or desktop environments.
+* The scale factor will have to be reset after any screen recording.</p>
 <pre class="language-bash"><code class="language-bash">xrandr <span class="token parameter variable">--output</span> DP-2 <span class="token parameter variable">--mode</span> 3840x2160 <span class="token parameter variable">--scale</span> 1x1</code></pre>
 <h2>Transcoding H.264</h2>
 <p>Unless using a <a href="https://obsproject.com/forum/threads/full-custom-ffmpeg-output.99064/">custom <em>ffmpeg</em> output</a>, OBS will only output video using the H.264 codec. This is a problem for a number of reasons when building a video creation pipeline on Linux:</p>

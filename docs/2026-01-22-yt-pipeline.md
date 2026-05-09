@@ -1,7 +1,7 @@
 ---
 title: "Recording & Transcoding 2:1 Screen-caps on Linux"
 layout: docs.html
-date: 2026-01-22
+date: 2026-05-09
 tags: docs
 ---
 
@@ -9,7 +9,8 @@ Some notes on setting up a custom display resolution on X11, transcoding H.264 m
 
 ## Required Software
 * [ffmpeg](https://ffmpeg.org/): For transcoding media
-* [xrandr](https://www.x.org/wiki/Projects/XRandR/): For setting a custom display resolution
+* [xrandr](https://www.x.org/wiki/Projects/XRandR/): For setting a custom display resolution on X11
+* [wlr-randr](https://github.com/emersion/wlr-randr): For setting a custom display resolution on Wayland
 
 #### Optional
 * [OBS](https://obsproject.com/): For recording screen
@@ -53,12 +54,16 @@ xrandr --output DP-2 --addmode "3840x1920_60.00"  \ # Adding output to X11 displ
 629.75  3840 4144 4560 5280  1920 1923 1933 1989 -hsync +vsync 
 ```
 
+
 However, if using a display port connection, or a modern laptop that uses an eDP display, it is very often not possible to set a fully custom resolution. However, X11's tools for display scaling can be exploited to achieve virtually the same thing. In the case of the Thinkpad P1 that was used for this documentation, the native resolution is 3840x2160. The desired output video resolution is at a 2:1 aspect ratio, 3840x1920. Dividing the desired vertical resolution by the original vertical resolution, *1920 ÷ 2160*, gives a result of *0.888888888889*, which can be used as the vertical scale factor in *xrandr*.
 
 ```bash
 xrandr --output DP-2 --mode 3840x2160 --scale 1x0.8889
 ```
-**Note**: The scale factor will have to be reset after any screen recording.
+
+**Notes**: 
+    * The *wlr-randr* command functions as a clone of xrandr for Wayland, and will accomplish the same goal in Wayland window managers or desktop environments.
+    * The scale factor will have to be reset after any screen recording.
 
 ```bash
 xrandr --output DP-2 --mode 3840x2160 --scale 1x1
