@@ -62,8 +62,8 @@ xrandr --output DP-2 --mode 3840x2160 --scale 1x0.8889
 ```
 
 **Notes**: 
-    * The *wlr-randr* command functions as a clone of xrandr for Wayland, and will accomplish the same goal in Wayland window managers or desktop environments.
-    * The scale factor will have to be reset after any screen recording.
+- The *wlr-randr* command functions as a clone of xrandr for Wayland, and will accomplish the same goal in Wayland window managers or desktop environments.
+- The scale factor will have to be reset after any screen recording.
 
 ```bash
 xrandr --output DP-2 --mode 3840x2160 --scale 1x1
