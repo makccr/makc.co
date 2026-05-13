@@ -1,7 +1,7 @@
 ---
 title: "Creating a Private Git Server"
 layout: docs.html
-date: 2026-05-08
+date: 2026-05-13
 tags: docs
 ---
 
@@ -93,6 +93,24 @@ After this set-up any new changes can be pushed to the private server with the s
 git remote set-url origin user@server:/home/user/Repo/REPO-NAME/
 
 git remote -v  # Can be used to confirm that a typo was made upon initial set-up as well
+```
+
+# Migrating an Existing Repository to Server
+* Change the remote origin
+* Ensure the primary branch names match up
+* Push to server
+
+```bash
+git remote set-url origin user@server:/home/user/Repo/EXISTING-REPO/
+git remote -v  # To check url & confirm before pushing
+
+git branch  # To check primary branch name, almost always "master" or "main" 
+
+# The primary branch names must line up, to change run
+git branch -m BRANCH-NAME
+
+git push -u origin BRANCH-NAME
+
 ```
 
 # Cloning Repo on a New Client

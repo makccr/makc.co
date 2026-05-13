@@ -139,7 +139,7 @@
 </style>
     <img class="hero" src="" alt="">
     <h1>Creating a Private Git Server</h1>
-    <h3>Last Updated <br> May 7, 2026</h3>
+    <h3>Last Updated <br> May 12, 2026</h3>
 
 <div class="essayContainer"> 
 <p>As <a href="https://github.com">GitHub</a> becomes <a href="https://mrshu.github.io/github-statuses/">increasingly less reliable</a> (not to mention riddled with AI slop), many are looking for alternatives. This documentation will walk through the process of setting up a private Git server for any non public-facing repositories.</p>
@@ -206,6 +206,22 @@ nix profile <span class="token function">install</span> nixpkgs<span class="toke
 <pre class="language-bash"><code class="language-bash"><span class="token function">git</span> remote set-url origin user@server:/home/user/Repo/REPO-NAME/
 
 <span class="token function">git</span> remote <span class="token parameter variable">-v</span>  <span class="token comment"># Can be used to confirm that a typo was made upon initial set-up as well</span></code></pre>
+<h1>Migrating an Existing Repository to Server</h1>
+<ul>
+<li>Change the remote origin</li>
+<li>Ensure the primary branch names match up</li>
+<li>Push to server</li>
+</ul>
+<pre class="language-bash"><code class="language-bash"><span class="token function">git</span> remote set-url origin user@server:/home/user/Repo/EXISTING-REPO/
+<span class="token function">git</span> remote <span class="token parameter variable">-v</span>  <span class="token comment"># To check url &amp; confirm before pushing</span>
+
+<span class="token function">git</span> branch  <span class="token comment"># To check primary branch name, almost always "master" or "main" </span>
+
+<span class="token comment"># The primary branch names must line up, to change run</span>
+<span class="token function">git</span> branch <span class="token parameter variable">-m</span> BRANCH-NAME
+
+<span class="token function">git</span> push <span class="token parameter variable">-u</span> origin BRANCH-NAME
+</code></pre>
 <h1>Cloning Repo on a New Client</h1>
 <p>Ensure SSH and Tailscale are installed and configured on any new machine, and then run:</p>
 <pre class="language-bash"><code class="language-bash"><span class="token function">git</span> clone user@100.27:/home/user/Repos/REPO-NAME/</code></pre>
