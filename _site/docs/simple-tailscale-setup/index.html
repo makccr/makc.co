@@ -139,11 +139,11 @@
 </style>
     <img class="hero" src="" alt="">
     <h1>Remotely Accesing a File Server with Tailscale</h1>
-    <h3>Last Updated <br> January 22, 2026</h3>
+    <h3>Last Updated <br> June 9, 2026</h3>
 
 <div class="essayContainer"> 
 <p>Set up a free and simple VPN tunnel to access and modify a remote file server in the most secure way possible, wile still being pretty lazy.</p>
-<h2>Background</h2>
+<h1>Background</h1>
 <p>The goal is to be able to access and add files to what was originally set up as a local file server, from outside of the LAN. In order to add an additional layer of security, this documentation assumes the use of an intermediate system. That is, a third system to remotely connect to, on the same LAN as the file server, that can then be used to access and manipulate the file server, without having to leave an open VPN connection on the file server itself.</p>
 <picture><source type="image/webp" srcset="/.11ty/image/?src=docs%2Fimg%2F2026-01-16.png&width=1307&format=webp&via=transform 1307w"><img src="/.11ty/image/?src=docs%2Fimg%2F2026-01-16.png&width=1307&format=jpeg&via=transform" alt="Map of devices invovled" class="fifty" width="1307" height="918"></picture>
 <h2>Required Software</h2>
@@ -154,67 +154,75 @@ BSD, Android and iOS.</li>
 <li>Scp, rSync or both: To remotely move files and directories.</li>
 <li>Curl: Required for installing Tailscale on Linux.</li>
 </ul>
-<h3>Optional Software</h3>
+<h2>Optional Software</h2>
 <ul>
 <li><a href="https://termius.com/">Terminus</a>: An iOS &amp; Android solution that allows users to save ssh information for easy remote connection.</li>
-<li>Tmux: A terminal multiplexer.</li>
-<li>Transmission: For downloading Linux ISO ;).</li>
 </ul>
-<h2>Install Instructions</h2>
-<h3>Dependencies (SSH, SCP, rSync &amp; Curl)</h3>
-<h4>Ubuntu</h4>
-<pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> openssh-server <span class="token function">curl</span> <span class="token function">rsync</span> <span class="token operator">&amp;&amp;</span>
-<span class="token function">sudo</span> systemctl <span class="token builtin class-name">enable</span> <span class="token parameter variable">--now</span> sshd</code></pre>
-<h4>Arch</h4>
-<pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> pacman <span class="token parameter variable">-S</span> openssh <span class="token function">scp</span> <span class="token function">curl</span> <span class="token function">rsync</span> <span class="token operator">&amp;&amp;</span> 
-<span class="token function">sudo</span> systemctl <span class="token builtin class-name">enable</span> <span class="token parameter variable">--now</span> sshd</code></pre>
-<h4>Fedora</h4>
-<pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> dnf <span class="token function">install</span> openssh-server <span class="token function">scp</span> <span class="token function">curl</span> <span class="token function">rsync</span> <span class="token operator">&amp;&amp;</span>
-<span class="token function">sudo</span> systemctl <span class="token builtin class-name">enable</span> <span class="token parameter variable">--now</span> sshd</code></pre>
-<h4>FreeBSD</h4>
-<pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> pkg <span class="token function">install</span> openssh <span class="token function">scp</span> <span class="token function">curl</span> rysync <span class="token punctuation">;</span> 
+<h1>Install Instructions</h1>
+<h2>Dependencies (SSH, SCP, rSync &amp; Curl)</h2>
+<pre class="language-bash"><code class="language-bash"><span class="token comment">## Ubuntu</span>
+<span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> openssh-server <span class="token function">curl</span> <span class="token function">rsync</span> <span class="token operator">&amp;&amp;</span>
+<span class="token function">sudo</span> systemctl <span class="token builtin class-name">enable</span> <span class="token parameter variable">--now</span> sshd
+
+<span class="token comment">## Arch</span>
+<span class="token function">sudo</span> pacman <span class="token parameter variable">-S</span> openssh <span class="token function">scp</span> <span class="token function">curl</span> <span class="token function">rsync</span> <span class="token operator">&amp;&amp;</span> 
+<span class="token function">sudo</span> systemctl <span class="token builtin class-name">enable</span> <span class="token parameter variable">--now</span> sshd
+
+<span class="token comment">## Fedora</span>
+<span class="token function">sudo</span> dnf <span class="token function">install</span> openssh-server <span class="token function">scp</span> <span class="token function">curl</span> <span class="token function">rsync</span> <span class="token operator">&amp;&amp;</span>
+<span class="token function">sudo</span> systemctl <span class="token builtin class-name">enable</span> <span class="token parameter variable">--now</span> sshd
+
+<span class="token comment">## FreeBSD</span>
+<span class="token function">sudo</span> pkg <span class="token function">install</span> openssh <span class="token function">scp</span> <span class="token function">curl</span> rysync <span class="token punctuation">;</span> 
 <span class="token function">sudo</span> kidload fuse <span class="token operator">&amp;&amp;</span> 
 <span class="token function">sudo</span> sysrc <span class="token assign-left variable">sshd_enable</span><span class="token operator">=</span><span class="token string">"YES"</span> <span class="token operator">&amp;&amp;</span>
-<span class="token function">sudo</span> <span class="token function">service</span> sshd start</code></pre>
-<h4>MacOS (Via Homebrew)</h4>
-<pre class="language-bash"><code class="language-bash">brew <span class="token function">install</span> openssh <span class="token function">scp</span> <span class="token function">curl</span> <span class="token function">rsync</span> <span class="token operator">&amp;&amp;</span>
+<span class="token function">sudo</span> <span class="token function">service</span> sshd start
+
+<span class="token comment">## MacOS (Via Homebrew)</span>
+brew <span class="token function">install</span> openssh <span class="token function">scp</span> <span class="token function">curl</span> <span class="token function">rsync</span> <span class="token operator">&amp;&amp;</span>
 brew <span class="token function">install</span> <span class="token parameter variable">--cask</span> macfuse</code></pre>
-<h3>Tailscale</h3>
-<h4>Linux</h4>
+<h2>Tailscale</h2>
+<h3>Linux</h3>
 <pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-fsSL</span> https://tailscale.com/install.sh <span class="token operator">|</span> <span class="token function">sh</span></code></pre>
-<h4>Android or iOS</h4>
+<h3>Android or iOS</h3>
 <p>Install the Tailscale app from the <a href="https://play.google.com/store/apps/details?id=com.tailscale.ipn">Google Play Store</a> or <a href="https://apps.apple.com/us/app/tailscale/id1470499037">iOS App Store</a> and login to a Tailscale account, accept any necessary permissions.</p>
-<h4>MacOS</h4>
+<h3>MacOS</h3>
 <pre class="language-bash"><code class="language-bash">brew <span class="token function">install</span> tailscale</code></pre>
-<h2>Starting Tailscale</h2>
-<h3>Desktop (Linux, MacOS, Powershell)</h3>
+<h1>Starting Tailscale</h1>
+<h2>Desktop (Linux, MacOS, Powershell)</h2>
 <pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> tailscale up</code></pre>
 <p>After starting the Tailscale process, an authentication link will be printed to the terminal. Follow the URL, sign in to a Tailscale account.</p>
 <p>To stop an active VPN tunnel, run:</p>
 <pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> Tailscale down</code></pre>
-<h4>A Note on Unattended Use</h4>
-<p>By default a Tailscale connection will stay open until a user closes the process andior the machine is restarted. Particularly when run with <em>sudo</em> on Linux, the VPN tunnel will stay <em>up</em> regardless of which user is logged in, even if no user is logged in. For the same functionality on a Windows machine, it may be necessary to run Tailscale with an additional flag for the same behavior to take place:</p>
+<h3>A Note on Unattended Use</h3>
+<p>By default a Tailscale connection will stay open until a user closes the process. Tailscale can also be set to automatically start back up upon a system restart with:</p>
 <pre class="language-bash"><code class="language-bash">tailscale up <span class="token parameter variable">--unattended</span><span class="token operator">=</span>true</code></pre>
 <p>The best resource for use case specific information is Tailscale's documentation, particularly the <a href="https://tailscale.com/kb/1088/run-unattended">page on unattended use</a>.</p>
-<h4>Android or iOS</h4>
-<p>Tailscale is toggled on an off via the respective phone application. Much the same as on desktop, once the VPN tunnel is open, by default it will remain open indefinitely. However in this case, if the Tailscale application is not kept open in the background, the connection will be closed.</p>
-<h2>Access</h2>
+<h2>Android or iOS</h2>
+<p>Tailscale is toggled on an off via the respective phone application. Much the same as on desktop, once the VPN tunnel is open, by default it will remain open indefinitely.</p>
+<h1>Access</h1>
 <p>In order to connect to a device remotely all that is required is an open Tailscale tunnel on each device.</p>
-<h3>SSH Access</h3>
+<h2>SSH Access</h2>
 <p>Visiting <a href="https://login.tailscale.com/">https://login.tailscale.com</a> on any device that you are logged in on, will provide a rundown of all machines authenticated with a given Tailscale account. Here you can easily find IP addresses for remote connection, and copy them to the clipboard. Additionally you can access the IP addresses by opening any Tailscale app, and if running on MacOS, FreBSD or Linux, by running:</p>
 <pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> tailscale status</code></pre>
 <p>Once you have the IP address, the SSH syntax is the same as it would be if you were remotely accessing a device on LAN. By default Tailscale uses port 22 for SSH. It is important to know the username for the device you are accessing via Tailscale's service. However, per standard SSH operation the username part of the equation is irrelevant if you use the same username across machines.</p>
 <pre class="language-bash"><code class="language-bash"><span class="token function">ssh</span> <span class="token environment constant">USER</span>@100.XXX.XX.XX <span class="token comment"># If username is different between the two machines</span>
 <span class="token function">ssh</span> <span class="token number">100</span>.XXX.XX.XX <span class="token comment"># If username is the same</span></code></pre>
-<h4>A Note on SysAdmining</h4>
-<p>If using this remote access method to manipulate files often, it would be worth looking into <em>Tmux</em>, a multiplexer that will allow users to easily run multiple terminal sessions via one remote connection. A YouTube video with instructions specific to Tmux can be found <a href="https://youtu.be/9WpU6vuus2g">here</a>).</p>
-<h2>Moving Files</h2>
+<h3>A Note on Best Practices &amp; Security</h3>
+<p>This guide focuses primarily on using an intermediate box to download items via a jump host or intermediate box &amp; then transfer them to a secondary host. This is done out of convenience as much as out of security, as the LAN connection of a stationary server is likely far faster than a remote device that a user can connect with. However using a jump host is also a valid security practice &amp; and OpenSSH has built in functionality to make this process easier and more secure, if a user is attempting to connect to a device like the File Server mentioned in the image at the top of this documentation.</p>
+<p>From a remote device, it is generally best practice to use the <em>-J</em> flag in SSH to simply make one connection that connects a user from their remote machine, to the File Server, using the jump host as an intermediate connection point:</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">ssh</span> <span class="token parameter variable">-J</span> user@jumpHost user@fileServer
+
+<span class="token comment">## Or, if using custom ports: </span>
+
+<span class="token function">ssh</span> <span class="token parameter variable">-J</span> user@jumpHost:port user@fileServer <span class="token parameter variable">-p</span> port</code></pre>
+<h1>Moving Files</h1>
 <p>Both <em>Scp</em> and <em>rSync</em> work to move files from a remote access machine, to a file server. rSync is typically considered more robust, and will work faster for large file transfers. Tailscale also has a file sharing protocol of their own in the Alpha stage of development called, <a href="https://tailscale.com/kb/1106/taildrop">Taildrop</a>.</p>
-<h3>Scp</h3>
+<h2>Scp</h2>
 <pre class="language-bash"><code class="language-bash"><span class="token function">scp</span> /path/to/local/file <span class="token environment constant">USER</span>@REMOTE:/path/to/remote/directory/ <span class="token comment"># Basic Syntax</span></code></pre>
 <p>Moving a single file is great for a simple test, but most use cases require moving an entire directory structure. This can be accomplished by adding the <strong>-r</strong> flag, for recursive transfer, to the beginning of the <em>Scp</em> command:</p>
 <pre class="language-bash"><code class="language-bash"><span class="token function">scp</span> <span class="token parameter variable">-r</span> /path/to/local/directory <span class="token environment constant">USER</span>@REMOTE:/path/to/remote/directory/ <span class="token comment"># Basic Syntax</span></code></pre>
-<h3>rSync</h3>
+<h2>rSync</h2>
 <p>rSync, for most use cases, is a far better option for remote file transfers. The syntax however is nearly identical to using Scp. The only change is that rSync requires the use of a <strong>-a</strong> flag, for <em>archive</em> transfer, in order to transfer a directory &amp; it's contents.</p>
 <pre class="language-bash"><code class="language-bash"><span class="token function">rsync</span> <span class="token parameter variable">-a</span> /path/to/local/directory <span class="token environment constant">USER</span>@REMOTE:/path/to/remote/directory/</code></pre>
 <p>However, where rSync becomes a much more powerful tool, is in the additional functionality it provides. A few of the most helpful options are:</p>
@@ -231,31 +239,30 @@ brew <span class="token function">install</span> <span class="token parameter va
 <span class="token comment"># Transfer fails :(</span>
 
 <span class="token function">rsync</span> <span class="token parameter variable">-av</span> <span class="token parameter variable">--partial</span> /path/to/local/directory <span class="token environment constant">USER</span>@REMOTE:/path/to/remote/directory/</code></pre>
-<h4>Important Note</h4>
+<h2>Important Note</h2>
 <p>Using both Scp and Rsync, pay very close attention to the placement of forward slashes. In a case like this where the goal is to move the entire directory structure of <em>path/to/local/directory</em> no slash should be included:</p>
 <p><em>/path/to/local/directory</em> <strong>not</strong> <s><em>/path/to/local/directory/</em></s>.</p>
 <p>However, in order to ensure the directory structure ends up in <em>/path/to/remote/directory/</em>, this location should include a trailing forward slash:</p>
 <p><em>/path/to/remote/directory/</em> <strong>not</strong> <s><em>/path/to/remote/directory</em></s>.</p>
-<h2>Getting Setup to Download Linux ISOs ;)</h2>
+<h1>Getting Setup to Download Linux ISOs ;)</h1>
 <p>As a bonus round this documentation will walk through set-up and use of a command line instance of <a href="https://transmissionbt.com/">Transmission</a>, as downloading new Linux ISOs via the BitTorrent protocol and storing them on a file server seems to a pretty common use for these servers.</p>
-<h3>Installation</h3>
+<h2>Installation</h2>
 <pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> transmission-cli <span class="token comment"># Ubuntu</span>
 <span class="token function">sudo</span> dnf <span class="token function">install</span> transmission-cli <span class="token comment"># Fedora </span>
 <span class="token function">sudo</span> pacman <span class="token parameter variable">-S</span> transmission-cli <span class="token comment"># Arch</span>
 brew <span class="token function">install</span> transmission-cli <span class="token comment"># MacOS (vai Homebrew)</span></code></pre>
 <p>After installation, start the Transmission Daemon.</p>
 <pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> systemctl <span class="token builtin class-name">enable</span> <span class="token parameter variable">--now</span> transmission-daemon</code></pre>
-<h3>Usage</h3>
+<h2>Usage</h2>
 <p><strong>Important Note</strong>: This documentation will not provide full usage instructions for Transmission, just enough to get started. More complete documentation can be found on the <a href="https://man.archlinux.org/man/extra/transmission-cli/transmission-remote.1.en">Arch wiki</a>.</p>
 <p>It's helpful to change the default download directory before downloading any torrents:</p>
 <pre class="language-bash"><code class="language-bash">transmission-remote <span class="token parameter variable">-w</span> ~/Downloads</code></pre>
 <p>Transmission can now download torrent via a .torrent file or a magnet link using the <strong>transmission-cli</strong> command:</p>
 <pre class="language-bash"><code class="language-bash"><span class="token comment"># With a .torrent file</span>
-transmission-cli /path/to/file
+transmission-cli <span class="token parameter variable">-a</span> /path/to/file
 
 <span class="token comment"># With a magnet link</span>
-transmission-cli <span class="token string">"MAGNET LINK"</span></code></pre>
-<p>Press <strong>Ctrl+C</strong> when a download is complete.</p>
+transmission-cli <span class="token parameter variable">-a</span> <span class="token string">"MAGNET LINK"</span></code></pre>
 
 </div> 
 
