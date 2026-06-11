@@ -4,17 +4,17 @@ title: Documentation
 ---
 
 <h1>{{ title }}</h1>
-<h6>Personal documentation for operations I complete infrequently enough that the documentation helps.</h6>
+<h6>
+Users may note some <em>odd</em> links on this page. Example: my guide to <a href="http://makc.co/docs/immich/" target="_blank">installing immich</a> that does nothing but link to documentation from Immich & Docker's websites, or my <a href="https://makc.co/docs/cloning-this-site/" target="_blank">guide for cloning and setting up this very website</a> -- this is due to the fact that the primary purpose of this page is to catalog my personal documentation. Most sane people would keep this in a notebook, but here we are. Feel free to use the information found here, but please don't think that any of this documentation is written with any form of expertise that should be trusted. 
+<br><br>
+It's probably still better than what ChatGPT would have told ya' though ;)
+</h6>
 <hr></hr>
-<div class="cardContainer">
+<div class="docsContainer">
   {% for essay in collections.docs reversed %}
-    <div class="essays-list">
+    <div class="docs-list">
       <h3><a href="{{ essay.url }}">{{ essay.data.title }}</a></h3>
       <h6>Last Updated: {{ essay.data.date | postDate }}</h6>
-      <div class="docs-preview">
-        {{ essay.templateContent | striptags | firstLine }} <a href="{{ essay.url }}"><br>
-      </div>
-      <h6></h6>
     </div>
   {% endfor %}
 </div>
