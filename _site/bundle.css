@@ -143,17 +143,21 @@ h6 {
     color: var(--fg2-color);
 }
 
-.essay-list h6 {
-    text-align: center;
-    align: center; 
+.docsContianer { 
+  text-align: center; 
+  vertical-align: center; 
+  display: inline-block;
+  margin: 1em;
+  align: center;
+} 
+
+.docs-list {
+    display: block; 
+    align: center;
     margin-left: auto; 
     margin-right: auto;
-    margin-top: .5rem;
 }
 
-.essay-list {
-    margin-bottom: 1rem; 
-}
 
 li {margin-left: 3em;}
 
