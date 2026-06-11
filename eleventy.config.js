@@ -103,11 +103,6 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("_redirects");
   eleventyConfig.addPassthroughCopy("downloads");
 
-  // ✅ Passthrough for Bootstrap Icons
-  eleventyConfig.addPassthroughCopy({
-    "node_modules/bootstrap-icons/font": "bootstrap-icons"
-  });
-
   // Filters
   eleventyConfig.addFilter("postDate", dateObj => {
     return DateTime.fromJSDate(dateObj).toFormat("LLLL d, yyyy");
