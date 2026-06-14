@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>MAKC.CO - Setting up a Private Immich Server</title>
+<title>MAKC.CO - Setting up a Calibre-web Server on Linux</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link href="https://cdn.jsdelivr.net/npm/modern-normalize@v3.0.1 /modern-normalize.min.css" rel="stylesheet">
 <link rel="stylesheet" href="/bundle.css">
@@ -65,7 +65,7 @@
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@makccr">
-<meta name="twitter:title" content="MAKC.CO - Setting up a Private Immich Server">
+<meta name="twitter:title" content="MAKC.CO - Setting up a Calibre-web Server on Linux">
 <meta name="twitter:description" content="Im a propagandist for pickled red onions, a rare meat activist, barely-monetizable YouTuber and Captain of the sailing vessel Knox. Ive been creating content online for well over a decade now, but delivering to a very small audience. Undoubtedly, youve discovered this website by mistake, but thanks for stopping by anyway-and, feel free to browse around.">
 <meta name="twitter:image" content="https://makc.co/images/bg-head.jpg">
 
@@ -138,28 +138,74 @@
 }
 </style>
     <img class="hero" src="" alt="">
-    <h1>Setting up a Private Immich Server</h1>
-    <h3>Last Updated <br> June 9, 2026</h3>
+    <h1>Setting up a Calibre-web Server on Linux</h1>
+    <h3>Last Updated <br> June 13, 2026</h3>
 
 <div class="essayContainer"> 
 <h1>Install Docker Engine / Docker CE</h1>
 <ol>
-<li><strong>Note</strong>: <em>Docker Engine</em> is not the same thing that would generally be installed via a standard linux package manager. To remove a previously installed iteration of Docker (at least on Ubuntu), use the command below:</li>
-</ol>
-<pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> remove <span class="token variable"><span class="token variable">$(</span>dpkg --get-selections docker.io <span class="token function">docker-compose</span> docker-compose-v2 docker-doc podman-docker containerd runc <span class="token operator">|</span> <span class="token function">cut</span> <span class="token parameter variable">-f1</span><span class="token variable">)</span></span></code></pre>
-<ol start="2">
 <li>Follow <a href="https://docs.docker.com/engine/install/#get-started">the Docker website's documentation</a>, it's solid &amp; also includes instructions to remove previous iterations of Docker on all the other supported distributions.</li>
 </ol>
-<h1>Install Immich</h1>
+<h1>Install Calibre-web via the <a href="https://github.com/linuxserver/docker-calibre-web">Docker Image</a></h1>
+<ul>
+<li><strong>Note</strong>: <a href="https://github.com/janeczku/calibre-web">Calibre-web</a> can be installed via a python pip package, however the Docker image is easier to set up and run as a background process on a Linux server.</li>
+</ul>
 <ol>
-<li>Use <a href="https://docs.immich.app/install/docker-compose">the Immich website's documentation</a> for installing and running with Docker Compose; once again, this documentation is more than good enough.</li>
+<li>Create a new directory for the calibre-web app to live in:</li>
 </ol>
-<h2>Configure Immich</h2>
+<pre class="language-bash"><code class="language-bash"><span class="token function">mkdir</span> Docker/claibre-web
+<span class="token builtin class-name">cd</span> Docker/claibre-web</code></pre>
+<ol start="2">
+<li>Set up a docker-compose.yml file in app directory:</li>
+</ol>
+<pre class="language-bash"><code class="language-bash"><span class="token function">touch</span> docker-compose.yml</code></pre>
+<ol start="3">
+<li>Ensure to make required changes to the <em>volumes:</em> section of the default docker-compose.yml:</li>
+</ol>
+<pre class="language-bash"><code class="language-bash">name: calibre-web
+
+---
+services:
+  calibre-web:
+    image: lscr.io/linuxserver/calibre-web:latest
+    container_name: calibre-web
+    environment:
+      - <span class="token assign-left variable">PUID</span><span class="token operator">=</span><span class="token number">1000</span>
+      - <span class="token assign-left variable">PGID</span><span class="token operator">=</span><span class="token number">1000</span>
+      - <span class="token assign-left variable">TZ</span><span class="token operator">=</span>Etc/UTC
+      - <span class="token assign-left variable">DOCKER_MODS</span><span class="token operator">=</span>linuxserver/mods:universal-calibre
+    volumes:
+      - /home/<span class="token environment constant">USER</span>/Docker/calibre-web/config:/config
+<span class="token comment"># ~/Docker/calibre-web/ will map the Calibre config directory to /config in the app directory</span>
+      - /home/<span class="token environment constant">USER</span>/Documents/Books:/books 
+<span class="token comment"># ~/Documents/Books = Pre-existing Calibre libary directory including metadata.db file</span>
+    ports:
+      - <span class="token number">8083</span>:8083
+    restart: unless-stopped</code></pre>
+<ol start="4">
+<li>Start the Calibre server:</li>
+</ol>
+<pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> compose up <span class="token parameter variable">-d</span></code></pre>
+<h2>Set-up the Calibre Library</h2>
 <ol>
-<li>Visit port 2283 on the machine that Immich was installed on: <em>http://SERVER.IP.ADDRESS:2283</em>.</li>
-<li>Follow the prompts to set up an admin &amp; some user accounts &amp; use <a href="https://docs.immich.app/install/post-install">Immich's documentation</a> if stuck.</li>
-<li>There are a few different ways to remotely access an Immich server, but one of the easiest &amp; most secure is <a href="https://makc.co/docs/create-your-own-git-server/">via a VPN</a> - just do that unless there's a really good reason not to.</li>
+<li>From inside the server's LAN access the server via: <strong>http://serverIP:8083</strong></li>
+<li>Login with the default credentials:</li>
 </ol>
+<pre class="language-bash"><code class="language-bash">Username: admin
+Password: admin123</code></pre>
+<ol start="3">
+<li>When prompted set the Calibre Database Location to <strong>/books</strong>. Link to a pre-existing calibre libary in the <strong>docker-compose.yml</strong>, in the above example: <strong>/home/USER/Documents/Books</strong> is mapped to <strong>/books</strong>.</li>
+</ol>
+<picture><source type="image/webp" srcset="/.11ty/image/?src=docs%2Fimg%2F2026-06-14-A.png&width=1586&format=webp&via=transform 1586w"><img src="/.11ty/image/?src=docs%2Fimg%2F2026-06-14-A.png&width=1586&format=jpeg&via=transform" alt="Database config setup in calibre-web" class="fifty" width="1586" height="540"></picture>
+<h3>Access the Calibre Server Remotely</h3>
+<p>The easiest &amp; most secure way to access the calibre-server remotely is via a VPN. <a href="https://www.wireguard.com/">Wireguard</a> is very good for this, &amp; <a href="https://tailscale.com/">Tailscale</a> is an even simpler abstraction that uses Wireguard as a dependency. Full instructions for installing and configuring Tailscale can be found <a href="https://makc.co/docs/simple-tailscale-setup/">here</a>.</p>
+<h1>Using the Calibre-web OPDS Server</h1>
+<p>Maybe the best thing about the calibre-web server is the fact that it spins up an OPDS server alongside the web UI that can be accessed via many Andoid and iOS eReader apps. This server can be accessed in a browser or in an application by navigating to: <strong>http://serverIP:8083/opds</strong></p>
+<picture><source type="image/webp" srcset="/.11ty/image/?src=docs%2Fimg%2F2026-06-14-B.png&width=1170&format=webp&via=transform 1170w"><img src="/.11ty/image/?src=docs%2Fimg%2F2026-06-14-B.png&width=1170&format=jpeg&via=transform" alt="The calibre-web OPDS server linked up in the Yomu app on iOS" class="quarter" width="1170" height="486"></picture>
+<p class="caption">The <a href="https://www.yomu-reader.com/" target="_blank">Yomu app</a> on iOS with the Calibre-web OPDS server linked via a Tailscale VPN connection.</p>
+<p>OPDS makes it incredibly easy to browse and download a user's full Calibre library of eBooks in any number of OPDS apps across all platforms. Some of the most popular apps are <a href="https://apps.apple.com/us/app/fbreader-epub-and-fb2-reader/id1067172178">FBReader</a> on iOS, <a href="https://play.google.com/store/apps/details?id=com.flyersoft.moonreader">Moon+ Reader</a> for Android &amp; <a href="https://thorium.edrlab.org/en/">Thorium Reader</a> for Linux, Windows and Apple Silicon Macs. A much larger list of OPDS applications can be found on the <a href="https://github.com/opds-community/awesome-opds">Awesome OPDS GitHub page</a>.</p>
+<picture><source type="image/webp" srcset="/.11ty/image/?src=docs%2Fimg%2F2026-06-14-c.png&width=1170&format=webp&via=transform 1170w"><img src="/.11ty/image/?src=docs%2Fimg%2F2026-06-14-c.png&width=1170&format=jpeg&via=transform" alt="My calibre library accessed in Yomu" class="quarter" width="1170" height="2377"></picture>
+<p class="caption">My personal calibre library being accessed via the OPDS server in Yomu</p>
 
 </div> 
 
