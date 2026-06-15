@@ -228,10 +228,13 @@ nix profile <span class="token function">install</span> nixpkgs<span class="toke
 <hr>
 <h2>Authentication with a SSH key</h2>
 <p>Authenticating transfers and remote operation via SSH keys is not only much more secure than a standard password, but also much better for any sort of CI, CD or cron job automation that a user might want to set up in the future. Luckily the <em>ssh-keygen</em> utility is packaged with <em>OpenSSH</em> upon install. This makes it very easy to create a SSH key on both the server and client.</p>
-<pre class="language-bash"><code class="language-bash">ssh-keygen <span class="token parameter variable">-t</span> ed25519 <span class="token parameter variable">-C</span> <span class="token string">"you@mail.com"</span>
+<pre class="language-bash"><code class="language-bash">ssh-keygen <span class="token parameter variable">-t</span> ed25519 <span class="token parameter variable">-a</span> <span class="token number">100</span> <span class="token parameter variable">-C</span> <span class="token string">"you@mail.com"</span>
 
-<span class="token comment"># if you are using a legacy system that does not support the Ed25519 hash algorithm use rsa</span>
-ssh-keygen <span class="token parameter variable">-t</span> rsa <span class="token parameter variable">-b</span> <span class="token number">4096</span> <span class="token parameter variable">-C</span> <span class="token string">"you@mail.com"</span></code></pre>
+<span class="token comment"># If you are using a legacy system that does not support the Ed25519 hash algorithm use rsa</span>
+ssh-keygen <span class="token parameter variable">-t</span> rsa <span class="token parameter variable">-b</span> <span class="token number">4096</span> <span class="token parameter variable">-a</span> <span class="token number">100</span> <span class="token parameter variable">-o</span> <span class="token parameter variable">-C</span> <span class="token string">"you@mail.com"</span>
+
+<span class="token comment"># If you want to use a hardware key for 2FA</span>
+ssh-keygen <span class="token parameter variable">-t</span> ed25519-sk <span class="token parameter variable">-C</span> <span class="token string">"you@mail.com"</span></code></pre>
 <p>After creating the key, add the client's public SSH key to the server's list of authorized keys. This can be done by manually copying and pasting the full public key, but OpenSSH has a built in utility that makes the process much easier.</p>
 <pre class="language-bash"><code class="language-bash">ssh-copy-id user@100.27</code></pre>
 <p><strong>Note</strong>: If a repository was initially cloned or initiated using HTTPS, it might be necessary to add the <em>ssh://</em> prefix to the URL. This is not necessary when using the instructions provided here and pushing to origin via a VPN connection, but still helpful information to have access to.</p>

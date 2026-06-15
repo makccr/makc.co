@@ -126,10 +126,13 @@ git clone user@100.27:/home/user/Repos/REPO-NAME/
 Authenticating transfers and remote operation via SSH keys is not only much more secure than a standard password, but also much better for any sort of CI, CD or cron job automation that a user might want to set up in the future. Luckily the *ssh-keygen* utility is packaged with *OpenSSH* upon install. This makes it very easy to create a SSH key on both the server and client.
 
 ```bash
-ssh-keygen -t ed25519 -C "you@mail.com"
+ssh-keygen -t ed25519 -a 100 -C "you@mail.com"
 
-# if you are using a legacy system that does not support the Ed25519 hash algorithm use rsa
-ssh-keygen -t rsa -b 4096 -C "you@mail.com"
+# If you are using a legacy system that does not support the Ed25519 hash algorithm use rsa
+ssh-keygen -t rsa -b 4096 -a 100 -o -C "you@mail.com"
+
+# If you want to use a hardware key for 2FA
+ssh-keygen -t ed25519-sk -C "you@mail.com"
 ```
 
 After creating the key, add the client's public SSH key to the server's list of authorized keys. This can be done by manually copying and pasting the full public key, but OpenSSH has a built in utility that makes the process much easier.
