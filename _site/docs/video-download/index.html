@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>MAKC.CO - Documentation</title>
+<title>MAKC.CO - Downloading a Video</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link href="https://cdn.jsdelivr.net/npm/modern-normalize@v3.0.1 /modern-normalize.min.css" rel="stylesheet">
 <link rel="stylesheet" href="/bundle.css">
@@ -65,7 +65,7 @@
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@makccr">
-<meta name="twitter:title" content="MAKC.CO - Documentation">
+<meta name="twitter:title" content="MAKC.CO - Downloading a Video">
 <meta name="twitter:description" content="Im a propagandist for pickled red onions, a rare meat activist, barely-monetizable YouTuber and Captain of the sailing vessel Knox. Ive been creating content online for well over a decade now, but delivering to a very small audience. Undoubtedly, youve discovered this website by mistake, but thanks for stopping by anyway-and, feel free to browse around.">
 <meta name="twitter:image" content="https://makc.co/images/bg-head.jpg">
 
@@ -108,76 +108,101 @@
     
     <main>
         
-<h1>Documentation</h1>
-<h6>
-Users may note some <em>odd</em> links on this page. Example: my guide to <a href="http://makc.co/docs/immich/" target="_blank">installing immich</a> that just links to documentation from Immich & Docker's websites, or my <a href="https://makc.co/docs/cloning-this-site/" target="_blank">guide for development on this website</a> -- this is due to the fact that the primary purpose of this page is to catalog my personal documentation. Most sane people would keep this in a notebook, but clearly I had other ideas. Feel free to use the information found here, but please don't think that any of this documentation was written with any level of verifiable expertise.
-<br><br>
-It's probably still better than what ChatGPT would have told ya' though ;)
-</h6>
-<hr>
-<div class="docsContainer">
+<style>
+    header p { 
+        font-family: 'Open Sans', sans-serif;
+        font-size: 1.1em;
+    } h1 { margin-top: 1em; }
+
+    p,ol,ul {
+        padding: 1em;
+        text-align: left;
+        width: 60%;
+        align: center; 
+        margin: auto; 
+    } h4 {text-align: center;}
+
+@media only screen and (max-width: 850px) { 
+    p,ol,ul {
+        margin-left: .5em; 
+        margin-right: .5em;
+        width: 90%;
+        align: center; 
+        margin: auto;
+    }
+    h1,h2,h3,h4,h5,h6 {
+        margin-left: .5em; 
+        margin-right: .5em;
+    }
+
+}
+</style>
+    <img class="hero" src="" alt="">
+    <h1>Downloading a Video</h1>
+    <h3>Last Updated <br> August 6, 2026</h3>
+
+<div class="essayContainer"> 
+<p>A quick guide to downloading videos that are harder than they should be to download.</p>
+<h1>Locating a File to Download</h1>
+<ol>
+<li>Toggle <em>Developer Mode</em> in any modern full-featured browser. Developer mode can be triggered in Chromium or Firefox by pressing <em>F12</em>.</li>
+<li>Swap to the <em>Network</em> tab.</li>
+<li>Reload web page if necessary and ensure video playback has been triggered.</li>
+<li>Monitor for any video files, using URL filters andior the Media category in the Developer menu.</li>
+<li>Select individual requests and view the headers until a url with a video file is included, the video file will often be obscured, as in the following example: <strong>https://videosite.com/remote_control.php?file=random-title-name.mp4&amp;acctoken=random-token</strong></li>
+</ol>
+<h1>Downloading the Video File</h1>
+<ol>
+<li>Using either <em>curl</em> or <em>wget</em> use the full URL to download the video file.</li>
+</ol>
+<pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-L</span> <span class="token parameter variable">-O</span> <span class="token string">"https://videosite.com/remote_control.php?file=random-title-name.mp4&amp;acctoken=random-token"</span></code></pre>
+<p class="caption">or</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">wget</span> --content-disposition <span class="token string">"https://videosite.com/remote_control.php?file=random-title-name.mp4&amp;acctoken=random-token"</span> </code></pre>
+<p class="caption"><em>ensure quotes around the video file URL are in place</em></p>
+<ol start="2">
+<li>Multiple attempts may be neccasary if their are multiple video files located (ads in front of video, <em>et cetera</em>), however once the curl or wget process has started the file-size is usually a pretty good giveaway (18MB vs 250MB is a pretty clear difference and easy to discriminate against).</li>
+<li>When the download is complete, often times you will be left with something other than a video file, example: <em>remote_control.php</em> would most likely be the filename if downloading a video with the previously referenced sample URL. The file-size here is once again a pretty clear give-away, as most .php files won't be several hundred megabytes.</li>
+<li>Change the file-name and extension as you will, ensuring that the .php extension is changed to a video container. I have found that <em>.mp4</em> or <em>.mov</em> will almost always result in a playable video, but depending on the format of the original file, a few tries might be necessary. In any case, simply matching the file extension of the original file should always work.</li>
+</ol>
+
+</div> 
+
+
+
   
-    <div class="docs-list">
-      <h3><a href="/docs/video-download/">Downloading a Video</a></h3>
-      <h6>Last Updated: August 6, 2026</h6>
-    </div>
+
   
-    <div class="docs-list">
-      <h3><a href="/docs/calibre-web-docker/">Setting up a Calibre-web Server on Linux</a></h3>
-      <h6>Last Updated: June 13, 2026</h6>
-    </div>
+
   
-    <div class="docs-list">
-      <h3><a href="/docs/immich/">Setting up a Private Immich Server</a></h3>
-      <h6>Last Updated: June 9, 2026</h6>
-    </div>
+
   
-    <div class="docs-list">
-      <h3><a href="/docs/simple-tailscale-setup/">Remotely Accesing a File Server with Tailscale</a></h3>
-      <h6>Last Updated: June 9, 2026</h6>
-    </div>
+
   
-    <div class="docs-list">
-      <h3><a href="/docs/iso-2-usb-with-pv/">Copying a ISO Image to a USB Drive</a></h3>
-      <h6>Last Updated: June 4, 2026</h6>
-    </div>
+
   
-    <div class="docs-list">
-      <h3><a href="/docs/create-your-own-git-server/">Creating a Private Git Server</a></h3>
-      <h6>Last Updated: May 12, 2026</h6>
-    </div>
+
   
-    <div class="docs-list">
-      <h3><a href="/docs/yt-pipeline/">Recording & Transcoding 2:1 Screen-caps on Linux</a></h3>
-      <h6>Last Updated: May 8, 2026</h6>
-    </div>
+
   
-    <div class="docs-list">
-      <h3><a href="/docs/flatpak-to-dmenu/">Launch Any Package via Dmenu</a></h3>
-      <h6>Last Updated: April 6, 2026</h6>
-    </div>
+
   
-    <div class="docs-list">
-      <h3><a href="/docs/install-resolve-on-linux/">Install Davinci Resolve on Linux</a></h3>
-      <h6>Last Updated: January 22, 2026</h6>
-    </div>
+
   
-    <div class="docs-list">
-      <h3><a href="/docs/markdown-to-manscript/">Converting a Markdown File to a Manuscript</a></h3>
-      <h6>Last Updated: January 16, 2026</h6>
-    </div>
+
   
-    <div class="docs-list">
-      <h3><a href="/docs/fedora-bspwm/">Setting up BSPWM on Fedora Workstation</a></h3>
-      <h6>Last Updated: December 28, 2025</h6>
-    </div>
+
   
-    <div class="docs-list">
-      <h3><a href="/docs/cloning-this-site/">Cloning This Webiste & Getting Set-up for Development with Eleventy</a></h3>
-      <h6>Last Updated: January 16, 2025</h6>
-    </div>
+
   
-</div>
+
+  
+
+  
+
+  
+
+  
+
 
     </main>
     <footer>

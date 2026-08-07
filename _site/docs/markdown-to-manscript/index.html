@@ -83,7 +83,7 @@
     </script>
 
     <header>
-        <a href="/index"><picture><source type="image/webp" srcset="/.11ty/image/?src=images%2Fm.svg&width=1000&format=webp&via=transform 1000w"><img class="logo" src="/.11ty/image/?src=images%2Fm.svg&width=1000&format=jpeg&via=transform" alt="HOME" width="1000" height="1000"></picture></a>
+        <a href="/index"><picture><source type="image/webp" srcset="/img/Es_hZy2Cb8-1000.webp 1000w"><img class="logo" src="/img/Es_hZy2Cb8-1000.jpeg" alt="HOME" width="1000" height="1000"></picture></a>
             <div class="bars" onclick="mobileMenu()">
                 <i class="nf nf-md-menu"></i>
             </div>
@@ -181,10 +181,10 @@ brew update <span class="token operator">&amp;&amp;</span> brew upgrade <span cl
 <pre class="language-bash"><code class="language-bash">pandoc INPUT.md <span class="token parameter variable">-o</span> OUTPUT.odt </code></pre>
 <p>Open the exported <em>.odt</em> file in Libre Office and edit each paragraph style that is utilized. This can be done by opening the paragraph style menu, and using the drop down menu to edit each style individually. I have made the template I use <a href="https://makc.co/downloads/reference.zip">available for download</a>.</p>
 <p>Store this <em>reference.odt</em> file in an easy to access location, I put a copy of the template in the root directory of any writing project I'm embark on.</p>
-<picture><source type="image/webp" srcset="/.11ty/image/?src=docs%2Fimg%2F2026-01-17-A.jpg&width=854&format=webp&via=transform 854w"><img src="/.11ty/image/?src=docs%2Fimg%2F2026-01-17-A.jpg&width=854&format=jpeg&via=transform" alt="Libre Office Style's List" class="fifty" width="854" height="445"></picture>
+<picture><source type="image/webp" srcset="/docs/markdown-to-manscript/AdjSnXgsGT-854.webp 854w"><img src="/docs/markdown-to-manscript/AdjSnXgsGT-854.jpeg" alt="Libre Office Style's List" class="fifty" width="854" height="445"></picture>
 <h2>.lua Filter</h2>
 <p>A problem I encountered early on involved my use of Markdown’s horizontal rule feature. When exporting to an Office format, Pandoc, quite reasonably, renders the horizontal rule as a visible line. However, in my document this element is intended to mark a scene break, which follows specific formatting conventions in a manuscript.</p>
-<picture><source type="image/webp" srcset="/.11ty/image/?src=docs%2Fimg%2F2026-01-17-B.jpg&width=1652&format=webp&via=transform 1652w"><img src="/.11ty/image/?src=docs%2Fimg%2F2026-01-17-B.jpg&width=1652&format=jpeg&via=transform" alt="Libre Office Style's List" class="seventyFive" width="1652" height="498"></picture>
+<picture><source type="image/webp" srcset="/docs/markdown-to-manscript/SMy3Q-jc8m-1652.webp 1652w"><img src="/docs/markdown-to-manscript/SMy3Q-jc8m-1652.jpeg" alt="Libre Office Style's List" class="seventyFive" width="1652" height="498"></picture>
 <p>To avoid making changes to my Markdown documents, I created a <em>.lua</em> filter that can be run with Pandoc, and will convert the horizonal rule <em>(---)</em> in Markdown, to a <em>#</em> symbol, when exporting. In order for this filter to work properly, it is necessary to create a <em>SceneBreak</em> style in the <em>reference.odt</em> template.</p>
 <pre class="language-lua"><code class="language-lua"><span class="token comment">-- rule-to-scene-break.lua</span>
 
