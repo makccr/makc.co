@@ -164,6 +164,33 @@
 <li>When the download is complete, often times you will be left with something other than a video file, example: <em>remote_control.php</em> would most likely be the filename if downloading a video with the previously referenced sample URL. The file-size here is once again a pretty clear give-away, as most .php files won't be several hundred megabytes.</li>
 <li>Change the file-name and extension as you will, ensuring that the .php extension is changed to a video container. I have found that <em>.mp4</em> or <em>.mov</em> will almost always result in a playable video, but depending on the format of the original file, a few tries might be necessary. In any case, simply matching the file extension of the original file should always work.</li>
 </ol>
+<h2>Sequenced Videos</h2>
+<p>Some websites don't list a full video file in the Network tab of the Developer Menu. Rather than hosting a full file, it's only possible to access segmented video clips. This however does not mean that we cannot still download a full video.</p>
+<ol>
+<li>First find the sequence of video clips, for example the following URL might show up: <strong>https://video.userscontent.net/video.mp4/seg-01-av.ts</strong></li>
+<li>Create a list of all segmented files, by first downloading an individual segment:</li>
+</ol>
+<pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-L</span> <span class="token parameter variable">-O</span> <span class="token string">"https://video.userscontent.net/video.mp4/seg-01-av.ts"</span></code></pre>
+<ol start="3">
+<li>Once you have one video segment, you can calculate or roughly guess the video segment in question. For example if the first segment was roughly two seconds, and the video was about thirty minutes long, we can reasonably guess that there would be about nine hundred individual segments.</li>
+<li>Create a bash script to download all of the segments:</li>
+</ol>
+<pre class="language-bash"><code class="language-bash"><span class="token shebang important">#!/usr/bin/env bash</span>
+
+<span class="token assign-left variable">BASE_URL</span><span class="token operator">=</span><span class="token string">"https://video.userscontent.net/video.mp4"</span>
+
+<span class="token keyword">for</span> <span class="token for-or-select variable">i</span> <span class="token keyword">in</span> <span class="token variable"><span class="token variable">$(</span><span class="token function">seq</span> <span class="token parameter variable">-w</span> <span class="token number">1</span> <span class="token number">900</span><span class="token variable">)</span></span><span class="token punctuation">;</span> <span class="token keyword">do</span>
+    <span class="token function">curl</span> <span class="token parameter variable">-L</span> <span class="token parameter variable">-O</span> <span class="token string">"<span class="token variable">$BASE_URL</span>/seg-<span class="token variable">$i</span>--av.ts"</span>
+<span class="token keyword">done</span></code></pre>
+<ol start="5">
+<li>Run the script.</li>
+<li>Add all the downloaded files into a properly organized text document. This function will organize all the files, regardless of whether or not they are numbered with proceeding zeros:</li>
+</ol>
+<pre class="language-bash"><code class="language-bash"><span class="token builtin class-name">printf</span> <span class="token string">'%s\n'</span> seg-*-av.ts <span class="token operator">|</span> <span class="token function">sort</span> <span class="token parameter variable">-V</span> <span class="token operator">|</span> <span class="token function">sed</span> <span class="token string">"s/^/file '/; s/$/'/"</span> <span class="token operator">></span> files.txt</code></pre>
+<ol start="7">
+<li>Combine all the files into one with <em>ffmpeg</em>:</li>
+</ol>
+<pre class="language-bash"><code class="language-bash">ffmpeg <span class="token parameter variable">-f</span> concat <span class="token parameter variable">-safe</span> <span class="token number">0</span> <span class="token parameter variable">-i</span> files.txt <span class="token parameter variable">-c</span> copy output.mp4</code></pre>
 
 </div> 
 
