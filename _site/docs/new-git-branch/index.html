@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>MAKC.CO - Documentation</title>
+<title>MAKC.CO - Creating a New Branch</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link href="https://cdn.jsdelivr.net/npm/modern-normalize@v3.0.1 /modern-normalize.min.css" rel="stylesheet">
 <link rel="stylesheet" href="/bundle.css">
@@ -65,7 +65,7 @@
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@makccr">
-<meta name="twitter:title" content="MAKC.CO - Documentation">
+<meta name="twitter:title" content="MAKC.CO - Creating a New Branch">
 <meta name="twitter:description" content="Im a propagandist for pickled red onions, a rare meat activist, barely-monetizable YouTuber and Captain of the sailing vessel Knox. Ive been creating content online for well over a decade now, but delivering to a very small audience. Undoubtedly, youve discovered this website by mistake, but thanks for stopping by anyway-and, feel free to browse around.">
 <meta name="twitter:image" content="https://makc.co/images/bg-head.jpg">
 
@@ -108,81 +108,99 @@
     
     <main>
         
-<h1>Documentation</h1>
-<h6>
-Users may note some <em>odd</em> links on this page. Example: my guide to <a href="http://makc.co/docs/immich/" target="_blank">installing immich</a> that just links to documentation from Immich & Docker's websites, or my <a href="https://makc.co/docs/cloning-this-site/" target="_blank">guide for development on this website</a> -- this is due to the fact that the primary purpose of this page is to catalog my personal documentation. Most sane people would keep this in a notebook, but clearly I had other ideas. Feel free to use the information found here, but please don't think that any of this documentation was written with any level of verifiable expertise.
-<br><br>
-It's probably still better than what ChatGPT would have told ya' though ;)
-</h6>
-<hr>
-<div class="docsContainer">
+<style>
+    header p { 
+        font-family: 'Open Sans', sans-serif;
+        font-size: 1.1em;
+    } h1 { margin-top: 1em; }
+
+    p,ol,ul {
+        padding: 1em;
+        text-align: left;
+        width: 60%;
+        align: center; 
+        margin: auto; 
+    } h4 {text-align: center;}
+
+@media only screen and (max-width: 850px) { 
+    p,ol,ul {
+        margin-left: .5em; 
+        margin-right: .5em;
+        width: 90%;
+        align: center; 
+        margin: auto;
+    }
+    h1,h2,h3,h4,h5,h6 {
+        margin-left: .5em; 
+        margin-right: .5em;
+    }
+
+}
+</style>
+    <img class="hero" src="" alt="">
+    <h1>Creating a New Branch</h1>
+    <h3>Last Updated <br> August 15, 2026</h3>
+
+<div class="essayContainer"> 
+<p>A guide for creating a new branch in a git repository.</p>
+<h1>Creating a New Branch</h1>
+<ol>
+<li>Navigate to git repo:</li>
+</ol>
+<pre class="language-bash"><code class="language-bash"><span class="token builtin class-name">cd</span> REPO</code></pre>
+<ol start="2">
+<li>Create new branch:</li>
+</ol>
+<pre class="language-bash"><code class="language-bash"><span class="token function">git</span> checkout <span class="token parameter variable">-b</span> NEW-BRANCH</code></pre>
+<ol start="3">
+<li>Push new branch:</li>
+</ol>
+<pre class="language-bash"><code class="language-bash"><span class="token function">git</span> push origin NEW-BRANCH</code></pre>
+<h2>(Optionally) Create a Branch from a Specific Commit</h2>
+<pre class="language-bash"><code class="language-bash"><span class="token function">git</span> checkout <span class="token parameter variable">-b</span> NEW-BRANCH HASH</code></pre>
+<h3>Swap Between Branches</h3>
+<pre class="language-bash"><code class="language-bash"><span class="token function">git</span> checkout BRANCH-NAME</code></pre>
+
+</div> 
+
+
+
   
-    <div class="docs-list">
-      <h3><a href="/docs/new-git-branch/">Creating a New Branch</a></h3>
-      <h6>Last Updated: August 15, 2026</h6>
-    </div>
+
   
-    <div class="docs-list">
-      <h3><a href="/docs/video-download/">Downloading a Video</a></h3>
-      <h6>Last Updated: August 6, 2026</h6>
-    </div>
+
   
-    <div class="docs-list">
-      <h3><a href="/docs/calibre-web-docker/">Setting up a Calibre-web Server on Linux</a></h3>
-      <h6>Last Updated: June 13, 2026</h6>
-    </div>
+
   
-    <div class="docs-list">
-      <h3><a href="/docs/immich/">Setting up a Private Immich Server</a></h3>
-      <h6>Last Updated: June 9, 2026</h6>
-    </div>
+
   
-    <div class="docs-list">
-      <h3><a href="/docs/simple-tailscale-setup/">Remotely Accesing a File Server with Tailscale</a></h3>
-      <h6>Last Updated: June 9, 2026</h6>
-    </div>
+
   
-    <div class="docs-list">
-      <h3><a href="/docs/iso-2-usb-with-pv/">Copying a ISO Image to a USB Drive</a></h3>
-      <h6>Last Updated: June 4, 2026</h6>
-    </div>
+
   
-    <div class="docs-list">
-      <h3><a href="/docs/create-your-own-git-server/">Creating a Private Git Server</a></h3>
-      <h6>Last Updated: May 12, 2026</h6>
-    </div>
+
   
-    <div class="docs-list">
-      <h3><a href="/docs/yt-pipeline/">Recording & Transcoding 2:1 Screen-caps on Linux</a></h3>
-      <h6>Last Updated: May 8, 2026</h6>
-    </div>
+
   
-    <div class="docs-list">
-      <h3><a href="/docs/flatpak-to-dmenu/">Launch Any Package via Dmenu</a></h3>
-      <h6>Last Updated: April 6, 2026</h6>
-    </div>
+
   
-    <div class="docs-list">
-      <h3><a href="/docs/install-resolve-on-linux/">Install Davinci Resolve on Linux</a></h3>
-      <h6>Last Updated: January 22, 2026</h6>
-    </div>
+
   
-    <div class="docs-list">
-      <h3><a href="/docs/markdown-to-manscript/">Converting a Markdown File to a Manuscript</a></h3>
-      <h6>Last Updated: January 16, 2026</h6>
-    </div>
+
   
-    <div class="docs-list">
-      <h3><a href="/docs/fedora-bspwm/">Setting up BSPWM on Fedora Workstation</a></h3>
-      <h6>Last Updated: December 28, 2025</h6>
-    </div>
+
   
-    <div class="docs-list">
-      <h3><a href="/docs/cloning-this-site/">Cloning This Webiste & Getting Set-up for Development with Eleventy</a></h3>
-      <h6>Last Updated: January 16, 2025</h6>
-    </div>
+
   
-</div>
+
+  
+
+  
+
+  
+
+  
+
 
     </main>
     <footer>
