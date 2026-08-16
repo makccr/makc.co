@@ -458,7 +458,7 @@ footer ul { text-align: center; }
     color: var(--button-text); 
     background-color: var(--button-color);
     border: none;
-    padding: 1rem 2rem;
+    padding: 1rem 1.3rem;
     border-radius: 3px; 
     transition: all .3s;
     margin: 1rem .2rem;
@@ -506,7 +506,7 @@ button i, button i:hover{
     font-weight: 600;
     font-size: 1rem;
     cursor: pointer;
-    background-color: var(--button-color);
+    background: linear-gradient(180deg, var(--button-hover), var(--button-color));
     border: none;
     padding: 1rem 2rem;
     border-radius: 3px; 
