@@ -83,7 +83,7 @@
     </script>
 
     <header>
-        <a href="/index"><picture><source type="image/webp" srcset="/img/Es_hZy2Cb8-1000.webp 1000w"><img class="logo" src="/img/Es_hZy2Cb8-1000.jpeg" alt="HOME" width="1000" height="1000"></picture></a>
+        <a href="/index"><picture><source type="image/webp" srcset="/.11ty/image/?src=images%2Fm.svg&width=1000&format=webp&via=transform 1000w"><img class="logo" src="/.11ty/image/?src=images%2Fm.svg&width=1000&format=jpeg&via=transform" alt="HOME" width="1000" height="1000"></picture></a>
             <div class="bars" onclick="mobileMenu()">
                 <i class="nf nf-md-menu"></i>
             </div>
@@ -196,15 +196,15 @@ Password: admin123</code></pre>
 <ol start="3">
 <li>When prompted set the Calibre Database Location to <strong>/books</strong>. Link to a pre-existing calibre libary in the <strong>docker-compose.yml</strong>, in the above example: <strong>/home/USER/Documents/Books</strong> is mapped to <strong>/books</strong>.</li>
 </ol>
-<picture><source type="image/webp" srcset="/docs/calibre-web-docker/i2iYv6TikT-1586.webp 1586w"><img src="/docs/calibre-web-docker/i2iYv6TikT-1586.jpeg" alt="Database config setup in calibre-web" class="fifty" width="1586" height="540"></picture>
+<picture><source type="image/webp" srcset="/.11ty/image/?src=docs%2Fimg%2F2026-06-14-A.png&width=1586&format=webp&via=transform 1586w"><img src="/.11ty/image/?src=docs%2Fimg%2F2026-06-14-A.png&width=1586&format=jpeg&via=transform" alt="Database config setup in calibre-web" class="fifty" width="1586" height="540"></picture>
 <h3>Access the Calibre Server Remotely</h3>
 <p>The easiest &amp; most secure way to access the calibre-server remotely is via a VPN. <a href="https://www.wireguard.com/">Wireguard</a> is very good for this, &amp; <a href="https://tailscale.com/">Tailscale</a> is an even simpler abstraction that uses Wireguard as a dependency. Full instructions for installing and configuring Tailscale can be found <a href="https://makc.co/docs/simple-tailscale-setup/">here</a>.</p>
 <h1>Using the Calibre-web OPDS Server</h1>
 <p>Maybe the best thing about the calibre-web server is the fact that it spins up an OPDS server alongside the web UI that can be accessed via many Andoid and iOS eReader apps. This server can be accessed in a browser or in an application by navigating to: <strong>http://serverIP:8083/opds</strong></p>
-<picture><source type="image/webp" srcset="/docs/calibre-web-docker/5EcLZ_PboK-1170.webp 1170w"><img src="/docs/calibre-web-docker/5EcLZ_PboK-1170.jpeg" alt="The calibre-web OPDS server linked up in the Yomu app on iOS" class="quarter" width="1170" height="486"></picture>
+<picture><source type="image/webp" srcset="/.11ty/image/?src=docs%2Fimg%2F2026-06-14-B.png&width=1170&format=webp&via=transform 1170w"><img src="/.11ty/image/?src=docs%2Fimg%2F2026-06-14-B.png&width=1170&format=jpeg&via=transform" alt="The calibre-web OPDS server linked up in the Yomu app on iOS" class="quarter" width="1170" height="486"></picture>
 <p class="caption">The <a href="https://www.yomu-reader.com/" target="_blank">Yomu app</a> on iOS with the Calibre-web OPDS server linked via a Tailscale VPN connection.</p>
 <p>OPDS makes it incredibly easy to browse and download a user's full Calibre library of eBooks in any number of OPDS apps across all platforms. Some of the most popular apps are <a href="https://apps.apple.com/us/app/fbreader-epub-and-fb2-reader/id1067172178">FBReader</a> on iOS, <a href="https://play.google.com/store/apps/details?id=com.flyersoft.moonreader">Moon+ Reader</a> for Android &amp; <a href="https://thorium.edrlab.org/en/">Thorium Reader</a> for Linux, Windows and Apple Silicon Macs. A much larger list of OPDS applications can be found on the <a href="https://github.com/opds-community/awesome-opds">Awesome OPDS GitHub page</a>.</p>
-<picture><source type="image/webp" srcset="/docs/calibre-web-docker/BeCG8LJk6X-1170.webp 1170w"><img src="/docs/calibre-web-docker/BeCG8LJk6X-1170.jpeg" alt="My calibre library accessed in Yomu" class="quarter" width="1170" height="2377"></picture>
+<picture><source type="image/webp" srcset="/.11ty/image/?src=docs%2Fimg%2F2026-06-14-c.png&width=1170&format=webp&via=transform 1170w"><img src="/.11ty/image/?src=docs%2Fimg%2F2026-06-14-c.png&width=1170&format=jpeg&via=transform" alt="My calibre library accessed in Yomu" class="quarter" width="1170" height="2377"></picture>
 <p class="caption">My personal calibre library being accessed via the OPDS server in Yomu</p>
 
 </div> 
@@ -245,10 +245,15 @@ Password: admin123</code></pre>
 
   
 
+  
+
 
     </main>
     <footer>
         <div class="socialIcons"> 
+            <a title="Codeberg" target="_blank" href="https://codeberg.org/makccr">
+                <i class="nf nf-linux-codeberg"></i>
+            </a>
             <a title="Github" target="_blank" href="https://github.com/makccr">
                 <i class="nf nf-dev-github"></i>
             </a>
