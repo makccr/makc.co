@@ -1,5 +1,0 @@
-User-agent: *
-Disallow:
-
-Sitemap: https://makc.co/sitemap.xml
-Feed: https://makc.co/feed.xml
