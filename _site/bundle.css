@@ -545,14 +545,17 @@ pre code {
 }
 
 th, td {
-    border: 1px solid var(--mid-accent);
     padding: 1rem;
     color: var(--fg-color);
     font-family: 'Open Sans', sans-serif; 
-    background-color: var(--bg-color-lighter);
+    border: 0px;
 }
 
-th { background-color: var(--button-color); }
+th { 
+    font-family: 'Inconsolata', monospace; 
+    text-align: left; 
+    border-bottom: 2px solid var(--mid-accent);
+}
 
 table {
    border-collapse: collapse;
