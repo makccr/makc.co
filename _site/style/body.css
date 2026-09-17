@@ -52,13 +52,13 @@ main p {
     padding: 1rem 0rem;
 }
 
-p a {
+main p a {
     text-decoration: none;
     color: var(--button-hover);
     transition: 0.3s;
 }
 
-p a:hover {
+main p a:hover {
     text-decoration: underline 3px var(--button-hover); 
     color: var(--fg-color);
     transition: 0.3s;
