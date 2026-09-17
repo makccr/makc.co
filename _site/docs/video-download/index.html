@@ -83,7 +83,11 @@
     </script>
 
     <header>
-        <a href="/index"><picture><source type="image/webp" srcset="/.11ty/image/?src=images%2Fm.svg&width=1000&format=webp&via=transform 1000w"><img class="logo" src="/.11ty/image/?src=images%2Fm.svg&width=1000&format=jpeg&via=transform" alt="HOME" width="1000" height="1000"></picture></a>
+        <div class="logo-container">
+            <a href="/index">
+                <picture><source type="image/webp" srcset="/.11ty/image/?src=images%2Fm.svg&width=1000&format=webp&via=transform 1000w"><img class="logo" src="/.11ty/image/?src=images%2Fm.svg&width=1000&format=jpeg&via=transform" alt="HOME" width="1000" height="1000"></picture>
+            </a>
+        </div>
             <div class="bars" onclick="mobileMenu()">
                 <i class="nf nf-md-menu"></i>
             </div>
@@ -234,7 +238,7 @@
 
 
     </main>
-    <footer>
+   <footer>
         <ul>
             <li><a href="/terms">Terms & Privacy</a></li>
             <li><a href="/contact">Contact</a></li>
