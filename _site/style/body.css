@@ -1,23 +1,199 @@
 @import url('style/color.css');
 
 /* SITE-WIDE COLORS & FONTS*/
-* {
+html {
     background-color: var(--bg-color); 
 } /* Page background color control */
 
-h1,h2,h3,h4,h5,h6 {
+h1 {
+    color: var(--fg-color); 
+    font-family: 'Montserrat', sans-serif;
+}
+
+h2,h3,h4,h5,h6,th {
     color: var(--fg-color);
     font-family: 'Inconsolata', monospace; 
 } /* Setting all headers to primary foreground color */
 
-p {
+p, li, td {
     color: var(--fg2-color);
     font-family: 'Open Sans', sans-serif; 
 } /* Setting paragraph to secondary foreground color */
+
+a {
+    text-decoration: none; 
+}
 
 /* SPACING & WIDTH*/
 main {
     width: 70%;
     margin-right: auto; 
     margin-left: auto; 
+    padding-bottom: 5rem;
+}
+
+/* HEADERS, Ps & As*/
+h1 {
+    text-align: center; 
+    font-size: 2.5rem; 
+    margin-top: 10rem;
+    font-weight: 100;
+}
+
+h2 { text-align: center; }
+h2, h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.15rem; }
+h6 { font-size: 1rem; }
+
+main p {
+    line-height: 1.75rem;
+    font-size: 1.1rem;
+    padding: 1rem 0rem;
+}
+
+p a {
+    text-decoration: none;
+    color: var(--button-hover);
+    transition: 0.3s;
+}
+
+p a:hover {
+    text-decoration: underline 3px var(--button-hover); 
+    color: var(--fg-color);
+    transition: 0.3s;
+}
+
+li {
+    line-height: 1.5rem;
+}
+
+/* ELEMENTS */
+/* CODE BLOCKS*/
+pre code {
+    color: var(--fg-color);
+    display: block;
+    padding: 1rem;
+}
+
+code {
+    white-space: pre-wrap; 
+    word-break: break-word; 
+    overflow-wrap: break-word; 
+    font-family: 'Inconsolata', monospace ; 
+    font-size: 1rem; 
+    background-color: var(--bg-color-lighter); 
+    border-radius: .3rem; 
+    border: 1px solid var(--mid-accent); 
+    padding: .2rem;
+}
+
+
+/* TABLES */
+table {
+    border-collapse: collapse; 
+    overflow: visible; 
+    margin: auto; 
+    text-align: center;
+    max-width: 100%; 
+    overflow-x: auto; 
+    -webkit-overflow-scrolling: touch; 
+}
+
+th, td {
+    border: 0px; 
+    text-align: left; 
+    padding: 1rem; 
+}
+
+th {
+    border-bottom: 2px solid var(--mid-accent);
+}
+
+
+/* LINE BREAK */
+hr {
+    margin: 5rem 10rem ;
+}
+
+/* BLOCKQUOTE & ATTRIBUTION */
+blockquote {
+    margin: 0rem 5rem; 
+    text-align: center;
+}
+
+blockquote p {
+    font-family: 'IM Fell English', serif;
+    color: var(--fg-color);
+    font-size: 1.25rem;
+    line-height: 1.7rem;
+}
+
+.attr {
+    text-transform: uppercase; 
+    text-align: center; 
+    padding: 0;
+    margin: 0 0 4rem;
+    position: relative; 
+    font-size: .9rem; 
+    font-family: 'Inconsolata', monospace;
+}
+
+.attr::before, .attr::after {
+    content: ""; 
+    display: block; 
+    width: 15rem; 
+    height: .1em; 
+    background: var(--mid-accent); 
+    margin: 0 auto; 
+}
+
+.attr::after {
+    margin-top: 0;
+}
+
+.attr::before {
+    margin-bottom: .5rem;
+}
+
+.attr::after {
+    margin-top: .5rem;
+}
+
+
+
+/* BUTTONS */
+button {
+    color: var(--fg-color);
+    font-family: 'Inconsolata', monospace; 
+    background-color: var(--button-color);
+    border: 0; 
+    padding: 1rem 2rem;
+    border-radius: .5rem;
+    display: block;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: var(--button-hover); 
+}
+
+
+
+/* MOBILE SITE CUSTOMIZATIONS*/
+
+@media only screen and (max-width: 640px) { /* Main phone settings */
+    
+    main {
+        width: 90%;
+    }
+
+    table {
+        display: block; 
+    }
+
+    blockquote {
+        margin: 0rem;
+    }
+
 }

@@ -33,6 +33,54 @@
     --code-gray: #999; 
 } /* Defining color scheme */
 
+
+/* CODE BLOCK COLOR DEFINITIONS*/
+/* CODE COLORS */
+.token.comment, .token.prolog, .token.doctype, .token.cdata {
+    color: var(--code-gray);
+    font-style: italic; 
+}
+
+.token.operator, .token.assign-left, .token.builtin, .token.entity, .token.namespace { 
+    color: var(--code-aqua); 
+}
+
+.token.string, .token.char, .token.attr-value, .token.inserted { 
+    color: var(--code-green); 
+}
+
+.token.attr-name, .token.property, .token.keyword { 
+    color: var(--code-purple); 
+}
+
+.token.selector { 
+    color: var(--code-orange);
+}
+
+.token.function { 
+    color: var(--code-blue); 
+}
+
+.token.number, .token.boolean, .token.variable, .token.parameter, .token.class-name, .token.type { 
+    color: var(--code-yellow); 
+}
+
+.token.regex, .token.symbol, .token.punctuation, .token.constant, .token.tag { 
+    color: var(--code-red); 
+}
+
+.token.bold { font-weight: bold; }
+.token.italic { font-style: italic; }
+.token.deleted { color: var(--code-red); }
+
+.token.important { 
+    color: var(--code-red); 
+    font-weight: bold; 
+} 
+
+.token { color: var(--code-gray); }
+
+
 /* Light Mode Settings ------------------------------------------------------ */
 @media (prefers-color-scheme: light) {
     :root {
