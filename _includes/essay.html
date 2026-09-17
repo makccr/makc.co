@@ -2,40 +2,8 @@
 layout: main.html 
 ---
 
-<style>
-    p,ol,ul {
-        font-family: 'IM Fell English', serif;
-        font-weight: 400;
-        font-size: 1.1em;
-        padding: 1em;
-        text-align: left;
-        width: 60%;
-        align: center; 
-        margin: auto; 
-        color: var(--fg2-color);
-    } h1 { margin-top: 1em; }
-    header p { 
-        font-family: 'Open Sans', sans-serif;
-        font-size: 1.1em;
-    }
-
-@media only screen and (max-width: 850px) { 
-    p,ol,ul {
-        margin-left: .5em; 
-        margin-right: .5em;
-        width: 90%;
-        align: center; 
-        margin: auto;
-    }
-    h1,h2,h3,h4,h5,h6 {
-        margin-left: .5em; 
-        margin-right: .5em;
-    }
-}
-</style>
-    <img class="hero" src="{{ image }}" alt="" >
-    <h1>{{ title | default: "Essays" }}</h1>
-    <h3>{{ date | postDate }}</h3>
+<h1>{{ title | default: "Essays" }}</h1>
+<h2>{{ date | postDate }}</h2>
 
 <div class="essayContainer"> 
 {{ content }}

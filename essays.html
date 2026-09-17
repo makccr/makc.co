@@ -18,7 +18,6 @@ main { text-align: center; }
     {% assign recentEssays = collections.essays | reverse | slice: 0, 2 %}
     {% for essay in recentEssays %}
     <div class="essay-card">
-        <img src="/essays/{{ essay.data.image }}" alt="">
         <h3> {{ essay.data.title }} </h3>
         <h6> {{ essay.data.date | postDate }} </h6>
         <div class="essay-preview">
