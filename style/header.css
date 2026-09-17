@@ -1,0 +1,67 @@
+@import url('style/color.css');
+
+/* CONFIGURING SITE LOGO */
+.logo {
+    padding: 1rem;
+    width: 5rem;
+    height: 5rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+} 
+
+.logo-container { 
+    text-align: center; 
+}
+
+/* CONFIGURING DESKTOP LINKS*/
+.links {
+    text-align: center; 
+    margin-top: 0rem;
+    padding-top: 0rem;
+}
+
+.links a {
+    position: relative;
+    display: inline-block;
+    padding-left: .5rem; 
+    padding-right: .5rem; 
+    font-family: 'Open Sans', sans-serif; 
+    font-size: 1rem; 
+    font-weight: 600; 
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--fg-color);
+    transition: 0.3s; 
+}
+
+.links a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -.1rem;;
+    width: 0;
+    height: 2px;
+    background: var(--button-hover);
+    transition: width 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.links a:hover {
+    color: var(--button-hover);
+}
+
+.links a:hover::after {
+    width: 90%;
+}
+
+
+/* CONFIGURING MOBILE LINKS*/
+#mobile-links, .bars {
+    display: none;
+}
+
+/* CONFIGURING HEADER STYLES*/
+header {
+    border-bottom: .1rem solid var(--mid-accent);
+}

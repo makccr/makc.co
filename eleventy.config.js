@@ -102,6 +102,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("images");
   eleventyConfig.addPassthroughCopy("_redirects");
   eleventyConfig.addPassthroughCopy("downloads");
+  eleventyConfig.addPassthroughCopy("style");
 
   // Filters
   eleventyConfig.addFilter("postDate", dateObj => {

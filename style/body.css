@@ -1,0 +1,23 @@
+@import url('style/color.css');
+
+/* SITE-WIDE COLORS & FONTS*/
+* {
+    background-color: var(--bg-color); 
+} /* Page background color control */
+
+h1,h2,h3,h4,h5,h6 {
+    color: var(--fg-color);
+    font-family: 'Inconsolata', monospace; 
+} /* Setting all headers to primary foreground color */
+
+p {
+    color: var(--fg2-color);
+    font-family: 'Open Sans', sans-serif; 
+} /* Setting paragraph to secondary foreground color */
+
+/* SPACING & WIDTH*/
+main {
+    width: 70%;
+    margin-right: auto; 
+    margin-left: auto; 
+}
