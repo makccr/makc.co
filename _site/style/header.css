@@ -63,7 +63,7 @@ header .links a:hover::after {
 
 /* CONFIGURING HEADER STYLES*/
 header {
-    background-color: rgba(0,0,0,0.3); 
+    background-color: var(--header-bg); 
     position: fixed; 
     top: 0; 
     left: 0; 

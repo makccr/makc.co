@@ -21,6 +21,7 @@
     --button-hover: #1288ef;
     --button-text: #fff; 
     --button-text-hover: #def; 
+    --header-bg: rgba(0,0,0,0.3);
     
     /*Code colors (material ocean)*/
     --code-aqua: #88c0d0; 
@@ -94,5 +95,6 @@
         --button-hover: #1288ef;
         --mid-accent: #ccc;
         --bg-color-lighter: #e8e8e8;
+        --header-bg: rgba(255,255,255,0.5);
     }
 }
