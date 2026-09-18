@@ -210,17 +210,9 @@ button:hover {
 /* MOBILE SITE CUSTOMIZATIONS*/
 
 @media only screen and (max-width: 640px) { /* Main phone settings */
-    
-    main {
-        width: 90%;
-    }
-
-    table {
-        display: block; 
-    }
-
-    blockquote {
-        margin: 0rem;
-    }
-
+    main { width: 90%; }
+    table { display: block; }
+    blockquote { margin: 0rem; }
+    .thirds { width: 100%; }
+    .half { width: 70%; }
 }

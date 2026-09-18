@@ -57,8 +57,45 @@ header .links a:hover::after {
 
 
 /* CONFIGURING MOBILE LINKS*/
-#mobile-links, .bars {
+.bars {
     display: none;
+}
+
+#mobile-links {
+    position: fixed; 
+    top: 5rem; 
+    right: 0;
+    width: 100%; 
+    height: calc(100vh - 5rem);
+
+    background: var(--header-bg);
+    backdrop-filter: blur(20px); 
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 999; 
+    transform: translateX(100%);
+    transition: transform 0.3s ease; 
+}
+
+#mobile-links ul {
+    list-style-type: none;
+    list-style-position:inside;
+    margin:0;
+    padding:0;
+}
+
+#mobile-links {
+    text-align: right; 
+    padding: 2rem;
+}
+
+#mobile-links a {
+    font-family: 'Open Sans', sans-serif; 
+    color: var(--fg-color); 
+    font-size: 2rem;
+}
+
+#mobile-links a:hover {
+    color: var(--button-hover);
 }
 
 /* CONFIGURING HEADER STYLES*/
@@ -68,9 +105,22 @@ header {
     top: 0; 
     left: 0; 
     width: 100%;
-    z-index: 1000; 
     backdrop-filter: blur(20px); 
     -webkit-backdrop-filter: blur(20px);
+    z-index: 1000; 
     border-bottom: .1rem solid var(--mid-accent);
 }
 
+@media only screen and (max-width: 640px) {
+    header .links { display: none; } 
+    #mobile-links.active { transform: translateX(0); }
+    .bars {
+        display: block; 
+        position: fixed; 
+        top: 1rem; 
+        right: 2rem;
+        color: var(--fg2-color);
+        font-size: 2.3rem;
+    }
+
+}

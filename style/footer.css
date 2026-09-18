@@ -3,6 +3,10 @@
 /* CONFIGURING DESKTOP LINKS*/
 footer ul {
     text-align: center; 
+    list-style-type: none;
+    list-style-position:inside;
+    margin:0;
+    padding:0;
 }
 
 footer li {
@@ -67,4 +71,11 @@ footer {
 .socialIcons a:hover {
     text-decoration: none;
     color: var(--button-hover);
+}
+
+@media only screen and (max-width: 640px) {
+    footer li { 
+        display: block; 
+        margin-bottom: 1rem;
+    } 
 }
