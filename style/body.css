@@ -5,6 +5,10 @@ html {
     background-color: var(--bg-color); 
 } /* Page background color control */
 
+main {
+    padding-top: 8rem;
+}
+
 h1 {
     color: var(--fg-color); 
     font-family: 'Montserrat', sans-serif;
@@ -176,6 +180,29 @@ button {
 
 button:hover {
     background-color: var(--button-hover); 
+}
+
+/* IMAGES */
+.full , .thirds, .half {
+    width: 100%;
+    height: auto; 
+    border-radius: 1rem;
+    border: .1rem solid var(--mid-accent);
+    display: block;
+    margin-left: auto; 
+    margin-right: auto; 
+}
+
+.thirds { width: 70%; }
+.half { width: 50%; }
+
+/* CAPTION */
+.caption {
+    text-align: center; 
+    margin: 0rem; 
+    padding; 0rem;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
 }
 
 

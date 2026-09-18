@@ -80,6 +80,7 @@ Gonna need some lists:
 
 
 ### And Finally: 
+Here it is formed into a paragraph. Here it is formed into a paragraph. Here it is formed into a paragraph. Here it is formed into a paragraph. Here it is formed into a paragraph. Here it is formed into a paragraph. Here it is formed into a paragraph. Here it is formed into a paragraph. Here it is formed into a paragraph. Here it is formed into a paragraph. Here it is formed into a paragraph. Here it is formed into a paragraph. Here it is formed into a paragraph. Here it is formed into a paragraph. Here it is formed into a paragraph. Here it is formed into a paragraph. Here it is formed into a paragraph. Here it is formed into a paragraph. Here it is formed into a paragraph. Here it is formed into a paragraph. Here it is formed into a paragraph. Here it is formed into a paragraph. Here it is formed into a paragraph. Here it is formed into a paragraph. Here it is formed into a paragraph. Here it is formed into a paragraph. Here it is formed into a paragraph. Here it is formed into a paragraph. Here it is formed into a paragraph. Here it is formed into a paragraph. Here it is formed into a paragraph. Here it is formed into a paragraph. Here it is formed into a paragraph. Here it is formed into a paragraph. Here it is formed into a paragraph. Here it is formed into a paragraph. Here it is formed into a paragraph. Here it is formed into a paragraph. Here it is formed into a paragraph. Here it is formed into a paragraph. Here it is formed into a paragraph. Here it is formed into a paragraph. Here it is formed into a paragraph. Here it is formed into a paragraph. Here it is formed into a paragraph. Here it is formed into a paragraph. Here it is formed into a paragraph. Here it is formed into a paragraph. Here it is formed into a paragraph. 
 
 > "The good ol'fashioned blockquote. Just imagine that this was a much longer an more philosophically relevant quote, something nice and Platonist. I don't know, just really need to see how a pretty long quote would look, as I might want to use Teddy Roosevelt's quote about the man in the arena being the one who-- I'll just use that quote: "It is not the critic who counts; not the man who points out how the strong man stumbles, or where the doer of deeds could have done them better. The credit belongs to the man who is actually in the arena, whose face is marred by dust and sweat and blood; who strives valiantly; who errs, who comes short again and again, because there is no effort without error and shortcoming; but who does actually strive to do the deeds; who knows great enthusiasms, the great devotions; who spends himself in a worthy cause; who at the best knows in the end the triumph of high achievement, and who at the worst, if he fails, at least fails while daring greatly, so that his place shall never be with those cold and timid souls who neither know victory nor defeat.""
 <p class="attr">Probably gonna need a custom attribution class?</p>
@@ -89,3 +90,13 @@ Gonna need some lists:
 A person<br>
 A book
 </p>
+
+#### One more thing: 
+**Some pictures!**
+
+<img src="essays/img/2026-06-14-A.jpg" class="full" alt="a picture">
+<p class='caption'>A full sized image</p>
+<img src="essays/img/2025-12-31-A.jpg" class="thirds" alt="a picture">
+<p class='caption'>Roughtly two thirds-sized image, how about a <a href="#">link</a>.</p>
+<img src="essays/img/2025-09-24-A.png" class="half" alt="a picture">
+<p class='caption'>A half sized image</p>
