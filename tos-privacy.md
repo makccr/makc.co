@@ -5,7 +5,7 @@ title: Terms of Service and Privacy Policy
 # {{ title }}
 <p class='caption'>
     <strong>Last Updated:</strong> 18 Septmeber 2026<br>
-    The full history of changes to these terms can be tracked <a href="https://github.com/makccr/makc.co/blob/master/tos-privacy.md" target="_blank">here</a>.
+    The full history of changes to these terms can be tracked <a href="https://github.com/makccr/makc.co/commits/master/tos-privacy.md" target="_blank">here</a>.
 </p>
 
 ## Terms of Service
