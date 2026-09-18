@@ -91,11 +91,20 @@ header .links a:hover::after {
 #mobile-links a {
     font-family: 'Open Sans', sans-serif; 
     color: var(--fg-color); 
-    font-size: 2rem;
 }
 
 #mobile-links a:hover {
     color: var(--button-hover);
+}
+
+#mobile-links li {
+    text-transform: uppercase; 
+    font-size: 1.3rem; 
+    padding: 1rem 0;
+}
+
+.mobile {
+    font-size: 2rem;
 }
 
 /* CONFIGURING HEADER STYLES*/

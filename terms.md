@@ -5,7 +5,7 @@ title: Terms of Service and Privacy Policy
 # {{ title }}
 <p class='caption'>
     <strong>Last Updated:</strong> 18 Septmeber 2026<br>
-    The full history of changes to these terms can be tracked <a href="https://github.com/makccr/makc.co/commits/master/tos-privacy.md" target="_blank">here</a>.
+    The full history of changes to these terms can be tracked <a href="https://github.com/makccr/makc.co/commits/master/terms.md" target="_blank">here</a>.
 </p>
 
 ## Terms of Service
@@ -13,7 +13,7 @@ title: Terms of Service and Privacy Policy
 These terms and conditions apply to this website, located at [makc.co](https://makc.co), as well as any and all subdomains hosted under this domain; including but not limited to [w8.makc.co](https://w8.makc.co) and [vim2tor.makc.co](https://vim2tor.makc.co). This site is the personal property of me (Mackenzie Criswell). By using this website, you are agreeing to the Terms of Use as outlined on this webpage; if you do not agree, **do not use this site**. 
 
 ### Description of Service(s) and Security
-This website functions as a personal repository for [essays](/essays), [documentation](/docs), and [downloads](/downloads) that I have made available for public consumption; as well as a mechanism by which to link to video and other content hosted on third-party services like [YouTube](https://youtube.com). I (Mackenzie Criswell) do not provide the hosting myself, and do not guarantee any uptime or availability of this site or any services provided by it. This website is served only over HTTPS which provides encryption in transit via TLS. It is the user's responsibility to provide any additional security or privacy required for use cases that require it. The website's full source code can be audited via the site's [public GitHub repository](https://github.com/makccr/makc.co).
+This website functions as a personal repository for [essays](/essays), [documentation](/docs), and [downloads](/downloads) that I have made available for public consumption; as well as a mechanism by which to link to video and other content hosted on third-party services like [YouTube](https://youtube.com). I (Mackenzie Criswell) do not provide the hosting myself, and do not guarantee any uptime or availability of this site or any services provided by it. This website is served only over HTTPS which provides encryption in transit via TLS. It is the user's responsibility to provide any additional security or privacy desired (Example: Using a VPN to hide traffic from an ISP). The website's full source code can be audited via the site's [public GitHub repository](https://github.com/makccr/makc.co).
 
 ### Acceptable Use, Intellectual Property & Copyright
 This website his hosted via [Netlify](https://netlify.com) and any use of this site should comply with [Netlify's Terms of Service](https://www.netlify.com/legal/terms-of-use/). 
@@ -34,11 +34,11 @@ This site utilizes third party services in the construction and deployment of it
 ##### Services Used in the Building and Deployment of this Site
 | Service | Terms | Privacy | GDPR/CCPA | Description| 
 | ------------ | ----- | --------| --------- | -----------|
-| Netlify | <i class='nf nf-fa-check'></i> [Terms of Service](https://www.netlify.com/legal/terms-of-use/) | <i class='nf nf-fa-check'></i> [Privacy Policy](https://www.netlify.com/privacy/) | <i class='nf nf-fa-check'></i> | <i class='nf nf-fa-check'></i> [GDPR/CCPA](https://www.netlify.com/gdpr-ccpa/) | Hosts this website and all of it's subdomains, DNS provider.
+| Netlify | <i class='nf nf-fa-check'></i> [Terms of Service](https://www.netlify.com/legal/terms-of-use/) | <i class='nf nf-fa-check'></i> [Privacy Policy](https://www.netlify.com/privacy/) | <i class='nf nf-fa-check'></i> [GDPR/CCPA](https://www.netlify.com/gdpr-ccpa/) | My web hosting solution & DNS provider.
 | Eleventy (11ty) | <i class='nf nf-fa-xmark'></i> | <i class='nf nf-fa-check'></i> [Privacy Policy](https://www.11ty.dev/docs/privacy/) | <i class='nf nf-fa-xmark'></i> | A static site generator used to build and deploy this site.
-| GitHub | <i class='nf nf-fa-check'></i> [Terms of Service](https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) | <i class='nf nf-fa-check'></i> [Privacy Satement](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement) | <i class='nf nf-fa-xmark'></i> | The CI/CS platform that I use to keep the wesbite's source code and VCS public. |
+| GitHub | <i class='nf nf-fa-check'></i> [Terms of Service](https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) | <i class='nf nf-fa-check'></i> [Privacy Satement](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement) | <i class='nf nf-fa-xmark'></i> | The CI/CD platform that I use to keep the wesbite's source code and VCS public. |
 | Nerd Fonts | <i class='nf nf-fa-xmark'></i> | <i class='nf nf-fa-xmark'></i> | <i class='nf nf-fa-xmark'></i> | The iconic font aggregator that provides symbols for my terminal and my website. |
-| Google Analytics | <i class='nf nf-fa-check'></i> [Terms of Service](https://policies.google.com/terms) | <i class='nf nf-fa-check'></i> [Privacy Policy](https://policies.google.com/privacy) | <i class='nf nf-fa-xmark'></i> | Used to site visitors and other analytics. | 
+| Google Analytics & Google Fonts | <i class='nf nf-fa-check'></i> [Terms of Service](https://policies.google.com/terms) | <i class='nf nf-fa-check'></i> [Privacy Policy](https://policies.google.com/privacy) | <i class='nf nf-fa-xmark'></i> | Used to track number of site visitors and serve fonts. | 
 <p class='caption'>
     *<em>Note:</em> I'm on the fence about removing Google Analytics. If anyone has any thoughts on this, or knows of good FOSS alternatives, please feel free to <a href='/contact'>contact me</a>.
 </p>

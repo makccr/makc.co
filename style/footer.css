@@ -74,8 +74,5 @@ footer {
 }
 
 @media only screen and (max-width: 640px) {
-    footer li { 
-        display: block; 
-        margin-bottom: 1rem;
-    } 
+    footer li { display: none; } 
 }

@@ -19,6 +19,8 @@ h2,h3,h4,h5,h6,th {
     font-family: 'Inconsolata', monospace; 
 } /* Setting all headers to primary foreground color */
 
+h2,h3,h4,h5,h6 { padding-top: 3rem; }
+
 p, li, td {
     color: var(--fg2-color);
     font-family: 'Open Sans', sans-serif; 
@@ -56,13 +58,29 @@ main p {
     padding: 1rem 0rem;
 }
 
-main p a , main td a {
+main p a, 
+main td a, 
+main li a, 
+main h1 a, 
+main h2 a, 
+main h3 a, 
+main h4 a, 
+main h5 a, 
+main h6 a {
     text-decoration: none;
     color: var(--button-hover);
     transition: 0.3s;
 }
 
-main p a:hover {
+main p a:hover, 
+main td a:hover, 
+main li a:hover, 
+main h1 a:hover,
+main h2 a:hover,
+main h3 a:hover,
+main h4 a:hover,
+main h5 a:hover,
+main h6 a:hover {
     text-decoration: underline 3px var(--button-hover); 
     color: var(--fg-color);
     transition: 0.3s;
