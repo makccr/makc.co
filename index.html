@@ -1,24 +1,22 @@
 ---
 layout: main.html
 title: Welcome
+description: I'm a propagandist for pickled red onions, a rare meat activist, and Captain of the sailing vessel Knox. I've been creating content online for well over a decade now, but delivering to a relatively small audience. Undoubtedly, you've discovered this website by mistake, but thanks for stopping by anyway. Feel free to browse around, odds are you might find something interesting.
 ---
 <style>
-main { text-align: center; }
-#home { text-align: center; }
-
-.card p {
-    padding: 0rem .5rem;
-    margin-bottom: 1.5rem;
+    main { 
+        text-align: center; 
+        width: 95%; 
+    }
 }
 </style>
 
 <h1>{{ title }}</h1>
-
-<h6> I'm a propagandist for pickled red onions, a rare meat activist, and Captain of the sailing vessel Knox. I've been creating content online for well over a decade now, but delivering to a very small audience. Undoubtedly, you've discovered this website by mistake, but thanks for stopping by anyway. Feel free to browse around, odds are you might find something interesting. </h6>
+<p class="caption">{{ description }}</p>
 
 <hr></hr>
 
-<h2>Recent Videos</h2>
+<h2>New Videos</h2>
 
 <div class=cardContainer>
     {% assign sorted = airtable | sort: "Date" | reverse %}
@@ -39,36 +37,30 @@ main { text-align: center; }
     {% endfor %}
 </div>
 
-<hr></hr>
+<h2>Projects Worth Checking Out</h2>
 
-<h2>Recent Essays</h2>
-
-    {% assign recentEssays = collections.essays | reverse | slice: 0, 2 %}
-    {% for essay in recentEssays %}
-    <div class="essay-card">
-        <h3> {{ essay.data.title }} </h3>
-        <h6> {{ essay.data.date | postDate }} </h6>
-        <br>
-        <a href="{{ essay.url }}">
-            <button>Read Now &nbsp;<i class="nf nf-fa-arrow_right"></i></button>
-        </a>
+<div class=cardContainer>
+    <div class=card data-category="App / Web App">
+        <img src="https://raw.githubusercontent.com/makccr/vim2tor/refs/heads/main/src/asci.jpg" alt="hero image"> 
+        <h2 class="essays">vim2tor</h2>
+        <a href="https://vim2tor.makc.co" target=_blank><button>View Site &nbsp;<i class="nf nf-md-exit_to_app"></i></button></a>
+        <a href="https://codeberg.org/makccr/vim2tor" target=_blank><button><i class="nf nf-linux-codeberg"></i></button></a>
+        <a href="https://github.com/makccr/vim2tor" target=_blank><button><i class="nf nf-dev-github"></i></button></a>
     </div>
-    {% endfor %}
+    <div class=card data-category="Configs">
+        <img src="images/downloads/dot.jpg" alt="hero image"> 
+        <h2 class="essays">Dot Files</h2>
+        <a href="https://codeberg.org/makccr/dot" target=_blank><button>Codeberg &nbsp;<i class="nf nf-linux-codeberg"></i></button></a>
+        <a href="https://github.com/makccr/dot" target=_blank><button><i class="nf nf-dev-github"></i></button></a>
+    </div>
+    <div class=card data-category="Wallpapers">
+        <img src="images/downloads/walls.jpg" alt="hero image"> 
+        <h2 class="essays">Wallpapers</h2>
+        <a href="https://wallpapers.makc.co" target=_blank><button>Browse &nbsp;<i class="nf nf-custom-folder"></i></button></a>
+        <a href="https://github.com/makccr/wallpapers" target=_blank><button><i class="nf nf-dev-github"></i></button></a>
+    </div>
+</div>
 
 <hr></hr>
 
-<h2>New Documentation</h2>
-
-    {% assign recentEssays = collections.docs | reverse | slice: 0, 5 %}
-    {% for essay in recentEssays %}
-    <h4> 
-        <a href="{{ essay.url }}">
-            {{ essay.data.title }}
-        </a>
-    </h4>
-    <h6>
-        Last Updated: {{ essay.data.date | postDate }}
-    </h6>
-    {% endfor %}
-
-<br><br><br>
+<h2>Writing</h2>

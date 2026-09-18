@@ -50,7 +50,7 @@ footer li a:hover::after {
 
 /* CONFIGURING FOOTER STYLES*/
 footer {
-    border-top: .1rem solid var(--mid-accent);
+    border-top: .1rem solid var(--bg-color-lighter);
     padding: 3rem 1rem;
     text-align: center;
 }

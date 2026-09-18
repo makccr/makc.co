@@ -136,6 +136,7 @@ th {
 /* LINE BREAK */
 hr {
     margin: 5rem 10rem ;
+    color: var(--bg-color-lighter);
 }
 
 /* BLOCKQUOTE & ATTRIBUTION */
@@ -262,7 +263,8 @@ button:hover {
 }
 
 .video-card img:hover {
-    scale: 105%;
+    scale: 103%;
+    border: .05rem solid var(--button-hover);
     transition: 0.3s ease;
 }
 
@@ -293,8 +295,53 @@ button:hover {
 .platform-select a:hover {
     text-decoration: underline 3px var(--button-hover); 
     color: var(--fg-color);
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
+
+/* DOWNLOADS PAGE CARDS*/
+
+.cardContainer { 
+    text-align: center; 
+    vertical-align: center; 
+    display: inline-block;
+    align: center;
+}
+
+.card {
+  width: 25rem; 
+  display: inline-block; 
+  margin: 1em; 
+  padding: 0em;
+  border: 1px solid var(--mid-accent);
+  border-radius: .3rem;
+  text-align: center;
+  background-color: var(--bg-color-lighter);
+} 
+
+.card img {
+  width: 100%; 
+  max-height: 13em;
+  min-height: 13em;
+  border-top-right-radius: .5rem;
+  border-top-left-radius: .5rem;
+  object-fit: cover;
+  padding: 0em; 
+  margin: 0em;
+}
+
+.card h2 {
+    padding: 1rem .25rem; 
+    margin: 0;
+    font-size: 1.3rem; 
+    font-family: 'Montserrat', sans-serif; 
+    font-weight: 600; 
+}
+
+.card button {
+    padding: 1rem 1.5rem;
+    margin-bottom: 1rem;
+}
+
 
 /* MOBILE SITE CUSTOMIZATIONS*/
 
@@ -307,9 +354,15 @@ button:hover {
     .caption { width: 95%; }
     hr { margin: 5rem 2rem ; }
     .filterButtons { width: 95%; }
+
     .video-card { 
         width: 100%; 
         display: block; 
+    }
+
+    .card {
+        width: 90%; 
+        display: block;
     }
 }
 
