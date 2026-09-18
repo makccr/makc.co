@@ -174,8 +174,8 @@ button {
     border: 0; 
     padding: 1rem 2rem;
     border-radius: .5rem;
-    display: block;
     transition: 0.3s;
+    margin: .5rem;
 }
 
 button:hover {
