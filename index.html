@@ -27,7 +27,14 @@ main { text-align: center; }
         <a href="{{ item.yturl }}" target="_blank" title="YouTube">
             <img src="https://i.ytimg.com/vi/{{ item.ytid | strip }}/maxresdefault.jpg" alt="Hero image"/>
         </a>
-        <p class="videos">{{ item.Title | truncate: 47, "..." }}</p><br>
+        <div class='metadata'>{{ item.Date }} • {{ item.Type }}</div>   
+        <p class="videos">{{ item.Title | truncate: 42, "..." }}</p>
+        <div class="platform-select">      
+            Watch on:    
+            <a href="{{ item.yturl }}" target="_blank">YouTube, </a>
+            <a href="{{ item.odurl }}" target="_blank">Odysee, </a> or 
+            <a href="{{ item.ivurl }}" target="_blank">Invidious</a>
+        </div>                                                     
     </div>
     {% endfor %}
 </div>

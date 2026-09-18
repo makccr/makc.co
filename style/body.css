@@ -187,13 +187,15 @@ blockquote p {
 /* BUTTONS */
 button {
     color: var(--fg-color);
-    font-family: 'Inconsolata', monospace; 
+    font-family: 'Open Sans', sans-serif; 
+    font-weight: 500;
+    font-size: .9rem;
     background-color: var(--button-color);
     border: 0; 
-    padding: 1rem 2rem;
+    padding: .5rem 1rem;
     border-radius: .5rem;
     transition: 0.3s;
-    margin: .5rem;
+    margin: .25rem;
 }
 
 button:hover {
@@ -231,6 +233,69 @@ button:hover {
 .nf-fa-xmark { color: var(--code-red); }
 
 
+/* Video page card and container */
+.filterButtons {
+    text-align: center; 
+    width: 60%; 
+    margin-left: auto; 
+    margin-right: auto;
+    margin-bottom: 4rem;
+}
+
+.VIDcardContainer {
+    text-align: center; 
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+.video-card {
+    width: 25rem;
+    display: inline-block;
+    padding: .5rem; 
+}
+
+.video-card img {
+    width: 100%; 
+    height: auto;
+    border-radius: .5rem; 
+    border: .1rem solid var(--mid-accent);
+}
+
+.video-card img:hover {
+    scale: 105%;
+    transition: 0.3s ease;
+}
+
+.video-card p {
+    margin: 0; 
+    padding: 0;
+    font-size: var(--fg-color);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: left; 
+}
+
+.video-card .metadata, .platform-select {
+    color: var(--fg2-color);
+    margin: 0; 
+    padding: 0; 
+    font-size: 0.8rem;
+    margin-top: .1rem;
+    text-align: left; 
+}
+
+.platform-select a {
+    color: var(--button-hover);
+    margin-bottom: 1rem;
+}
+
+.platform-select a:hover {
+    text-decoration: underline 3px var(--button-hover); 
+    color: var(--fg-color);
+    transition: 0.3s;
+}
+
 /* MOBILE SITE CUSTOMIZATIONS*/
 
 @media only screen and (max-width: 640px) { /* Main phone settings */
@@ -239,6 +304,13 @@ button:hover {
     blockquote { margin: 0rem; }
     .thirds { width: 100%; }
     .half { width: 70%; }
-    .caption { width: 80%; }
+    .caption { width: 95%; }
     hr { margin: 5rem 2rem ; }
+    .filterButtons { width: 95%; }
+    .video-card { 
+        width: 100%; 
+        display: block; 
+    }
 }
+
+

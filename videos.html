@@ -1,10 +1,11 @@
 ---
 layout: main.html
 title: Videos
+description: My entire catalog of video content. Over a decade of content ranging tech, motion graphics, web design, video essays and much more. Now available on <a href="https://www.youtube.com/@makc" target="_blank">YouTube</a>, <a href="https://inv.nadeko.net/channel/UCWh6YtclgTAzReTASc4uSKw" target="_blank">Invidious</a> or <a href="https://odysee.com/@makc:a" target="_blank">Odysee</a>
 ---
 
 <h1>{{ title }}</h1>
-<h6>My entire catalog of video content. Over a decade of content ranging tech, motion graphics, web design, video essays and much more. Now available on <a href="https://www.youtube.com/@makc" target="_blank">YouTube</a>, <a href="https://inv.nadeko.net/channel/UCWh6YtclgTAzReTASc4uSKw" target="_blank">Invidious</a> or <a href="https://odysee.com/@makc:a" target="_blank">Odysee</a>...</h6>
+<p class="caption">{{ description }}</p>
 
 {% assign categories = "" | split: "" %}
 {% for item in airtable %}
@@ -20,13 +21,20 @@ title: Videos
   {% endfor %}
 </div>
 
-<div class=cardContainer>
+<div class=VIDcardContainer>
         {% for item in airtable %}
     <div data-category="{{ item.Type }}" class="video-card">
         <a href="{{ item.yturl }}" target="_blank" title="YouTube">
         <img src="https://i.ytimg.com/vi/{{ item.ytid | strip }}/maxresdefault.jpg" alt="Hero image"/>
         </a>
-        <p class="videos">{{ item.Title | truncate: 42, "..." }}</p><br>
+        <div class='metadata'>{{ item.Date }} • {{ item.Type }}</div>
+        <p class="videos">{{ item.Title | truncate: 42, "..." }}</p>
+        <div class="platform-select">
+            Watch on:  
+            <a href="{{ item.yturl }}" target="_blank">YouTube, </a>
+            <a href="{{ item.odurl }}" target="_blank">Odysee, </a> or 
+            <a href="{{ item.ivurl }}" target="_blank">Invidious</a>
+        </div>
     </div>
         {% endfor %}
 </div>
