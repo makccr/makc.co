@@ -3,6 +3,9 @@ layout: main.html
 title: All Styles
 ---
 
+<i class='nf nf-fa-check'></i>
+<i class='nf nf-fa-xmark'></i>
+
 # This is the top level header
 ## Heading 2
 ### Heading 3

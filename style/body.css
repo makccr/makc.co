@@ -56,7 +56,7 @@ main p {
     padding: 1rem 0rem;
 }
 
-main p a {
+main p a , main td a {
     text-decoration: none;
     color: var(--button-hover);
     transition: 0.3s;
@@ -199,12 +199,18 @@ button:hover {
 /* CAPTION */
 .caption {
     text-align: center; 
+    width: 60%;
     margin: 0rem; 
     padding; 0rem;
     margin-bottom: 2rem;
     font-size: 0.9rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+/* Miscellaneous NF symbols*/
+.nf-fa-check { color: var(--code-green); }
+.nf-fa-xmark { color: var(--code-red); }
 
 
 /* MOBILE SITE CUSTOMIZATIONS*/
@@ -215,4 +221,5 @@ button:hover {
     blockquote { margin: 0rem; }
     .thirds { width: 100%; }
     .half { width: 70%; }
+    .caption { width: 80%; }
 }
