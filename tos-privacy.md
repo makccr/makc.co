@@ -3,7 +3,10 @@ layout: main.html
 title: Terms of Service and Privacy Policy
 ---
 # {{ title }}
-<p class='caption'><strong>Last Updated:</strong> 18 Septmeber 2026</p>
+<p class='caption'>
+    <strong>Last Updated:</strong> 18 Septmeber 2026<br>
+    The full history of changes to these terms can be tracked <a href="https://github.com/makccr/makc.co/blob/master/tos-privacy.md" target="_blank">here</a>.
+</p>
 
 ## Terms of Service
 ### Ownership of Site; Agreement to Terms of Use
@@ -24,6 +27,7 @@ The intellectual property hosted on this site is protected by the automatic copy
 ### Warranty & Modification of Terms
 This website is provided as a free service to all users. There is no warranty expressed or implied, as I collect no payment in order to use these services. I (Mackenzie Criswell) reserve the right to change these terms in the future. Any update to these terms will be made available on this webpage, and any changes can be easily tracked by my site's [version control system](https://github.com/makccr/makc.co).
 
+<a id="third-party"></a>
 #### Third Party Services
 This site utilizes third party services in the construction and deployment of it's services. These services are regularly monitored and evaluated for compliance with reasonable ethical, security, and privacy standards to ensure user data is not being unduly collected. It should be noted however that I (Mackenzie Criswell), should not be held responsible for any content, policies or practices of these services, users who interact with any of the services listed below, do so at their own risk. All of that being said, I do have a vested interest in only using third-party services that are safe, as I also am a user of my own website. I welcome any criticism or recommendations for more secure, more private, or any free and open source alternatives for any of the services used. Any recommendations can be sent to me via any of the mechanisms detailed on this site's [contact page](/contact).
 
@@ -52,4 +56,10 @@ This site utilizes third party services in the construction and deployment of it
 ---
 
 ## Privacy Policy
+This website is the personal property of me (Mackenzie Criswell). This policy applies to all users of this site. Use of this site constitutes agreeing to the policy; if you do not agree to the policy **do not use this site**. 
 
+### Collection of Personal Data
+I do not collect any person information from visitors of this site. I do not share any user data with any third party services, as I do not collect any data. Any user does however have the right to make a complaint about this site to any local regulatory body if they believe their privacy is being violated. The privacy documentation for any third-party services used in the deployment of this site, or linked to from this site can be viewed [here](#third-party).
+
+### Contact
+Any questions or concerns can be directed to the webmaster and data protection officer, me (Mackenzie Criswell) via my email address: [m@makc.co](mailto:m@makc.co).

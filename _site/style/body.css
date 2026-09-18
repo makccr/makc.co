@@ -222,4 +222,5 @@ button:hover {
     .thirds { width: 100%; }
     .half { width: 70%; }
     .caption { width: 80%; }
+    hr { margin: 5rem 2rem ; }
 }
