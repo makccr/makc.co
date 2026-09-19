@@ -1,8 +1,10 @@
 ---
 title: "Creating a Private Git Server"
 layout: docs.html
-date: 2026-05-13
+date: 2026-05-07
+updated: 2026-05-13
 tags: docs
+subject: ["git", "backup", "security", "homelab"]
 ---
 
 As [GitHub](https://github.com) becomes [increasingly less reliable](https://mrshu.github.io/github-statuses/) (not to mention riddled with AI slop), many are looking for alternatives. This documentation will walk through the process of setting up a private Git server for any non public-facing repositories.
@@ -16,17 +18,17 @@ As [GitHub](https://github.com) becomes [increasingly less reliable](https://mrs
 * [Git](https://git-scm.com/)
 * A VPN software, this guide uses: [Tailscale](https://tailscale.com/)
 
-# Required set-up for both devices
+### Required set-up for both devices
 On both the server and any machine you intend to push changes from, you will need to set-up a VPN connection and install OpenSSH, as well as an *optional* SSH key. The process is identical for each system: 
 
-### Install Tailscale
+#### Install Tailscale
 ```bash 
 curl -fsSL https://tailscale.com/install.sh | sh
 ```
 
 Authenticate your user account when prompted, or set up a new account on first use.
 
-### Install OpenSSH
+#### Install OpenSSH
 ```bash
 sudo pacman -S openssh  # Arch Linux
 
@@ -42,7 +44,7 @@ nix profile install nixpkgs#openssh  # Nix
 
 ```
 
-# Server Set-up 
+### Server Set-up 
 Remote into the server using SSH and the server's Tailscale generated IP address. This documentation will use the user name: "user" & a fake IP address of "100.27".
 
 ```bash
@@ -62,7 +64,7 @@ mkdir "REPO-NAME" && cd "REPO-NAME"
 git init --bare
 ```
 
-# Client Set-up
+### Client Set-up
 Create an empty directory with the same name (REPO-NAME) anywhere on the client system. 
 
 ```bash
@@ -95,7 +97,7 @@ git remote set-url origin user@server:/home/user/Repo/REPO-NAME/
 git remote -v  # Can be used to confirm that a typo was made upon initial set-up as well
 ```
 
-# Migrating an Existing Repository to Server
+### Migrating an Existing Repository to Server
 * Change the remote origin
 * Ensure the primary branch names match up
 * Push to server
@@ -113,7 +115,7 @@ git push -u origin BRANCH-NAME
 
 ```
 
-# Cloning Repo on a New Client
+### Cloning Repo on a New Client
 Ensure SSH and Tailscale are installed and configured on any new machine, and then run: 
 
 ```bash
@@ -122,7 +124,7 @@ git clone user@100.27:/home/user/Repos/REPO-NAME/
 
 ---
 
-## Authentication with a SSH key
+#### Authentication with a SSH key
 Authenticating transfers and remote operation via SSH keys is not only much more secure than a standard password, but also much better for any sort of CI, CD or cron job automation that a user might want to set up in the future. Luckily the *ssh-keygen* utility is packaged with *OpenSSH* upon install. This makes it very easy to create a SSH key on both the server and client.
 
 ```bash

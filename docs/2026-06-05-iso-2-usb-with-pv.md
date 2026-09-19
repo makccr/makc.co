@@ -2,14 +2,16 @@
 title: "Copying a ISO Image to a USB Drive"
 layout: docs.html
 date: 2026-06-05
+updated: 2026-06-05
 tags: docs 
+subject: ["software", "OS"]
 ---
 
-# Required Items
+## Required Items
 * [pv](https://linux.die.net/man/1/pv). Don't use [dd](https://linux.die.net/man/1/dd). While it will often work, dd is a 50+ year old command, uses archaic syntax and provides little to no feedback on what it is doing.
 * An [ISO image](https://archlinux.org/download/) (usually *.iso*, but the process will also work for *.raw.xz*, and some other archived images). 
 
-# Steps
+## Steps
 1. Insert a removable USB drive, and ensure that there is at least one partition large enough for the ISO image.
 2. Use [lsblk](https://linux.die.net/man/8/lsblk) to check the drive name & partitions (very often a removable drive will be something like */dev/sda* or */dev/sdb*).
 ```bash
@@ -31,7 +33,7 @@ sudo cfdisk /dev/sda
 sudo pv arch.iso -o /dev/sda1
 ```
 
-## Optional Improvements
+### Optional Improvements
 * **--sync** or **-Y** will use [fdatasync](https://linux.die.net/man/2/fdatasync) to synchronize the buffer cache after every write operation. This will sometimes improve the accuracy of pv's progress bar when writing data to a slow disk (like a USB stick). 
 
 ```bash

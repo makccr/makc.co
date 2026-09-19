@@ -102,70 +102,36 @@
             <li><a href="/essays">Essays</a></li>
             <li><a href="/docs">Documentation</a></li>
             <li><a href="/downloads">Downloads & Apps</a></li>
-            <br><br>
-            <li><a href="/terms">TOS & Privacy</a></li>
-            <li><a href="/contact">Contact</a></li>
-            <li><a href="/ai">AI Disclosure</a></li>
-            <li><a href="https://ko-fi.com/makccr" target="_blank">Donate</a></li>
         </ul>
     </div>
 </div>
     
     <main>
         
-<style>
-    header p { 
-        font-family: 'Open Sans', sans-serif;
-        font-size: 1.1em;
-    } h1 { margin-top: 1em; }
-
-    main {
-        padding: 1em;
-        text-align: left;
-        width: 60%;
-        align: center; 
-        margin: auto; 
-    } h4 {text-align: center;}
-
-@media only screen and (max-width: 850px) { 
-    main {
-        margin-left: .5em; 
-        margin-right: .5em;
-        width: 95%;
-        align: center; 
-        margin: auto;
-    }
-    h1,h2,h3,h4,h5,h6 {
-        margin-left: .5em; 
-        margin-right: .5em;
-    }
-
-}
-</style>
-    <img class="hero" src="" alt="">
-    <h1>Converting a Markdown File to a Manuscript</h1>
-    <h3>Last Updated <br> January 16, 2026</h3>
+<h1>Converting a Markdown File to a Manuscript</h1>
+<p class="caption"><strong>Originally Posted:</strong> January 16, 2026<br>
+<strong>Last Updated:</strong> January 16, 2026</p>
 
 <div class="essayContainer"> 
 <p>A guide for exporting Markdown <em>(.md)</em> files to Open Office <em>(.odt)</em> files, with <a href="https://en.wikipedia.org/w/index.php?title=Standard_manuscript_format">standard manuscript formatting</a>.</p>
-<h1>Background</h1>
+<h2>Background</h2>
 <p>Last year I began writing my first novel. My preferred method of writing is to use the <a href="https://daringfireball.net/projects/markdown/">Markdown format</a>, and <a href="https://neovim.io/">Neovim</a>. This setup is great for writing efficiently and accessing my work on any device. However, I have run into two issues:</p>
 <ol>
 <li>I prefer to edit with pen &amp; paper. Markdown is not a printer friendly format.</li>
 <li>If I ever do try to publish my work, no publisher in the world will accept a <em>.md</em> file as a manuscript.</li>
 </ol>
 <p>Both of these problems can be solved by periodically converting the Markdown files into an Office format. I prefer the Open Office format <em>(.odt)</em>, but this process is nearly identical with Microsoft Word <em>(.docx)</em> or Google Doc <em>(.gdoc)</em> formats.</p>
-<h1>Required Software</h1>
+<h2>Required Software</h2>
 <ul>
 <li><a href="https://pandoc.org/">Pandoc</a>: A tool that will convert Markdown files to Open Office files.</li>
 <li><a href="https://www.libreoffice.org/">Libre Office</a>: My office software of choice. <a href="https://www.openoffice.org/">Open Office</a> will work just as well.</li>
 </ul>
-<h3>Optional</h3>
+<h4>Optional</h4>
 <ul>
 <li>My <a href="https://makc.co/downloads/reference.zip">Open Office Template</a></li>
 <li>My <a href="https://github.com/makccr/dot/blob/master/.scripts/rule-to-scene-break.lua"><em>.lua</em> filter</a>, available as part of my <a href="https://github.com/makccr/dot">dotfiles</a>.</li>
 </ul>
-<h2>Installation</h2>
+<h3>Installation</h3>
 <pre class="language-bash"><code class="language-bash"><span class="token comment"># Arch</span>
 <span class="token function">sudo</span> pacman -Syu<span class="token punctuation">;</span> <span class="token function">sudo</span> pacman <span class="token parameter variable">-S</span> libreoffice-still pandoc
 
@@ -180,16 +146,22 @@
 
 <span class="token comment"># MacOS (via Homebrew)</span>
 brew update <span class="token operator">&amp;&amp;</span> brew upgrade <span class="token operator">&amp;&amp;</span> brew <span class="token function">install</span> pandoc libreoffice</code></pre>
-<h1>Procedure</h1>
-<h2>Open Office Template</h2>
+<h2>Procedure</h2>
+<h3>Open Office Template</h3>
 <p>The first step is to create an Open Office template, or, what Pandoc will refer to as a: <em>reference-doc</em>. To do this, run an existing Markdown project through Pandoc to generate an Open Office file with all of the Markdown elements.</p>
 <pre class="language-bash"><code class="language-bash">pandoc INPUT.md <span class="token parameter variable">-o</span> OUTPUT.odt </code></pre>
 <p>Open the exported <em>.odt</em> file in Libre Office and edit each paragraph style that is utilized. This can be done by opening the paragraph style menu, and using the drop down menu to edit each style individually. I have made the template I use <a href="https://makc.co/downloads/reference.zip">available for download</a>.</p>
 <p>Store this <em>reference.odt</em> file in an easy to access location, I put a copy of the template in the root directory of any writing project I'm embark on.</p>
-<picture><source type="image/webp" srcset="/.11ty/image/?src=docs%2Fimg%2F2026-01-17-A.jpg&width=854&format=webp&via=transform 854w"><img src="/.11ty/image/?src=docs%2Fimg%2F2026-01-17-A.jpg&width=854&format=jpeg&via=transform" alt="Libre Office Style's List" class="fifty" width="854" height="445"></picture>
-<h2>.lua Filter</h2>
+<picture><source type="image/webp" srcset="/.11ty/image/?src=docs%2Fimg%2F2026-01-17-A.jpg&width=854&format=webp&via=transform 854w"><img src="/.11ty/image/?src=docs%2Fimg%2F2026-01-17-A.jpg&width=854&format=jpeg&via=transform" alt="Libre Office Style's List" class="half" width="854" height="445"></picture>
+<p class="caption">
+Libre Office's style's list
+</p>
+<h3>.lua Filter</h3>
 <p>A problem I encountered early on involved my use of Markdown’s horizontal rule feature. When exporting to an Office format, Pandoc, quite reasonably, renders the horizontal rule as a visible line. However, in my document this element is intended to mark a scene break, which follows specific formatting conventions in a manuscript.</p>
-<picture><source type="image/webp" srcset="/.11ty/image/?src=docs%2Fimg%2F2026-01-17-B.jpg&width=1652&format=webp&via=transform 1652w"><img src="/.11ty/image/?src=docs%2Fimg%2F2026-01-17-B.jpg&width=1652&format=jpeg&via=transform" alt="Libre Office Style's List" class="seventyFive" width="1652" height="498"></picture>
+<picture><source type="image/webp" srcset="/.11ty/image/?src=docs%2Fimg%2F2026-01-17-B.jpg&width=1652&format=webp&via=transform 1652w"><img src="/.11ty/image/?src=docs%2Fimg%2F2026-01-17-B.jpg&width=1652&format=jpeg&via=transform" alt="Libre Office Style's List" class="full" width="1652" height="498"></picture>
+<p class="caption">
+A before and after of the horizontal rule conversion via the lua filter
+</p>
 <p>To avoid making changes to my Markdown documents, I created a <em>.lua</em> filter that can be run with Pandoc, and will convert the horizonal rule <em>(---)</em> in Markdown, to a <em>#</em> symbol, when exporting. In order for this filter to work properly, it is necessary to create a <em>SceneBreak</em> style in the <em>reference.odt</em> template.</p>
 <pre class="language-lua"><code class="language-lua"><span class="token comment">-- rule-to-scene-break.lua</span>
 
@@ -197,12 +169,12 @@ brew update <span class="token operator">&amp;&amp;</span> brew upgrade <span cl
     <span class="token keyword">local</span> para <span class="token operator">=</span> pandoc<span class="token punctuation">.</span><span class="token function">Para</span><span class="token punctuation">(</span><span class="token punctuation">{</span>pandoc<span class="token punctuation">.</span><span class="token function">Str</span><span class="token punctuation">(</span><span class="token string">"#"</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
     <span class="token keyword">return</span> pandoc<span class="token punctuation">.</span><span class="token function">Div</span><span class="token punctuation">(</span><span class="token punctuation">{</span>para<span class="token punctuation">}</span><span class="token punctuation">,</span> pandoc<span class="token punctuation">.</span><span class="token function">Attr</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token punctuation">[</span><span class="token string">"custom-style"</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token string">"SceneBreak"</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token keyword">end</span></code></pre>
-<h2>Creating the Final Manuscript</h2>
+<h3>Creating the Final Manuscript</h3>
 <p>Using the Open Office template and <em>.lua</em> filter, convert the Markdown file to an Open Office file. In order to do this, use the standard Pandoc syntax, but provide a link to the <em>reference.odt</em> template, with the <em>--reference-doc=</em> flag, and the <em>.lua</em> filter, using the <em>--lua-filter=</em> flag.</p>
 <pre class="language-bash"><code class="language-bash">pandoc INPUT.md <span class="token parameter variable">-o</span> OUTPUT.odt <span class="token punctuation">\</span>
 --reference-doc<span class="token operator">=</span>reference.odt <span class="token punctuation">\</span>
 --lua-filter<span class="token operator">=</span>/home/makc/.scripts/rule-to-scene-break.lua</code></pre>
-<h3>Converting to PDF</h3>
+<h4>Converting to PDF</h4>
 <p>To create a PDF from the command line, we can use Libre Office in a headless manner. After creating the Open Office Document with Pandoc, run:</p>
 <pre class="language-bash"><code class="language-bash">libreoffice <span class="token parameter variable">--headless</span> --convert-to pdf FILENAME.odt</code></pre>
 <p>Or, simply create one bash script to handle everything in one motion.</p>

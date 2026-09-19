@@ -1,8 +1,10 @@
 ---
 title: "Recording & Transcoding 2:1 Screen-caps on Linux"
 layout: docs.html
-date: 2026-05-09
+date: 2026-01-22
+updated : 2026-05-09
 tags: docs
+subject: ["production", "pipeline", "editing", "software"]
 ---
 
 Some notes on setting up a custom display resolution on X11, transcoding H.264 media using ffmpeg, editing in Davinci Resolve, and then transcoding screen capture videos to the VP9 codec for delivery to YouTube & other video platforms.

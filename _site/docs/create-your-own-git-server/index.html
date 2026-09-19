@@ -102,49 +102,15 @@
             <li><a href="/essays">Essays</a></li>
             <li><a href="/docs">Documentation</a></li>
             <li><a href="/downloads">Downloads & Apps</a></li>
-            <br><br>
-            <li><a href="/terms">TOS & Privacy</a></li>
-            <li><a href="/contact">Contact</a></li>
-            <li><a href="/ai">AI Disclosure</a></li>
-            <li><a href="https://ko-fi.com/makccr" target="_blank">Donate</a></li>
         </ul>
     </div>
 </div>
     
     <main>
         
-<style>
-    header p { 
-        font-family: 'Open Sans', sans-serif;
-        font-size: 1.1em;
-    } h1 { margin-top: 1em; }
-
-    main {
-        padding: 1em;
-        text-align: left;
-        width: 60%;
-        align: center; 
-        margin: auto; 
-    } h4 {text-align: center;}
-
-@media only screen and (max-width: 850px) { 
-    main {
-        margin-left: .5em; 
-        margin-right: .5em;
-        width: 95%;
-        align: center; 
-        margin: auto;
-    }
-    h1,h2,h3,h4,h5,h6 {
-        margin-left: .5em; 
-        margin-right: .5em;
-    }
-
-}
-</style>
-    <img class="hero" src="" alt="">
-    <h1>Creating a Private Git Server</h1>
-    <h3>Last Updated <br> May 12, 2026</h3>
+<h1>Creating a Private Git Server</h1>
+<p class="caption"><strong>Originally Posted:</strong> May 6, 2026<br>
+<strong>Last Updated:</strong> May 12, 2026</p>
 
 <div class="essayContainer"> 
 <p>As <a href="https://github.com">GitHub</a> becomes <a href="https://mrshu.github.io/github-statuses/">increasingly less reliable</a> (not to mention riddled with AI slop), many are looking for alternatives. This documentation will walk through the process of setting up a private Git server for any non public-facing repositories.</p>
@@ -159,12 +125,12 @@
 <li><a href="https://git-scm.com/">Git</a></li>
 <li>A VPN software, this guide uses: <a href="https://tailscale.com/">Tailscale</a></li>
 </ul>
-<h1>Required set-up for both devices</h1>
+<h3>Required set-up for both devices</h3>
 <p>On both the server and any machine you intend to push changes from, you will need to set-up a VPN connection and install OpenSSH, as well as an <em>optional</em> SSH key. The process is identical for each system:</p>
-<h3>Install Tailscale</h3>
+<h4>Install Tailscale</h4>
 <pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-fsSL</span> https://tailscale.com/install.sh <span class="token operator">|</span> <span class="token function">sh</span></code></pre>
 <p>Authenticate your user account when prompted, or set up a new account on first use.</p>
-<h3>Install OpenSSH</h3>
+<h4>Install OpenSSH</h4>
 <pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> pacman <span class="token parameter variable">-S</span> openssh  <span class="token comment"># Arch Linux</span>
 
 <span class="token function">sudo</span> <span class="token function">apt</span> update <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> openssh-server <span class="token comment"># Debian &amp; Ubuntu</span>
@@ -177,7 +143,7 @@ brew <span class="token function">install</span> openssh  <span class="token com
 
 nix profile <span class="token function">install</span> nixpkgs<span class="token comment">#openssh  # Nix</span>
 </code></pre>
-<h1>Server Set-up</h1>
+<h3>Server Set-up</h3>
 <p>Remote into the server using SSH and the server's Tailscale generated IP address. This documentation will use the user name: &quot;user&quot; &amp; a fake IP address of &quot;100.27&quot;.</p>
 <pre class="language-bash"><code class="language-bash">tailscale status  <span class="token comment"># To locate the server's IP</span>
 
@@ -191,7 +157,7 @@ nix profile <span class="token function">install</span> nixpkgs<span class="toke
 <span class="token function">mkdir</span> <span class="token string">"REPO-NAME"</span> <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">cd</span> <span class="token string">"REPO-NAME"</span>
 
 <span class="token function">git</span> init <span class="token parameter variable">--bare</span></code></pre>
-<h1>Client Set-up</h1>
+<h3>Client Set-up</h3>
 <p>Create an empty directory with the same name (REPO-NAME) anywhere on the client system.</p>
 <pre class="language-bash"><code class="language-bash"><span class="token function">mkdir</span> REPO-NAME <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">cd</span> REPO-NAME</code></pre>
 <p>Once inside of that directory run the following commands:</p>
@@ -211,7 +177,7 @@ nix profile <span class="token function">install</span> nixpkgs<span class="toke
 <pre class="language-bash"><code class="language-bash"><span class="token function">git</span> remote set-url origin user@server:/home/user/Repo/REPO-NAME/
 
 <span class="token function">git</span> remote <span class="token parameter variable">-v</span>  <span class="token comment"># Can be used to confirm that a typo was made upon initial set-up as well</span></code></pre>
-<h1>Migrating an Existing Repository to Server</h1>
+<h3>Migrating an Existing Repository to Server</h3>
 <ul>
 <li>Change the remote origin</li>
 <li>Ensure the primary branch names match up</li>
@@ -227,11 +193,11 @@ nix profile <span class="token function">install</span> nixpkgs<span class="toke
 
 <span class="token function">git</span> push <span class="token parameter variable">-u</span> origin BRANCH-NAME
 </code></pre>
-<h1>Cloning Repo on a New Client</h1>
+<h3>Cloning Repo on a New Client</h3>
 <p>Ensure SSH and Tailscale are installed and configured on any new machine, and then run:</p>
 <pre class="language-bash"><code class="language-bash"><span class="token function">git</span> clone user@100.27:/home/user/Repos/REPO-NAME/</code></pre>
 <hr>
-<h2>Authentication with a SSH key</h2>
+<h4>Authentication with a SSH key</h4>
 <p>Authenticating transfers and remote operation via SSH keys is not only much more secure than a standard password, but also much better for any sort of CI, CD or cron job automation that a user might want to set up in the future. Luckily the <em>ssh-keygen</em> utility is packaged with <em>OpenSSH</em> upon install. This makes it very easy to create a SSH key on both the server and client.</p>
 <pre class="language-bash"><code class="language-bash">ssh-keygen <span class="token parameter variable">-t</span> ed25519 <span class="token parameter variable">-a</span> <span class="token number">100</span> <span class="token parameter variable">-C</span> <span class="token string">"you@mail.com"</span>
 

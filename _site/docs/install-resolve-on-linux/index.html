@@ -102,49 +102,15 @@
             <li><a href="/essays">Essays</a></li>
             <li><a href="/docs">Documentation</a></li>
             <li><a href="/downloads">Downloads & Apps</a></li>
-            <br><br>
-            <li><a href="/terms">TOS & Privacy</a></li>
-            <li><a href="/contact">Contact</a></li>
-            <li><a href="/ai">AI Disclosure</a></li>
-            <li><a href="https://ko-fi.com/makccr" target="_blank">Donate</a></li>
         </ul>
     </div>
 </div>
     
     <main>
         
-<style>
-    header p { 
-        font-family: 'Open Sans', sans-serif;
-        font-size: 1.1em;
-    } h1 { margin-top: 1em; }
-
-    main {
-        padding: 1em;
-        text-align: left;
-        width: 60%;
-        align: center; 
-        margin: auto; 
-    } h4 {text-align: center;}
-
-@media only screen and (max-width: 850px) { 
-    main {
-        margin-left: .5em; 
-        margin-right: .5em;
-        width: 95%;
-        align: center; 
-        margin: auto;
-    }
-    h1,h2,h3,h4,h5,h6 {
-        margin-left: .5em; 
-        margin-right: .5em;
-    }
-
-}
-</style>
-    <img class="hero" src="" alt="">
-    <h1>Install Davinci Resolve on Linux</h1>
-    <h3>Last Updated <br> January 22, 2026</h3>
+<h1>Install Davinci Resolve on Linux</h1>
+<p class="caption"><strong>Originally Posted:</strong> January 22, 2026<br>
+<strong>Last Updated:</strong> January 22, 2026</p>
 
 <div class="essayContainer"> 
 <p>Documentation for installing Black Magic Design's Davinci Resolve or Davinci Resolve Studio on Linux.</p>
@@ -197,21 +163,21 @@ https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-<span c
 <li>Install.</li>
 </ol>
 <pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token assign-left variable">SKIP_PACKAGE_CHECK</span><span class="token operator">=</span><span class="token number">1</span> ./DaVinci_Resolve_*_Linux.run</code></pre>
-<h2>Post Install Fixes</h2>
-<h3>Fedora Libraries Fix</h3>
+<h3>Post Install Fixes</h3>
+<h4>Fedora Libraries Fix</h4>
 <p>If installing on Fedora Linux it may be necessary to replace older libraries that conflict with Fedora workstation:</p>
 <pre class="language-bash"><code class="language-bash"><span class="token builtin class-name">cd</span> /opt/resolve/libs
 <span class="token function">sudo</span> <span class="token function">mkdir</span> disabled-libraries
 <span class="token function">sudo</span> <span class="token function">mv</span> libglib* libgio* libgmodule* disabled-libraries <span class="token comment"># Move outdated libraries to disabled-libraries</span>
 
 <span class="token function">sudo</span> dnf <span class="token function">install</span> <span class="token parameter variable">-y</span> libxcrypt-compat <span class="token comment"># Instal updated libraries</span></code></pre>
-<h3>Display Scaling Workaround</h3>
+<h4>Display Scaling Workaround</h4>
 <p>If using Davinci Resolve on a HiDPI display, scaling issues may be encountered. This is due to the fact that Resolve uses <a href="https://www.qt.io/">QT's GUI toolkit</a>, but often ignores userspace environment variables to control QT apps. A quick workaround is to create a wrapper script that will change the display scaling when launching Resolve, and revert the scaling when Resolve is closed:</p>
 <pre class="language-bash"><code class="language-bash"><span class="token shebang important">#!/bin/bash</span>
 xrandr <span class="token parameter variable">--output</span> DP-2 <span class="token parameter variable">--scale</span> <span class="token number">0</span>.5x0.5 <span class="token comment"># Scale screen down by 2x</span>
 /opt/resolve/bin/resolve <span class="token comment"># Launch Resolve</span>
 xrandr <span class="token parameter variable">--output</span> DP-2 <span class="token parameter variable">--scale</span> 1x1 <span class="token comment"># Restore native scale</span></code></pre>
-<h1>Launching</h1>
+<h2>Launching</h2>
 <p>When installing Davinci Resolve in a full Desktop environment, Resolve will most likely not launch. The easiest solution is to <a href="http://makc.co/docs/flatpak-to-dmenu/">add an entry</a> in <em>/usr/bin</em> for Resolve.</p>
 <pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">ln</span> <span class="token parameter variable">-s</span> /opt/resolve/bin/resolve /usr/bin/resolve</code></pre>
 

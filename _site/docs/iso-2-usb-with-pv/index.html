@@ -102,57 +102,23 @@
             <li><a href="/essays">Essays</a></li>
             <li><a href="/docs">Documentation</a></li>
             <li><a href="/downloads">Downloads & Apps</a></li>
-            <br><br>
-            <li><a href="/terms">TOS & Privacy</a></li>
-            <li><a href="/contact">Contact</a></li>
-            <li><a href="/ai">AI Disclosure</a></li>
-            <li><a href="https://ko-fi.com/makccr" target="_blank">Donate</a></li>
         </ul>
     </div>
 </div>
     
     <main>
         
-<style>
-    header p { 
-        font-family: 'Open Sans', sans-serif;
-        font-size: 1.1em;
-    } h1 { margin-top: 1em; }
-
-    main {
-        padding: 1em;
-        text-align: left;
-        width: 60%;
-        align: center; 
-        margin: auto; 
-    } h4 {text-align: center;}
-
-@media only screen and (max-width: 850px) { 
-    main {
-        margin-left: .5em; 
-        margin-right: .5em;
-        width: 95%;
-        align: center; 
-        margin: auto;
-    }
-    h1,h2,h3,h4,h5,h6 {
-        margin-left: .5em; 
-        margin-right: .5em;
-    }
-
-}
-</style>
-    <img class="hero" src="" alt="">
-    <h1>Copying a ISO Image to a USB Drive</h1>
-    <h3>Last Updated <br> June 4, 2026</h3>
+<h1>Copying a ISO Image to a USB Drive</h1>
+<p class="caption"><strong>Originally Posted:</strong> June 4, 2026<br>
+<strong>Last Updated:</strong> June 4, 2026</p>
 
 <div class="essayContainer"> 
-<h1>Required Items</h1>
+<h2>Required Items</h2>
 <ul>
 <li><a href="https://linux.die.net/man/1/pv">pv</a>. Don't use <a href="https://linux.die.net/man/1/dd">dd</a>. While it will often work, dd is a 50+ year old command, uses archaic syntax and provides little to no feedback on what it is doing.</li>
 <li>An <a href="https://archlinux.org/download/">ISO image</a> (usually <em>.iso</em>, but the process will also work for <em>.raw.xz</em>, and some other archived images).</li>
 </ul>
-<h1>Steps</h1>
+<h2>Steps</h2>
 <ol>
 <li>Insert a removable USB drive, and ensure that there is at least one partition large enough for the ISO image.</li>
 <li>Use <a href="https://linux.die.net/man/8/lsblk">lsblk</a> to check the drive name &amp; partitions (very often a removable drive will be something like <em>/dev/sda</em> or <em>/dev/sdb</em>).</li>
@@ -173,7 +139,7 @@ sda
 <li>Write the ISO image to a partition on the drive:</li>
 </ol>
 <pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">pv</span> arch.iso <span class="token parameter variable">-o</span> /dev/sda1</code></pre>
-<h2>Optional Improvements</h2>
+<h3>Optional Improvements</h3>
 <ul>
 <li><strong>--sync</strong> or <strong>-Y</strong> will use <a href="https://linux.die.net/man/2/fdatasync">fdatasync</a> to synchronize the buffer cache after every write operation. This will sometimes improve the accuracy of pv's progress bar when writing data to a slow disk (like a USB stick).</li>
 </ul>

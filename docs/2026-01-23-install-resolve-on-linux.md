@@ -2,7 +2,9 @@
 title: "Install Davinci Resolve on Linux"
 layout: docs.html
 date: 2026-01-23
+updated: 2026-01-23
 tags: docs
+subject: ["production", "software"]
 ---
 
 Documentation for installing Black Magic Design's Davinci Resolve or Davinci Resolve Studio on Linux.
@@ -64,8 +66,8 @@ chmod +x DaVinci_Resolve_*_Linux.run # Making install script executable
 sudo SKIP_PACKAGE_CHECK=1 ./DaVinci_Resolve_*_Linux.run
 ```
 
-## Post Install Fixes
-### Fedora Libraries Fix
+### Post Install Fixes
+#### Fedora Libraries Fix
 If installing on Fedora Linux it may be necessary to replace older libraries that conflict with Fedora workstation: 
 
 ```bash
@@ -76,7 +78,7 @@ sudo mv libglib* libgio* libgmodule* disabled-libraries # Move outdated librarie
 sudo dnf install -y libxcrypt-compat # Instal updated libraries
 ```
 
-### Display Scaling Workaround
+#### Display Scaling Workaround
 If using Davinci Resolve on a HiDPI display, scaling issues may be encountered. This is due to the fact that Resolve uses [QT's GUI toolkit](https://www.qt.io/), but often ignores userspace environment variables to control QT apps. A quick workaround is to create a wrapper script that will change the display scaling when launching Resolve, and revert the scaling when Resolve is closed: 
 
 ```bash
@@ -86,7 +88,7 @@ xrandr --output DP-2 --scale 0.5x0.5 # Scale screen down by 2x
 xrandr --output DP-2 --scale 1x1 # Restore native scale
 ```
 
-# Launching
+## Launching
 When installing Davinci Resolve in a full Desktop environment, Resolve will most likely not launch. The easiest solution is to [add an entry](http://makc.co/docs/flatpak-to-dmenu/) in _/usr/bin_ for Resolve.
 
 ```bash

@@ -102,53 +102,19 @@
             <li><a href="/essays">Essays</a></li>
             <li><a href="/docs">Documentation</a></li>
             <li><a href="/downloads">Downloads & Apps</a></li>
-            <br><br>
-            <li><a href="/terms">TOS & Privacy</a></li>
-            <li><a href="/contact">Contact</a></li>
-            <li><a href="/ai">AI Disclosure</a></li>
-            <li><a href="https://ko-fi.com/makccr" target="_blank">Donate</a></li>
         </ul>
     </div>
 </div>
     
     <main>
         
-<style>
-    header p { 
-        font-family: 'Open Sans', sans-serif;
-        font-size: 1.1em;
-    } h1 { margin-top: 1em; }
-
-    main {
-        padding: 1em;
-        text-align: left;
-        width: 60%;
-        align: center; 
-        margin: auto; 
-    } h4 {text-align: center;}
-
-@media only screen and (max-width: 850px) { 
-    main {
-        margin-left: .5em; 
-        margin-right: .5em;
-        width: 95%;
-        align: center; 
-        margin: auto;
-    }
-    h1,h2,h3,h4,h5,h6 {
-        margin-left: .5em; 
-        margin-right: .5em;
-    }
-
-}
-</style>
-    <img class="hero" src="" alt="">
-    <h1>Creating a New Branch</h1>
-    <h3>Last Updated <br> August 15, 2026</h3>
+<h1>Creating a New Branch</h1>
+<p class="caption"><strong>Originally Posted:</strong> August 15, 2026<br>
+<strong>Last Updated:</strong> August 15, 2026</p>
 
 <div class="essayContainer"> 
 <p>A guide for creating a new branch in a git repository.</p>
-<h1>Creating a New Branch</h1>
+<h2>Creating a New Branch</h2>
 <ol>
 <li>Navigate to git repo:</li>
 </ol>
@@ -161,11 +127,11 @@
 <li>Push new branch:</li>
 </ol>
 <pre class="language-bash"><code class="language-bash"><span class="token function">git</span> push origin NEW-BRANCH</code></pre>
-<h2>(Optionally) Create a Branch from a Specific Commit</h2>
+<h3>(Optionally) Create a Branch from a Specific Commit</h3>
 <pre class="language-bash"><code class="language-bash"><span class="token function">git</span> checkout <span class="token parameter variable">-b</span> NEW-BRANCH HASH</code></pre>
-<h3>Swap Between Branches</h3>
+<h4>Swap Between Branches</h4>
 <pre class="language-bash"><code class="language-bash"><span class="token function">git</span> checkout BRANCH-NAME</code></pre>
-<h1>Merge Changes to master/main Branch</h1>
+<h2>Merge Changes to master/main Branch</h2>
 <ol>
 <li>Change back to main branch:</li>
 </ol>

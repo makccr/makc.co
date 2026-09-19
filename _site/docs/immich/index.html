@@ -102,52 +102,18 @@
             <li><a href="/essays">Essays</a></li>
             <li><a href="/docs">Documentation</a></li>
             <li><a href="/downloads">Downloads & Apps</a></li>
-            <br><br>
-            <li><a href="/terms">TOS & Privacy</a></li>
-            <li><a href="/contact">Contact</a></li>
-            <li><a href="/ai">AI Disclosure</a></li>
-            <li><a href="https://ko-fi.com/makccr" target="_blank">Donate</a></li>
         </ul>
     </div>
 </div>
     
     <main>
         
-<style>
-    header p { 
-        font-family: 'Open Sans', sans-serif;
-        font-size: 1.1em;
-    } h1 { margin-top: 1em; }
-
-    main {
-        padding: 1em;
-        text-align: left;
-        width: 60%;
-        align: center; 
-        margin: auto; 
-    } h4 {text-align: center;}
-
-@media only screen and (max-width: 850px) { 
-    main {
-        margin-left: .5em; 
-        margin-right: .5em;
-        width: 95%;
-        align: center; 
-        margin: auto;
-    }
-    h1,h2,h3,h4,h5,h6 {
-        margin-left: .5em; 
-        margin-right: .5em;
-    }
-
-}
-</style>
-    <img class="hero" src="" alt="">
-    <h1>Setting up a Private Immich Server</h1>
-    <h3>Last Updated <br> June 9, 2026</h3>
+<h1>Setting up a Private Immich Server</h1>
+<p class="caption"><strong>Originally Posted:</strong> June 9, 2026<br>
+<strong>Last Updated:</strong> June 9, 2026</p>
 
 <div class="essayContainer"> 
-<h1>Install Docker Engine / Docker CE</h1>
+<h2>Install Docker Engine / Docker CE</h2>
 <ol>
 <li><strong>Note</strong>: <em>Docker Engine</em> is not the same thing that would generally be installed via a standard linux package manager. To remove a previously installed iteration of Docker (at least on Ubuntu), use the command below:</li>
 </ol>
@@ -155,11 +121,11 @@
 <ol start="2">
 <li>Follow <a href="https://docs.docker.com/engine/install/#get-started">the Docker website's documentation</a>, it's solid &amp; also includes instructions to remove previous iterations of Docker on all the other supported distributions.</li>
 </ol>
-<h1>Install Immich</h1>
+<h2>Install Immich</h2>
 <ol>
 <li>Use <a href="https://docs.immich.app/install/docker-compose">the Immich website's documentation</a> for installing and running with Docker Compose; once again, this documentation is more than good enough.</li>
 </ol>
-<h2>Configure Immich</h2>
+<h3>Configure Immich</h3>
 <ol>
 <li>Visit port 2283 on the machine that Immich was installed on: <em>http://SERVER.IP.ADDRESS:2283</em>.</li>
 <li>Follow the prompts to set up an admin &amp; some user accounts &amp; use <a href="https://docs.immich.app/install/post-install">Immich's documentation</a> if stuck.</li>

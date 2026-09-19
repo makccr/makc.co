@@ -4,8 +4,8 @@ title: Contact
 ---
 <h1>{{ title }}</h1>
 
-<h2><i class="fa-solid fa-paper-plane"></i><br><a href="mailto:m@makc.co" target="_blank">m@makc.co</a></h2>
-<h2><i class="fa-solid fa-phone"></i><br><a href="tel:936-513-6885" target="_blank">(936) 513-6885</a></h2>
+<h2><i class="nf nf-fa-phone"></i><br><a href="mailto:m@makc.co" target="_blank">m@makc.co</a></h2>
+<h2><i class="nf nf-md-email"></i><br><a href="tel:936-513-6885" target="_blank">(936) 513-6885</a></h2>
 <p class="caption">The intended use for this phone number is as a receptacle for text messages and voicemails.</p>
 
 ---

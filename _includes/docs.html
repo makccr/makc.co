@@ -2,38 +2,9 @@
 layout: main.html 
 ---
 
-<style>
-    header p { 
-        font-family: 'Open Sans', sans-serif;
-        font-size: 1.1em;
-    } h1 { margin-top: 1em; }
-
-    main {
-        padding: 1em;
-        text-align: left;
-        width: 60%;
-        align: center; 
-        margin: auto; 
-    } h4 {text-align: center;}
-
-@media only screen and (max-width: 850px) { 
-    main {
-        margin-left: .5em; 
-        margin-right: .5em;
-        width: 95%;
-        align: center; 
-        margin: auto;
-    }
-    h1,h2,h3,h4,h5,h6 {
-        margin-left: .5em; 
-        margin-right: .5em;
-    }
-
-}
-</style>
-    <img class="hero" src="{{ image }}" alt="" >
-    <h1>{{ title | default: "Essays" }}</h1>
-    <h3>Last Updated <br> {{ date | postDate }}</h3>
+<h1>{{ title | default: "Essays" }}</h1>
+<p class="caption"><strong>Originally Posted:</strong> {{ date | postDate }}<br>
+<strong>Last Updated:</strong> {{ updated | postDate }}</p>
 
 <div class="essayContainer"> 
 {{ content }}

@@ -2,7 +2,9 @@
 title: "Powershell and Bash"
 layout: docs.html
 date: 2026-09-07
+updated: 2026-09-18
 tags: docs 
+subject: ["windows", "linux"]
 ---
 
 Some basic tips and rules for navigating Windows and Linux with powershell and bash. This was made for my own personal use and does assume that any reader is pretty familiar with bash commands and mainly interested in learning how to transfer these same skills to navigating a Windows system via powershell.
@@ -52,6 +54,32 @@ cp *.jpg ~/Dowloads/
 | drwxr-xr-x  | 2          | makc makc        | 3    | Sep  3 19:00         | Desktop   |
 | drwxr-xr-x  | 13         | makc makc        | 14   | Sep  6 17:49         | Documents | 
 | drwxr-xr-x  | 4          | makc makc        | 5    | Sep  6 21:22         | Downloads |
+
+### `ls -l` permissions broken down
+| d | rwx | r-x | r-x | 
+| - | --- | --- | --- | 
+| filetype | owner rights | group rights | everyone elses rights | 
+
+The first letter in the string (`d` in the above example) indicates the type of file that is being listed.
+
+* `d` = directory
+* `-` = regular file
+* `l` = symbolic link
+
+The next nine characters are broken into three categories, permissions for the: 
+1. file owner
+2. group
+3. other users
+
+* `r` = read
+* `w` = write
+* `x` = execute
+
+`-` indicates that a permission does not exist, for example: `r-x` would indicate rights to read and execute, but not to write. In the example above (`drwxr-xr-x`), we can learn that: 
+1. The file is a directory. 
+2. The owner has full rights: read, write, execute
+3. The group has read and execution rights, not write rights.
+3. All other users also have read and execution rights, not write rights.
 
 ## Viewing Files
 * `cat` - prints full file

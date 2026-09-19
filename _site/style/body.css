@@ -364,10 +364,9 @@ button:hover {
   display: inline-block; 
   margin: 1em; 
   padding: 0em;
-  border: 1px solid var(--mid-accent);
+  border: 1px solid var(--bg-color-lighter);
   border-radius: .3rem;
   text-align: center;
-  background-color: var(--bg-color-lighter);
 } 
 
 .card img {

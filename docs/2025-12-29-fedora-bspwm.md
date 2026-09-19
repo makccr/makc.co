@@ -2,7 +2,9 @@
 title: "Setting up BSPWM on Fedora Workstation"
 layout: docs.html
 date: 2025-12-29
+updated: 2025-12-29
 tags: docs 
+subject: ["linux", "GUI", "OS", "ricing"]
 ---
 
 A guide for setting up a working instance of [my BSPWM configuration](https://github.com/makccr/dot) on a clean install of [Fedora Workstation](https://fedoraproject.org/workstation/download). Note: *I have only tested this on version 43 and above on x86 platforms.*

@@ -102,53 +102,19 @@
             <li><a href="/essays">Essays</a></li>
             <li><a href="/docs">Documentation</a></li>
             <li><a href="/downloads">Downloads & Apps</a></li>
-            <br><br>
-            <li><a href="/terms">TOS & Privacy</a></li>
-            <li><a href="/contact">Contact</a></li>
-            <li><a href="/ai">AI Disclosure</a></li>
-            <li><a href="https://ko-fi.com/makccr" target="_blank">Donate</a></li>
         </ul>
     </div>
 </div>
     
     <main>
         
-<style>
-    header p { 
-        font-family: 'Open Sans', sans-serif;
-        font-size: 1.1em;
-    } h1 { margin-top: 1em; }
-
-    main {
-        padding: 1em;
-        text-align: left;
-        width: 60%;
-        align: center; 
-        margin: auto; 
-    } h4 {text-align: center;}
-
-@media only screen and (max-width: 850px) { 
-    main {
-        margin-left: .5em; 
-        margin-right: .5em;
-        width: 95%;
-        align: center; 
-        margin: auto;
-    }
-    h1,h2,h3,h4,h5,h6 {
-        margin-left: .5em; 
-        margin-right: .5em;
-    }
-
-}
-</style>
-    <img class="hero" src="" alt="">
-    <h1>Downloading a Video</h1>
-    <h3>Last Updated <br> August 6, 2026</h3>
+<h1>Downloading a Video</h1>
+<p class="caption"><strong>Originally Posted:</strong> August 6, 2026<br>
+<strong>Last Updated:</strong> August 6, 2026</p>
 
 <div class="essayContainer"> 
 <p>A quick guide to downloading videos that are harder than they should be to download.</p>
-<h1>Locating a File to Download</h1>
+<h2>Locating a File to Download</h2>
 <ol>
 <li>Toggle <em>Developer Mode</em> in any modern full-featured browser. Developer mode can be triggered in Chromium or Firefox by pressing <em>F12</em>.</li>
 <li>Swap to the <em>Network</em> tab.</li>
@@ -156,7 +122,11 @@
 <li>Monitor for any video files, using URL filters andior the Media category in the Developer menu.</li>
 <li>Select individual requests and view the headers until a url with a video file is included, the video file will often be obscured, as in the following example: <strong>https://videosite.com/remote_control.php?file=random-title-name.mp4&amp;acctoken=random-token</strong></li>
 </ol>
-<h1>Downloading the Video File</h1>
+<picture><source type="image/webp" srcset="/.11ty/image/?src=docs%2Fimg%2F2026-08-07.jpg&width=2208&format=webp&via=transform 2208w"><img class="thirds" src="/.11ty/image/?src=docs%2Fimg%2F2026-08-07.jpg&width=2208&format=jpeg&via=transform" alt="Using the Network section to find a URL" width="2208" height="1242"></picture>
+<p class="caption">
+An example using the network tab in Firefox's Dev Tools to located a segmented video stream when a video starts playing on an example website.
+</p>
+<h2>Downloading the Video File</h2>
 <ol>
 <li>Using either <em>curl</em> or <em>wget</em> use the full URL to download the video file.</li>
 </ol>
@@ -169,7 +139,7 @@
 <li>When the download is complete, often times you will be left with something other than a video file, example: <em>remote_control.php</em> would most likely be the filename if downloading a video with the previously referenced sample URL. The file-size here is once again a pretty clear give-away, as most .php files won't be several hundred megabytes.</li>
 <li>Change the file-name and extension as you will, ensuring that the .php extension is changed to a video container. I have found that <em>.mp4</em> or <em>.mov</em> will almost always result in a playable video, but depending on the format of the original file, a few tries might be necessary. In any case, simply matching the file extension of the original file should always work.</li>
 </ol>
-<h2>Sequenced Videos</h2>
+<h3>Sequenced Videos</h3>
 <p>Some websites don't list a full video file in the Network tab of the Developer Menu. Rather than hosting a full file, it's only possible to access segmented video clips. This however does not mean that we cannot still download a full video.</p>
 <ol>
 <li>First find the sequence of video clips, for example the following URL might show up: <strong>https://video.userscontent.net/video.mp4/seg-01-av.ts</strong></li>
