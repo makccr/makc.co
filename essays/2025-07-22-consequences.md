@@ -1,9 +1,9 @@
 ---
 title: "Consequences"
 layout: essay.html
-image: img/2025-07-22.jpg
 date: 2025-07-22
 tags: essay 
+subject: ["philsophy", "history"]
 ---
 
 What would have happened if, when Rosa Parks made her protest and sat at the front of the bus, no one tried to stop her? No police. No outrage. Just silence. Would we still remember her name? More importantly, would the decades-long civil rights battle that her quiet act helped ignite have ever begun?

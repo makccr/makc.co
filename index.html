@@ -62,3 +62,25 @@ description: I'm a propagandist for pickled red onions, a rare meat activist, an
 </div>
 
 <h2>Writing</h2>
+<div class="cardContainer">
+    {% assign recentEssays = collections.essays | reverse | slice: 0, 3 %}
+    {% for essay in recentEssays %}
+    <div class="essay-card">
+        <a href="{{ essay.url }}">    
+            <div class="essay-title"> {{ essay.data.title }} </div>
+        </a>   
+        <div class="metadata">
+            {{ essay.data.date | postDate }}<br>      
+            {% for subject in essay.data.subject %}           
+                <span class="subject">{{ subject }}</span>  
+            {% endfor %}                                         
+        </div>                                                   
+        <div class="essay-preview">                              
+            {{ essay.templateContent | striptags | truncate: 275, "..." }} 
+            <a href="{{ essay.url }}">
+                Read More &nbsp;<i class="nf nf-fa-arrow_right"></i>            
+            </a>              
+        </div>                
+    </div>                    
+    {% endfor %}              
+

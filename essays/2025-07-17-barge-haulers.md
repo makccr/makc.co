@@ -1,10 +1,14 @@
 ---
 title: "Barge Haulers on the Volga"
 layout: essay.html
-image: img/2025-07-17.jpg
 date: 2025-07-17
 tags: essay 
+subject: ["art"]
 ---
+
+<img src="img/2025-07-17-A.jpg" alt="Ilya Repin's: Barge Haulers on The Volga" class="full">
+
+<p class="caption">Ilya Repin's "Barge Haulers on The Volga</p>
 
 Above is, without question, my favorite painting of all time. _Barge Haulers on the Volga_ is a nineteenth-century work by Russian painter [Ilya Repin](https://www.britannica.com/biography/Ilya-Yefimovich-Repin). It comes as no surprise to me that I was immediately drawn to it, as, like so many others, I’ve long been captivated by the cultural output of the Russian Empire and its many political incarnations: the Soviet Union, the Russian Federation, the RSFSR. Whether it’s Dostoevsky, Tolstoy, Rachmaninoff, or even Solzhenitsyn’s bleak documentation of the Soviet-era prison system in _The Gulag Archipelago_, Russian art has been some of the most intellectually and emotionally formative material I’ve encountered in recent years. Repin’s painting more than earns its spot in that canon: deeply human, brutally honest, and impossible to forget.
 

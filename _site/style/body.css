@@ -278,7 +278,7 @@ button:hover {
     text-align: left; 
 }
 
-.video-card .metadata, .platform-select {
+.metadata, .platform-select {
     color: var(--fg2-color);
     margin: 0; 
     padding: 0; 
@@ -296,6 +296,58 @@ button:hover {
     text-decoration: underline 3px var(--button-hover); 
     color: var(--fg-color);
     transition: 0.3s ease;
+}
+
+/* ESSAY CARDS AND CONTAINER*/
+.essay-card {
+    margin: 1rem;
+    border-radius: .5rem; 
+    border: .1rem solid var(--bg-color-lighter);
+    width: 30rem; 
+    display: inline-block;
+}
+
+.essay-card:hover {
+    transition: 0.3s ease; 
+    scale: 103%; 
+    border: .1rem solid var(--button-hover);
+}
+
+.essay-card .metadata { text-align: center; }
+
+.essay-card .essay-title {
+    font-size: 1.2rem; 
+    line-height: 1.4;
+    height: 2.8rem; 
+    box-sizing: content-box; 
+    color: var(--fg-color);
+    padding: .5rem; 
+    margin-top: 1rem; 
+    font-family: 'Montserrat', sans-serif; 
+    font-weight: 600;
+}
+
+.essay-card .essay-preview {
+    font-size: .9rem; 
+    color: var(--fg2-color);
+    padding: 1rem; 
+    margin-bottom: 1rem; 
+    font-family: 'Open Sans', sans-serif; 
+    text-align: left;
+}
+
+.essay-card .subject {
+    color: var(--button-hover);
+}
+
+.essay-card .essay-preview a {
+    color: var(--button-hover);
+}
+
+.essay-card .essay-preview a:hover {
+    text-decoration: underline 3px var(--button-hover); 
+    color: var(--fg-color);
+    transition: 0.3s;
 }
 
 /* DOWNLOADS PAGE CARDS*/
@@ -337,7 +389,7 @@ button:hover {
     font-weight: 600; 
 }
 
-.card button {
+.card button, .post-navigation button {
     padding: 1rem 1.5rem;
     margin-bottom: 1rem;
 }
@@ -363,6 +415,10 @@ button:hover {
     .card {
         width: 90%; 
         display: block;
+    }
+
+    .essay-card {
+        width: 90%;
     }
 }
 

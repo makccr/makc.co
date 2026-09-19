@@ -1,9 +1,9 @@
 ---
 title: "Watch “The Incredible Hulk” Before “Avengers: Endgame”"
 layout: essay.html
-image: img/2019-04-30-A.jpg
 date: 2019-04-30
 tags: essay 
+subject: ["film"]
 ---
 
 I just got back from Avengers: Endgame, and it was pretty incredible. It took advantage of its three-hour run time in a way I never expected, and formed itself into a quiet contemplation of the MCU’s past events. But what surprised me about the film more than anything else was the way that no single character felt short shrifted in the film. Of course, the biggest complaint that I heard about the penultimate film, “Avengers: Infinity War”, was how the film moved quickly and glossed over important character moments. But somehow, in a film with perhaps more characters in the script than any other film in history, this was not the case with “Avengers: Endgame”.
@@ -28,7 +28,8 @@ Everyone that I talked to about this bit of the film seemed happy to just write 
 
 There’s a pretty good chance that I’m wrong, but even if I am, the connection is there. “Avengers: Endgame” is a film that rewards long-time viewers of the MCU. Most of the films in the MCU tend to pretend like inconvenient, or less revered films, just don’t exist. Tony Stark blew up all of his suits in “Iron Man 3” only to build more than ever by the time “Avengers: Age of Ultron” started rolling. Jane Foster has been almost completely erased from the MCU because Natalie Portman refused to come back. But of course, “The Incredible Hulk” is probably the best example of this. Bruce Banner travels to Canada at the end of “The Incredible Hulk”, only to be picked up by Black Widow in Calcutta at the start of “The Avengers”, Bruce Banner was recast, Abomination is never mentioned again, and Liv Tyler went the way of Jane Foster. But then, whether intentional or not, Markus and McFeely acknowledged “The Incredible Hulk”. I think that’s pretty awesome.
 
-<img src="img/2019-04-30-B.jpg" alt="Screenshot from The Incredible Hulk">
+<img src="img/2019-04-30-B.jpg" alt="Screenshot from The Incredible Hulk" class="full">
+<p class="caption">Screenshot from "The Incredible Hulk"</p>
 
 ### This next bit is pretty off topic, so just quit reading if you’re not interested.
 I’m not one of those “The Incredible Hulk” fans that pretends like the movie is perfect or anything. It’s not even close to my favorite film in the MCU. There are 22 films to choose from there, and 4 of them are directed by Joe & Anthony Russo, so there’s really not much of a contest.

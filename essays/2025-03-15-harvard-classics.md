@@ -1,9 +1,9 @@
 ---
 layout: essay.html
 title: "The Best Bargain in the History of Literature"
-image: img/2025-03-15.jpg
 date: 2025-03-15
-tags: essay 
+tags: essay
+subject: ["history", "reading"]
 ---
 
 I can't remember exactly when or how I first came across *The Harvard Classics*, but ever since that day I have been on a mission to get a copy of the collection for myself. The Classics, originally published as: *Dr. Elliot's Five Foot Shelf of Books* are an absolutely massive, fifty-one volume collection of novels, poetry, history, philosophy, scientific writing, historical documents, and anything else that Dr. Elliot deemed necessary reading to establish a well-rounded liberal education. But the size of the collection isn't what's really special about it. Any fool could copy and paste 200 books into a Word Document, hit print, and self-publish in an effort to profit off of someone else's contributions to the world.

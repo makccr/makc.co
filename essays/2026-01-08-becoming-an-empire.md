@@ -1,9 +1,9 @@
 ---
 title: "Becoming an Empire"
 layout: essay.html
-image: img/2026-01-08.jpg
 date: 2026-01-08
 tags: essay 
+subject: ["war", "isreal", "history"]
 ---
 
 A couple of days ago, Donald Trump’s administration carried out a military operation in Venezuela. A Delta Force unit was deployed to [abduct President Nicolás Maduro](https://www.dropsitenews.com/p/united-states-venezuela-nicolas-maduro-attacks-regime-change-bombing) and his wife. The operation was accompanied by bombing inside the country, and between the airstrikes and the raid itself, roughly eighty people were killed. By all available accounts, the plan unfolded exactly as intended. Maduro was transported to New York to stand trial—though it remains unclear what, precisely, he has been charged with. Shortly thereafter, the administration announced that Venezuela’s acting leadership was being ordered to hand over up to 50 million barrels of oil to the United States. At the same time, U.S. forces [seized a Russian ship](https://www.dropsitenews.com/p/united-states-military-venezuela-russia-trump-administration-cabello-dhs-arrests-minneapolis) that had been prevented from docking during the month-long naval blockade and bombing campaign along Venezuela’s coast.

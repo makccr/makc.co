@@ -1,46 +1,40 @@
 ---
 layout: main.html
 title: Essays
+description: A collection of personal essays on film, technology, philosophy, and art—charting the edges where culture, creativity, and critical thought meet.
 ---
 
 <style>
-main { text-align: center; }
-#home { text-align: center; }
+    main { 
+        text-align: center; 
+        width: 90%; 
+    }
 </style>
 
 <h1>Essays</h1>
-<h6>A collection of personal essays on film, technology, philosophy, and art—charting the edges where culture, creativity, and critical thought meet.</h6>
+<p class='caption'>{{ description }}</p>
 
-<hr></hr>
-
-<h2>Recent Essays</h2>
 <div class="cardContainer">
-    {% assign recentEssays = collections.essays | reverse | slice: 0, 2 %}
-    {% for essay in recentEssays %}
+    {% for essay in collections.essays reversed %}
     <div class="essay-card">
-        <h3> {{ essay.data.title }} </h3>
-        <h6> {{ essay.data.date | postDate }} </h6>
-        <div class="essay-preview">
-            {{ essay.templateContent | striptags | truncate: 300, "..." }} 
-        </div>
         <a href="{{ essay.url }}">
-            <button>Read Now &nbsp;<i class="nf nf-fa-arrow_right"></i></button>
+            <div class="essay-title"> {{ essay.data.title }} </div>
         </a>
+        <div class="metadata">
+            {{ essay.data.date | postDate }}<br>
+            {% for subject in essay.data.subject %}
+                <span class="subject">
+                    {{ subject }}
+                </span>
+            {% endfor %}
+
+
+        </div>
+        <div class="essay-preview">
+            {{ essay.templateContent | striptags | truncate: 275, "..." }} 
+            <a href="{{ essay.url }}">
+                Read More &nbsp;<i class="nf nf-fa-arrow_right"></i>
+            </a>
+        </div>
     </div>
     {% endfor %}
-
-<hr></hr>
-
-<h2>All Essays</h2>
-
-{% for essay in collections.essays reversed %}
-    <div class="post-card">
-        <img src="/essays/{{ essay.data.image }}" alt="">
-        <div class="post-content">
-            <a href="{{ essay.url}}">
-                <h4>{{ essay.data.title | truncate: 40, "..." }}</h4>
-            </a>
-            <h6>{{ essay.data.date | postDate }}</h6>
-        </div>
-    </div>
-{% endfor %}

@@ -1,9 +1,9 @@
 ---
-title: "<em>Blowing Up</em>, Just to Blow Up"
+title: "Blowing Up, Just to Blow Up"
 layout: essay.html
-image: img/2026-08-16.jpg
 date: 2026-08-16
-tags: essay 
+category: essay 
+subject: ["philosophy", "technology"] 
 ---
 
 Recently I began the process of moving all of my [GitHub repositories](https://github.com/makcc/) to [Codeberg](https://codeberg.org/makccr/). I am far from the only person making this move in 2026; if anything, I'm well behind the curve. However, I did want to dedicate some time to detailing (a) how I am conducting my transition to Codeberg, and (b) the reasons why I felt that this move was necessary. 

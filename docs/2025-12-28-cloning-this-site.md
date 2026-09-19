@@ -69,11 +69,11 @@ git add -A; git commit -m "message"; git push
 ## New Essay Header
 ```markdown
 ---
-title: "TITLE"
+title: "TITLE TEXT"
 layout: essay.html
-image: img/LINK.jpg
 date: YYYY-MM-DD
 tags: essay 
+subject: ["subject1", "subject2"]
 ---
 ```
 ## New Doc Header
@@ -83,6 +83,7 @@ title: "TITLE"
 layout: docs.html
 date: YYYY-MM-DD
 tags: docs
+subject: ["subject1", "subject2"]
 ---
 ```
 

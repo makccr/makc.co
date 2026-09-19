@@ -3,7 +3,7 @@ layout: main.html
 ---
 
 <h1>{{ title | default: "Essays" }}</h1>
-<h2>{{ date | postDate }}</h2>
+<p class="caption">{{ date | postDate }}</p>
 
 <div class="essayContainer"> 
 {{ content }}

@@ -1,9 +1,9 @@
 ---
 title: "The Only Way Out is Through"
 layout: essay.html
-image: img/2025-03-30.jpg
 date: 2025-03-30
 tags: essay 
+subject: ["philosophy"]
 ---
 
 The first exposure I had to this line of thinking, at least as far as I can remember, was in Nikos Kazantzakis' novel: _Zorba the Greek_ (which, interestingly enough, might have since become my favorite book). The original quote is said by Zorba to the protagonist: "How do you expect to get the better of a devil ... if you don't turn into a devil and a half yourself?" Kazantzakis is far from the only one to make this philosophical suggestion, but this was my first exposure to the idea, and thus, I think it always sort of rings the loudest in my head when I am contemplating the idea.

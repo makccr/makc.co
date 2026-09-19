@@ -1,16 +1,18 @@
 ---
 title: "The Death of the Internet"
 layout: essay.html
-image: img/2025-09-24.jpg
 date: 2025-09-24
 tags: essay 
+subject: ["technology", "history"]
 ---
 
 I got my first computer when I was eight years old. It wasn’t anything fancy, an old Windows 95 box that barely worked. But when my parents decided to upgrade to a shiny, new, Dell Machine running Windows XP, I was more than happy to do whatever it took to get my hands on the old family PC. The deal that I struck up with them took place in early February of my seventh year. They agreed that if I kept my room clean for the remainder of the year, that come Christmas Day, the computer would be mine. Needless to say, there wasn’t so much as a sock on the floor of my room for the rest of the year. At the time I shared a room with my younger brother, and I specifically remember having to work twice as hard, cleaning up not only my own mess, but his as well. Come Christmas day though, all the work paid off and the computer was all mine.
 
 If you lived through this era of computing, I probably don’t need to tell you there wasn’t a whole hell of a lot that I could actually do with the machine. A lone Windows 95 Box without an internet connection in the middle of the south Texas woods in 2005 or 2006 wasn’t exactly a portal to anything dangerous or exciting. But for an eight year old me, it was more than enough to capture my attention. I spent hours on end sitting in front of that old PC, toying around, learning everything I could about it. I spend days cataloging every CD in the house. Ripping individual CDs, manually adding all the metadata that was available to add in an early version of Windows Media Player. I toyed around with the screen savers (particularly the [maze screen saver](https://inv.nadeko.net/watch?v=oRL5durPleI)), breaking random things, painstakingly fixing them - I even managed to convince myself that I had drawn the attention of law enforcement one night when I tried to print without a printer attached, and got the dreaded message:
 
-<img src="img/2025-09-24-A.png" alt="Windows 95 Illegal Operation Error Message" class="fifty">
+<img src="img/2025-09-24-A.png" alt="Windows 95 Illegal Operation Error Message" class="half">
+
+<p class="caption">The dreaded Windows 95 <em>Illegal Operation</em> Error Message</p>
 
 Even when I managed to find some old Ethernet wire and figure out how to run myself a dial up connection under the house to my bedroom, all I ever really managed to figure out how to do was slowly download album art for my Media Player library. Still I spent days manually downloading images online, often queuing up ten or fifteen album covers to download before going to sleep and adding them to my Media Library when I woke up the next morning.
 

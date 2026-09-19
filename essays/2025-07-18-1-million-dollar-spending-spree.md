@@ -1,9 +1,9 @@
 ---
 title: "My Two Million Dollar Spending Spree"
 layout: essay.html
-image: img/2025-07-18.jpg
 date: 2025-07-18
 tags: essay 
+subject: ["finance", "webDev"]
 ---
 
 Over the past few weeks, I’ve been laser-focused on getting my finances in order. Like many Americans over eighteen, I’ve accumulated more than my fair share of debt—along with the bad spending habits that come with it. Credit cards, a car loan that’s longer than it should be—everything short of payday loans and collections—I’ve got it.
@@ -34,6 +34,6 @@ Of course, I can’t afford to invest $45 every single day—not yet. But this e
 
 Since that day, I’ve been using this method every time I’m tempted to spend unnecessarily. So far, it’s worked almost every time. The one exception? I bought a can of white Monster while filling up my gas tank. But even then, I sat in the car, did the math, and realized I had just bought a $200,000 energy drink. And I have to admit—it was the most satisfying can of Monster I’ve ever had. I savored every drop.
 
-At first, I did these calculations by hand, which I actually recommend. Something is grounding about manually working out the numbers. But as I started using the method more frequently, I built a [simple website to do the math for me](https://wonder8.app) automatically. It’s made the process much quicker.
+At first, I did these calculations by hand, which I actually recommend. Something is grounding about manually working out the numbers. But as I started using the method more frequently, I built a [simple website to do the math for me](https://w8.makc.co) automatically. It’s made the process much quicker.
 
 If you’re dealing with similar habits, feel free to use the site—but I also encourage you to try doing the math yourself, at least once or twice. The impact hits a little harder that way.

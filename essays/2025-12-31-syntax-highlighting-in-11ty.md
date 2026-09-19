@@ -1,9 +1,9 @@
 ---
 title: "Custom Syntax Highlighting With 11ty"
 layout: essay.html
-image: img/2025-12-31.jpg
 date: 2025-12-31
 tags: essay 
+subject: ["webDev"]
 ---
 
 Unless you stalk my [GitHub account](https://github.com/makccr) relentlessly, you are probably unaware of it, but [my website](https://makc.co) was developed using the static site generator, [Eleventy (11ty)](https://www.11ty.dev/). 11ty offers incredibly easy web development, not only because of its capability to play nicely with a massive amount of different file formats, but also because of its massive library of NodeJS plugins. Throughout the process of developing and maintaining my website, I have found that adding a new feature to my site is often as simple as running _npm install X_ and making a small change to the _eleventy.config.js_ file in my root directory. Earlier this week, when I decided that I wanted to add syntax highlighting to HTML code blocks on my site, the process looked to be just that simple.
@@ -41,7 +41,7 @@ console.log("some code");
 
 It turns out that the syntax highlighting plugin from 11ty only supports the third option: a full code block with a label at the top line declaring the language to which the syntax highlighting needs to be applied. Unfortunately for me, this is how I had already formatted damn near all of my code blocks site-wide. So I went ahead and took a closer look:
 
-<img src="img/2025-12-31-A.jpg" alt="Firefox inspector window proving that the plugin was working" class="fifty">
+<img src="img/2025-12-31-A.jpg" alt="Firefox inspector window proving that the plugin was working" class="thirds">
 
 After taking a look at the inspector window in Firefox, it became clear to me that the PrismJS plugin was doing quite a bit. When rendering the HTML document for my site, 11ty no longer was simply putting all of the text in a generic _code_ block, but was instead creating individual CSS classes for _language-javascript_, _language-shell_, and so on - as well as breaking down the contents of the block even further into classes for _punctuation, string, operator, comment_ and several other elements that made up the blocks. The only problem? The text in the code block was still the same color as generic text, no styling at all. This was odd, but it also wasn’t the worst thing in the world. Knowing myself, I knew I’d eventually want a way to customize the colors and makeup of the individual elements myself anyway, so I began the process of trying to compile a concrete list of every class that the syntax highlighting plugin would create for every single one of the nearly 300 languages that PrismJS supports -- no easy task.
 

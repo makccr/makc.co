@@ -1,10 +1,9 @@
 ---
 title: "Is “The Prisoner of Azkaban” the Best “Harry Potter” Movie"
 layout: essay.html
-image: img/2018-10-19.jpg
 date: 2018-10-19
 tags: essay 
-categories: ["film"]
+subject: ["film"]
 ---
 
 If you have read any reviews for the Harry Potter films online, you probably know that Harry Potter and the Prisoner of Azkaban is widely considered to be the best of the films. The praise for this movie is off the charts. It has 91% on Rotten Tomatoes (a score beaten only by The Deathly Hallows Pt.2, at 94%), Roger Ebert gave it 3.5/4 starts, the film has high reviews on basically every movie rating platform out there, MetaCritic, IMDb, ext. If you google the movie, the top voted tags, are “magical”, “must watch”, “clever”, and “intense”; one of my favorite YouTuber’s, the Nerd Writer even made a [video](https://www.youtube.com/watch?v=3hZ_ZyzCO24) about why he believes The Prisoner of Azkaban to be the best movie.

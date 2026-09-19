@@ -1,9 +1,9 @@
 ---
 title: "A Tale of AI Betrayal & Snapshotting Victory!"
 layout: essay.html
-image: img/2026-04-06.jpg
 date: 2026-04-06
 tags: essay 
+subject: ["linux", "AI", "technology"]
 ---
 
 At the beginning of this year, I decided to leave the quiet comforts of the [AUR](https://aur.archlinux.org/), Pacman and my purpose built, minimal system for a bit of _distro-hopping_. I've been using Linux full time for about five years now. That journey [began](https://youtu.be/mxTDsqcaj1o) with, and has maintained Arch Linux as a constant for it's duration. So, as any readers familiar with the ins-and-outs of Linux distributions might have guessed, I spent a bit of time playing around with Ubuntu, found out that I quite liked Fedora, but by the beginning of March, was ready to return to good ol' Arch Linux. To keep things interesting (and because I was a bit pressed for time), I opted to test drive [Cachy OS](https://cachyos.org/), a relatively new Arch derivative that boasts some interesting features like a custom kernel tuned with the [EEVDF scheduler](https://docs.kernel.org/scheduler/sched-eevdf.html). This is how I ended up inadvertently setting up my first Linux box that featured automatic Snapshotting, a fact that will become relevant later. 

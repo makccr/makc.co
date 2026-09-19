@@ -1,9 +1,9 @@
 ---
 title: "The Art of Virtue"
 layout: essay.html
-image: img/2025-07-14.jpg
 date: 2025-07-14
 tags: essay 
+subject: ["history", "philosophy", "productivity"]
 ---
 
 Without a doubt, the best book I’ve read this year is *The Autobiography of Benjamin Franklin*. I only opened it because it leads off The Harvard Classics—a 51‑volume anthology I describe in a separate essay—but I was pleasantly surprised by how readable, engaging, and practical it is.
@@ -29,7 +29,8 @@ Two things grabbed me right away:
 1. The Comparison Between Jesus and Socrates. Franklin isn’t the only Founder to pair them; Jefferson does the same in _[The Life and Morals of Jesus of Nazareth](https://thejeffersonbible.com/)_, his cut-and-paste iterative isolation of just the story of Jesus and philosophy contained in The New Testament Gospels.
 2. The idea of tracking virtues, not habits. Franklin built a weekly chart (see below) and marked a box whenever he failed a virtue. The goal was character, not routine.
 
-<img src="img/2025-07-14-B.jpg" alt="An estimation of what this tracking system might have looked like" class="fifty">
+<img src="img/2025-07-14-B.jpg" alt="An estimation of what this tracking system might have looked like" class="half">
+<p class="caption">A sketch of Franklin's tracking diagram</p>
 
 That distinction solved a problem I’ve long had with habit trackers. My lists balloon—work out, read, Duolingo, create something—until the whole system implodes. Franklin’s approach refocuses on principles I actually value. Habits follow naturally.
 
@@ -37,7 +38,8 @@ He also advanced one virtue at a time. Week 1: Temperance. Week 2: add Silen
 
 In practice, I’ve slimmed Franklin’s list to seven virtues that group naturally for me—e.g., I can’t picture Order, Industry, and Cleanliness separately. Your mileage may vary.
 
-<img src="img/2025-07-14-A.png" alt="My virtue tracking spreadsheet" class="fifty">
+<img src="img/2025-07-14-A.png" alt="My virtue tracking spreadsheet" class="thirds">
+<p class="caption">A modern interpretatoin of Franklin's chart using Excel</p>
 
 Paper worked fine, but I wanted weekly grades for quick comparison, so I built a spreadsheet. Each day, I type “X” under any virtue I feel I have succeeded in representing, and the sheet totals my slips, converting them to a letter grade:
 

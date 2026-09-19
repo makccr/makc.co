@@ -1,9 +1,9 @@
 ---
 title: "John Woolman was Kind of a Dick"
 layout: essay.html
-image: img/2025-04-01.jpg
 date: 2025-04-01
 tags: essay 
+subject: ["history", "satire"]
 ---
 
 Having just finished reading _The Journal of John Woolman_, I was struck by a few different things, the foremost: just how early an anti-slavery campaigner Woolman was. I knew that the guy wrote about the evils of slavery around the time of the American Revolution. What I did not realize is that Woolman actually died in 1774, 2 years before _The Declaration of Independence_ was even signed. To say that the guy was "ahead of his time" is one of the most egregious understatements in history. At a time when virtually everyone owned slaves, including virtually all of our first presidents - this guy was actually running around successfully convincing people, on an individual level, to just straight up grant freedom to slaves they had already paid for.
@@ -25,9 +25,13 @@ In Chapter IX of his journal, Woolman goes into great detail about his account o
 The story goes that Woolman was traveling around, going to various Quaker meetings and spreading his anti-slavery message, or at least that's what he was meant to be doing. He also just mentions several times over and over again that he gets to some meeting and just sits there without saying anything at all the entire time, so make of that what you will. Anyway, while traveling around, Woolman spots what I'm guessing by his description is a kind of pop-up magic show. He specifically asks the sleight of hand artist there if it's cool if he hangs out; the artist says yes. At which point Woolman proceeds to stand outside of the show, preaching the evils of magicians, pestering everyone who thought about coming to the show, until finally:
 
 > "So, having spent about an Hour amongst them, and feeling my Mind easy, I departed."
+<p class="attr">
+John Woolman<br>
+The Journal of John Woolman
+</p>
 
 ---
 
 I could go on and on about the various dickish pursuits of John Woolman, but unfortunately, I'd just be making stuff up. I read the whole journal, and I could only find two moments that I could twist into something negative. Of course, the reality is that Woolman was a trailblazer of early American politics and deserves a huge amount of respect, even if he won't let you go to a magic show. I just thought this might be a fun essay to read, if you happen to actually come across it on the day that it's published:
 
-### Happy April Fool’s Day!
+## Happy April Fool’s Day!
