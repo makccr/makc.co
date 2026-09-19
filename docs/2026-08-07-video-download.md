@@ -2,7 +2,7 @@
 title: "Downloading a Video"
 layout: docs.html
 date: 2026-08-07
-updated: 2026-08-07
+updated: 2026-09-19
 tags: docs 
 subject: ["software", "webDev", "wget", "curl"]
 ---
@@ -14,7 +14,7 @@ A quick guide to downloading videos that are harder than they should be to downl
 2. Swap to the *Network* tab. 
 3. Reload web page if necessary and ensure video playback has been triggered.
 4. Monitor for any video files, using URL filters andior the Media category in the Developer menu.
-5. Select individual requests and view the headers until a url with a video file is included, the video file will often be obscured, as in the following example: **https://videosite.com/remote_control.php?file=random-title-name.mp4&acctoken=random-token**
+5. Select individual requests and view the headers until a url with a video file is included, the video file will often be obscured, as in the following example: `https://video.com/something.php?file=name.mp4&extra_bs`
 
 <img class="thirds" src="img/2026-08-07.jpg" alt="Using the Network section to find a URL">
 
@@ -25,12 +25,12 @@ An example using the network tab in Firefox's Dev Tools to located a segmented v
 ## Downloading the Video File 
 1. Using either *curl* or *wget* use the full URL to download the video file. 
 ```bash
-curl -L -O "https://videosite.com/remote_control.php?file=random-title-name.mp4&acctoken=random-token"
+curl -L -O "https://video.com/something.php?file=title.mp4&token=token"
 ```
 <p class="caption">or</p>
 
 ```bash
-wget --content-disposition "https://videosite.com/remote_control.php?file=random-title-name.mp4&acctoken=random-token" 
+wget --content-disposition "https://video.com/something.php?file=title.mp4&token=token" 
 ```
 <p class="caption"><em>ensure quotes around the video file URL are in place</em></p>
 
