@@ -10,9 +10,24 @@ layout: main.html
 {{ content }}
 </div> 
 
-{% assign allPosts = collections.essays %}
+{% assign allPosts = collections.docs %}
 {% for post in allPosts %}
   {% if post.url == page.url %}
     {% capture currentIndex %}{{ forloop.index0 }}{% endcapture %}
   {% endif %}
 {% endfor %}
+
+<div class="post-navigation" style="margin-top: 3em; text-align: center;">
+  {% assign prevIndex = currentIndex | minus: 1 %}
+  {% assign nextIndex = currentIndex | plus: 1 %}
+<div class="rss">
+  {% if prevIndex >= 0 %}
+    {% assign prevPost = allPosts[prevIndex] %}
+    <a href="{{ prevPost.url }}" class="prev-post"><button><i class="nf nf-fa-arrow_left"></i></button></a>
+  {% endif %}
+  <a href="/rss"><button><i class="nf nf-fa-rss"></i></button></a>
+  {% if nextIndex < allPosts.size %}
+    {% assign nextPost = allPosts[nextIndex] %}
+    <a href="{{ nextPost.url }}" class="next-post"><button><i class="nf nf-fa-arrow_right"></i></button></a>
+  {% endif %}
+</div>
