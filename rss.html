@@ -1,0 +1,88 @@
+---
+layout: main.html
+title: Feeds
+description: Links to the RSS feeds for this site. Follow my essays, documentation or both.
+---
+
+<style>
+    main {
+        text-align: center; 
+    }
+
+    button {
+        padding: 1rem 2rem; 
+        margin-bottom: 2rem;
+    }
+
+    .essay-card .essay-preview {
+        margin: 0rem; 
+        padding: .5rem 2rem; 
+    }
+</style>
+
+<script>
+    function copyAll(button) {
+        navigator.clipboard.writeText("https://makc.co/feed.xml");
+
+        button.textContent = "Copied!"; 
+    }
+
+    function copyEssay(button) {
+        navigator.clipboard.writeText("https://makc.co/feed-essays.xml");
+
+        button.textContent = "Copied!"; 
+    }
+
+    function copyDoc(button) {
+        navigator.clipboard.writeText("https://makc.co/feed-docs.xml");
+
+        button.textContent = "Copied!"; 
+    }
+</script> 
+
+<h1>{{ title }}</h1>
+<p class='caption'>{{ description }}</p>
+
+<div class="cardContainer">
+    <div class="essay-card">
+        <a href="https://makc.co/feed.xml">
+            <div class="essay-title">
+                All Writing &nbsp;<i class='nf nf-fa-rss'></i>
+            </div>
+        </a>
+        <div class="essay-preview">
+            My full collection of essays and documentation, all jammed into one feed.
+        </div>
+        <button onclick="copyAll(this)">
+            Copy Link &nbsp;<i class='nf nf-fa-copy'></i>
+        </button>
+    </div>
+<br>
+    <div class="essay-card">
+        <a href="https://makc.co/feed-essays.xml">
+            <div class="essay-title">
+                Essays &nbsp;<i class='nf nf-fa-rss'></i>
+            </div>
+        </a>
+        <div class="essay-preview">
+            A collection of personal essays on film, technology, philosophy, and art. Charting the edges where culture, creativity, and critical thought meet.
+        </div>
+        <button onclick="copyEssay(this)">
+            Copy Link &nbsp;<i class='nf nf-fa-copy'></i>
+        </button>
+    </div>
+<br>
+    <div class="essay-card">
+        <a href="https://makc.co/feed-docs.xml">
+            <div class="essay-title">
+                Documentation &nbsp;<i class='nf nf-fa-rss'></i>
+            </div>
+        </a>
+        <div class="essay-preview">
+             My personal documentation. Feel free to use the information found here, but please don't think that any of this documentation was written with any level of verifiable expertise.
+        </div>
+        <button onclick="copyDoc(this)">
+            Copy Link &nbsp;<i class='nf nf-fa-copy'></i>
+        </button>
+    </div>
+</div>

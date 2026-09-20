@@ -1,0 +1,1135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+  <channel>
+    <title>MAKC | Documentation</title>
+    <link>https://makc.co/docs/</link>
+    <description></description>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 06 Sep 2026 19:00:00 CDT</lastBuildDate>
+
+    
+      <item>
+        <title>Powershell and Bash</title>
+        <link>https://makc.co/docs/powershell-and-bash/</link>
+        <guid>https://makc.co/docs/powershell-and-bash/</guid>
+        <pubDate>Sun, 06 Sep 2026 19:00:00 CDT</pubDate>
+        <description><![CDATA[<p>Some basic tips and rules for navigating Windows and Linux with powershell and bash. This was made for my own personal use and does assume that any reader is pretty familiar with bash commands and mainly interested in learning how to transfer these same skills to navigating a Windows system via powershell.</p>
+<h1>Powershell eccentricitys</h1>
+<ul>
+<li>Get-Help (linux of -h or --help or man x)
+<ul>
+<li><code>Get-Help ls</code> or <code>Get-Help ls --full</code></li>
+<li><code>-Force</code> on ls is like <code>ls -a</code>
+<ul>
+<li>example: <code>ls -Force C:\</code> to see <code>ProgramData</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>As a general rule just change forward slash to backslash in Powershell and things just kind of work as you'd expect. This is because while powershell commands are weird, but have a ton of aliases that are mapped to the UNIX equivalents.</li>
+<li>Some exceptions to the rule:
+<ul>
+<li><code>-f</code> becomes <code>-Force</code></li>
+<li><code>-r</code> becomes <code>-Recurse</code>
+<ul>
+<li>Often arguments needs to be at the end of a command, ex: <code>rm -r FILE -Recurse</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Powershell doesn't have <code>less</code> command, just the old bash <code>more</code>, which does still work.</li>
+<li><code>Select-String</code> - ps version of <code>grep</code></li>
+<li><code>-Filter</code> lets you search for files in a directory, ex: <code>ls C:\ -Recurese - Filter *.exe</code> will give you so much data that you won't be able to use it for anything if you don't pipe it through <code>more</code>.</li>
+</ul>
+<h2>Escape Characters</h2>
+<ol>
+<li>In Linux <code>\</code> is the escape character.<pre class="language-bash"><code class="language-bash"><span class="token function">mkdir</span> My<span class="token punctuation">\</span> Folder</code></pre>
+</li>
+<li>Windows in it's normal weird fashion uses a backtick `<pre class="language-powershell"><code class="language-powershell">mkdir My` Folder</code></pre>
+</li>
+</ol>
+<ul>
+<li><code>history</code> Ctrl+R allows searching through recent command history in Powershell and bash.</li>
+<li>wildcard * is handy as hell, cool example:</li>
+</ul>
+<pre class="language-bash"><code class="language-bash"><span class="token function">cp</span> *.jpg ~/Dowloads/
+
+<span class="token comment"># Copies all jpegs from working directory to ~/Downloads</span></code></pre>
+<h1>Linux stuff</h1>
+<ul>
+<li>/bin - stores apps</li>
+<li>/etc - system configs</li>
+<li>/home - duh</li>
+<li>/proc - currently running process</li>
+<li>/usr - usr intalled files</li>
+<li>/var - temp stuff (sort of)</li>
+</ul>
+<h2><code>ls -l</code> broken down</h2>
+<table>
+<thead>
+<tr>
+<th>permissions</th>
+<th># of links</th>
+<th>file owner group</th>
+<th>size</th>
+<th>date of modification</th>
+<th>Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>drwxr-xr-x</td>
+<td>2</td>
+<td>makc makc</td>
+<td>3</td>
+<td>Sep  3 19:00</td>
+<td>Desktop</td>
+</tr>
+<tr>
+<td>drwxr-xr-x</td>
+<td>13</td>
+<td>makc makc</td>
+<td>14</td>
+<td>Sep  6 17:49</td>
+<td>Documents</td>
+</tr>
+<tr>
+<td>drwxr-xr-x</td>
+<td>4</td>
+<td>makc makc</td>
+<td>5</td>
+<td>Sep  6 21:22</td>
+<td>Downloads</td>
+</tr>
+</tbody>
+</table>
+<h3><code>ls -l</code> permissions broken down</h3>
+<table>
+<thead>
+<tr>
+<th>d</th>
+<th>rwx</th>
+<th>r-x</th>
+<th>r-x</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>filetype</td>
+<td>owner rights</td>
+<td>group rights</td>
+<td>everyone elses rights</td>
+</tr>
+</tbody>
+</table>
+<p>The first letter in the string (<code>d</code> in the above example) indicates the type of file that is being listed.</p>
+<ul>
+<li><code>d</code> = directory</li>
+<li><code>-</code> = regular file</li>
+<li><code>l</code> = symbolic link</li>
+</ul>
+<p>The next nine characters are broken into three categories, permissions for the:</p>
+<ol>
+<li>file owner</li>
+<li>group</li>
+<li>other users</li>
+</ol>
+<ul>
+<li><code>r</code> = read</li>
+<li><code>w</code> = write</li>
+<li><code>x</code> = execute</li>
+</ul>
+<p><code>-</code> indicates that a permission does not exist, for example: <code>r-x</code> would indicate rights to read and execute, but not to write. In the example above (<code>drwxr-xr-x</code>), we can learn that:</p>
+<ol>
+<li>The file is a directory.</li>
+<li>The owner has full rights: read, write, execute</li>
+<li>The group has read and execution rights, not write rights.</li>
+<li>All other users also have read and execution rights, not write rights.</li>
+</ol>
+<h2>Viewing Files</h2>
+<ul>
+<li><code>cat</code> - prints full file</li>
+<li><code>head</code> - first 10 lines
+<ul>
+<li><code>head -n 1 FILE</code> - prints specific number of lines (10 is just a default)</li>
+<li><code>head --lines 1 FILE</code> - same thing</li>
+</ul>
+</li>
+<li><code>tail</code> - last 10 lines
+<ul>
+<li><code>tail -n 1 FILE</code> - prints specific number of lines (10 is just a default)</li>
+<li><code>tail --lines 1 FILE</code> - same thing</li>
+</ul>
+</li>
+<li><code>less</code> - fills window with text file
+<ul>
+<li>Bash also has the legacy <code>more</code> command, but why bother if you don't have to?</li>
+</ul>
+</li>
+</ul>
+<h2>Grep and His Powerful Friends</h2>
+<p>Way better than the powershell set-up (or at least less weird). Some examples follow:</p>
+<ul>
+<li><code>grep &quot;America is doomed&quot; Documents/journal/*.md</code> - finds every-time I wrote a journal entry after watching the news in 2026.
+<ul>
+<li><code>grep &quot;America is doomed&quot; Documents/journal/*.md | less</code> - give me an output that I can actually parse easily.</li>
+<li><code>grep -c &quot;America is doomed&quot; Documents/journal/*.md</code> - would just brake down how mnay times I've used the phrase in a journal.
+<ul>
+<li>Example Output:</li>
+</ul>
+<pre class="language-bash"><code class="language-bash">Documents/journal/volume-03.md:20
+Documents/journal/volume-04.md:122
+Documents/journal/volume-05.md:36
+Documents/journal/volume-06.md:79
+Documents/journal/volume-07.md:22</code></pre>
+</li>
+<li><code>grep -i</code> - case insensitive</li>
+<li><code>grep -n pattern</code> - show line numbers with output</li>
+<li><code>grep -w</code> - only returns if pattern matches exactly
+<ul>
+<li><code>grep -w data app.log</code> wouldn't return the word &quot;database&quot; as a result</li>
+</ul>
+</li>
+<li>Showing lines before or after pattern is found:
+<ul>
+<li><strong>Before</strong>: <code>grep -B 2 &quot;data&quot; app.log</code> - shows two lines before &quot;data&quot;</li>
+<li><strong>After</strong>: <code>grep -A 85 &quot;data&quot; app.log</code> - shows eighty-five lines before &quot;data&quot;</li>
+</ul>
+</li>
+<li><code>grep &quot;America is doomed | sort --unique</code> - filters out anytime I've just timed &quot;America is doomed&quot; and ended the entry there.</li>
+</ul>
+</li>
+</ul>
+]]></description>
+      </item>
+    
+      <item>
+        <title>Creating a New Branch</title>
+        <link>https://makc.co/docs/new-git-branch/</link>
+        <guid>https://makc.co/docs/new-git-branch/</guid>
+        <pubDate>Sat, 15 Aug 2026 19:00:00 CDT</pubDate>
+        <description><![CDATA[<p>A guide for creating a new branch in a git repository.</p>
+<h2>Creating a New Branch</h2>
+<ol>
+<li>Navigate to git repo:</li>
+</ol>
+<pre class="language-bash"><code class="language-bash"><span class="token builtin class-name">cd</span> REPO</code></pre>
+<ol start="2">
+<li>Create new branch:</li>
+</ol>
+<pre class="language-bash"><code class="language-bash"><span class="token function">git</span> checkout <span class="token parameter variable">-b</span> NEW-BRANCH</code></pre>
+<ol start="3">
+<li>Push new branch:</li>
+</ol>
+<pre class="language-bash"><code class="language-bash"><span class="token function">git</span> push origin NEW-BRANCH</code></pre>
+<h3>(Optionally) Create a Branch from a Specific Commit</h3>
+<pre class="language-bash"><code class="language-bash"><span class="token function">git</span> checkout <span class="token parameter variable">-b</span> NEW-BRANCH HASH</code></pre>
+<h4>Swap Between Branches</h4>
+<pre class="language-bash"><code class="language-bash"><span class="token function">git</span> checkout BRANCH-NAME</code></pre>
+<h2>Merge Changes to master/main Branch</h2>
+<ol>
+<li>Change back to main branch:</li>
+</ol>
+<pre class="language-bash"><code class="language-bash"><span class="token function">git</span> checkout master</code></pre>
+<ol start="2">
+<li>Merge it:</li>
+</ol>
+<pre class="language-bash"><code class="language-bash"><span class="token function">git</span> merge branchNAME</code></pre>
+]]></description>
+      </item>
+    
+      <item>
+        <title>Downloading a Video</title>
+        <link>https://makc.co/docs/video-download/</link>
+        <guid>https://makc.co/docs/video-download/</guid>
+        <pubDate>Thu, 06 Aug 2026 19:00:00 CDT</pubDate>
+        <description><![CDATA[<p>A quick guide to downloading videos that are harder than they should be to download.</p>
+<h2>Locating a File to Download</h2>
+<ol>
+<li>Toggle <em>Developer Mode</em> in any modern full-featured browser. Developer mode can be triggered in Chromium or Firefox by pressing <em>F12</em>.</li>
+<li>Swap to the <em>Network</em> tab.</li>
+<li>Reload web page if necessary and ensure video playback has been triggered.</li>
+<li>Monitor for any video files, using URL filters andior the Media category in the Developer menu.</li>
+<li>Select individual requests and view the headers until a url with a video file is included, the video file will often be obscured, as in the following example: <code>https://site.com/control.php?file=filename.mp4&amp;acctoken=token</code></li>
+</ol>
+<img class="thirds" src="img/2026-08-07.jpg" alt="Using the Network section to find a URL">
+<p class="caption">
+An example using the network tab in Firefox's Dev Tools to located a segmented video stream when a video starts playing on an example website.
+</p>
+<h2>Downloading the Video File</h2>
+<ol>
+<li>Using either <em>curl</em> or <em>wget</em> use the full URL to download the video file.</li>
+</ol>
+<pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-L</span> <span class="token parameter variable">-O</span> <span class="token string">"https://sie.com/control.php?file=filename.mp4&amp;acctoken=token"</span></code></pre>
+<p class="caption">or</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">wget</span> --content-disposition <span class="token string">"https://site.com/control.php?file=filename.mp4&amp;acctoken=token"</span> </code></pre>
+<p class="caption"><em>ensure quotes around the video file URL are in place</em></p>
+<ol start="2">
+<li>Multiple attempts may be neccasary if their are multiple video files located (ads in front of video, <em>et cetera</em>), however once the curl or wget process has started the file-size is usually a pretty good giveaway (18MB vs 250MB is a pretty clear difference and easy to discriminate against).</li>
+<li>When the download is complete, often times you will be left with something other than a video file, example: <em>remote_control.php</em> would most likely be the filename if downloading a video with the previously referenced sample URL. The file-size here is once again a pretty clear give-away, as most .php files won't be several hundred megabytes.</li>
+<li>Change the file-name and extension as you will, ensuring that the .php extension is changed to a video container. I have found that <em>.mp4</em> or <em>.mov</em> will almost always result in a playable video, but depending on the format of the original file, a few tries might be necessary. In any case, simply matching the file extension of the original file should always work.</li>
+</ol>
+<h3>Sequenced Videos</h3>
+<p>Some websites don't list a full video file in the Network tab of the Developer Menu. Rather than hosting a full file, it's only possible to access segmented video clips. This however does not mean that we cannot still download a full video.</p>
+<ol>
+<li>First find the sequence of video clips, for example the following URL might show up: <code>https://video.net/video.mp4/seg-01-av.ts</code></li>
+<li>Create a list of all segmented files, by first downloading an individual segment:</li>
+</ol>
+<pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-L</span> <span class="token parameter variable">-O</span> <span class="token string">"https://video.net/video.mp4/seg-01-av.ts"</span></code></pre>
+<ol start="3">
+<li>Once you have one video segment, you can calculate or roughly guess the video segment in question. For example if the first segment was roughly two seconds, and the video was about thirty minutes long, we can reasonably guess that there would be about nine hundred individual segments.</li>
+<li>Create a bash script to download all of the segments:</li>
+</ol>
+<pre class="language-bash"><code class="language-bash"><span class="token shebang important">#!/usr/bin/env bash</span>
+
+<span class="token assign-left variable">BASE_URL</span><span class="token operator">=</span><span class="token string">"https://video.net/video.mp4"</span>
+
+<span class="token keyword">for</span> <span class="token for-or-select variable">i</span> <span class="token keyword">in</span> <span class="token variable"><span class="token variable">$(</span><span class="token function">seq</span> <span class="token parameter variable">-w</span> <span class="token number">1</span> <span class="token number">900</span><span class="token variable">)</span></span><span class="token punctuation">;</span> <span class="token keyword">do</span>
+    <span class="token function">curl</span> <span class="token parameter variable">-L</span> <span class="token parameter variable">-O</span> <span class="token string">"<span class="token variable">$BASE_URL</span>/seg-<span class="token variable">$i</span>--av.ts"</span>
+<span class="token keyword">done</span></code></pre>
+<ol start="5">
+<li>Run the script.</li>
+<li>Add all the downloaded files into a properly organized text document. This function will organize all the files, regardless of whether or not they are numbered with proceeding zeros:</li>
+</ol>
+<pre class="language-bash"><code class="language-bash"><span class="token builtin class-name">printf</span> <span class="token string">'%s\n'</span> seg-*-av.ts <span class="token operator">|</span> <span class="token function">sort</span> <span class="token parameter variable">-V</span> <span class="token operator">|</span> <span class="token function">sed</span> <span class="token string">"s/^/file '/; s/$/'/"</span> <span class="token operator">></span> files.txt</code></pre>
+<ol start="7">
+<li>Combine all the files into one with <em>ffmpeg</em>:</li>
+</ol>
+<pre class="language-bash"><code class="language-bash">ffmpeg <span class="token parameter variable">-f</span> concat <span class="token parameter variable">-safe</span> <span class="token number">0</span> <span class="token parameter variable">-i</span> files.txt <span class="token parameter variable">-c</span> copy output.mp4</code></pre>
+]]></description>
+      </item>
+    
+      <item>
+        <title>Setting up a Calibre-web Server on Linux</title>
+        <link>https://makc.co/docs/calibre-web-docker/</link>
+        <guid>https://makc.co/docs/calibre-web-docker/</guid>
+        <pubDate>Sat, 13 Jun 2026 19:00:00 CDT</pubDate>
+        <description><![CDATA[<h2>Install Docker Engine / Docker CE</h2>
+<ol>
+<li>Follow <a href="https://docs.docker.com/engine/install/#get-started">the Docker website's documentation</a>, it's solid &amp; also includes instructions to remove previous iterations of Docker on all the other supported distributions.</li>
+</ol>
+<h2>Install Calibre-web via the <a href="https://github.com/linuxserver/docker-calibre-web">Docker Image</a></h2>
+<ul>
+<li><strong>Note</strong>: <a href="https://github.com/janeczku/calibre-web">Calibre-web</a> can be installed via a python pip package, however the Docker image is easier to set up and run as a background process on a Linux server.</li>
+</ul>
+<ol>
+<li>Create a new directory for the calibre-web app to live in:</li>
+</ol>
+<pre class="language-bash"><code class="language-bash"><span class="token function">mkdir</span> Docker/claibre-web
+<span class="token builtin class-name">cd</span> Docker/claibre-web</code></pre>
+<ol start="2">
+<li>Set up a docker-compose.yml file in app directory:</li>
+</ol>
+<pre class="language-bash"><code class="language-bash"><span class="token function">touch</span> docker-compose.yml</code></pre>
+<ol start="3">
+<li>Ensure to make required changes to the <em>volumes:</em> section of the default docker-compose.yml:</li>
+</ol>
+<pre class="language-bash"><code class="language-bash">name: calibre-web
+
+---
+services:
+  calibre-web:
+    image: lscr.io/linuxserver/calibre-web:latest
+    container_name: calibre-web
+    environment:
+      - <span class="token assign-left variable">PUID</span><span class="token operator">=</span><span class="token number">1000</span>
+      - <span class="token assign-left variable">PGID</span><span class="token operator">=</span><span class="token number">1000</span>
+      - <span class="token assign-left variable">TZ</span><span class="token operator">=</span>Etc/UTC
+      - <span class="token assign-left variable">DOCKER_MODS</span><span class="token operator">=</span>linuxserver/mods:universal-calibre
+    volumes:
+      - /home/<span class="token environment constant">USER</span>/Docker/calibre-web/config:/config
+<span class="token comment"># ~/Docker/calibre-web/ will map the Calibre config directory to /config in the app directory</span>
+      - /home/<span class="token environment constant">USER</span>/Documents/Books:/books 
+<span class="token comment"># ~/Documents/Books = Pre-existing Calibre libary directory including metadata.db file</span>
+    ports:
+      - <span class="token number">8083</span>:8083
+    restart: unless-stopped</code></pre>
+<ol start="4">
+<li>Start the Calibre server:</li>
+</ol>
+<pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> compose up <span class="token parameter variable">-d</span></code></pre>
+<h3>Set-up the Calibre Library</h3>
+<ol>
+<li>From inside the server's LAN access the server via: <strong>http://serverIP:8083</strong></li>
+<li>Login with the default credentials:</li>
+</ol>
+<pre class="language-bash"><code class="language-bash">Username: admin
+Password: admin123</code></pre>
+<ol start="3">
+<li>When prompted set the Calibre Database Location to <strong>/books</strong>. Link to a pre-existing calibre libary in the <strong>docker-compose.yml</strong>, in the above example: <strong>/home/USER/Documents/Books</strong> is mapped to <strong>/books</strong>.</li>
+</ol>
+<img src="img/2026-06-14-A.png"  alt="Database config setup in calibre-web" class="thirds">
+<p class="caption">
+Databse config setup in the Calibre Web UI
+</p>
+<h4>Access the Calibre Server Remotely</h4>
+<p>The easiest &amp; most secure way to access the calibre-server remotely is via a VPN. <a href="https://www.wireguard.com/">Wireguard</a> is very good for this, &amp; <a href="https://tailscale.com/">Tailscale</a> is an even simpler abstraction that uses Wireguard as a dependency. Full instructions for installing and configuring Tailscale can be found <a href="https://makc.co/docs/simple-tailscale-setup/">here</a>.</p>
+<h2>Using the Calibre-web OPDS Server</h2>
+<p>Maybe the best thing about the calibre-web server is the fact that it spins up an OPDS server alongside the web UI that can be accessed via many Andoid and iOS eReader apps. This server can be accessed in a browser or in an application by navigating to: <strong>http://serverIP:8083/opds</strong></p>
+<img src="img/2026-06-14-B.png"  alt="The calibre-web OPDS server linked up in the Yomu app on iOS" class="half">
+<p class="caption">The <a href="https://www.yomu-reader.com/" target="_blank">Yomu app</a> on iOS with the Calibre-web OPDS server linked via a Tailscale VPN connection.</p>
+<p>OPDS makes it incredibly easy to browse and download a user's full Calibre library of eBooks in any number of OPDS apps across all platforms. Some of the most popular apps are <a href="https://apps.apple.com/us/app/fbreader-epub-and-fb2-reader/id1067172178">FBReader</a> on iOS, <a href="https://play.google.com/store/apps/details?id=com.flyersoft.moonreader">Moon+ Reader</a> for Android &amp; <a href="https://thorium.edrlab.org/en/">Thorium Reader</a> for Linux, Windows and Apple Silicon Macs. A much larger list of OPDS applications can be found on the <a href="https://github.com/opds-community/awesome-opds">Awesome OPDS GitHub page</a>.</p>
+<img src="img/2026-06-14-c.png"  alt="My calibre library accessed in Yomu" class="half">
+<p class="caption">My personal calibre library being accessed via the OPDS server in Yomu</p>
+]]></description>
+      </item>
+    
+      <item>
+        <title>Setting up a Private Immich Server</title>
+        <link>https://makc.co/docs/immich/</link>
+        <guid>https://makc.co/docs/immich/</guid>
+        <pubDate>Tue, 09 Jun 2026 19:00:00 CDT</pubDate>
+        <description><![CDATA[<h2>Install Docker Engine / Docker CE</h2>
+<ol>
+<li><strong>Note</strong>: <em>Docker Engine</em> is not the same thing that would generally be installed via a standard linux package manager. To remove a previously installed iteration of Docker (at least on Ubuntu), use the command below:</li>
+</ol>
+<pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> remove <span class="token variable"><span class="token variable">$(</span>dpkg --get-selections docker.io <span class="token function">docker-compose</span> docker-compose-v2 docker-doc podman-docker containerd runc <span class="token operator">|</span> <span class="token function">cut</span> <span class="token parameter variable">-f1</span><span class="token variable">)</span></span></code></pre>
+<ol start="2">
+<li>Follow <a href="https://docs.docker.com/engine/install/#get-started">the Docker website's documentation</a>, it's solid &amp; also includes instructions to remove previous iterations of Docker on all the other supported distributions.</li>
+</ol>
+<h2>Install Immich</h2>
+<ol>
+<li>Use <a href="https://docs.immich.app/install/docker-compose">the Immich website's documentation</a> for installing and running with Docker Compose; once again, this documentation is more than good enough.</li>
+</ol>
+<h3>Configure Immich</h3>
+<ol>
+<li>Visit port 2283 on the machine that Immich was installed on: <em>http://SERVER.IP.ADDRESS:2283</em>.</li>
+<li>Follow the prompts to set up an admin &amp; some user accounts &amp; use <a href="https://docs.immich.app/install/post-install">Immich's documentation</a> if stuck.</li>
+<li>There are a few different ways to remotely access an Immich server, but one of the easiest &amp; most secure is <a href="https://makc.co/docs/create-your-own-git-server/">via a VPN</a> - just do that unless there's a really good reason not to.</li>
+</ol>
+]]></description>
+      </item>
+    
+      <item>
+        <title>Copying a ISO Image to a USB Drive</title>
+        <link>https://makc.co/docs/iso-2-usb-with-pv/</link>
+        <guid>https://makc.co/docs/iso-2-usb-with-pv/</guid>
+        <pubDate>Thu, 04 Jun 2026 19:00:00 CDT</pubDate>
+        <description><![CDATA[<h2>Required Items</h2>
+<ul>
+<li><a href="https://linux.die.net/man/1/pv">pv</a>. Don't use <a href="https://linux.die.net/man/1/dd">dd</a>. While it will often work, dd is a 50+ year old command, uses archaic syntax and provides little to no feedback on what it is doing.</li>
+<li>An <a href="https://archlinux.org/download/">ISO image</a> (usually <em>.iso</em>, but the process will also work for <em>.raw.xz</em>, and some other archived images).</li>
+</ul>
+<h2>Steps</h2>
+<ol>
+<li>Insert a removable USB drive, and ensure that there is at least one partition large enough for the ISO image.</li>
+<li>Use <a href="https://linux.die.net/man/8/lsblk">lsblk</a> to check the drive name &amp; partitions (very often a removable drive will be something like <em>/dev/sda</em> or <em>/dev/sdb</em>).</li>
+</ol>
+<pre class="language-bash"><code class="language-bash">lsblk <span class="token parameter variable">-f</span> <span class="token comment">## List block devices</span>
+
+<span class="token comment">## Look for something like the partition tree below</span>
+
+NAME        FSTYPE FSVER LABEL UUID  
+sda                                   
+└─sda1                                                                             </code></pre>
+<ol start="3">
+<li>If the drive has no partition, <a href="https://linux.die.net/man/8/cfdisk">cfdisk</a> is a user-friendly TUI tool that can create drive partitions.</li>
+</ol>
+<pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">cfdisk</span> /dev/sda
+<span class="token comment">## Ensure changes are written before exiting the application</span></code></pre>
+<ol start="4">
+<li>Write the ISO image to a partition on the drive:</li>
+</ol>
+<pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">pv</span> arch.iso <span class="token parameter variable">-o</span> /dev/sda1</code></pre>
+<h3>Optional Improvements</h3>
+<ul>
+<li><strong>--sync</strong> or <strong>-Y</strong> will use <a href="https://linux.die.net/man/2/fdatasync">fdatasync</a> to synchronize the buffer cache after every write operation. This will sometimes improve the accuracy of pv's progress bar when writing data to a slow disk (like a USB stick).</li>
+</ul>
+<pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">pv</span> arch.iso <span class="token parameter variable">--sync</span> <span class="token parameter variable">-o</span> /dev/sda1
+
+<span class="token comment">## or</span>
+
+<span class="token function">sudo</span> <span class="token function">pv</span> arch.iso <span class="token parameter variable">-Y</span> <span class="token parameter variable">-o</span> /dev/sda1</code></pre>
+<ul>
+<li><strong>--stats</strong> or <strong>-v</strong> will show the transfer rate in bytes per second.</li>
+</ul>
+<pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">pv</span> arch.ios <span class="token parameter variable">--sync</span> <span class="token parameter variable">--stats</span> <span class="token parameter variable">-o</span> /dev/sda1</code></pre>
+]]></description>
+      </item>
+    
+      <item>
+        <title>Creating a Private Git Server</title>
+        <link>https://makc.co/docs/create-your-own-git-server/</link>
+        <guid>https://makc.co/docs/create-your-own-git-server/</guid>
+        <pubDate>Wed, 06 May 2026 19:00:00 CDT</pubDate>
+        <description><![CDATA[<p>As <a href="https://github.com">GitHub</a> becomes <a href="https://mrshu.github.io/github-statuses/">increasingly less reliable</a> (not to mention riddled with AI slop), many are looking for alternatives. This documentation will walk through the process of setting up a private Git server for any non public-facing repositories.</p>
+<h2>Required Hardware</h2>
+<ul>
+<li>A server. The required software is available on virtually every OS and should run on any modern CPU architecture. This documentation provides instructions for a POSIX-style shell.</li>
+<li>A client machine to <em>push</em> to the server, once again, virtually any OS or CPU architecture will work.</li>
+</ul>
+<h2>Required Software</h2>
+<ul>
+<li><a href="https://www.openssh.org/">Open SSH</a></li>
+<li><a href="https://git-scm.com/">Git</a></li>
+<li>A VPN software, this guide uses: <a href="https://tailscale.com/">Tailscale</a></li>
+</ul>
+<h3>Required set-up for both devices</h3>
+<p>On both the server and any machine you intend to push changes from, you will need to set-up a VPN connection and install OpenSSH, as well as an <em>optional</em> SSH key. The process is identical for each system:</p>
+<h4>Install Tailscale</h4>
+<pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-fsSL</span> https://tailscale.com/install.sh <span class="token operator">|</span> <span class="token function">sh</span></code></pre>
+<p>Authenticate your user account when prompted, or set up a new account on first use.</p>
+<h4>Install OpenSSH</h4>
+<pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> pacman <span class="token parameter variable">-S</span> openssh  <span class="token comment"># Arch Linux</span>
+
+<span class="token function">sudo</span> <span class="token function">apt</span> update <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> openssh-server <span class="token comment"># Debian &amp; Ubuntu</span>
+
+<span class="token function">sudo</span> dnf <span class="token function">install</span> openssh-server  <span class="token comment"># Fedora</span>
+
+<span class="token function">sudo</span> pkg <span class="token function">install</span> openssh  <span class="token comment"># FreeBSD</span>
+
+brew <span class="token function">install</span> openssh  <span class="token comment"># Homebrew</span>
+
+nix profile <span class="token function">install</span> nixpkgs<span class="token comment">#openssh  # Nix</span>
+</code></pre>
+<h3>Server Set-up</h3>
+<p>Remote into the server using SSH and the server's Tailscale generated IP address. This documentation will use the user name: &quot;user&quot; &amp; a fake IP address of &quot;100.27&quot;.</p>
+<pre class="language-bash"><code class="language-bash">tailscale status  <span class="token comment"># To locate the server's IP</span>
+
+<span class="token function">ssh</span> user@100.27</code></pre>
+<ol>
+<li>Set up a location in which to store Git repositories</li>
+<li>Create a directory with the name of the repository</li>
+<li>Initiate a bare git repository</li>
+</ol>
+<pre class="language-bash"><code class="language-bash"><span class="token function">mkdir</span> Repos <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">cd</span> Repos
+<span class="token function">mkdir</span> <span class="token string">"REPO-NAME"</span> <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">cd</span> <span class="token string">"REPO-NAME"</span>
+
+<span class="token function">git</span> init <span class="token parameter variable">--bare</span></code></pre>
+<h3>Client Set-up</h3>
+<p>Create an empty directory with the same name (REPO-NAME) anywhere on the client system.</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">mkdir</span> REPO-NAME <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">cd</span> REPO-NAME</code></pre>
+<p>Once inside of that directory run the following commands:</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">git</span> init  <span class="token comment"># Initiates the new repository</span>
+<span class="token function">git</span> <span class="token function">add</span> <span class="token parameter variable">-A</span>   <span class="token comment"># Stages all files</span>
+<span class="token function">git</span> commit <span class="token parameter variable">-m</span> <span class="token string">"Initial commit"</span>  <span class="token comment"># Commit's those changes</span>
+
+<span class="token function">git</span> remote <span class="token function">add</span> origin user@100.27:/home/user/Repos/REPO-NAME/
+
+<span class="token function">git</span> branch  <span class="token comment"># Depending on Git version, changes might be commited to the "main" or "master" branch by default. Note which branch this repository defaulted to.</span>
+
+<span class="token function">git</span> push <span class="token parameter variable">-u</span> origin master 
+<span class="token comment"># or</span>
+<span class="token function">git</span> push <span class="token parameter variable">-u</span> origin main</code></pre>
+<p>After this set-up any new changes can be pushed to the private server with the standard <em>git push</em> command, with no additional flags or options required.</p>
+<p><strong>Note</strong>: Git will only accept one origin to push to. If a typo or other error is made while running <em>remote add origin</em>, this can be fixed by running:</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">git</span> remote set-url origin user@server:/home/user/Repo/REPO-NAME/
+
+<span class="token function">git</span> remote <span class="token parameter variable">-v</span>  <span class="token comment"># Can be used to confirm that a typo was made upon initial set-up as well</span></code></pre>
+<h3>Migrating an Existing Repository to Server</h3>
+<ul>
+<li>Change the remote origin</li>
+<li>Ensure the primary branch names match up</li>
+<li>Push to server</li>
+</ul>
+<pre class="language-bash"><code class="language-bash"><span class="token function">git</span> remote set-url origin user@server:/home/user/Repo/EXISTING-REPO/
+<span class="token function">git</span> remote <span class="token parameter variable">-v</span>  <span class="token comment"># To check url &amp; confirm before pushing</span>
+
+<span class="token function">git</span> branch  <span class="token comment"># To check primary branch name, almost always "master" or "main" </span>
+
+<span class="token comment"># The primary branch names must line up, to change run</span>
+<span class="token function">git</span> branch <span class="token parameter variable">-m</span> BRANCH-NAME
+
+<span class="token function">git</span> push <span class="token parameter variable">-u</span> origin BRANCH-NAME
+</code></pre>
+<h3>Cloning Repo on a New Client</h3>
+<p>Ensure SSH and Tailscale are installed and configured on any new machine, and then run:</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">git</span> clone user@100.27:/home/user/Repos/REPO-NAME/</code></pre>
+<hr>
+<h4>Authentication with a SSH key</h4>
+<p>Authenticating transfers and remote operation via SSH keys is not only much more secure than a standard password, but also much better for any sort of CI, CD or cron job automation that a user might want to set up in the future. Luckily the <em>ssh-keygen</em> utility is packaged with <em>OpenSSH</em> upon install. This makes it very easy to create a SSH key on both the server and client.</p>
+<pre class="language-bash"><code class="language-bash">ssh-keygen <span class="token parameter variable">-t</span> ed25519 <span class="token parameter variable">-a</span> <span class="token number">100</span> <span class="token parameter variable">-C</span> <span class="token string">"you@mail.com"</span>
+
+<span class="token comment"># If you are using a legacy system that does not support the Ed25519 hash algorithm use rsa</span>
+ssh-keygen <span class="token parameter variable">-t</span> rsa <span class="token parameter variable">-b</span> <span class="token number">4096</span> <span class="token parameter variable">-a</span> <span class="token number">100</span> <span class="token parameter variable">-o</span> <span class="token parameter variable">-C</span> <span class="token string">"you@mail.com"</span>
+
+<span class="token comment"># If you want to use a hardware key for 2FA</span>
+ssh-keygen <span class="token parameter variable">-t</span> ed25519-sk <span class="token parameter variable">-C</span> <span class="token string">"you@mail.com"</span></code></pre>
+<p>After creating the key, add the client's public SSH key to the server's list of authorized keys. This can be done by manually copying and pasting the full public key, but OpenSSH has a built in utility that makes the process much easier.</p>
+<pre class="language-bash"><code class="language-bash">ssh-copy-id user@100.27</code></pre>
+<p><strong>Note</strong>: If a repository was initially cloned or initiated using HTTPS, it might be necessary to add the <em>ssh://</em> prefix to the URL. This is not necessary when using the instructions provided here and pushing to origin via a VPN connection, but still helpful information to have access to.</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">git</span> remote set-url origin ssh://makc@100.27:/home/user/Repo/REPO-NAME/</code></pre>
+]]></description>
+      </item>
+    
+      <item>
+        <title>Launch Any Package via Dmenu</title>
+        <link>https://makc.co/docs/flatpak-to-dmenu/</link>
+        <guid>https://makc.co/docs/flatpak-to-dmenu/</guid>
+        <pubDate>Mon, 06 Apr 2026 19:00:00 CDT</pubDate>
+        <description><![CDATA[<p>Documentation for setting up Flatpack, Snap and other packages installed to non-standard locations to launch via dmenu and other minimal application launchers.</p>
+<h2>Issue</h2>
+<p>By default demnu (and most other minimal app launchers) look(s) for packages installed in <em>/usr/bin</em>. This is where most packages installed via <em>apt</em>, <em>pacman</em> or other package managers generally write to. However when installing apps with services like Flatpak or Canonical's Snap Store, the appImage is often placed elsewhere.</p>
+<p><strong>Note</strong>: I have found that Snap packages specifically often do launch via dmenu without issue, though not always. This fix will apply to any application that is installed to a non-standard location.</p>
+<h2>Steps</h2>
+<h4>Locate your newly installed package:</h4>
+<ul>
+<li><strong>Flatpak</strong> installs to <em>/var/lib/flatpak/exports/bin</em></li>
+<li><strong>Snap Store</strong> typically installs to either <em>/var/lib/snapd/snap</em> or <em>/snap</em></li>
+<li><strong>Blackmagic</strong> installs Davinci Resolve in <em>/opt/resolve/bin</em></li>
+</ul>
+<h4>Create a symlink to <em>/usr/bin</em>, where dmenu can find it:</h4>
+<pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">ln</span> <span class="token parameter variable">-s</span> /var/lib/flatpak/exports/bin/com.app.NAME /usr/bin/appNAME</code></pre>
+<p>Replace <em>appNAME</em> with whatever you want to type into dmenu to launch the app.</p>
+<h2>Examples</h2>
+<h4>PlexAMP (Flatpak)</h4>
+<pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">ln</span> <span class="token parameter variable">-s</span> /var/lib/flatpak/exports/bin/com.plexamp.Plexamp /usr/bin/plexAMP</code></pre>
+<h4>Davinci Resolve (Blackmagic installer)</h4>
+<pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">ln</span> <span class="token parameter variable">-s</span> /opt/resolve/bin/resolve /usr/bin/resolve</code></pre>
+<h2>Source</h2>
+<p>I found the original fix from <a href="https://gist.github.com/curioswati/668e9e120ddd4b6f8d07dc28b5780d22">a gist</a> written by <a href="https://github.com/curioswati">Swati Jaiswal</a>.</p>
+]]></description>
+      </item>
+    
+      <item>
+        <title>Install Davinci Resolve on Linux</title>
+        <link>https://makc.co/docs/install-resolve-on-linux/</link>
+        <guid>https://makc.co/docs/install-resolve-on-linux/</guid>
+        <pubDate>Thu, 22 Jan 2026 18:00:00 CST</pubDate>
+        <description><![CDATA[<p>Documentation for installing Black Magic Design's Davinci Resolve or Davinci Resolve Studio on Linux.</p>
+<h2>Required Software</h2>
+<ul>
+<li><a href="https://www.blackmagicdesign.com/products/davinciresolve">Davinci Resolve</a></li>
+<li>Proprietary Nvidia, or AMD Drivers</li>
+<li>unzip</li>
+</ul>
+<p><strong>Important Note</strong>: Davinci Resolve requires a GPU with OpenCL or CUDA support. Full compatibility information can be found on the <a href="https://www.khronos.org/conformance/adopters/conformant-products#opencl">Khronos Group's list</a>, but running Resolve on Linux will likely require a discrete GPU &amp; may require configuring a laptop with hybrid graphics to run using only the GPU for display output.</p>
+<p><strong>Important Note:</strong> Resolve is only supported running with proprietary Nvidia drivers. Resolve will not run with <a href="https://nouveau.freedesktop.org/">Nouveau</a> drivers installed.</p>
+<p><strong>Important Note</strong>: While Resolve included full Wayland support in Resolve 19, many users have reported issues. This documentation covers installing Resolve in an X11 environment.</p>
+<h2>Installation</h2>
+<ol>
+<li>Ensure that the appropriate display driver's &amp; unzip are installed.</li>
+</ol>
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># Arch (Nvidia)</span>
+<span class="token function">sudo</span> pacman <span class="token parameter variable">-Syu</span> nvidia nvidia-utils cuda opencl-nvidia <span class="token function">unzip</span>
+
+<span class="token comment"># Arch (AMD)</span>
+<span class="token function">sudo</span> pacman <span class="token parameter variable">-Syu</span> rocm-opencl-runtime rocm-hip-runtime <span class="token function">unzip</span>
+
+<span class="token comment"># Fedora (Nvida)</span>
+<span class="token function">sudo</span> dnf <span class="token function">install</span> <span class="token parameter variable">-y</span> <span class="token punctuation">\</span>
+https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-<span class="token variable"><span class="token variable">$(</span><span class="token function">rpm</span> <span class="token parameter variable">-E</span> %fedora<span class="token variable">)</span></span>.noarch.rpm <span class="token punctuation">\</span>
+https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-<span class="token variable"><span class="token variable">$(</span><span class="token function">rpm</span> <span class="token parameter variable">-E</span> %fedora<span class="token variable">)</span></span>.noarch.rpm
+
+<span class="token function">sudo</span> dnf <span class="token function">install</span> <span class="token parameter variable">-y</span> akmod-nvidia xorg-x11-drv-nvidia-cuda
+
+<span class="token comment"># Fedora (AMD)</span>
+<span class="token function">sudo</span> dnf <span class="token function">install</span> <span class="token parameter variable">-y</span> rocm-opencl rocm-hip
+<span class="token function">sudo</span> <span class="token function">usermod</span> <span class="token parameter variable">-aG</span> render,video <span class="token environment constant">$USER</span>
+
+<span class="token comment"># Ubuntu (Nvida)</span>
+<span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> nvidia-driver-550 nvidia-cuda-toolkit
+
+<span class="token comment"># Ubuntu (AMD)</span>
+<span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> rocm-opencl-runtime rocm-hip-runtime</code></pre>
+<ol start="2">
+<li>Download <a href="https://www.blackmagicdesign.com/products/davinciresolve">Davinci Resolve Linux</a> from Black Magic Design's website.</li>
+</ol>
+<p><strong>Note</strong>: The process is identical for the free version of Davinci Resole and Davinci Resolve Studio.</p>
+<ol start="3">
+<li>Extract the installer &amp; make it executable.</li>
+</ol>
+<pre class="language-bash"><code class="language-bash"><span class="token builtin class-name">cd</span> ~/Downloads/ <span class="token comment"># Navigating to Downloads</span>
+<span class="token function">unzip</span> DaVinci_Resolve_*_Linux.zip <span class="token comment"># Unzipping zip file</span>
+<span class="token function">chmod</span> +x DaVinci_Resolve_*_Linux.run <span class="token comment"># Making install script executable</span></code></pre>
+<ol start="4">
+<li>Install.</li>
+</ol>
+<pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token assign-left variable">SKIP_PACKAGE_CHECK</span><span class="token operator">=</span><span class="token number">1</span> ./DaVinci_Resolve_*_Linux.run</code></pre>
+<h3>Post Install Fixes</h3>
+<h4>Fedora Libraries Fix</h4>
+<p>If installing on Fedora Linux it may be necessary to replace older libraries that conflict with Fedora workstation:</p>
+<pre class="language-bash"><code class="language-bash"><span class="token builtin class-name">cd</span> /opt/resolve/libs
+<span class="token function">sudo</span> <span class="token function">mkdir</span> disabled-libraries
+<span class="token function">sudo</span> <span class="token function">mv</span> libglib* libgio* libgmodule* disabled-libraries <span class="token comment"># Move outdated libraries to disabled-libraries</span>
+
+<span class="token function">sudo</span> dnf <span class="token function">install</span> <span class="token parameter variable">-y</span> libxcrypt-compat <span class="token comment"># Instal updated libraries</span></code></pre>
+<h4>Display Scaling Workaround</h4>
+<p>If using Davinci Resolve on a HiDPI display, scaling issues may be encountered. This is due to the fact that Resolve uses <a href="https://www.qt.io/">QT's GUI toolkit</a>, but often ignores userspace environment variables to control QT apps. A quick workaround is to create a wrapper script that will change the display scaling when launching Resolve, and revert the scaling when Resolve is closed:</p>
+<pre class="language-bash"><code class="language-bash"><span class="token shebang important">#!/bin/bash</span>
+xrandr <span class="token parameter variable">--output</span> DP-2 <span class="token parameter variable">--scale</span> <span class="token number">0</span>.5x0.5 <span class="token comment"># Scale screen down by 2x</span>
+/opt/resolve/bin/resolve <span class="token comment"># Launch Resolve</span>
+xrandr <span class="token parameter variable">--output</span> DP-2 <span class="token parameter variable">--scale</span> 1x1 <span class="token comment"># Restore native scale</span></code></pre>
+<h2>Launching</h2>
+<p>When installing Davinci Resolve in a full Desktop environment, Resolve will most likely not launch. The easiest solution is to <a href="http://makc.co/docs/flatpak-to-dmenu/">add an entry</a> in <em>/usr/bin</em> for Resolve.</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">ln</span> <span class="token parameter variable">-s</span> /opt/resolve/bin/resolve /usr/bin/resolve</code></pre>
+]]></description>
+      </item>
+    
+      <item>
+        <title>Recording &amp; Transcoding 2:1 Screen-caps on Linux</title>
+        <link>https://makc.co/docs/yt-pipeline/</link>
+        <guid>https://makc.co/docs/yt-pipeline/</guid>
+        <pubDate>Wed, 21 Jan 2026 18:00:00 CST</pubDate>
+        <description><![CDATA[<p>Some notes on setting up a custom display resolution on X11, transcoding H.264 media using ffmpeg, editing in Davinci Resolve, and then transcoding screen capture videos to the VP9 codec for delivery to YouTube &amp; other video platforms.</p>
+<h2>Required Software</h2>
+<ul>
+<li><a href="https://ffmpeg.org/">ffmpeg</a>: For transcoding media</li>
+<li><a href="https://www.x.org/wiki/Projects/XRandR/">xrandr</a>: For setting a custom display resolution on X11</li>
+<li><a href="https://github.com/emersion/wlr-randr">wlr-randr</a>: For setting a custom display resolution on Wayland</li>
+</ul>
+<h4>Optional</h4>
+<ul>
+<li><a href="https://obsproject.com/">OBS</a>: For recording screen</li>
+<li><a href="https://www.blackmagicdesign.com/products/davinciresolve">Davinci Resolve</a>: An all around awesome NLE that runs on Linux, proprietary</li>
+<li><a href="https://kdenlive.org/">Kdenlive</a>: A less than ideal, but usable NLE that is open-source</li>
+</ul>
+<h2>Installation</h2>
+<p><strong>Note</strong>: Installing Davinci Resolve on Linux requires a fairly specific process, documentation for installing can be found <a href="https://makc.co/docs/install-resolve-on-linux/">here</a>.</p>
+<p><strong>Note</strong>: <em>cvt</em> is used in this documentation and installed with the X11 utilities</p>
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># Arch Linux</span>
+<span class="token function">sudo</span> pacman <span class="token parameter variable">-Syu</span>
+<span class="token function">sudo</span> pacman <span class="token parameter variable">-S</span> obs-studio kdenlive ffmpeg xorg-xrandr
+
+<span class="token comment"># Fedora </span>
+<span class="token function">sudo</span> dnf upgrade <span class="token parameter variable">--refresh</span> <span class="token parameter variable">-y</span>
+<span class="token function">sudo</span> dnf <span class="token function">install</span> <span class="token parameter variable">-y</span> <span class="token punctuation">\</span>
+https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-<span class="token variable"><span class="token variable">$(</span><span class="token function">rpm</span> <span class="token parameter variable">-E</span> %fedora<span class="token variable">)</span></span>.noarch.rpm <span class="token punctuation">\</span>
+https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-<span class="token variable"><span class="token variable">$(</span><span class="token function">rpm</span> <span class="token parameter variable">-E</span> %fedora<span class="token variable">)</span></span>.noarch.rpm 
+
+<span class="token function">sudo</span> dnf <span class="token function">install</span> <span class="token parameter variable">-y</span> obs-studio kdenlive ffmpeg xorg-x11-server-utils
+
+
+<span class="token comment"># Ubuntu</span>
+<span class="token function">sudo</span> add-apt-repository universe
+<span class="token function">sudo</span> <span class="token function">apt</span> update <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> <span class="token function">apt</span> upgrade <span class="token parameter variable">-y</span>
+<span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> <span class="token parameter variable">-y</span> obs-studio kdenlive ffmpeg x11-xserver-utils</code></pre>
+<h2>Changing A Display's Native Resolution</h2>
+<p>Depending on the display, it is sometimes possible to use the <em>cvt</em> command to generate a <em>modeline</em>, and then use <em>xrandr</em>'s <em>--addmode</em> flag to create a fully custom display resolution. Basic steps can be found below, or more detailed instructions can be viewed <a href="https://youtu.be/IzFdqELyZbA">here</a>:</p>
+<pre class="language-bash"><code class="language-bash">cvt <span class="token number">3840</span> <span class="token number">1920</span> <span class="token number">60</span> <span class="token comment"># Generating Modeline at 3840x1920 &amp; 60hz</span>
+<span class="token comment"># 3840x1920 59.97 Hz (CVT) hsync: 119.27 kHz; pclk: 629.75 MHz</span>
+Modeline <span class="token string">"3840x1920_60.00"</span>  <span class="token number">629.75</span>  <span class="token number">3840</span> <span class="token number">4144</span> <span class="token number">4560</span> <span class="token number">5280</span>  <span class="token number">1920</span> <span class="token number">1923</span> <span class="token number">1933</span> <span class="token number">1989</span> <span class="token parameter variable">-hsync</span> +vsync
+
+xrandr <span class="token parameter variable">--output</span> DP-2 <span class="token parameter variable">--addmode</span> <span class="token string">"3840x1920_60.00"</span>  <span class="token punctuation">\</span> <span class="token comment"># Adding output to X11 display</span>
+<span class="token number">629.75</span>  <span class="token number">3840</span> <span class="token number">4144</span> <span class="token number">4560</span> <span class="token number">5280</span>  <span class="token number">1920</span> <span class="token number">1923</span> <span class="token number">1933</span> <span class="token number">1989</span> <span class="token parameter variable">-hsync</span> +vsync </code></pre>
+<p>However, if using a display port connection, or a modern laptop that uses an eDP display, it is very often not possible to set a fully custom resolution. However, X11's tools for display scaling can be exploited to achieve virtually the same thing. In the case of the Thinkpad P1 that was used for this documentation, the native resolution is 3840x2160. The desired output video resolution is at a 2:1 aspect ratio, 3840x1920. Dividing the desired vertical resolution by the original vertical resolution, <em>1920 ÷ 2160</em>, gives a result of <em>0.888888888889</em>, which can be used as the vertical scale factor in <em>xrandr</em>.</p>
+<pre class="language-bash"><code class="language-bash">xrandr <span class="token parameter variable">--output</span> DP-2 <span class="token parameter variable">--mode</span> 3840x2160 <span class="token parameter variable">--scale</span> 1x0.8889</code></pre>
+<p><strong>Notes</strong>:</p>
+<ul>
+<li>The <em>wlr-randr</em> command functions as a clone of xrandr for Wayland, and will accomplish the same goal in Wayland window managers or desktop environments.</li>
+<li>The scale factor will have to be reset after any screen recording.</li>
+</ul>
+<pre class="language-bash"><code class="language-bash">xrandr <span class="token parameter variable">--output</span> DP-2 <span class="token parameter variable">--mode</span> 3840x2160 <span class="token parameter variable">--scale</span> 1x1</code></pre>
+<h2>Transcoding H.264</h2>
+<p>Unless using a <a href="https://obsproject.com/forum/threads/full-custom-ffmpeg-output.99064/">custom <em>ffmpeg</em> output</a>, OBS will only output video using the H.264 codec. This is a problem for a number of reasons when building a video creation pipeline on Linux:</p>
+<ol>
+<li>Fedora, Ubuntu &amp; many other Linux distributions do not ship an iteration of <em>ffmpeg</em> that supports H.264 libraries.</li>
+<li>Kdenlive will not allow users to edit H.264 video without a transcode.</li>
+<li>The free edition of Davinci Resolve will not work with H.264 at all when running on Linux.</li>
+</ol>
+<p>Much of this is due to a <a href="https://www.zdnet.com/article/a-closer-look-at-the-costs-and-fine-print-of-h-264-licenses/">licensing fee structure</a> implemented by <a href="https://via-la.com/">Via-LA</a>-- but the end result is that, the first step in any editing pipeline has to be a transcode to escape the limitations of the H.264 codec. NLE friendly alternative codecs include, but are not limited to, AVID's <a href="https://en.wikipedia.org/wiki/DNxHR_codec">DNxHR</a>, GoPro's <a href="https://gopro.github.io/cineform-sdk/">CineForm</a> and Apple's <a href="https://support.apple.com/en-us/102207">ProRes</a>. All three have varying degrees of support across Linux distributions, but ProRes typically works <em>out of the box</em> and is what this documentation will recommend.</p>
+<pre class="language-bash"><code class="language-bash">ffmpeg <span class="token parameter variable">-i</span> INPUT.MOV <span class="token punctuation">\</span> <span class="token comment"># Calls ffmpeg and selects file to transcode </span>
+<span class="token parameter variable">-c:v</span> prores_ks <span class="token punctuation">\</span> <span class="token comment"># "c:v" = codec for video, "prores_ks" = ProRes Codec</span>
+<span class="token parameter variable">-profile:v</span> <span class="token number">0</span> <span class="token punctuation">\</span> <span class="token comment"># How ProRes sets quality 0=proxy, 1=low, 2=high, 3=lossless</span>
+<span class="token parameter variable">-c:a</span> pcm_s16le <span class="token punctuation">\</span> <span class="token comment"># "c:a" = codec for audio, "pcm_s16le" is selecting 16-bit audio</span>
+OUTPUT.md <span class="token comment"># Gives a name for output</span>
+
+ffmpeg <span class="token parameter variable">-i</span> INPUT.MOV <span class="token parameter variable">-c:v</span> prores_ks <span class="token parameter variable">-profile:v</span> <span class="token number">0</span> <span class="token parameter variable">-c:a</span> pcm_s16le OUTPUT.MOV <span class="token comment"># Sample ProRes</span>
+ffmpeg <span class="token parameter variable">-i</span> INPUT.MOV <span class="token parameter variable">-c:v</span> dnxhr <span class="token parameter variable">-profile:v</span> dnxhr_lb <span class="token parameter variable">-c:a</span> pcm_s16le OUTPUT.MOV <span class="token comment"># Sample DNXHQ</span>
+ffmpeg <span class="token parameter variable">-i</span> INPUT.MOV <span class="token parameter variable">-c:v</span> cfhd <span class="token parameter variable">-quality</span> medium <span class="token parameter variable">-c:a</span> pcm_s16le OUTPUT.MOV <span class="token comment"># Sample Cineform </span></code></pre>
+<p>Depending on use case, it is sometimes worth creating a bash script to handle this process. If this is desired, the use of input variables will make a script run more efficiently:</p>
+<pre class="language-bash"><code class="language-bash">ffmpeg <span class="token parameter variable">-i</span> <span class="token variable">$1</span> <span class="token parameter variable">-c:v</span> prores_ks <span class="token parameter variable">-profile:v</span> <span class="token number">0</span> <span class="token parameter variable">-c:a</span> pcm_s16le <span class="token string">"prefix-<span class="token variable"><span class="token variable">$(</span><span class="token function">basename</span> <span class="token string">"%1"</span><span class="token variable">)</span></span>"</span>
+
+<span class="token comment"># Usage</span>
+./scriptname.sh FILENAME.mov <span class="token comment"># Outputs a transcoded file named, prefix-FILENAME.mov</span></code></pre>
+<h4>Bonus: Quick Audio Cleanup in Resolve</h4>
+<ol>
+<li>Drag audio onto timeline, select <em>Fairlight</em> panel.</li>
+<li>Right-click audio track, select <em>Clip Options</em>, then <em>Normalize Audio</em>.</li>
+<li>When the pop-up window appears, normalize audio to -1db.</li>
+<li>Navigate to the <em>Mixer Panel</em>, select the <em>Plus sign</em> to add and effect, <em>EQ</em> menu, select <em>Fairlight EQ</em>.</li>
+<li>To set up a basic noise gate: mute or reduce audio output on Band 1 &amp; Band 2, which control 100hz &amp; 120hz wavelengths respectively.</li>
+<li>If there is any hissing or popping in narration, slightly lower the decibel level of Band 6.</li>
+</ol>
+<h2>Transcoding for Delivery</h2>
+<p>When exporting from Davinci Resolve, once again we run into issues, as Resolve does not support exporting to the H.264 codec. Luckily, Google's <a href="https://www.webmproject.org/vp9/">VP9</a> codecs has nearly all the same compression advantages as H.264 and none of the licensing issues. Unfortunately, Resolve also can't export to the VP9 codec. The easiest workaround is to export ProRes from Resolve and transcode to VP9 using <em>ffmpeg</em> for final delivery to a video sharing site:</p>
+<pre class="language-bash"><code class="language-bash">ffmpeg <span class="token parameter variable">-i</span> INPUT.mov <span class="token parameter variable">-c:v</span> libvpx-vp9 <span class="token parameter variable">-crf</span> <span class="token number">35</span> <span class="token parameter variable">-b:v</span> <span class="token number">0</span> <span class="token parameter variable">-c:a</span> libopus <span class="token parameter variable">-b:a</span> 512k OUTPUT.webm
+
+<span class="token comment"># The syntax for using an input variable is slightly different here, due to the changing file extension</span>
+ffmpeg <span class="token parameter variable">-i</span> <span class="token string">"<span class="token variable">$1</span>"</span> <span class="token parameter variable">-c:v</span> libvpx-vp9 <span class="token parameter variable">-crf</span> <span class="token number">35</span> <span class="token parameter variable">-b:v</span> <span class="token number">0</span> <span class="token parameter variable">-c:a</span> libopus <span class="token parameter variable">-b:a</span> 512k <span class="token string">"prefix-<span class="token variable"><span class="token variable">$(</span><span class="token function">basename</span> <span class="token string">"<span class="token variable">$1</span>"</span> .mov<span class="token variable">)</span></span>.webm"</span></code></pre>
+]]></description>
+      </item>
+    
+      <item>
+        <title>Converting a Markdown File to a Manuscript</title>
+        <link>https://makc.co/docs/markdown-to-manscript/</link>
+        <guid>https://makc.co/docs/markdown-to-manscript/</guid>
+        <pubDate>Fri, 16 Jan 2026 18:00:00 CST</pubDate>
+        <description><![CDATA[<p>A guide for exporting Markdown <em>(.md)</em> files to Open Office <em>(.odt)</em> files, with <a href="https://en.wikipedia.org/w/index.php?title=Standard_manuscript_format">standard manuscript formatting</a>.</p>
+<h2>Background</h2>
+<p>Last year I began writing my first novel. My preferred method of writing is to use the <a href="https://daringfireball.net/projects/markdown/">Markdown format</a>, and <a href="https://neovim.io/">Neovim</a>. This setup is great for writing efficiently and accessing my work on any device. However, I have run into two issues:</p>
+<ol>
+<li>I prefer to edit with pen &amp; paper. Markdown is not a printer friendly format.</li>
+<li>If I ever do try to publish my work, no publisher in the world will accept a <em>.md</em> file as a manuscript.</li>
+</ol>
+<p>Both of these problems can be solved by periodically converting the Markdown files into an Office format. I prefer the Open Office format <em>(.odt)</em>, but this process is nearly identical with Microsoft Word <em>(.docx)</em> or Google Doc <em>(.gdoc)</em> formats.</p>
+<h2>Required Software</h2>
+<ul>
+<li><a href="https://pandoc.org/">Pandoc</a>: A tool that will convert Markdown files to Open Office files.</li>
+<li><a href="https://www.libreoffice.org/">Libre Office</a>: My office software of choice. <a href="https://www.openoffice.org/">Open Office</a> will work just as well.</li>
+</ul>
+<h4>Optional</h4>
+<ul>
+<li>My <a href="https://makc.co/downloads/reference.zip">Open Office Template</a></li>
+<li>My <a href="https://github.com/makccr/dot/blob/master/.scripts/rule-to-scene-break.lua"><em>.lua</em> filter</a>, available as part of my <a href="https://github.com/makccr/dot">dotfiles</a>.</li>
+</ul>
+<h3>Installation</h3>
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># Arch</span>
+<span class="token function">sudo</span> pacman -Syu<span class="token punctuation">;</span> <span class="token function">sudo</span> pacman <span class="token parameter variable">-S</span> libreoffice-still pandoc
+
+<span class="token comment"># Fedora</span>
+<span class="token function">sudo</span> dnf upgrade <span class="token parameter variable">--refresh</span> <span class="token parameter variable">-y</span> <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> dnf <span class="token function">install</span> <span class="token parameter variable">-y</span> libreoffice pandoc
+
+<span class="token comment"># Ubuntu </span>
+<span class="token function">sudo</span> <span class="token function">apt</span> update <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> <span class="token function">apt</span> upgrade <span class="token parameter variable">-y</span> <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> <span class="token parameter variable">-y</span> libreoffice pandoc
+
+<span class="token comment"># FreeBSD</span>
+<span class="token function">su</span> <span class="token operator">&amp;&amp;</span> pkg update <span class="token operator">&amp;&amp;</span> pkg upgrade <span class="token parameter variable">-y</span> <span class="token operator">&amp;&amp;</span> pkg <span class="token function">install</span> <span class="token parameter variable">-y</span> libreoffice pandoc
+
+<span class="token comment"># MacOS (via Homebrew)</span>
+brew update <span class="token operator">&amp;&amp;</span> brew upgrade <span class="token operator">&amp;&amp;</span> brew <span class="token function">install</span> pandoc libreoffice</code></pre>
+<h2>Procedure</h2>
+<h3>Open Office Template</h3>
+<p>The first step is to create an Open Office template, or, what Pandoc will refer to as a: <em>reference-doc</em>. To do this, run an existing Markdown project through Pandoc to generate an Open Office file with all of the Markdown elements.</p>
+<pre class="language-bash"><code class="language-bash">pandoc INPUT.md <span class="token parameter variable">-o</span> OUTPUT.odt </code></pre>
+<p>Open the exported <em>.odt</em> file in Libre Office and edit each paragraph style that is utilized. This can be done by opening the paragraph style menu, and using the drop down menu to edit each style individually. I have made the template I use <a href="https://makc.co/downloads/reference.zip">available for download</a>.</p>
+<p>Store this <em>reference.odt</em> file in an easy to access location, I put a copy of the template in the root directory of any writing project I'm embark on.</p>
+<img src="img/2026-01-17-A.jpg" alt="Libre Office Style's List" class="half">
+<p class="caption">
+Libre Office's style's list
+</p>
+<h3>.lua Filter</h3>
+<p>A problem I encountered early on involved my use of Markdown’s horizontal rule feature. When exporting to an Office format, Pandoc, quite reasonably, renders the horizontal rule as a visible line. However, in my document this element is intended to mark a scene break, which follows specific formatting conventions in a manuscript.</p>
+<img src="img/2026-01-17-B.jpg" alt="Libre Office Style's List" class="full" >
+<p class="caption">
+A before and after of the horizontal rule conversion via the lua filter
+</p>
+<p>To avoid making changes to my Markdown documents, I created a <em>.lua</em> filter that can be run with Pandoc, and will convert the horizonal rule <em>(---)</em> in Markdown, to a <em>#</em> symbol, when exporting. In order for this filter to work properly, it is necessary to create a <em>SceneBreak</em> style in the <em>reference.odt</em> template.</p>
+<pre class="language-lua"><code class="language-lua"><span class="token comment">-- rule-to-scene-break.lua</span>
+
+<span class="token keyword">function</span> <span class="token function">HorizontalRule</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">local</span> para <span class="token operator">=</span> pandoc<span class="token punctuation">.</span><span class="token function">Para</span><span class="token punctuation">(</span><span class="token punctuation">{</span>pandoc<span class="token punctuation">.</span><span class="token function">Str</span><span class="token punctuation">(</span><span class="token string">"#"</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> pandoc<span class="token punctuation">.</span><span class="token function">Div</span><span class="token punctuation">(</span><span class="token punctuation">{</span>para<span class="token punctuation">}</span><span class="token punctuation">,</span> pandoc<span class="token punctuation">.</span><span class="token function">Attr</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token punctuation">[</span><span class="token string">"custom-style"</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token string">"SceneBreak"</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">end</span></code></pre>
+<h3>Creating the Final Manuscript</h3>
+<p>Using the Open Office template and <em>.lua</em> filter, convert the Markdown file to an Open Office file. In order to do this, use the standard Pandoc syntax, but provide a link to the <em>reference.odt</em> template, with the <em>--reference-doc=</em> flag, and the <em>.lua</em> filter, using the <em>--lua-filter=</em> flag.</p>
+<pre class="language-bash"><code class="language-bash">pandoc INPUT.md <span class="token parameter variable">-o</span> OUTPUT.odt <span class="token punctuation">\</span>
+--reference-doc<span class="token operator">=</span>reference.odt <span class="token punctuation">\</span>
+--lua-filter<span class="token operator">=</span>/home/makc/.scripts/rule-to-scene-break.lua</code></pre>
+<h4>Converting to PDF</h4>
+<p>To create a PDF from the command line, we can use Libre Office in a headless manner. After creating the Open Office Document with Pandoc, run:</p>
+<pre class="language-bash"><code class="language-bash">libreoffice <span class="token parameter variable">--headless</span> --convert-to pdf FILENAME.odt</code></pre>
+<p>Or, simply create one bash script to handle everything in one motion.</p>
+<pre class="language-bash"><code class="language-bash"><span class="token shebang important">#!/usr/bin/env bash</span>
+<span class="token builtin class-name">set</span> <span class="token parameter variable">-euo</span> pipefail
+
+<span class="token comment"># Resources</span>
+<span class="token assign-left variable">SCRIPTS_DIR</span><span class="token operator">=</span><span class="token string">"<span class="token environment constant">$HOME</span>/.scripts"</span>
+<span class="token assign-left variable">REFERENCE_DOC</span><span class="token operator">=</span><span class="token string">"<span class="token variable">$SCRIPTS_DIR</span>/reference.odt"</span>
+<span class="token assign-left variable">LUA_FILTER</span><span class="token operator">=</span><span class="token string">"<span class="token variable">$SCRIPTS_DIR</span>/rule-to-scene-break.lua"</span>
+
+<span class="token comment"># Arg check</span>
+<span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token variable">$#</span> <span class="token parameter variable">-ne</span> <span class="token number">1</span> <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">"Usage: <span class="token variable"><span class="token variable">$(</span><span class="token function">basename</span> <span class="token string">"<span class="token variable">$0</span>"</span><span class="token variable">)</span></span> FILE.md"</span>
+    <span class="token builtin class-name">exit</span> <span class="token number">1</span>
+<span class="token keyword">fi</span>
+
+<span class="token assign-left variable">INPUT</span><span class="token operator">=</span><span class="token string">"<span class="token variable">$1</span>"</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token operator">!</span> <span class="token parameter variable">-f</span> <span class="token string">"<span class="token variable">$INPUT</span>"</span> <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">"Error: File not found: <span class="token variable">$INPUT</span>"</span>
+    <span class="token builtin class-name">exit</span> <span class="token number">1</span>
+<span class="token keyword">fi</span>
+
+<span class="token comment"># Paths</span>
+<span class="token assign-left variable">INPUT_ABS</span><span class="token operator">=</span><span class="token string">"<span class="token variable"><span class="token variable">$(</span>realpath <span class="token string">"<span class="token variable">$INPUT</span>"</span><span class="token variable">)</span></span>"</span>
+<span class="token assign-left variable">BASENAME</span><span class="token operator">=</span><span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">basename</span> <span class="token string">"<span class="token variable">$INPUT_ABS</span>"</span> .md<span class="token variable">)</span></span>"</span>
+<span class="token assign-left variable">WORKDIR</span><span class="token operator">=</span><span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">dirname</span> <span class="token string">"<span class="token variable">$INPUT_ABS</span>"</span><span class="token variable">)</span></span>"</span>
+
+<span class="token assign-left variable">ODT</span><span class="token operator">=</span><span class="token string">"<span class="token variable">$WORKDIR</span>/<span class="token variable">$BASENAME</span>.odt"</span>
+<span class="token assign-left variable">PDF</span><span class="token operator">=</span><span class="token string">"<span class="token variable">$WORKDIR</span>/<span class="token variable">$BASENAME</span>.pdf"</span>
+
+<span class="token comment"># Converting and print to terminal</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"→ Converting Markdown to ODT..."</span>
+pandoc <span class="token string">"<span class="token variable">$INPUT_ABS</span>"</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">-o</span> <span class="token string">"<span class="token variable">$ODT</span>"</span> <span class="token punctuation">\</span>
+    --reference-doc<span class="token operator">=</span><span class="token string">"<span class="token variable">$REFERENCE_DOC</span>"</span> <span class="token punctuation">\</span>
+    --lua-filter<span class="token operator">=</span><span class="token string">"<span class="token variable">$LUA_FILTER</span>"</span>
+
+<span class="token builtin class-name">echo</span> <span class="token string">"→ Converting ODT to PDF..."</span>
+libreoffice <span class="token punctuation">\</span>
+    <span class="token parameter variable">--headless</span> <span class="token punctuation">\</span>
+    --convert-to pdf <span class="token punctuation">\</span>
+    <span class="token parameter variable">--outdir</span> <span class="token string">"<span class="token variable">$WORKDIR</span>"</span> <span class="token punctuation">\</span>
+    <span class="token string">"<span class="token variable">$ODT</span>"</span>
+
+<span class="token builtin class-name">echo</span> <span class="token string">"✓ Done: <span class="token variable">$PDF</span>"</span></code></pre>
+]]></description>
+      </item>
+    
+      <item>
+        <title>Remotely Accesing a File Server with Tailscale</title>
+        <link>https://makc.co/docs/simple-tailscale-setup/</link>
+        <guid>https://makc.co/docs/simple-tailscale-setup/</guid>
+        <pubDate>Thu, 15 Jan 2026 18:00:00 CST</pubDate>
+        <description><![CDATA[<p>Set up a free and simple VPN tunnel to access and modify a remote file server in the most secure way possible, wile still being pretty lazy.</p>
+<h2>Background</h2>
+<p>The goal is to be able to access and add files to what was originally set up as a local file server, from outside of the LAN. In order to add an additional layer of security, this documentation assumes the use of an intermediate system. That is, a third system to remotely connect to, on the same LAN as the file server, that can then be used to access and manipulate the file server, without having to leave an open VPN connection on the file server itself.</p>
+<img src="img/2026-01-16.png"  alt="Map of devices invovled" class="thirds">
+<p class="caption">A map of my basic jumpHost set-up
+</p>
+<h3>Required Software</h3>
+<ul>
+<li><a href="https://tailscale.com/">Tailscale</a>: A very simple VPN service, with great apps for MacOS, Windows, Linux,
+BSD, Android and iOS.</li>
+<li>OpenSSH: For remote access.</li>
+<li>Scp, rSync or both: To remotely move files and directories.</li>
+<li>Curl: Required for installing Tailscale on Linux.</li>
+</ul>
+<h3>Optional Software</h3>
+<ul>
+<li><a href="https://termius.com/">Terminus</a>: An iOS &amp; Android solution that allows users to save ssh information for easy remote connection.</li>
+</ul>
+<h2>Install Instructions</h2>
+<h3>Dependencies (SSH, SCP, rSync &amp; Curl)</h3>
+<pre class="language-bash"><code class="language-bash"><span class="token comment">## Ubuntu</span>
+<span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> openssh-server <span class="token function">curl</span> <span class="token function">rsync</span> <span class="token operator">&amp;&amp;</span>
+<span class="token function">sudo</span> systemctl <span class="token builtin class-name">enable</span> <span class="token parameter variable">--now</span> sshd
+
+<span class="token comment">## Arch</span>
+<span class="token function">sudo</span> pacman <span class="token parameter variable">-S</span> openssh <span class="token function">scp</span> <span class="token function">curl</span> <span class="token function">rsync</span> <span class="token operator">&amp;&amp;</span> 
+<span class="token function">sudo</span> systemctl <span class="token builtin class-name">enable</span> <span class="token parameter variable">--now</span> sshd
+
+<span class="token comment">## Fedora</span>
+<span class="token function">sudo</span> dnf <span class="token function">install</span> openssh-server <span class="token function">scp</span> <span class="token function">curl</span> <span class="token function">rsync</span> <span class="token operator">&amp;&amp;</span>
+<span class="token function">sudo</span> systemctl <span class="token builtin class-name">enable</span> <span class="token parameter variable">--now</span> sshd
+
+<span class="token comment">## FreeBSD</span>
+<span class="token function">sudo</span> pkg <span class="token function">install</span> openssh <span class="token function">scp</span> <span class="token function">curl</span> rysync <span class="token punctuation">;</span> 
+<span class="token function">sudo</span> kidload fuse <span class="token operator">&amp;&amp;</span> 
+<span class="token function">sudo</span> sysrc <span class="token assign-left variable">sshd_enable</span><span class="token operator">=</span><span class="token string">"YES"</span> <span class="token operator">&amp;&amp;</span>
+<span class="token function">sudo</span> <span class="token function">service</span> sshd start
+
+<span class="token comment">## MacOS (Via Homebrew)</span>
+brew <span class="token function">install</span> openssh <span class="token function">scp</span> <span class="token function">curl</span> <span class="token function">rsync</span> <span class="token operator">&amp;&amp;</span>
+brew <span class="token function">install</span> <span class="token parameter variable">--cask</span> macfuse</code></pre>
+<h3>Tailscale</h3>
+<h4>Linux</h4>
+<pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-fsSL</span> https://tailscale.com/install.sh <span class="token operator">|</span> <span class="token function">sh</span></code></pre>
+<h4>Android or iOS</h4>
+<p>Install the Tailscale app from the <a href="https://play.google.com/store/apps/details?id=com.tailscale.ipn">Google Play Store</a> or <a href="https://apps.apple.com/us/app/tailscale/id1470499037">iOS App Store</a> and login to a Tailscale account, accept any necessary permissions.</p>
+<h4>MacOS</h4>
+<pre class="language-bash"><code class="language-bash">brew <span class="token function">install</span> tailscale</code></pre>
+<h2>Starting Tailscale</h2>
+<h3>Desktop (Linux, MacOS, Powershell)</h3>
+<pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> tailscale up</code></pre>
+<p>After starting the Tailscale process, an authentication link will be printed to the terminal. Follow the URL, sign in to a Tailscale account.</p>
+<p>To stop an active VPN tunnel, run:</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> Tailscale down</code></pre>
+<h4>A Note on Unattended Use</h4>
+<p>By default a Tailscale connection will stay open until a user closes the process. Tailscale can also be set to automatically start back up upon a system restart with:</p>
+<pre class="language-bash"><code class="language-bash">tailscale up <span class="token parameter variable">--unattended</span><span class="token operator">=</span>true</code></pre>
+<p>The best resource for use case specific information is Tailscale's documentation, particularly the <a href="https://tailscale.com/kb/1088/run-unattended">page on unattended use</a>.</p>
+<h3>Android or iOS</h3>
+<p>Tailscale is toggled on an off via the respective phone application. Much the same as on desktop, once the VPN tunnel is open, by default it will remain open indefinitely.</p>
+<h2>Access</h2>
+<p>In order to connect to a device remotely all that is required is an open Tailscale tunnel on each device.</p>
+<h3>SSH Access</h3>
+<p>Visiting <a href="https://login.tailscale.com/">https://login.tailscale.com</a> on any device that you are logged in on, will provide a rundown of all machines authenticated with a given Tailscale account. Here you can easily find IP addresses for remote connection, and copy them to the clipboard. Additionally you can access the IP addresses by opening any Tailscale app, and if running on MacOS, FreBSD or Linux, by running:</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> tailscale status</code></pre>
+<p>Once you have the IP address, the SSH syntax is the same as it would be if you were remotely accessing a device on LAN. By default Tailscale uses port 22 for SSH. It is important to know the username for the device you are accessing via Tailscale's service. However, per standard SSH operation the username part of the equation is irrelevant if you use the same username across machines.</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">ssh</span> <span class="token environment constant">USER</span>@100.XXX.XX.XX <span class="token comment"># If username is different between the two machines</span>
+<span class="token function">ssh</span> <span class="token number">100</span>.XXX.XX.XX <span class="token comment"># If username is the same</span></code></pre>
+<h4>A Note on Best Practices &amp; Security</h4>
+<p>This guide focuses primarily on using an intermediate box to download items via a jump host or intermediate box &amp; then transfer them to a secondary host. This is done out of convenience as much as out of security, as the LAN connection of a stationary server is likely far faster than a remote device that a user can connect with. However using a jump host is also a valid security practice &amp; and OpenSSH has built in functionality to make this process easier and more secure, if a user is attempting to connect to a device like the File Server mentioned in the image at the top of this documentation.</p>
+<p>From a remote device, it is generally best practice to use the <em>-J</em> flag in SSH to simply make one connection that connects a user from their remote machine, to the File Server, using the jump host as an intermediate connection point:</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">ssh</span> <span class="token parameter variable">-J</span> user@jumpHost user@fileServer
+
+<span class="token comment">## Or, if using custom ports: </span>
+
+<span class="token function">ssh</span> <span class="token parameter variable">-J</span> user@jumpHost:port user@fileServer <span class="token parameter variable">-p</span> port</code></pre>
+<h2>Moving Files</h2>
+<p>Both <em>Scp</em> and <em>rSync</em> work to move files from a remote access machine, to a file server. rSync is typically considered more robust, and will work faster for large file transfers. Tailscale also has a file sharing protocol of their own in the Alpha stage of development called, <a href="https://tailscale.com/kb/1106/taildrop">Taildrop</a>.</p>
+<h3>Scp</h3>
+<pre class="language-bash"><code class="language-bash"><span class="token function">scp</span> /path/to/local/file <span class="token environment constant">USER</span>@REMOTE:/path/to/remote/directory/ <span class="token comment"># Basic Syntax</span></code></pre>
+<p>Moving a single file is great for a simple test, but most use cases require moving an entire directory structure. This can be accomplished by adding the <strong>-r</strong> flag, for recursive transfer, to the beginning of the <em>Scp</em> command:</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">scp</span> <span class="token parameter variable">-r</span> /path/to/local/directory <span class="token environment constant">USER</span>@REMOTE:/path/to/remote/directory/ <span class="token comment"># Basic Syntax</span></code></pre>
+<h3>rSync</h3>
+<p>rSync, for most use cases, is a far better option for remote file transfers. The syntax however is nearly identical to using Scp. The only change is that rSync requires the use of a <strong>-a</strong> flag, for <em>archive</em> transfer, in order to transfer a directory &amp; it's contents.</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">rsync</span> <span class="token parameter variable">-a</span> /path/to/local/directory <span class="token environment constant">USER</span>@REMOTE:/path/to/remote/directory/</code></pre>
+<p>However, where rSync becomes a much more powerful tool, is in the additional functionality it provides. A few of the most helpful options are:</p>
+<ul>
+<li><strong>-a</strong>: To move a directory &amp; it's contents</li>
+<li><strong>-v</strong>: Verbose (to have the command tell you what it's doing)</li>
+<li><strong>-z</strong>: To apply compression to a transfer</li>
+<li><strong>--progress</strong>: To show a progress bar for longer transfers.</li>
+<li><strong>--partial</strong>: To continue a file transfer that failed.</li>
+</ul>
+<p>If a transfer does fail, it can restarted by running rSync with the same parameters and the <strong>--partial</strong> flag.</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">rsync</span> <span class="token parameter variable">-av</span> /path/to/local/directory <span class="token environment constant">USER</span>@REMOTE:/path/to/remote/directory/
+
+<span class="token comment"># Transfer fails :(</span>
+
+<span class="token function">rsync</span> <span class="token parameter variable">-av</span> <span class="token parameter variable">--partial</span> /path/to/local/directory <span class="token environment constant">USER</span>@REMOTE:/path/to/remote/directory/</code></pre>
+<h3>Important Note</h3>
+<p>Using both Scp and Rsync, pay very close attention to the placement of forward slashes. In a case like this where the goal is to move the entire directory structure of <em>path/to/local/directory</em> no slash should be included:</p>
+<p><em>/path/to/local/directory</em> <strong>not</strong> <s><em>/path/to/local/directory/</em></s>.</p>
+<p>However, in order to ensure the directory structure ends up in <em>/path/to/remote/directory/</em>, this location should include a trailing forward slash:</p>
+<p><em>/path/to/remote/directory/</em> <strong>not</strong> <s><em>/path/to/remote/directory</em></s>.</p>
+<h2>Getting Setup to Download Linux ISOs ;)</h2>
+<p>As a bonus round this documentation will walk through set-up and use of a command line instance of <a href="https://transmissionbt.com/">Transmission</a>, as downloading new Linux ISOs via the BitTorrent protocol and storing them on a file server seems to a pretty common use for these servers.</p>
+<h3>Installation</h3>
+<pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> transmission-cli <span class="token comment"># Ubuntu</span>
+<span class="token function">sudo</span> dnf <span class="token function">install</span> transmission-cli <span class="token comment"># Fedora </span>
+<span class="token function">sudo</span> pacman <span class="token parameter variable">-S</span> transmission-cli <span class="token comment"># Arch</span>
+brew <span class="token function">install</span> transmission-cli <span class="token comment"># MacOS (vai Homebrew)</span></code></pre>
+<p>After installation, start the Transmission Daemon.</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> systemctl <span class="token builtin class-name">enable</span> <span class="token parameter variable">--now</span> transmission-daemon</code></pre>
+<h3>Usage</h3>
+<p><strong>Important Note</strong>: This documentation will not provide full usage instructions for Transmission, just enough to get started. More complete documentation can be found on the <a href="https://man.archlinux.org/man/extra/transmission-cli/transmission-remote.1.en">Arch wiki</a>.</p>
+<p>It's helpful to change the default download directory before downloading any torrents:</p>
+<pre class="language-bash"><code class="language-bash">transmission-remote <span class="token parameter variable">-w</span> ~/Downloads</code></pre>
+<p>Transmission can now download torrent via a .torrent file or a magnet link using the <strong>transmission-cli</strong> command:</p>
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># With a .torrent file</span>
+transmission-cli <span class="token parameter variable">-a</span> /path/to/file
+
+<span class="token comment"># With a magnet link</span>
+transmission-cli <span class="token parameter variable">-a</span> <span class="token string">"MAGNET LINK"</span></code></pre>
+]]></description>
+      </item>
+    
+      <item>
+        <title>Setting up BSPWM on Fedora Workstation</title>
+        <link>https://makc.co/docs/fedora-bspwm/</link>
+        <guid>https://makc.co/docs/fedora-bspwm/</guid>
+        <pubDate>Sun, 28 Dec 2025 18:00:00 CST</pubDate>
+        <description><![CDATA[<p>A guide for setting up a working instance of <a href="https://github.com/makccr/dot">my BSPWM configuration</a> on a clean install of <a href="https://fedoraproject.org/workstation/download">Fedora Workstation</a>. Note: <em>I have only tested this on version 43 and above on x86 platforms.</em></p>
+<h2>Install Required Packages</h2>
+<p>We need to first install all packages that are required by BSPWM and are referenced in my BSPWM configuration. Most packages can be installed via the dnf package manger:</p>
+<pre class="language-shell"><code class="language-shell"><span class="token function">sudo</span> dnf upgrade <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> dnf <span class="token function">install</span> xorg-x11-server-Xorg polybar dunst sxhkd bspwm picom feh flameshot redshift xrandr udiskie alacritty pavucontrol brightnessctl xbindkeys</code></pre>
+<p><strong>Note</strong>: The only packages that are required for BSPWM to function are:</p>
+<ul>
+<li>bspwm</li>
+<li>sxhkd</li>
+<li>xrandr</li>
+<li>X11-server</li>
+</ul>
+<p>My polybar configuration will also use a few different scripts that will require API keys stored in a Dropbox folder. Installing and logging into the default Dropbox client is required for some polybar modules to work. In order to install dropbox, you must first download the appropriate rpm package from the <a href="https://linux.dropbox.com/packages/fedora/">Dropbox website</a> &amp; then install with:</p>
+<pre class="language-shell"><code class="language-shell"><span class="token function">sudo</span> dnf <span class="token function">install</span> ~/Downloads/DROPBOX-VERSION.rpm</code></pre>
+<p>Finally, BSPWM works a lot better with an application launcher of some sort. My configuration is set up to use a <a href="https://github.com/makccr/suckless/tree/main/dmenu">custom build of dmenu</a> that will need to be installed. To install we will need to clone the repo via either HTTPS or SSH and then build the application.</p>
+<pre class="language-shell"><code class="language-shell"><span class="token builtin class-name">cd</span> ~/Documents<span class="token punctuation">;</span> <span class="token function">git</span> clone git@github.com:makccr/suckless<span class="token punctuation">;</span> <span class="token builtin class-name">cd</span> suckless
+<span class="token comment"># or</span>
+<span class="token builtin class-name">cd</span> ~/Documents<span class="token punctuation">;</span> <span class="token function">git</span> clone https://github.com/makccr/suckless.git<span class="token punctuation">;</span> <span class="token builtin class-name">cd</span> suckless</code></pre>
+<p>Once the repository is cloned, there is an install script located in the root folder, which needs to be run, however in order to build dmenu some X11 development headers to be installed on the system in question:</p>
+<pre class="language-shell"><code class="language-shell"><span class="token function">sudo</span> dnf <span class="token function">install</span> libX11-devel libXinerama-devel libXft-devel</code></pre>
+<pre class="language-shell"><code class="language-shell">./install.sh</code></pre>
+<p><strong>Note</strong>: It is not necessary to install a custom iteration of demnu. Some amount of time and effort could be saved by simply downloading and installing the dmenu packages in dnf package manger:</p>
+<pre class="language-shell"><code class="language-shell"><span class="token function">sudo</span> dnf <span class="token function">install</span> dmenu</code></pre>
+<h2>Install Configuration Files &amp; Fonts</h2>
+<p>First use git to clone my dot files repository and create symbolic links for my config and script directories.</p>
+<pre class="language-shell"><code class="language-shell"><span class="token builtin class-name">cd</span> ~/Documents<span class="token punctuation">;</span> <span class="token function">git</span> clone git@github.com:makccr/dot<span class="token punctuation">;</span> <span class="token builtin class-name">cd</span>
+<span class="token comment"># or</span>
+<span class="token builtin class-name">cd</span> ~/Documents<span class="token punctuation">;</span> <span class="token function">git</span> clone https://github.com/makccr/dot.git<span class="token punctuation">;</span> <span class="token builtin class-name">cd</span></code></pre>
+<p>There is a setup script in the <em>.scripts/</em> folder of this repository as well. It should be noted however, that on a clean install of Fedora Workstation the <em>~/.config</em> folder will be populated. It is necessary to move these default configuration files somewhere before running the install script.</p>
+<pre class="language-shell"><code class="language-shell"><span class="token function">mv</span> ~/.config ~/Documents/</code></pre>
+<p>At this point we can now run the <em>setup.sh</em> script, which will create symbolic links from the <em>~/Documents/dot</em> directory to the respective locations for all configs. <strong>Important</strong>: This script must be run from the users home directory (~/).</p>
+<pre class="language-shell"><code class="language-shell">./~/Documents/dot/.scripts/setup.sh</code></pre>
+<p>At this point we can now add the default Fedora configs back into the <em>~/.config</em> folder:</p>
+<pre class="language-shell"><code class="language-shell"><span class="token function">mv</span> ~/Documents/.config/<span class="token punctuation">{</span>*,.*<span class="token punctuation">}</span> ~/.config</code></pre>
+<p>Lastly we need to install some fonts that polybar will be looking for in it's configuration. The easiest way to do this would be to simply install two font packages from dnf.</p>
+<pre class="language-shell"><code class="language-shell"><span class="token function">sudo</span> dnf <span class="token function">install</span> julietaula-montserrat-fonts nerd-fonts-hack</code></pre>
+<p>However, this is also a good opportunity to go ahead an install my full collection of fonts:</p>
+<pre class="language-shell"><code class="language-shell"><span class="token function">git</span> clone git@github.com:makccr/fonts<span class="token punctuation">;</span> <span class="token builtin class-name">cd</span> fonts<span class="token punctuation">;</span> <span class="token function">sudo</span> <span class="token function">cp</span> <span class="token parameter variable">-r</span> makc-fonts/ /usr/share/fonts/</code></pre>
+<h2>Testing</h2>
+<p>One of the few issues I have run into, is the <em>bspwm.desktop</em> file not being created and put into <em>/usr/share/xessions</em>. This will result in a situation where BSPWM can not be launched from the default login manger. In order to fix this we simply need to create a <em>bspwm.desktop</em> file in <em>/usr/share/xsessions</em>.</p>
+<p><strong>Note</strong>: Ensuring that <em>xorg-x11-server-Xorg</em> and <em>bspwm</em> packages are installed should prevent this problem from ever taking place, but it's still helpful to know how to fix the issue.</p>
+<pre class="language-shell"><code class="language-shell"><span class="token function">sudo</span> <span class="token function">nano</span> /usr/share/xsessions/bspwm.desktop</code></pre>
+<p>Add the following text to the <em>.dekstop</em> file and save changes.</p>
+<pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>Desktop Entry<span class="token punctuation">]</span>
+<span class="token assign-left variable">Name</span><span class="token operator">=</span>BSPWM
+<span class="token assign-left variable">Comment</span><span class="token operator">=</span>Binary Space Partitioning Window Manager
+<span class="token assign-left variable">Exec</span><span class="token operator">=</span>/usr/bin/bspwm
+<span class="token assign-left variable">Type</span><span class="token operator">=</span>Application</code></pre>
+]]></description>
+      </item>
+    
+      <item>
+        <title>Cloning This Webiste &amp; Getting Set-up for Development with Eleventy</title>
+        <link>https://makc.co/docs/cloning-this-site/</link>
+        <guid>https://makc.co/docs/cloning-this-site/</guid>
+        <pubDate>Sat, 27 Dec 2025 18:00:00 CST</pubDate>
+        <description><![CDATA[<p>A quick guide for cloning this site's repository via git &amp; getting set up for development on a new system. I use <a href="https://github.com/11ty/eleventy/">Eleventy (11ty)</a> as a static site generator &amp; <a href="https://airtable.com/">Airtable</a> as a <em>sort of a CMS solution</em>. This documentation will walk through cloning this website's repository from <a href="https://github.com/makccr/makccr.github.io">GitHub</a>, installing all required dependencies, insuring all NPM plugins are installed, and testing to ensure that the new machine is ready for further development.</p>
+<h2>Install Required Packages</h2>
+<pre class="language-shell"><code class="language-shell"><span class="token comment">#### Arch</span>
+<span class="token function">sudo</span> pacman <span class="token parameter variable">-Syu</span> <span class="token function">git</span> nodejs <span class="token function">npm</span>
+
+<span class="token comment">#### Fedora</span>
+<span class="token function">sudo</span> dnf upgrade <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> dnf <span class="token function">install</span> <span class="token function">git</span> nodejs <span class="token function">npm</span>
+
+<span class="token comment">#### Ubuntu</span>
+<span class="token function">sudo</span> <span class="token function">apt</span> update <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> <span class="token function">apt</span> upgrade<span class="token punctuation">;</span> <span class="token function">curl</span> <span class="token parameter variable">-fsSL</span> https://deb.nodesource.com/setup_current.x <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token parameter variable">-E</span> <span class="token function">bash</span> - <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> <span class="token parameter variable">-y</span> nodejs<span class="token punctuation">;</span> <span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> <span class="token function">git</span> <span class="token function">npm</span>
+
+<span class="token comment">#### Free BSD</span>
+<span class="token function">su</span> <span class="token parameter variable">-c</span> <span class="token string">"pkg update &amp;&amp; pkg upgrade &amp;&amp; pkg install git node npm"</span></code></pre>
+<h2>Clone the Site's Repository</h2>
+<ol>
+<li>Navigate to a suitable location, typically I will use a <em>~/Documents</em> folder</li>
+<li>Clone the site from GitHub either via HTTPS or SSH:</li>
+</ol>
+<pre class="language-shell"><code class="language-shell"><span class="token function">git</span> clone git@github.com:makccr/makc.co
+or
+<span class="token function">git</span> clone https://github.com/makccr/makc.co</code></pre>
+<h3>Install 11ty &amp; Required Plugins</h3>
+<pre class="language-shell"><code class="language-shell"><span class="token function">npm</span> <span class="token function">install</span> @11ty/eleventy @11ty/eleventy-img airtable dotenv striptags @11ty/eleventy-plugin-rss @11ty/eleventy-plugin-syntaxhighlight<span class="token punctuation">;</span> <span class="token function">npm</span> <span class="token function">install</span> luxon --save-dev</code></pre>
+<h4>Relocate dotenv API Key</h4>
+<p>I use the dotenv npm plugin in order to authenticate a connection to Airtable. By default the dotenv plugin expects to find a file called <em>.env</em> in the site's root directory. For obvious reasons this can't be added to the GitHub repository and pushed upstream. My solution is to store the required API key in a Dropbox folder and then manually copy this key into the site's root directory when cloning a new development instance:</p>
+<pre class="language-shell"><code class="language-shell"><span class="token function">cp</span> ~/Dropbox/keys/.env ~/Documents/makccr.github.io/.env</code></pre>
+<h3>Verify the New Instance is Ready for Development</h3>
+<p>The easiest way to verify that everything is working properly, is simply to attempt to compile and serve the eleventy site:</p>
+<pre class="language-shell"><code class="language-shell">npx @11ty/eleventy <span class="token parameter variable">--serve</span></code></pre>
+<p>If all went well, a local version of the site can now be reached at <em>http://localhost:8080</em> in any web browser. So long as this command is running the site will continually recompile as changes are made. You can also manually compile the site with:</p>
+<pre class="language-shell"><code class="language-shell">npx @11ty/eleventy</code></pre>
+<p>When ready to commit changes to the site, just use the normal git process for doing so. The site is hosted on Netlify &amp; any changes pushed to the <em>master</em> branch will go live immediately.</p>
+<pre class="language-shell"><code class="language-shell"><span class="token function">git</span> <span class="token function">add</span> -A<span class="token punctuation">;</span> <span class="token function">git</span> commit <span class="token parameter variable">-m</span> <span class="token string">"message"</span><span class="token punctuation">;</span> <span class="token function">git</span> push</code></pre>
+<hr>
+<h2>Helpful Formatting Blocks</h2>
+<h3>New Essay Header</h3>
+<pre class="language-markdown"><code class="language-markdown"><span class="token front-matter-block"><span class="token punctuation">---</span>
+<span class="token front-matter yaml language-yaml">title: "TITLE TEXT"
+layout: essay.html
+date: YYYY-MM-DD
+tags: essay 
+subject: ["subject1", "subject2"]</span>
+<span class="token punctuation">---</span></span></code></pre>
+<h3>New Doc Header</h3>
+<pre class="language-markdown"><code class="language-markdown"><span class="token front-matter-block"><span class="token punctuation">---</span>
+<span class="token front-matter yaml language-yaml">title: "TITLE"
+layout: docs.html
+date: YYYY-MM-DD
+updated: YYYY-MM-DD
+tags: docs
+subject: ["subject1", "subject2"]</span>
+<span class="token punctuation">---</span></span></code></pre>
+<h3>Custom YouTube Embed Code</h3>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>youtube<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>youtube-video-container-16<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>iframe</span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>560<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>315<span class="token punctuation">"</span></span>
+            <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>LINK<span class="token punctuation">"</span></span>
+            <span class="token attr-name">frameborder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span>
+            <span class="token attr-name">allow</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>accelerometer; encrypted-media; gyroscope; picture
+-in-picture<span class="token punctuation">"</span></span>
+            <span class="token attr-name">allowfullscreen</span> <span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>iframe</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>This YouTube embed code has additional classes for videos at different aspect ratios, options include:</p>
+<ul>
+<li>youtube-video-container-16</li>
+<li>youtube-video-container-2-1</li>
+<li>youtube-video-container-anamorphic</li>
+</ul>
+]]></description>
+      </item>
+    
+  </channel>
+</rss>

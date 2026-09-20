@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>MAKC.CO - The Only Way Out is Through</title>
+<title>MAKC.CO - Feeds</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link href="https://cdn.jsdelivr.net/npm/modern-normalize@v3.0.1 /modern-normalize.min.css" rel="stylesheet">
 <link rel="stylesheet" href="/bundle.css">
@@ -65,7 +65,7 @@
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@makccr">
-<meta name="twitter:title" content="MAKC.CO - The Only Way Out is Through">
+<meta name="twitter:title" content="MAKC.CO - Feeds">
 <meta name="twitter:description" content="Im a propagandist for pickled red onions, a rare meat activist, barely-monetizable YouTuber and Captain of the sailing vessel Knox. Ive been creating content online for well over a decade now, but delivering to a very small audience. Undoubtedly, youve discovered this website by mistake, but thanks for stopping by anyway-and, feel free to browse around.">
 <meta name="twitter:image" content="https://makc.co/images/bg-head.jpg">
 
@@ -108,73 +108,90 @@
     
     <main>
         
-<h1>The Only Way Out is Through</h1>
-<p class="caption">March 29, 2025</p>
+<style>
+    main {
+        text-align: center; 
+    }
 
-<div class="essayContainer"> 
-<p>The first exposure I had to this line of thinking, at least as far as I can remember, was in Nikos Kazantzakis' novel: <em>Zorba the Greek</em> (which, interestingly enough, might have since become my favorite book). The original quote is said by Zorba to the protagonist: &quot;How do you expect to get the better of a devil ... if you don't turn into a devil and a half yourself?&quot; Kazantzakis is far from the only one to make this philosophical suggestion, but this was my first exposure to the idea, and thus, I think it always sort of rings the loudest in my head when I am contemplating the idea.</p>
-<p>Embracing evil with full force, as opposed to running from evil, is the only true way that I have found to mitigate the effects of the evil we all must contend with. The interesting thing, however, is that it seems not to matter what form the evil is taking. When we phrase things in nigh apocalyptic terms, we tend to think of the application of this kind of logic on a massive scale. Clearly, this logic works here: If you want to avoid falling prey to mass societal acceptances of evil, you have no chance of being able to do so if you can not identify the evil, and even less of a shot if you simply dig your head in the sand and pretend that you simply are not capable of doing an evil thing. That last idea: <em>pretending that you simply are not capable of true evil</em>, is one of the most pervasive bad ideas that society has ever developed. If you are not capable of evil, then by definition, everything you do will <em>not be evil</em>. You'll find yourself personally filling the chamber with <em>Zyklon B</em>, all the while still telling yourself that pervasive lie: &quot;I'm simply not capable of that kind of evil.”</p>
-<p>But, importantly, embracing evil can be used to defeat even the smallest forms of evil, the ones that are annoying more than murderous. In particular, I'm referring to vice, but I do not want to limit the train of thought. Interestingly enough, the thing that finally got me to quit smoking cigarettes was smoking more than I had ever smoked in my entire life. I had a job where I smoked damn near a pack of cigarettes a day, if not more. If I were driving, it would be impossible that I didn't have a cigarette in my mouth. If I were on break, same situation. Even when getting home from a sixteen-hour shift, I could not go inside and go to sleep until I smoked a cigarette. I became so reliant on nicotine that I was smoking cigarettes with nicotine pouches in my mouth and nicotine patches on my arm (only a mild exaggeration).</p>
-<p>Then I simply decided I wanted to stop. Being now immensely familiar with the perks and downsides of the drug, I was able to make that decision with more clarity than I could have had before. I took a break for a very short amount of time, maybe a week and a half, maybe two weeks, and then attempted to smoke again. The nicotine had no effect whatsoever, save for putting a disgusting chemical taste in my mouth; and when I forced myself to smoke another cigarette (for science, I guess), I instantly got a headache that lasted the rest of the day. Even the Zyn pouches that I used to pop like candy were absolutely useless to me. I went from being fully addicted to nicotine to a nicotine non-responder in the space of a fortnight.</p>
-<p>Of course, it does seem like this kind of thing is possible to do as a thought exercise; there's no need to actually destroy your lungs just to stop a casual habit. It would be a wild world indeed if, for example, the only way humans could get rid of a desire to murder was to go out and physically murder so many people that they were simply bored with it. But, luckily, that is not the world that we live in. It seems more than possible to simply imagine the depths of evil that you might descend into, as a safeguard against ever actually going there unconsciously.</p>
+    button {
+        padding: 1rem 2rem; 
+        margin-bottom: 2rem;
+    }
 
-</div> 
+    .essay-card .essay-preview {
+        margin: 0rem; 
+        padding: .5rem 2rem; 
+    }
+</style>
 
+<script>
+    function copyAll(button) {
+        navigator.clipboard.writeText("https://makc.co/feed.xml");
 
+        button.textContent = "Copied!"; 
+    }
 
-  
+    function copyEssay(button) {
+        navigator.clipboard.writeText("https://makc.co/feed-essays.xml");
 
-  
+        button.textContent = "Copied!"; 
+    }
 
-  
+    function copyDoc(button) {
+        navigator.clipboard.writeText("https://makc.co/feed-docs.xml");
 
-  
+        button.textContent = "Copied!"; 
+    }
+</script> 
 
-  
+<h1>Feeds</h1>
+<p class="caption">Links to the RSS feeds for this site. Follow my essays, documentation or both.</p>
 
-  
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-<div class="post-navigation" style="margin-top: 3em; text-align: center;">
-  
-  
-<div class="rss">
-  
-    
-    <a href="/essays/harvard-classics/" class="prev-post"><button><i class="nf nf-fa-arrow_left"></i></button></a>
-  
-  <a href="https://makc.co/feed.xml" target="_blank"><button><i class="nf nf-fa-rss"></i></button></a>
-  
-    
-    <a href="/essays/woolman-was-a-dick/" class="next-post"><button><i class="nf nf-fa-arrow_right"></i></button></a>
-  
+<div class="cardContainer">
+    <div class="essay-card">
+        <a href="https://makc.co/feed.xml">
+            <div class="essay-title">
+                All Writing &nbsp;<i class="nf nf-fa-rss"></i>
+            </div>
+        </a>
+        <div class="essay-preview">
+            My full collection of essays and documentation, all jammed into one feed.
+        </div>
+        <button onclick="copyAll(this)">
+            Copy Link &nbsp;<i class="nf nf-fa-copy"></i>
+        </button>
+    </div>
+<br>
+    <div class="essay-card">
+        <a href="https://makc.co/feed-essays.xml">
+            <div class="essay-title">
+                Essays &nbsp;<i class="nf nf-fa-rss"></i>
+            </div>
+        </a>
+        <div class="essay-preview">
+            A collection of personal essays on film, technology, philosophy, and art. Charting the edges where culture, creativity, and critical thought meet.
+        </div>
+        <button onclick="copyEssay(this)">
+            Copy Link &nbsp;<i class="nf nf-fa-copy"></i>
+        </button>
+    </div>
+<br>
+    <div class="essay-card">
+        <a href="https://makc.co/feed-docs.xml">
+            <div class="essay-title">
+                Documentation &nbsp;<i class="nf nf-fa-rss"></i>
+            </div>
+        </a>
+        <div class="essay-preview">
+             My personal documentation. Feel free to use the information found here, but please don't think that any of this documentation was written with any level of verifiable expertise.
+        </div>
+        <button onclick="copyDoc(this)">
+            Copy Link &nbsp;<i class="nf nf-fa-copy"></i>
+        </button>
+    </div>
 </div>
 
-    </div></main>
+    </main>
    <footer>
         <ul>
             <li><a href="/terms">TOS & Privacy</a></li>

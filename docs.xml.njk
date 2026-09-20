@@ -1,0 +1,24 @@
+---
+permalink: /feed-docs.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+  <channel>
+    <title>MAKC | Documentation</title>
+    <link>https://makc.co/docs/</link>
+    <description>My personal documentation. Most sane people would keep this in a notebook, but clearly I had other ideas. Feel free to use the information found here, but please don't think that any of this documentation was written with any level of verifiable expertise. It's probably still better than what ChatGPT would have told ya' though ;)</description>
+    <language>en-us</language>
+    <lastBuildDate>{{ collections.docs | getNewestCollectionItemDate | dateToRfc822 }}</lastBuildDate>
+
+    {% for post in collections.docs | reverse %}
+      <item>
+        <title>{{ post.data.title }}</title>
+        <link>https://makc.co{{ post.url }}</link>
+        <guid>https://makc.co{{ post.url }}</guid>
+        <pubDate>{{ post.date | dateToRfc822 }}</pubDate>
+        <description><![CDATA[{{ post.templateContent | safe }}]]></description>
+      </item>
+    {% endfor %}
+  </channel>
+</rss>
