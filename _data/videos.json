@@ -1,0 +1,1262 @@
+[
+{
+    "title": "Creating a Private Git Server",
+    "date": "2026-05-13",
+    "ytid": "HvklHoL7Ano",
+    "category": "System Admin",
+    "odurl": "https://odysee.com/@makc:a/creating-a-private-git-server:b"
+}, 
+{
+    "title": "Transferring Files Remotely with SSH and a VPN Tunnel",
+    "date": "2026-01-25",
+    "ytid": "TQdmp2P93cM",
+"category": "System Admin",
+    "odurl": "https://odysee.com/@makc:a/transferring-files-remotely-with-rsync,:6"
+}, 
+{
+    "title": "Exporting .md to .odt with Pandoc & Lua",
+    "date": "2026-01-18",
+    "ytid": "8ORPbeFyzeU",
+    "category": "CLI & Scripting",
+    "odurl": "https://odysee.com/@makc:a/exporting-markdown-to-openoffice-with:2"
+},
+{
+    "title": "Vim2tor: The next step in learning for the world's most powerful text editor",
+    "date": "2025-08-15",
+    "ytid": "xjKU4qb4CN4",
+    "category": "CLI & Scripting",
+    "odurl": "https://odysee.com/@makc:a/vim2tor-the-next-step-in-learning-for:6"
+},
+{
+    "title": "My $2 Million Spending Spree",
+    "date": "2025-07-22",
+    "ytid": "rGs2Z8yyjwc",
+    "category": "Video Essay",
+    "odurl": "https://odysee.com/@makc:a/my-2-million-dollar-spending-spree:9"
+},
+{
+    "title": "The Best Value in the History of Literature",
+    "date": "2025-07-19",
+    "ytid": "FdKy0F0sVRw",
+    "category": "Video Essay",
+    "odurl": "https://odysee.com/@makc:a/the-best-value-in-the-history-of:c"
+},
+{
+    "title": "The Contrarian Philosphy of Zorba",
+    "date": "2024-04-01",
+    "ytid": "WNEdo_8tFN0",
+    "category": "Video Essay",
+    "odurl": "https://odysee.com/@makc:a/how-will-you-get-free-of-the-devil-if"
+},
+{
+    "title": "Building the Ultimate Flash Drive",
+    "date": "2022-12-19",
+    "ytid": "VETocalXNAA",
+    "category": "Tech",
+    "odurl": "https://odysee.com/@makc:a/building-the-ultimate-flash-drive:1"
+},
+{
+    "title": "Why Coke's Ad Worked & Pepsi's Didn't",
+    "date": "2022-11-14",
+    "ytid": "zjnNjBQSOqQ",
+    "category": "Video Essay",
+    "odurl": "https://odysee.com/@makc:a/why-coke's-ad-worked-and-pepsi's-didn't:6"
+},
+{
+    "title": "Correcting the Record // A 25 Days of Linux Bonus Video",
+    "date": "2022-01-15",
+    "ytid": "DRjJ5wmaiFU",
+    "category": "25 Days of Linux",
+    "odurl": "https://odysee.com/@makc:a/correcting-the-record-a-25-days-of-linux:e"
+},
+{
+    "title": "I didn't even finish the level; but it was Ubuntu's fault // DOOM Eternal: Doom Hunter Base - Pt. IV",
+    "date": "2022-01-14",
+    "ytid": "rtgrwKiywS4",
+    "category": "Gaming",
+    "odurl": "https://odysee.com/@makc:a/i-didn't-even-finish-the-level-but-it:d"
+},
+{
+    "title": "Somehow I Died Even More Than Last Time // DOOM Eternal: Cultist Base - Pt. III",
+    "date": "2021-12-26",
+    "ytid": "TITYwECM07o",
+    "category": "Gaming",
+    "odurl": ""
+},
+{
+    "title": "A Clueless & Intoxicated Free BSD Install Guide // 25 Days of... Not Just Linux Anymore",
+    "date": "2021-12-25",
+    "ytid": "sq9Zf-UABbU",
+    "category": "25 Days of Linux",
+    "odurl": "https://odysee.com/@makc:a/a-clueless-intoxicated-free-bsd-install:d"
+},
+{
+    "title": "My Death Count is in Double Digits // DOOM Eternal: Exultia - Pt. II",
+    "date": "2021-12-25",
+    "ytid": "3uV2GsucZA0",
+    "category": "Gaming",
+    "odurl": "https://odysee.com/@makc:a/my-death-count-is-in-double-digits-doom:3"
+},
+{
+    "title": "I've Been Making My Life on Linux Harder Than it Needs to Be // 25 Days of Linux",
+    "date": "2021-12-24",
+    "ytid": "yhqAv_u7F5M",
+    "category": "25 Days of Linux",
+    "odurl": "https://odysee.com/@makc:a/i've-been-making-my-life-on-linux-harder:1"
+},
+{
+    "title": "A Christmas Eve Live Stream // DOOM Eternal: Hell on Earth - Pt. I",
+    "date": "2021-12-24",
+    "ytid": "X-XI0TXun0M",
+    "category": "Gaming",
+    "odurl": "https://odysee.com/@makc:a/a-christmas-eve-live-stream-doom-eternal:7"
+},
+{
+    "title": "Curing Terminal Phobia // 25 Days of Linux",
+    "date": "2021-12-23",
+    "ytid": "rflZ9GOnSAs",
+    "category": "25 Days of Linux",
+    "odurl": "https://odysee.com/@makc:a/curing-terminal-phobia-25-days-of-linux:e"
+},
+{
+    "title": "A Clueless URXVT Config Guide // 25 Days of Linux",
+    "date": "2021-12-22",
+    "ytid": "VpPaFTfMhmk",
+    "category": "25 Days of Linux",
+    "odurl": "https://odysee.com/@makc:a/a-clueless-urxvt-config-guide-25-days-of:9"
+},
+{
+    "title": "A Really Lazy Qtile Video // 25 Days of Linux",
+    "date": "2021-12-21",
+    "ytid": "JOMKbOsPITw",
+    "category": "25 Days of Linux",
+    "odurl": "https://odysee.com/@makc:a/a-really-lazy-qtile-video-25-days-of:5"
+},
+{
+    "title": "One More Void Linux Video (It's About VPM) // 25 Days of Linux",
+    "date": "2021-12-20",
+    "ytid": "s6sI1rnS4ww",
+    "category": "25 Days of Linux",
+    "odurl": "https://odysee.com/@makc:a/one-more-void-linux-video-(it's-about:9"
+},
+{
+    "title": "The Coolest Thing I've Seen on Linux in a While // 25 Days of Linux",
+    "date": "2021-12-19",
+    "ytid": "aEyhUV0oaIw",
+    "category": "25 Days of Linux",
+    "odurl": "https://odysee.com/@makc:a/the-coolest-thing-i've-seen-on-linux-in:5"
+},
+{
+    "title": "Building a Custom Fish Prompt // 25 Days of Linux",
+    "date": "2021-12-18",
+    "ytid": "s8DKsSWpoJ8",
+    "category": "25 Days of Linux",
+    "odurl": "https://odysee.com/@makc:a/building-a-custom-fish-prompt-25-days-of:b"
+},
+{
+    "title": "The Sway Window Manger // 25 Days of Linux",
+    "date": "2021-12-17",
+    "ytid": "ZMIbENWoxa8",
+    "category": "25 Days of Linux",
+    "odurl": "https://odysee.com/@makc:a/the-sway-window-manger-25-days-of-linux:0"
+},
+{
+    "title": "Linux's Biggest Downfall Is Also It's Greatest Strength: A Review of CuteFish OS // 25 Days of Linux",
+    "date": "2021-12-16",
+    "ytid": "6MjoMmY0rpk",
+    "category": "25 Days of Linux",
+    "odurl": "https://odysee.com/@makc:a/linux's-biggest-downfall-is-also-it's:7"
+},
+{
+    "title": "How to Mount Drives in Arch Linux & Why You Should Let Udiskie Do It For You // 25 Days of Linux",
+    "date": "2021-12-15",
+    "ytid": "kdcaqSLs6Y8",
+    "category": "25 Days of Linux",
+    "odurl": "https://odysee.com/@makc:a/how-to-mount-drives-in-arch-linux-why:c"
+},
+{
+    "title": "LSD (Another LS Replacement) // 25 Days of Linux",
+    "date": "2021-12-14",
+    "ytid": "51ktLu05u3c",
+    "category": "25 Days of Linux",
+    "odurl": "https://odysee.com/@makc:a/lsd-(another-ls-replacement)-25-days-of:1"
+},
+{
+    "title": "Using Dunst with BSPWM // 25 Days of Linux",
+    "date": "2021-12-13",
+    "ytid": "d--UH9XlWKI",
+    "category": "25 Days of Linux",
+    "odurl": "https://odysee.com/@makc:a/using-dunst-with-bspwm-25-days-of-linux:5"
+},
+{
+    "title": "Using Polybar with BSPWM // 25 Days of Linux",
+    "date": "2021-12-12",
+    "ytid": "mnzJBOjvaXI",
+    "category": "25 Days of Linux",
+    "odurl": "https://odysee.com/@makc:a/using-polybar-with-bspwm-25-days-of:8"
+},
+{
+    "title": "A BSPWM Video // 25 Days of Linux",
+    "date": "2021-12-11",
+    "ytid": "dnYJ_TlqDV4",
+    "category": "25 Days of Linux",
+    "odurl": "https://odysee.com/@makc:a/a-bspwm-video-25-days-of-linux:1"
+},
+{
+    "title": "Trying Out the Fish Shell // 25 Days of Linux",
+    "date": "2021-12-10",
+    "ytid": "6eTPEg5Kklg",
+    "category": "25 Days of Linux",
+    "odurl": "https://odysee.com/@makc:a/trying-out-the-fish-shell-25-days-of:a"
+},
+{
+    "title": "A Ranger Video // 25 Days of Linux",
+    "date": "2021-12-09",
+    "ytid": "ytPcNsuaWzs",
+    "category": "25 Days of Linux",
+    "odurl": "https://odysee.com/@makc:a/a-ranger-video-25-days-of-linux:5"
+},
+{
+    "title": "I'm Too Lazy To Use GNU Stow // 25 Days of Linux",
+    "date": "2021-12-08",
+    "ytid": "YsK2lCzdUCA",
+    "category": "25 Days of Linux",
+    "odurl": "https://odysee.com/@makc:a/i'm-too-lazy-to-use-gnu-stow-25-days-of:6"
+},
+{
+    "title": "How Annoying Is Ubuntu (Not Very Annoying at All) // 25 Days of Linux",
+    "date": "2021-12-07",
+    "ytid": "1nfUfLgEDTE",
+    "category": "25 Days of Linux",
+    "odurl": "https://odysee.com/@makc:a/how-annoying-is-ubuntu-(not-very:e"
+},
+{
+    "title": "A BPYTOP Video // 25 Days of Linux",
+    "date": "2021-12-06",
+    "ytid": "XJLLhDADHLo",
+    "category": "25 Days of Linux",
+    "odurl": "https://odysee.com/@makc:a/a-bpytop-video-25-days-of-linux:9"
+},
+{
+    "title": "My Top 5 Linux Apps // 25 Days of Linux",
+    "date": "2021-12-05",
+    "ytid": "0w0SmgQxaD0",
+    "category": "25 Days of Linux",
+    "odurl": "https://odysee.com/@makc:a/my-top-5-linux-apps-25-days-of-linux:6"
+},
+{
+    "title": "EXA: A Colorful LS Replacement // 25 Days of Linux",
+    "date": "2021-12-04",
+    "ytid": "EcaPd8RzslY",
+    "category": "25 Days of Linux",
+    "odurl": "https://odysee.com/@makc:a/exa-a-colorful-ls-replacement-25-days-of:f"
+},
+{
+    "title": "Conquer of Completion // 25 Days of Linux",
+    "date": "2021-12-03",
+    "ytid": "NT88CtOD_7g",
+    "category": "25 Days of Linux",
+    "odurl": "https://odysee.com/@makc:a/conquer-of-completion-25-days-of-linux:3"
+},
+{
+    "title": "A YouTube Thumbnail Downloading Script // 25 Days of Linux",
+    "date": "2021-12-02",
+    "ytid": "g3WhXB_qgFs",
+    "category": "25 Days of Linux",
+    "odurl": "https://odysee.com/@makc:a/a-youtube-thumbnail-downloading-script:0"
+},
+{
+    "title": "A Project Organization Script // 25 Days of Linux",
+    "date": "2021-12-01",
+    "ytid": "bXjahDHTtd8",
+    "category": "25 Days of Linux",
+    "odurl": "https://odysee.com/@makc:a/a-project-organization-script-25-days-of:5"
+},
+{
+    "title": "This Video Isn't About XBPS-SRC (But it was supposed to be)",
+    "date": "2021-11-22",
+    "ytid": "GE0UCJmAZH4",
+    "category": "Linux",
+    "odurl": "https://odysee.com/@makc:a/this-video-isn't-about-xbps-src-(but-it:8"
+},
+{
+    "title": "How I Make A Video",
+    "date": "2021-11-12",
+    "ytid": "VUmzD6zPI94",
+    "category": "Design",
+    "odurl": "https://odysee.com/@makc:a/how-i-make-a-video:5"
+},
+{
+    "title": "This Video IS About Void Linux",
+    "date": "2021-10-31",
+    "ytid": "xeOK3pOvmo0",
+    "category": "Linux",
+    "odurl": "https://odysee.com/@makc:a/this-video-is-about-void-linux:9"
+},
+{
+    "title": "Celebrating 1,000,000 Channel Views, With Skyrim?",
+    "date": "2021-10-20",
+    "ytid": "wQWWSmlOZD0",
+    "category": "Gaming",
+    "odurl": ""
+},
+{
+    "title": "Into the Void with DWM: A Sanely Patched Build of DWM",
+    "date": "2021-10-05",
+    "ytid": "8boA-TUF3R0",
+    "category": "Linux",
+    "odurl": "https://odysee.com/@makc:a/into-the-void-with-dwm:e"
+},
+{
+    "title": "A Decently Good Way to Create Custom Polybar Modules",
+    "date": "2021-09-29",
+    "ytid": "fHycYVrXKlk",
+    "category": "Linux",
+    "odurl": "https://odysee.com/@makc:a/a-decently-good-way-to-create-custom:8"
+},
+{
+    "title": "Cinematic Light Leaks: A Motion Mile (Rendaa Studios) After Effects Tutorial",
+    "date": "2021-09-18",
+    "ytid": "4Yhg1i78qH0",
+    "category": "Design",
+    "odurl": "https://odysee.com/@makc:a/cinematic-light-leaks-a-motion-mile:e"
+},
+{
+    "title": "Lava Shine Sequence: A Motion Mile (Rendaa Studios) After Effects Tutorial",
+    "date": "2021-09-18",
+    "ytid": "5kyeIwbsDoQ",
+    "category": "Design",
+    "odurl": "https://odysee.com/@makc:a/lava-shine-sequence-a-motion-mile:c"
+},
+{
+    "title": "Scientific Cells: A Motion Mile (Rendaa Studios) After Effects & Cinema 4D Tutorial",
+    "date": "2021-09-18",
+    "ytid": "AZQV5LfSudA",
+    "category": "Design",
+    "odurl": "https://odysee.com/@makc:a/scientific-cells-a-motion-mile-(rendaa:e"
+},
+{
+    "title": "The Universe: A Motion Mile (Rendaa Studios) After Effects & Trapcode Particular Tutorial",
+    "date": "2021-09-18",
+    "ytid": "yXRhjD5QVqI",
+    "category": "Design",
+    "odurl": "https://odysee.com/@makc:a/the-universe-a-motion-mile-(rendaa:d"
+},
+{
+    "title": "Stickman: A Motion Mile (Rendaa Studios) After Effects Tutorial",
+    "date": "2021-09-18",
+    "ytid": "cnTUxV7HfVI",
+    "category": "Design",
+    "odurl": "https://odysee.com/@makc:a/stickman-a-motion-mile-(rendaa-studios):1"
+},
+{
+    "title": "Fractured HUD: A Motion Mile (Rendaa Studios) After Effects Tutorial",
+    "date": "2021-09-18",
+    "ytid": "SeeesLIvPg0",
+    "category": "Design",
+    "odurl": "https://odysee.com/@makc:a/fractured-hud-a-motion-mile-(rendaa:b"
+},
+{
+    "title": "Floating Flower Particles: A Motion Mile (Rendaa Studios) After Effects Tutorial",
+    "date": "2021-09-18",
+    "ytid": "Rk5bs_lQziY",
+    "category": "Design",
+    "odurl": "https://odysee.com/@makc:a/floating-flower-particles-%E2%98%AE-a-motion:d"
+},
+{
+    "title": "The Void: A Motion Mile (Rendaa Studios) After Effects & Trapcode TAO Tutorial",
+    "date": "2021-09-18",
+    "ytid": "DK6qxxOTLgE",
+    "category": "Design",
+    "odurl": "https://odysee.com/@makc:a/the-void-a-motion-mile-(rendaa-studios):b"
+},
+{
+    "title": "Depth Particles: A Motion Mile (Rendaa Studios) After Effects Tutorial",
+    "date": "2021-09-18",
+    "ytid": "QmVCyl4fXA0",
+    "category": "Design",
+    "odurl": "https://odysee.com/@makc:a/depth-particles-a-motion-mile-(rendaa:6"
+},
+{
+    "title": "The Company that Gave Me My First Job Just Got Snapped: WTF Happened to MotionMile?",
+    "date": "2021-09-16",
+    "ytid": "Fv5VeyON8DQ",
+    "category": "Design",
+    "odurl": "https://odysee.com/@makc:a/the-company-that-gave-me-my-first-job,:7"
+},
+{
+    "title": "Cinematic Titles: A Motion Mile (Rendaa Studios) After Effects & Cinema 4D Tutorial",
+    "date": "2021-09-16",
+    "ytid": "eNXydqulDho",
+    "category": "Design",
+    "odurl": "https://odysee.com/@makc:a/cinematic-titles-a-motion-mile-(rendaa:7"
+},
+{
+    "title": "Futuristic Light Streaks: A Motion Mile (Rendaa Studios) After Effects & Trapcode TAO Tutorial",
+    "date": "2021-09-16",
+    "ytid": "sC2hZYBErx4",
+    "category": "Design",
+    "odurl": "https://odysee.com/@makc:a/futuristic-light-streaks-a-motion-mile:a"
+},
+{
+    "title": "DWM: Reloaded",
+    "date": "2021-09-11",
+    "ytid": "rxfq7S_hwcA",
+    "category": "Linux",
+    "odurl": "https://odysee.com/@makc:a/dwm-reloaded:3"
+},
+{
+    "title": "DWM or (The Lament of the Awesome Window Manager)",
+    "date": "2021-09-03",
+    "ytid": "hd6eDfvdIRo",
+    "category": "Linux",
+    "odurl": "https://odysee.com/@makc:a/dwm-or-(the-lament-of-the-awesome-window:8"
+},
+{
+    "title": "The Second Best Linux Distribution",
+    "date": "2021-08-18",
+    "ytid": "ioXvVMq_i0I",
+    "category": "Linux",
+    "odurl": "https://odysee.com/@makc:a/the-second-best-linux-distribution:9"
+},
+{
+    "title": "The Slowest Arch Linux Speedrun",
+    "date": "2021-08-09",
+    "ytid": "A0U9u3s7GMs",
+    "category": "Linux",
+    "odurl": "https://odysee.com/@makc:a/the-slowest-arch-linux-speedrun:3"
+},
+{
+    "title": "Finishing the Project the Night Before It's Due",
+    "date": "2021-08-08",
+    "ytid": "JDp1oyg5O9Q",
+    "category": "Design",
+    "odurl": ""
+},
+{
+    "title": "Theming the Awesome WM",
+    "date": "2021-08-02",
+    "ytid": "3fQjNJR3o08",
+    "category": "Linux",
+    "odurl": "https://odysee.com/@makc:a/theming-the-awesome-window-manager:f"
+},
+{
+    "title": "Paper: A Collection of 8K Linux Wallpapers",
+    "date": "2021-07-22",
+    "ytid": "HE8LJBw2oCI",
+    "category": "Design",
+    "odurl": "https://odysee.com/@makc:a/paper-a-collection-of-8k-linux:3"
+},
+{
+    "title": "Windows Subsystem Arch LInux",
+    "date": "2021-07-19",
+    "ytid": "bLaXmC4yIok",
+    "category": "Linux",
+    "odurl": "https://odysee.com/@makc:a/arch-linux-on-windows:8"
+},
+{
+    "title": "A Proper Zsh Video",
+    "date": "2021-07-12",
+    "ytid": "KBh8lM3jeeE",
+    "category": "Linux",
+    "odurl": "https://odysee.com/@makc:a/a-proper-zsh-video:7"
+},
+{
+    "title": "Make Vim as Sexy as Audrey Hepburn",
+    "date": "2021-07-05",
+    "ytid": "q9tsjTeeEHA",
+    "category": "Linux",
+    "odurl": "https://odysee.com/@makc:a/make-vim-as-sexy-as-audrey-hepburn:f"
+},
+{
+    "title": "Azula: A Tragedy",
+    "date": "2021-07-02",
+    "ytid": "CI9VYT68Jiw",
+    "category": "Video Essay",
+    "odurl": "https://odysee.com/@makc:a/azula-a-tragedy:6"
+},
+{
+    "title": "Polybar Trilogy - Part III",
+    "date": "2021-06-28",
+    "ytid": "Js-rMY5p19E",
+    "category": "Linux",
+    "odurl": "https://odysee.com/@makc:a/polybar-iii-using-polybar-with-multiple:0"
+},
+{
+    "title": "Setting Default Apps on Arch Linux (Or Linux in General)",
+    "date": "2021-06-21",
+    "ytid": "VOR1sZ58HzY",
+    "category": "Linux",
+    "odurl": "https://odysee.com/@makc:a/setting-default-apps-on-arch-linux-(or:3"
+},
+{
+    "title": "starts @ 23:43",
+    "date": "2021-06-18",
+    "ytid": "cOwpeM5HUqI",
+    "category": "Linux",
+    "odurl": "https://odysee.com/@makc:a/starts-at-23-43-%F0%9F%92%AF:9"
+},
+{
+    "title": "I'm Not Switching to ST",
+    "date": "2021-06-14",
+    "ytid": "ETjOcONYvxo",
+    "category": "Linux",
+    "odurl": "https://odysee.com/@makc:a/i'm-not-switching-to-st:8"
+},
+{
+    "title": "Installing Suckless Apps",
+    "date": "2021-06-07",
+    "ytid": "919gr_UMl0k",
+    "category": "Linux",
+    "odurl": "https://odysee.com/@makc:a/installing-suckless-apps:f"
+},
+{
+    "title": "Arch Linux & Login Manager: Do You Even Need One?",
+    "date": "2021-05-31",
+    "ytid": "5GlaUFZFs6M",
+    "category": "Linux",
+    "odurl": "https://odysee.com/@makc:a/arch-linux-login-manager-do-you-even:5"
+},
+{
+    "title": "A YouTube Sub Count Module for Polybar",
+    "date": "2021-05-24",
+    "ytid": "Cj-frgJj83M",
+    "category": "Linux",
+    "odurl": "https://odysee.com/@makc:a/a-youtube-sub-count-module-for-polybar:7"
+},
+{
+    "title": "Theming GTK & QT Apps",
+    "date": "2021-05-14",
+    "ytid": "dHhBWJsV01k",
+    "category": "Linux",
+    "odurl": "https://odysee.com/@makc:a/theming-gtk-qt-apps:d"
+},
+{
+    "title": "I don't know what to call this video...",
+    "date": "2021-05-08",
+    "ytid": "-fzi5V18dTw",
+    "category": "Linux",
+    "odurl": "https://odysee.com/@makc:a/i-don't-know-what-to-call-this-video...:3"
+},
+{
+    "title": "WPGTK: The Video",
+    "date": "2021-04-29",
+    "ytid": "ykFDowak9Zw",
+    "category": "Linux",
+    "odurl": "https://odysee.com/@makc:a/wpgtk-the-video:6"
+},
+{
+    "title": "The Pywal Video",
+    "date": "2021-04-24",
+    "ytid": "J_jfjnK-ZFY",
+    "category": "Linux",
+    "odurl": "https://odysee.com/@makc:a/the-pywal-video:8"
+},
+{
+    "title": "An Awesome WM Tag Switching Module for Polybar",
+    "date": "2021-04-10",
+    "ytid": "pPoMDfcSdU4",
+    "category": "Linux",
+    "odurl": "https://odysee.com/@makc:a/an-awesome-wm-tag-switching-module-for:f"
+},
+{
+    "title": "Optimizing Gaming on Linux",
+    "date": "2021-04-04",
+    "ytid": "S2DU_hyhJ_Y",
+    "category": "Linux",
+    "odurl": "https://odysee.com/@makc:a/optimizing-gaming-on-linux:a"
+},
+{
+    "title": "Gaming on Linux",
+    "date": "2021-03-02",
+    "ytid": "q-zLZWelRAg",
+    "category": "Linux",
+    "odurl": "https://odysee.com/@makc:a/gaming-on-linux:e"
+},
+{
+    "title": "Polybar (Volume II)",
+    "date": "2020-09-04",
+    "ytid": "n3fsLqEHAPE",
+    "category": "Linux",
+    "odurl": "https://odysee.com/@makc:a/polybar-(volume-ii):a"
+},
+{
+    "title": "Using Polybar with the Awesome WM",
+    "date": "2020-07-10",
+    "ytid": "ibRa4A4pIws",
+    "category": "Linux",
+    "odurl": "https://odysee.com/@makc:a/using-polybar-with-the-awesome-wm:7"
+},
+{
+    "title": "XRandR: My Linux Knight in Shining Armour",
+    "date": "2020-06-24",
+    "ytid": "IzFdqELyZbA",
+    "category": "Linux",
+    "odurl": "https://odysee.com/@makc:a/xrandr-my-linux-knight-in-shining-armour:1"
+},
+{
+    "title": "My Arch Linux Bootstrapping Script",
+    "date": "2020-06-05",
+    "ytid": "vckbal6BnD4",
+    "category": "Linux",
+    "odurl": "https://odysee.com/@makc:a/my-arch-linux-bootstrapping-script:c"
+},
+{
+    "title": "My AwesomeWM Configuration",
+    "date": "2020-05-30",
+    "ytid": "nC_e8Gw1XlA",
+    "category": "Linux",
+    "odurl": "https://odysee.com/@makc:a/my-awesomewm-configuration:d"
+},
+{
+    "title": "A Clueless Arch Linux Install Guide (Part Two) (2020)",
+    "date": "2020-05-23",
+    "ytid": "G0SDpw17V0w",
+    "category": "Linux",
+    "odurl": "https://odysee.com/@makc:a/a-clueless-arch-linux-install-guide:c"
+},
+{
+    "title": "A Clueless Arch Linux Install Guide (Part One) (2020)",
+    "date": "2020-05-15",
+    "ytid": "mxTDsqcaj1o",
+    "category": "Linux",
+    "odurl": "https://odysee.com/@makc:a/a-clueless-arch-linux-install-guide-2:5"
+},
+{
+    "title": "Designing My YouTube Intro // After Effects Tutorial",
+    "date": "2020-05-13",
+    "ytid": "ONTrHYdK5ZA",
+    "category": "Design",
+    "odurl": "https://odysee.com/@makc:a/designing-my-youtube-intro-after-effects:5"
+},
+{
+    "title": "Downloading Torrents on the Command Line (with Transmission-Cli)",
+    "date": "2020-05-08",
+    "ytid": "NVOLRXFhczU",
+    "category": "CLI & Scripting",
+    "odurl": "https://odysee.com/@makc:a/downloading-torrents-on-the-command-line:0"
+},
+{
+    "title": "macSetup: Six Months Later",
+    "date": "2020-05-01",
+    "ytid": "wmcz6BWmSlE",
+    "category": "MacOS",
+    "odurl": "https://odysee.com/@makc:a/macsetup-six-months-later:5"
+},
+{
+    "title": "Bash & Tmux: The Video",
+    "date": "2020-04-29",
+    "ytid": "9WpU6vuus2g",
+    "category": "CLI & Scripting",
+    "odurl": "https://odysee.com/@makc:a/bash-tmux-the-video:e"
+},
+{
+    "title": "My New Terminal: Alacritty",
+    "date": "2020-04-24",
+    "ytid": "eXyrTFNsdHA",
+    "category": "CLI & Scripting",
+    "odurl": "https://odysee.com/@makc:a/my-new-terminal-alacritty:8"
+},
+{
+    "title": "Switching to Neovim & Rebuilding my Configuration",
+    "date": "2020-04-17",
+    "ytid": "Kx-SDJwL01o",
+    "category": "CLI & Scripting",
+    "odurl": "https://odysee.com/@makc:a/switching-to-neovim-rebuilding-my:4"
+},
+{
+    "title": "My Directory Organization Bash Script",
+    "date": "2020-03-27",
+    "ytid": "e08UU7M0tEU",
+    "category": "CLI & Scripting",
+    "odurl": "https://odysee.com/@makc:a/my-directory-organization-bash-script:2"
+},
+{
+    "title": "Sync Minecraft Save-games in the Cloud (Java Edition) (MacOS)",
+    "date": "2020-03-20",
+    "ytid": "xoJEoC-VHd4",
+    "category": "CLI & Scripting",
+    "odurl": "https://odysee.com/@makc:a/sync-minecraft-save-games-in-the-cloud:4"
+},
+{
+    "title": "My Favorite Vim Tricks",
+    "date": "2020-03-13",
+    "ytid": "B-EPvfxcgl0",
+    "category": "CLI & Scripting",
+    "odurl": "https://odysee.com/@makc:a/my-favorite-vim-tricks:a"
+},
+{
+    "title": "My Vimrc: Customized for Markdown Writing & Nothing Else",
+    "date": "2020-02-28",
+    "ytid": "Igfm59WL3NE",
+    "category": "CLI & Scripting",
+    "odurl": "https://odysee.com/@makc:a/my-vimrc-customized-for-markdown-writing:f"
+},
+{
+    "title": "Let's Code // 309 // CSS Cards",
+    "date": "2020-02-21",
+    "ytid": "PEajTdRHRLQ",
+    "category": "Web Development",
+    "odurl": "https://odysee.com/@makc:a/let's-code-309-css-cards:2"
+},
+{
+    "title": "Let's Code // 200 // Text Editor Round-ups",
+    "date": "2020-01-17",
+    "ytid": "zbnb_1L31Io",
+    "category": "Web Development",
+    "odurl": "https://odysee.com/@makc:a/let's-code-200-text-editor-round-ups:7"
+},
+{
+    "title": "Top 10 Menubar Apps: For the Sensible MacOS User",
+    "date": "2020-01-06",
+    "ytid": "6-xur2-mf2o",
+    "category": "MacOS",
+    "odurl": "https://odysee.com/@makc:a/top-10-menubar-apps-for-the-sensible:3"
+},
+{
+    "title": "Let's Code // 306 // Making a Better Footer",
+    "date": "2019-10-08",
+    "ytid": "gJ6fKsl_sGU",
+    "category": "Web Development",
+    "odurl": "https://odysee.com/@makc:a/let's-code-306-making-a-better-footer:e"
+},
+{
+    "title": "macSetup: Updating Dot Files (The Not Stupid Way)",
+    "date": "2019-10-01",
+    "ytid": "pMTo95ZxnY4",
+    "category": "MacOS",
+    "odurl": "https://odysee.com/@makc:a/macsetup-updating-dot-files-(the-not:9"
+},
+{
+    "title": "macSetup: Editing Mac Preferences with .plist Files",
+    "date": "2019-08-27",
+    "ytid": "H-AbuyidVEw",
+    "category": "MacOS",
+    "odurl": "https://odysee.com/@makc:a/macsetup-editing-mac-preferences-with:f"
+},
+{
+    "title": "Trying to Create the Ultimate MacSetup Script",
+    "date": "2019-07-09",
+    "ytid": "PAKTzCj2iX4",
+    "category": "MacOS",
+    "odurl": "https://odysee.com/@makc:a/trying-to-create-the-ultimate-macsetup:4"
+},
+{
+    "title": "How to Create A Batch Cask Installer for Homebrew (Using a Simple Bash Script)",
+    "date": "2019-06-24",
+    "ytid": "1J9NKpjJegk",
+    "category": "MacOS",
+    "odurl": "https://odysee.com/@makc:a/how-to-create-a-batch-cask-installer-for:0"
+},
+{
+    "title": "Let's Code // 304 // CSS Maintenance",
+    "date": "2019-06-07",
+    "ytid": "7bTw9Fd08N8",
+    "category": "Web Development",
+    "odurl": "https://odysee.com/@makc:a/let%E2%80%99s-code-304-css-maintenance:6"
+},
+{
+    "title": "How to Create A Batch Cask Installer for Homebrew (Using Plain Text)",
+    "date": "2019-05-31",
+    "ytid": "O3-vW-uDtU0",
+    "category": "MacOS",
+    "odurl": "https://odysee.com/@makc:a/how-to-create-a-batch-cask-installer-2:6"
+},
+{
+    "title": "Adding Custom Themes to Alfred",
+    "date": "2019-05-27",
+    "ytid": "8LfT7rBejo4",
+    "category": "MacOS",
+    "odurl": "https://odysee.com/@makc:a/adding-custom-themes-to-alfred:1"
+},
+{
+    "title": "Let's Code // 210 // Vim",
+    "date": "2019-05-24",
+    "ytid": "TDgPC0n1LNY",
+    "category": "Web Development",
+    "odurl": "https://odysee.com/@makc:a/let%E2%80%99s-code-210-vim:a"
+},
+{
+    "title": "Let's Code //206 // Text Wrangler/BB Edit",
+    "date": "2019-04-26",
+    "ytid": "QOaAI-qgoYg",
+    "category": "Web Development",
+    "odurl": "https://odysee.com/@makc:a/let%E2%80%99s-code-206-text-wrangler-bb-edit:f"
+},
+{
+    "title": "Let's Code //205 // Coda 2",
+    "date": "2019-04-22",
+    "ytid": "qlniuZXBzME",
+    "category": "Web Development",
+    "odurl": "https://odysee.com/@makc:a/let%E2%80%99s-code-205-coda-2:7"
+},
+{
+    "title": "Removing DRM Locks From eBooks",
+    "date": "2019-04-17",
+    "ytid": "ee3SNDOgTmI",
+    "category": "Tech",
+    "odurl": "https://odysee.com/@makc:a/removing-drm-locks-from-ebooks:4"
+},
+{
+    "title": "Let's Code // 201 // Plain Text (Notepad & Text Edit)",
+    "date": "2019-04-08",
+    "ytid": "QfRDAYJ1jW0",
+    "category": "Web Development",
+    "odurl": "https://odysee.com/@makc:a/let%E2%80%99s-code-201-plain-text-(notepad:7"
+},
+{
+    "title": "Leo's Fortune - Chapter XIX : Wife's Trail",
+    "date": "2019-02-25",
+    "ytid": "rNgj1a5gwJE",
+    "category": "Gaming",
+    "odurl": "https://odysee.com/@makc:a/leo's-fortune-chapter-xix-wife's-trail:e"
+},
+{
+    "title": "Replace Siri with Google Assistant",
+    "date": "2019-02-07",
+    "ytid": "k0Q-z3iMY3E",
+    "category": "Tech",
+    "odurl": "https://odysee.com/@makc:a/replace-siri-with-google-assistant:1"
+},
+{
+    "title": "Leo's Fortune -  Chapter VIII: Mechanical Marvels",
+    "date": "2018-11-19",
+    "ytid": "gL_yTbkHJ7I",
+    "category": "Gaming",
+    "odurl": "https://odysee.com/@makc:a/leo's-fortune-chapter-xvii-station's:1"
+},
+{
+    "title": "Leo's Fortune - Chapter VI: Cleverson Cave",
+    "date": "2018-11-05",
+    "ytid": "Fh93XQbS2h0",
+    "category": "Gaming",
+    "odurl": "https://odysee.com/@makc:a/leo's-fortune-chapter-vi-cleverson-cave:d"
+},
+{
+    "title": "Changing Artwork in Plex",
+    "date": "2018-10-31",
+    "ytid": "1DiY_5W45AE",
+    "category": "Tech",
+    "odurl": "https://odysee.com/@makc:a/changing-artwork-in-plex:d"
+},
+{
+    "title": "Leo's Fortune -  Act I Bonus Round: Carnival",
+    "date": "2018-10-22",
+    "ytid": "q3qPPMfGd0A",
+    "category": "Gaming",
+    "odurl": "https://odysee.com/@makc:a/leo's-fortune-act-i-bonus-round-carnival:0"
+},
+{
+    "title": "Leo's Fortune - Chapter I: Trickery Trail",
+    "date": "2018-09-25",
+    "ytid": "4cx7CBklpJk",
+    "category": "Gaming",
+    "odurl": "https://odysee.com/@makc:a/leo's-fortune-chapter-i-trickery-trail:0"
+},
+{
+    "title": "How to Kick Devices off of Google WiFi/ OnHub",
+    "date": "2017-09-14",
+    "ytid": "SDQN-D5aR6M",
+    "category": "Tech",
+    "odurl": "https://odysee.com/@makc:a/how-to-kick-devices-off-of-google-wifi:9"
+},
+{
+    "title": "Stuff I Use Everyday: Final Cut Library Manager",
+    "date": "2017-08-16",
+    "ytid": "BuS2rg-xvDg",
+    "category": "MacOS",
+    "odurl": "https://odysee.com/@makc:a/stuff-i-use-everyday-final-cut-library:d"
+},
+{
+    "title": "Fix the Finder",
+    "date": "2017-05-26",
+    "ytid": "9jzLpvMghDc",
+    "category": "MacOS",
+    "odurl": "https://odysee.com/@makc:a/fix-the-finder:7"
+},
+{
+    "title": "A Pretty Good Way to Archive Final Cut Pro X Projects (It think it's the best way, but whatever...)",
+    "date": "2017-05-25",
+    "ytid": "hLQ4KnnSjqY",
+    "category": "MacOS",
+    "odurl": "https://odysee.com/@makc:a/a-pretty-good-way-to-archive-final-cut:c"
+},
+{
+    "title": "How Use Emoji in After Effects",
+    "date": "2017-05-24",
+    "ytid": "Kq2YQqBBYB0",
+    "category": "Design",
+    "odurl": "https://odysee.com/@makc:a/how-use-emoji-in-after-effects:7"
+},
+{
+    "title": "Use Outlook With Two-Factor Verfication",
+    "date": "2017-05-22",
+    "ytid": "pVcNtOL0dDo",
+    "category": "Tech",
+    "odurl": "https://odysee.com/@makc:a/use-outlook-with-two-factor-verfication:1"
+},
+{
+    "title": "Make Your Screensaver a Movie",
+    "date": "2017-05-19",
+    "ytid": "-OBuMMXIjBU",
+    "category": "MacOS",
+    "odurl": "https://odysee.com/@makc:a/make-your-screensaver-a-movie:d"
+},
+{
+    "title": "How to Install a PocketCasts App on OSX",
+    "date": "2017-03-31",
+    "ytid": "_1ZefDFUTuE",
+    "category": "MacOS",
+    "odurl": "https://odysee.com/@makc:a/how-to-install-a-pocketcasts-app-on-osx:0"
+},
+{
+    "title": "Cliaming Your IMDb Page",
+    "date": "2017-01-28",
+    "ytid": "BXecItkG-Xg",
+    "category": "Misc",
+    "odurl": "https://odysee.com/@makc:a/cliaming-your-imdb-page:e"
+},
+{
+    "title": "How to Fix the Creative Cloud Limited Access Error",
+    "date": "2016-12-30",
+    "ytid": "SgpSOOJhXnQ",
+    "category": "Tech",
+    "odurl": "https://odysee.com/@makc:a/how-to-fix-the-creative-cloud-limited:3"
+},
+{
+    "title": "How to Replace Audio in Adobe Premiere",
+    "date": "2016-12-10",
+    "ytid": "XTbDzjzUsJ4",
+    "category": "Design",
+    "odurl": "https://odysee.com/@makc:a/how-to-replace-audio-in-adobe-premiere:5"
+},
+{
+    "title": "Move a Plex Library Between PC & MAC",
+    "date": "2016-11-17",
+    "ytid": "V71NXHgZ0vA",
+    "category": "Plex",
+    "odurl": "https://odysee.com/@makc:a/move-a-plex-library-between-pc-mac:5"
+},
+{
+    "title": "How to Backup a PLEX Media Server (Windows)",
+    "date": "2016-11-09",
+    "ytid": "rycE-nZ7ky8",
+    "category": "Plex",
+    "odurl": "https://odysee.com/@makc:a/how-to-backup-a-plex-media-server:4"
+},
+{
+    "title": "Make Your Credit Cards Look Dope",
+    "date": "2016-10-31",
+    "ytid": "vDc10Byk4Bc",
+    "category": "Misc",
+    "odurl": "https://odysee.com/@makc:a/make-your-credit-cards-look-dope:2"
+},
+{
+    "title": "Backup Plex Media Library (MacOS)",
+    "date": "2016-06-21",
+    "ytid": "yLPi4vZOj0w",
+    "category": "Plex",
+    "odurl": "https://odysee.com/@makc:a/backup-plex-media-library-(macos):2"
+},
+{
+    "title": "Change macOS Wallpaper With the Time of Day",
+    "date": "2016-06-14",
+    "ytid": "SM1kG6ONyUA",
+    "category": "MacOS",
+    "odurl": "https://odysee.com/@makc:a/change-macos-wallpaper-with-the-time-of:2"
+},
+{
+    "title": "Trigger Menu Bar Color with a Keyboard Shortcut",
+    "date": "2016-06-12",
+    "ytid": "uWCwTHrbDik",
+    "category": "Tech",
+    "odurl": "https://odysee.com/@makc:a/trigger-menu-bar-color-with-a-keyboard:a"
+},
+{
+    "title": "Google Inbox OSX App Setup",
+    "date": "2016-06-08",
+    "ytid": "4l047FZL-JI",
+    "category": "Tech",
+    "odurl": "https://odysee.com/@makc:a/google-inbox-osx-app-setup:2"
+},
+{
+    "title": "Squarespace Summary Blocks",
+    "date": "2016-05-25",
+    "ytid": "ZLnH5bMIABc",
+    "category": "Web Development",
+    "odurl": "https://odysee.com/@makc:a/squarespace-summary-blocks:e"
+},
+{
+    "title": "Keyboard Shortcuts in After Effects",
+    "date": "2016-05-24",
+    "ytid": "5ScC01hczLw",
+    "category": "Design",
+    "odurl": "https://odysee.com/@makc:a/keyboard-shortcuts-in-after-effects:c"
+},
+{
+    "title": "(Mid) 2016 Motion Graphics Reel",
+    "date": "2016-05-13",
+    "ytid": "H-vBkU2scKg",
+    "category": "Design",
+    "odurl": "https://odysee.com/@makc:a/(mid)-2016-motion-graphics-reel:a"
+},
+{
+    "title": "Rendering in After Effects",
+    "date": "2016-05-03",
+    "ytid": "ofrvxxsreo4",
+    "category": "Design",
+    "odurl": "https://odysee.com/@makc:a/rendering-in-after-effects:3"
+},
+{
+    "title": "Stuff I Use Everyday: Handbrake",
+    "date": "2016-04-05",
+    "ytid": "bbE9au9Ma-Q",
+    "category": "Tech",
+    "odurl": "https://odysee.com/@makc:a/stuff-i-use-everyday-handbrake:9"
+},
+{
+    "title": "Stuff I Use Everyday: Air Server",
+    "date": "2016-03-28",
+    "ytid": "Icnj5DO2pBA",
+    "category": "Tech",
+    "odurl": "https://odysee.com/@makc:a/stuff-i-use-everyday-air-server:c"
+},
+{
+    "title": "Stuff I Use Everyday: QuickTime",
+    "date": "2016-03-22",
+    "ytid": "6qMm8y_QpY8",
+    "category": "Tech",
+    "odurl": "https://odysee.com/@makc:a/stuff-i-use-everyday-quicktime:e"
+},
+{
+    "title": "Stuff I Use Everyday: Near Lock",
+    "date": "2016-03-07",
+    "ytid": "MeqMYq2mkUc",
+    "category": "MacOS",
+    "odurl": "https://odysee.com/@makc:a/stuff-i-use-everyday-near-lock:9"
+},
+{
+    "title": "Final Cut Pro X: Exporting",
+    "date": "2016-03-03",
+    "ytid": "FzMSmuMi22c",
+    "category": "Design",
+    "odurl": "https://odysee.com/@makc:a/final-cut-pro-x-exporting:6"
+},
+{
+    "title": "Stuff I Use Everyday: SwitchResX",
+    "date": "2016-03-01",
+    "ytid": "laciA-Wr5lE",
+    "category": "MacOS",
+    "odurl": "https://odysee.com/@makc:a/stuff-i-use-everyday-switchresx:4"
+},
+{
+    "title": "Stuff I Use Everyday: Audition",
+    "date": "2016-02-26",
+    "ytid": "hY1Em0glUoM",
+    "category": "Design",
+    "odurl": "https://odysee.com/@makc:a/stuff-i-use-everyday-audition:b"
+},
+{
+    "title": "Editing Videos with Camera RAW",
+    "date": "2016-02-24",
+    "ytid": "J41irZx_Uh4",
+    "category": "MacOS",
+    "odurl": "https://odysee.com/@makc:a/editing-videos-with-camera-raw:3"
+},
+{
+    "title": "Shooting 3K on the iPhone 6",
+    "date": "2016-02-20",
+    "ytid": "rhe6sBeMnf4",
+    "category": "Tech",
+    "odurl": "https://odysee.com/@makc:a/shooting-3k-on-the-iphone-6:0"
+},
+{
+    "title": "Stuff I Use Everyday: Ad Blocker",
+    "date": "2016-02-15",
+    "ytid": "E0Cfkc-78rE",
+    "category": "Tech",
+    "odurl": "https://odysee.com/@makc:a/stuff-i-use-everyday-ad-blocker:4"
+},
+{
+    "title": "AE Presets Quick-Guide & Bundle",
+    "date": "2016-02-10",
+    "ytid": "BkU__AM9J2Y",
+    "category": "Design",
+    "odurl": "https://odysee.com/@makc:a/ae-presets-quick-guide-bundle:a"
+},
+{
+    "title": "Stuff I Use Everyday: f.lux",
+    "date": "2016-02-08",
+    "ytid": "y0li1AoyCyw",
+    "category": "Tech",
+    "odurl": "https://odysee.com/@makc:a/stuff-i-use-everyday-f.lux:b"
+},
+{
+    "title": "After Effects Color Presets",
+    "date": "2016-02-03",
+    "ytid": "RyBbGYUlG0Y",
+    "category": "Design",
+    "odurl": "https://odysee.com/@makc:a/after-effects-color-presets:0"
+},
+{
+    "title": "Stuff I Use Everyday: Mac ID",
+    "date": "2016-02-01",
+    "ytid": "5_ysA9sd33U",
+    "category": "MacOS",
+    "odurl": "https://odysee.com/@makc:a/stuff-i-use-everyday-mac-id:9"
+},
+{
+    "title": "Final Cut Pro X: Getting Started",
+    "date": "2016-01-31",
+    "ytid": "kb_icpqCfU8",
+    "category": "Design",
+    "odurl": "https://odysee.com/@makc:a/final-cut-pro-x-getting-started:f"
+},
+{
+    "title": "Stuff I Use Everyday: Buffer",
+    "date": "2016-01-25",
+    "ytid": "_wDM7vxknlA",
+    "category": "MacOS",
+    "odurl": "https://odysee.com/@makc:a/stuff-i-use-everyday-buffer:8"
+},
+{
+    "title": "Stuff I Use Everyday: iDentify",
+    "date": "2016-01-16",
+    "ytid": "8TYNympRynM",
+    "category": "Tech",
+    "odurl": "https://odysee.com/@makc:a/stuff-i-use-everyday-identify:1"
+},
+{
+    "title": "BPA Digital Media Production 2016 Entry",
+    "date": "2016-01-07",
+    "ytid": "o_8obKJxzBs",
+    "category": "Design",
+    "odurl": "https://odysee.com/@makc:a/bpa-digital-media-production-2016-entry:d"
+},
+{
+    "title": "2016: Motion Graphics Demo Reel",
+    "date": "2015-11-26",
+    "ytid": "qF-eAPaDPd4",
+    "category": "Design",
+    "odurl": "https://odysee.com/@makc:a/2016-motion-graphics-demo-reel:2"
+},
+{
+    "title": "A Guide to Animation Presets in After Effects",
+    "date": "2015-10-12",
+    "ytid": "a-NLERVMJtg",
+    "category": "Design",
+    "odurl": "https://odysee.com/@makc:a/a-guide-to-animation-presets-in-after:1"
+},
+{
+    "title": "2014 Motion Graphics Reel",
+    "date": "2015-01-15",
+    "ytid": "ec-SGLA0d1U",
+    "category": "Design",
+    "odurl": "https://odysee.com/@makc:a/2014-motion-graphic-reel:2"
+},
+{
+    "title": "More Videos in Adobe Muse",
+    "date": "2014-10-30",
+    "ytid": "WZpuFn9hRLQ",
+    "category": "Web Development",
+    "odurl": "https://odysee.com/@makc:a/more-videos-in-muse:7"
+},
+{
+    "title": "Posters & Images on IMDb",
+    "date": "2014-10-24",
+    "ytid": "YyDorC0rfNI",
+    "category": "Misc",
+    "odurl": "https://odysee.com/@makc:a/posters-images-on-imdb:5"
+},
+{
+    "title": "Updating Pages on IMDb",
+    "date": "2014-10-22",
+    "ytid": "_fWHSFxsv2M",
+    "category": "Misc",
+    "odurl": "https://odysee.com/@makc:a/updating-pages-on-imdb:1"
+},
+{
+    "title": "Adding Yourself & Your Film to IMDb",
+    "date": "2014-10-14",
+    "ytid": "jmG-KBKQS8c",
+    "category": "Misc",
+    "odurl": "https://odysee.com/@makc:a/adding-yourself-your-film-to-imdb:0"
+},
+{
+    "title": "Shoot on Film: Free Film Emulation",
+    "date": "2014-10-01",
+    "ytid": "JhfaGNuPKPc",
+    "category": "Design",
+    "odurl": "https://odysee.com/@makc:a/shoot-on-film-free-film-emulation:9"
+},
+{
+    "title": "Videos in Adobe Muse",
+    "date": "2014-09-30",
+    "ytid": "jnGGhMoqcXw",
+    "category": "Web Development",
+    "odurl": "https://odysee.com/@makc:a/videos-in-adobe-muse:4"
+},
+{
+    "title": "RAW Timelapses: A Guide to Processing Time-lapses",
+    "date": "2014-09-29",
+    "ytid": "ik61Pa_24yE",
+    "category": "Design",
+    "odurl": "https://odysee.com/@makc:a/raw-timelapses-a-guide-to-processing:a"
+},
+{
+    "title": "Water Simulation Basics",
+    "date": "2014-09-28",
+    "ytid": "We3R0EaD0j8",
+    "category": "Design",
+    "odurl": "https://odysee.com/@makc:a/water-simulation-basics:4"
+},
+{
+    "title": "HUD Compositing",
+    "date": "2014-09-22",
+    "ytid": "NmJkJFng-1I",
+    "category": "Design",
+    "odurl": "https://odysee.com/@makc:a/hud-compositing:c"
+},
+{
+    "title": "HUD Designing",
+    "date": "2014-09-22",
+    "ytid": "E71g4O8nf-E",
+    "category": "Design",
+    "odurl": "https://odysee.com/@makc:a/hud-designing:d"
+},
+{
+    "title": "Clarity in After Effects",
+    "date": "2014-09-22",
+    "ytid": "JV6p9Jbx8hM",
+    "category": "Design",
+    "odurl": "https://odysee.com/@makc:a/clarity-in-after-effects:d"
+},
+{
+    "title": "The Basics of After Effects",
+    "date": "2014-09-22",
+    "ytid": "E8HYmT4JmuM",
+    "category": "Design",
+    "odurl": "https://odysee.com/@makc:a/the-basics-of-after-effects:5"
+},
+{
+    "title": "Simulated Screens",
+    "date": "2014-09-22",
+    "ytid": "qjfBGaqFnLA",
+    "category": "Design",
+    "odurl": "https://odysee.com/@makc:a/simulated-screens:0"
+},
+{
+    "title": "Tier Modus Design",
+    "date": "2014-09-22",
+    "ytid": "k33IEnEio_0",
+    "category": "Design",
+    "odurl": "https://odysee.com/@makc:a/tier-modus-design:c"
+},
+{
+    "title": "Texture Design in After Effects",
+    "date": "2014-09-22",
+    "ytid": "CI4KA3LTEeI",
+    "category": "Design",
+    "odurl": "https://odysee.com/@makc:a/texture-design-in-after-effects:8"
+}
+]

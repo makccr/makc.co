@@ -33,28 +33,26 @@ description: I'm a propagandist for pickled red onions, a rare meat activist, an
 <hr></hr>
 
 <h2>New Videos</h2>
-
 <div class=cardContainer>
-    {% assign sorted = airtable | sort: "Date" | reverse %}
-    {% for item in sorted limit:3 %}
-    <div data-category="{{ item.Type }}" class="video-card">
-        <a href="{{ item.yturl }}" target="_blank" title="YouTube">
-            <img src="https://i.ytimg.com/vi/{{ item.ytid | strip }}/maxresdefault.jpg" alt="Hero image"/>
+    {% assign recentVid = videos | slice: 0, 3 %}
+    {% for video in recentVid %}
+    <div data-category="{{ video.category }}" class="video-card">
+        <a href="https://youtube.com/watch?v={{ video.ytid }}" target="_blank" title="YouTube">
+        <img src="https://i.ytimg.com/vi/{{ video.ytid }}/maxresdefault.jpg" alt="Hero image"/>
         </a>
-        <div class='metadata'>{{ item.Date }} • {{ item.Type }}</div>   
-        <p class="videos">{{ item.Title | truncate: 42, "..." }}</p>
-        <div class="platform-select">      
-            Watch on:    
-            <a href="{{ item.yturl }}" target="_blank">YouTube, </a>
-            <a href="{{ item.odurl }}" target="_blank">Odysee, </a> or 
-            <a href="{{ item.ivurl }}" target="_blank">Invidious</a>
-        </div>                                                     
+        <div class='metadata'>{{ video.date | displayDate }} • {{ video.category }}</div>
+        <p class="videos">{{ video.title | truncate: 42, "..." }}</p>
+        <div class="platform-select">
+            Watch on:  
+            <a href="https://youtube.com/watch?v={{ video.ytid }}" target="_blank">YouTube, </a>
+            <a href="{{ video.odurl }}" target="_blank">Odysee, </a> or 
+            <a href="https://inv.nadeko.net/watch?v={{ video.ytid }}" target="_blank">Invidious</a>
+        </div>
     </div>
     {% endfor %}
 </div>
 
 <h2>Projects Worth Checking Out</h2>
-
 <div class=cardContainer>
     <div class=card data-category="App / Web App">
         <img src="https://raw.githubusercontent.com/makccr/vim2tor/refs/heads/main/src/asci.jpg" alt="hero image"> 
