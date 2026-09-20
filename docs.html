@@ -18,7 +18,7 @@ description: My personal documentation. Most sane people would keep this in a no
 <div class="cardContainer">
     {% for essay in collections.docs reversed %}
     <div class="essay-card" data-subjects="{% for subject in essay.data.subject %}{{ subject }}{% if not loop.last %},{% endif %}{% endfor %}">
-        <a href="{{ docs.url }}">
+        <a href="{{ essay.url }}">
             <div class="essay-title"> {{ essay.data.title }} </div>
         </a>
         <div class="metadata">

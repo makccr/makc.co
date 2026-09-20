@@ -2,7 +2,7 @@
 title: "Cloning This Webiste & Getting Set-up for Development with Eleventy"
 layout: docs.html
 date: 2025-12-28
-updated: 2026-09-18
+updated: 2026-09-21
 tags: docs 
 subject: ["webDev", "linux", "software"]
 ---
@@ -36,14 +36,7 @@ git clone https://github.com/makccr/makc.co
 
 ### Install 11ty & Required Plugins
 ```shell
-npm install @11ty/eleventy @11ty/eleventy-img airtable dotenv striptags @11ty/eleventy-plugin-rss @11ty/eleventy-plugin-syntaxhighlight; npm install luxon --save-dev
-```
-
-#### Relocate dotenv API Key
-I use the dotenv npm plugin in order to authenticate a connection to Airtable. By default the dotenv plugin expects to find a file called *.env* in the site's root directory. For obvious reasons this can't be added to the GitHub repository and pushed upstream. My solution is to store the required API key in a Dropbox folder and then manually copy this key into the site's root directory when cloning a new development instance: 
-
-```shell
-cp ~/Dropbox/keys/.env ~/Documents/makccr.github.io/.env
+npm install @11ty/eleventy @11ty/eleventy-img striptags @11ty/eleventy-plugin-rss @11ty/eleventy-plugin-syntaxhighlight; npm install luxon --save-dev
 ```
 
 ### Verify the New Instance is Ready for Development
@@ -89,22 +82,3 @@ tags: docs
 subject: ["subject1", "subject2"]
 ---
 ```
-
-### Custom YouTube Embed Code
-```html
-<div class="youtube">
-    <div class="youtube-video-container-16">
-        <iframe width="560" height="315"
-            src="LINK"
-            frameborder="0"
-            allow="accelerometer; encrypted-media; gyroscope; picture
--in-picture"
-            allowfullscreen >
-        </iframe>
-    </div>
-</div>
-```
-This YouTube embed code has additional classes for videos at different aspect ratios, options include: 
-* youtube-video-container-16
-* youtube-video-container-2-1
-* youtube-video-container-anamorphic
