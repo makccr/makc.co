@@ -187,7 +187,7 @@ blockquote p {
 
 /* BUTTONS */
 button {
-    color: var(--fg-color);
+    color: #cfe5ff;
     font-family: 'Open Sans', sans-serif; 
     font-weight: 500;
     font-size: .9rem;
@@ -197,11 +197,14 @@ button {
     border-radius: .5rem;
     transition: 0.3s ease;
     margin: .25rem;
+    border: .1rem solid var(--bg-color);
 }
 
 button:hover {
-    background-color: var(--button-hover); 
+    border: .1rem solid var(--button-hover);
+    background-color: var(--bg-color);
     scale: 103%; 
+    color: var(--button-hover);
 }
 
 /* IMAGES */
@@ -438,5 +441,3 @@ button:hover {
         width: 90%;
     }
 }
-
-
