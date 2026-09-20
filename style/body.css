@@ -195,12 +195,13 @@ button {
     border: 0; 
     padding: .5rem 1rem;
     border-radius: .5rem;
-    transition: 0.3s;
+    transition: 0.3s ease;
     margin: .25rem;
 }
 
 button:hover {
     background-color: var(--button-hover); 
+    scale: 103%; 
 }
 
 /* IMAGES */
@@ -364,10 +365,16 @@ button:hover {
   display: inline-block; 
   margin: 1em; 
   padding: 0em;
-  border: 1px solid var(--bg-color-lighter);
-  border-radius: .3rem;
+  border: .1rem solid var(--bg-color-lighter);
+  border-radius: .5rem;
   text-align: center;
+  transition: 0.3s ease; 
 } 
+
+.card:hover {
+    border: .1rem solid var(--button-hover); 
+    scale: 103%;
+}
 
 .card img {
   width: 100%; 
@@ -391,6 +398,17 @@ button:hover {
 .card button, .post-navigation button {
     padding: 1rem 1.5rem;
     margin-bottom: 1rem;
+}
+
+.card .dwnld-preview {
+    font-size: .9rem; 
+    height: 2rem; 
+    box-sizing: content-box; 
+    color: var(--fg2-color);
+    padding: 0 2rem; 
+    margin-bottom: 1rem; 
+    font-family: 'Open Sans', sans-serif; 
+    text-align: center;
 }
 
 
