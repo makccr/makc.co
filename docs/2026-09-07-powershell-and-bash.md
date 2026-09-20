@@ -2,7 +2,7 @@
 title: "Powershell and Bash"
 layout: docs.html
 date: 2026-09-07
-updated: 2026-09-18
+updated: 2026-09-20
 tags: docs 
 subject: ["windows", "linux"]
 ---
@@ -55,7 +55,7 @@ cp *.jpg ~/Dowloads/
 | drwxr-xr-x  | 13         | makc makc        | 14   | Sep  6 17:49         | Documents | 
 | drwxr-xr-x  | 4          | makc makc        | 5    | Sep  6 21:22         | Downloads |
 
-### `ls -l` permissions broken down
+## `ls -l permissions` broken down
 | d | rwx | r-x | r-x | 
 | - | --- | --- | --- | 
 | filetype | owner rights | group rights | everyone elses rights | 

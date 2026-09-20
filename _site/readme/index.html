@@ -1,9 +1,42 @@
 <a href="https://makc.co">
-    <picture><source type="image/webp" srcset="/readme/v47XL2K0iZ-329.webp 329w"><img src="/readme/v47XL2K0iZ-329.jpeg" alt="MAKC lgoo" title="MAKC" align="right" height="92" width="329"></picture>
+    <picture><source type="image/webp" srcset="/readme/v47XL2K0iZ-329.webp 329w"><img src="/readme/v47XL2K0iZ-329.jpeg" alt="MAKC logo" title="MAKC" align="left" height="92" width="329"></picture>
 </a>
-<h1><a href="https://makc.co">makc.co</a></h1>
-<p>This is the repository for my website. The main goal of the website, is to be a website (duh) - that is to serve as a hub that links to the various projects I've worked on that are available for access online, and a hosting platform to download some of the projects that I have made available for download.</p>
-<p>In addition, I like to use this website as a personal kind of a <em>sandbox</em>. For a long time this meant that the website was built exclusively the old fashioned way: no frameworks, no libraries; just straight HTML, CSS &amp; JavaScript. If you are interested in that kind of web design, I did produce a little <a href="https://www.youtube.com/watch?v=avjB5rQMm24&amp;list=PLIYVhRocqRoT6yvieIyNehUz6VnB6hXhF&amp;pp=gAQB">series of videos</a> on my YouTube channel that featured me stumbling through the process of creating a website out out of poorly organized texted documents and crossed fingers.</p>
-<p>These days the site is a lot more boring, but also a whole lot lower maintenance. The site is built on the back of <a href="https://github.com/11ty/eleventy/">11ty</a> and uses <a href="https://airtable.com/">Airtable</a> as a sort of a CMS solution for a few of the pages. I have toyed with the idea of making a series of videos that would cover how I managed to put this all together, but in the meantime this repository should serve as at least some kind of instruction.</p>
-<p><em>P.S.</em>: If you're interested in a series of video on the current iteration of my site, feel free to <a href="mailto:m@makc.co:">e-mail</a> me to let that request be known; and be sure to keep and eye on my <a href="https://www.youtube.com/@makc">YouTube channel</a> just in case I publish something without telling anyone...</p>
-<p><a href="https://makc.co/docs/cloning-this-site/"><picture><source type="image/webp" srcset="/readme/Nal0N9lEPj-1138.webp 1138w"><img src="/readme/Nal0N9lEPj-1138.jpeg" alt="Preview on All Devices" width="1138" height="640"></picture></a></p>
+<p>My personal website. The goal of this site is to act as:</p>
+<ul>
+<li>A repository for downloading all of the content I have made publicly available over the years.</li>
+<li>A place to store personal <a href="https://makc.co/docs">documentation</a> and <a href="https://makc.co/essays">essays</a>.</li>
+<li>A way to link to YouTube videos, or other external content.</li>
+<li>A sandbox for me to experiment with new and old web technologies alike.</li>
+</ul>
+<h2>History</h2>
+<p>My personal website has been around for well over a decade now (originally published in 2012 at <a href="https://mackenziecriswell.com">mackenziecriswell.com</a>), and has utilized just about every web technology in existence. At various points in the site's history is has been a <a href="https://wordpress.com/">Wordpress site</a>, a <a href="https://www.squarespace.com/">Squarespace site</a>, a <a href="https://www.blogger.com/">Blogger project</a>, an <a href="https://www.youtube.com/watch?v=jnGGhMoqcXw">Adobe Muse website</a> and in 2020 I even made the somewhat ill advised decision to give my site a <a href="https://www.youtube.com/watch?v=avjB5rQMm24&amp;list=PLIYVhRocqRoT6yvieIyNehUz6VnB6hXhF&amp;pp=sAgC">ground-up rebuild</a> using nothing but vanilla HTML, CSS and JavaScript. While the rebuild of my site forced me to learn a lot, and made me much more familiar with the core technologies that serve the current world wide web; that experiment did not last very long. The simple reality is the for a website that requires any level of complexity beyond a simple homepage, there are frameworks that make building and maintaining much easier these days.</p>
+<h2>Current Deployment</h2>
+<p>The current iteration of my site, <a href="https://makc.co">makc.co</a>, is a static site generated with <a href="http://11ty.dev/http://11ty.dev/">11ty</a>. In the past I have used various <em>half-ass</em> CMS solutions like <a href="https://airtable.com">Airtable</a> to let me have a database without actually having to build one for some larger data sets (my <a href="https://makc.co/videos">videos page</a> in particular); but more recently I've fully embraced the static site life and replaced even these elements with simple JSON files that eliminate the need for APIs that are slow even when they do work, and allow me to (a) still edit the database on the fly, but (b) deploy the site incredibly quickly. I still continue to toy around with different technologies, simply because I find it fun, but I have arrived at a fairly predictable stack:</p>
+<ol>
+<li>Simple markdown pages for writing and most web pages that don't require more complex design.
+<ul>
+<li>Nunjucks elements to simplify page generation.</li>
+</ul>
+</li>
+<li>HTML for pages that required it.</li>
+<li>Structured CSS files that style different elements separately:</li>
+</ol>
+<pre class="language-bash"><code class="language-bash">site
+│   build.js 
+│   bundle.css      <span class="token comment"># Main CSS page that links everything together</span>
+│
+└───style
+│   │   header.css  <span class="token comment"># Styling just the &lt;header> content</span>
+│   │   footer.css  <span class="token comment"># Styling just the &lt;footer> content</span>
+│   │   color.css   <span class="token comment"># Defining color variable under :root, as well as fonts</span>
+│   │   body.css    <span class="token comment"># Styling all page elements</span></code></pre>
+<ol start="4">
+<li>A static site generator to build the site and tie everything together. I like 11ty myself, but <a href="https://astro.build/">Astro</a> &amp; <a href="https://gohugo.io/">Hugo</a> are also very good.</li>
+<li>Separate branches for my public site and my own experimenting.</li>
+<li><a href="https://www.netlify.com/">Netlify</a> to deploy on <code>master</code> and <code>development</code> branches, and handle DNS.</li>
+</ol>
+<h3>Deployment Status</h3>
+<p><strong>makc.co</strong>: Deployed from <code>master</code> branch.
+<a href="https://app.netlify.com/projects/makccr/deploys"><picture><source type="image/webp" srcset="/readme/z0FUXTnk6R-118.webp 118w"><img src="/readme/z0FUXTnk6R-118.jpeg" alt="Netlify Status" width="118" height="20"></picture></a></p>
+<p><strong>dev.makc.co</strong>: Deployed from <code>development</code> branch.
+<a href="https://app.netlify.com/projects/devmakccr/deploys"><picture><source type="image/webp" srcset="/readme/RNoUIuTB23-118.webp 118w"><img src="/readme/RNoUIuTB23-118.jpeg" alt="Netlify Status" width="118" height="20"></picture></a></p>

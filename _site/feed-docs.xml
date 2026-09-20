@@ -103,7 +103,7 @@
 </tr>
 </tbody>
 </table>
-<h3><code>ls -l</code> permissions broken down</h3>
+<h2><code>ls -l permissions</code> broken down</h2>
 <table>
 <thead>
 <tr>
