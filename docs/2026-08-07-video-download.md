@@ -41,11 +41,11 @@ wget --content-disposition "https://site.com/control.php?file=filename.mp4&accto
 ### Sequenced Videos
 Some websites don't list a full video file in the Network tab of the Developer Menu. Rather than hosting a full file, it's only possible to access segmented video clips. This however does not mean that we cannot still download a full video. 
 
-1. First find the sequence of video clips, for example the following URL might show up: **https://video.userscontent.net/video.mp4/seg-01-av.ts**
+1. First find the sequence of video clips, for example the following URL might show up: `https://video.net/video.mp4/seg-01-av.ts`
 2. Create a list of all segmented files, by first downloading an individual segment: 
 
 ```bash
-curl -L -O "https://video.userscontent.net/video.mp4/seg-01-av.ts"
+curl -L -O "https://video.net/video.mp4/seg-01-av.ts"
 ```
 
 3. Once you have one video segment, you can calculate or roughly guess the video segment in question. For example if the first segment was roughly two seconds, and the video was about thirty minutes long, we can reasonably guess that there would be about nine hundred individual segments.
@@ -54,7 +54,7 @@ curl -L -O "https://video.userscontent.net/video.mp4/seg-01-av.ts"
 ```bash 
 #!/usr/bin/env bash
 
-BASE_URL="https://video.userscontent.net/video.mp4"
+BASE_URL="https://video.net/video.mp4"
 
 for i in $(seq -w 1 900); do
     curl -L -O "$BASE_URL/seg-$i--av.ts"
