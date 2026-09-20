@@ -39,7 +39,7 @@ header .links a::after {
     content: "";
     position: absolute;
     left: 50%;
-    bottom: -.4rem;;
+    bottom: -.1rem;;
     width: 0;
     height: 2px;
     background: var(--button-hover);
