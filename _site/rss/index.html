@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>MAKC.CO - Creating a New Branch</title>
+<title>MAKC.CO - Feeds</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link href="https://cdn.jsdelivr.net/npm/modern-normalize@v3.0.1 /modern-normalize.min.css" rel="stylesheet">
 <link rel="stylesheet" href="/bundle.css">
@@ -65,7 +65,7 @@
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@makccr">
-<meta name="twitter:title" content="MAKC.CO - Creating a New Branch">
+<meta name="twitter:title" content="MAKC.CO - Feeds">
 <meta name="twitter:description" content="Im a propagandist for pickled red onions, a rare meat activist, barely-monetizable YouTuber and Captain of the sailing vessel Knox. Ive been creating content online for well over a decade now, but delivering to a very small audience. Undoubtedly, youve discovered this website by mistake, but thanks for stopping by anyway-and, feel free to browse around.">
 <meta name="twitter:image" content="https://makc.co/images/bg-head.jpg">
 
@@ -81,7 +81,7 @@
     <header>
         <div class="logo-container">
             <a href="/index">
-                <picture><source type="image/webp" srcset="/.11ty/image/?src=images%2Fm.svg&width=1000&format=webp&via=transform 1000w"><img class="logo" src="/.11ty/image/?src=images%2Fm.svg&width=1000&format=jpeg&via=transform" alt="HOME" width="1000" height="1000"></picture>
+                <picture><source type="image/webp" srcset="/img/Es_hZy2Cb8-1000.webp 1000w"><img class="logo" src="/img/Es_hZy2Cb8-1000.jpeg" alt="HOME" width="1000" height="1000"></picture>
             </a>
         </div>
             <div class="bars" onclick="mobileMenu()">
@@ -108,77 +108,88 @@
     
     <main>
         
-<h1>Creating a New Branch</h1>
-<p class="caption"><strong>Originally Posted:</strong> August 15, 2026<br>
-<strong>Last Updated:</strong> August 15, 2026</p>
+<style>
+    main {
+        text-align: center; 
+    }
 
-<div class="essayContainer"> 
-<p>A guide for creating a new branch in a git repository.</p>
-<h2>Creating a New Branch</h2>
-<ol>
-<li>Navigate to git repo:</li>
-</ol>
-<pre class="language-bash"><code class="language-bash"><span class="token builtin class-name">cd</span> REPO</code></pre>
-<ol start="2">
-<li>Create new branch:</li>
-</ol>
-<pre class="language-bash"><code class="language-bash"><span class="token function">git</span> checkout <span class="token parameter variable">-b</span> NEW-BRANCH</code></pre>
-<ol start="3">
-<li>Push new branch:</li>
-</ol>
-<pre class="language-bash"><code class="language-bash"><span class="token function">git</span> push origin NEW-BRANCH</code></pre>
-<h3>(Optionally) Create a Branch from a Specific Commit</h3>
-<pre class="language-bash"><code class="language-bash"><span class="token function">git</span> checkout <span class="token parameter variable">-b</span> NEW-BRANCH HASH</code></pre>
-<h4>Swap Between Branches</h4>
-<pre class="language-bash"><code class="language-bash"><span class="token function">git</span> checkout BRANCH-NAME</code></pre>
-<h2>Merge Changes to master/main Branch</h2>
-<ol>
-<li>Change back to main branch:</li>
-</ol>
-<pre class="language-bash"><code class="language-bash"><span class="token function">git</span> checkout master</code></pre>
-<ol start="2">
-<li>Merge it:</li>
-</ol>
-<pre class="language-bash"><code class="language-bash"><span class="token function">git</span> merge branchNAME</code></pre>
+    button {
+        padding: 1rem 2rem; 
+        margin-bottom: 2rem;
+    }
 
-</div> 
+    .essay-card .essay-preview {
+        margin: 0rem; 
+        padding: .5rem 2rem; 
+    }
+</style>
 
+<script>
+    function copyAll(button) {
+        navigator.clipboard.writeText("https://makc.co/feed.xml");
 
+        button.textContent = "Copied!"; 
+    }
 
-  
+    function copyEssay(button) {
+        navigator.clipboard.writeText("https://makc.co/feed-essays.xml");
 
-  
+        button.textContent = "Copied!"; 
+    }
 
-  
+    function copyDoc(button) {
+        navigator.clipboard.writeText("https://makc.co/feed-docs.xml");
 
-  
+        button.textContent = "Copied!"; 
+    }
+</script> 
 
-  
+<h1>Feeds</h1>
+<p class="caption">Links to the RSS feeds for this site. Follow my essays, documentation or both.</p>
 
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
+<div class="cardContainer">
+    <div class="essay-card">
+        <a href="https://makc.co/feed.xml">
+            <div class="essay-title">
+                All Writing &nbsp;<i class="nf nf-fa-rss"></i>
+            </div>
+        </a>
+        <div class="essay-preview">
+            My full collection of essays and documentation, all jammed into one feed.
+        </div>
+        <button onclick="copyAll(this)">
+            Copy Link &nbsp;<i class="nf nf-fa-copy"></i>
+        </button>
+    </div>
+<br>
+    <div class="essay-card">
+        <a href="https://makc.co/feed-essays.xml">
+            <div class="essay-title">
+                Essays &nbsp;<i class="nf nf-fa-rss"></i>
+            </div>
+        </a>
+        <div class="essay-preview">
+            A collection of personal essays on film, technology, philosophy, and art. Charting the edges where culture, creativity, and critical thought meet.
+        </div>
+        <button onclick="copyEssay(this)">
+            Copy Link &nbsp;<i class="nf nf-fa-copy"></i>
+        </button>
+    </div>
+<br>
+    <div class="essay-card">
+        <a href="https://makc.co/feed-docs.xml">
+            <div class="essay-title">
+                Documentation &nbsp;<i class="nf nf-fa-rss"></i>
+            </div>
+        </a>
+        <div class="essay-preview">
+             My personal documentation. Feel free to use the information found here, but please don't think that any of this documentation was written with any level of verifiable expertise.
+        </div>
+        <button onclick="copyDoc(this)">
+            Copy Link &nbsp;<i class="nf nf-fa-copy"></i>
+        </button>
+    </div>
+</div>
 
     </main>
    <footer>
