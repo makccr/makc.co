@@ -117,10 +117,12 @@
 <h1>Documentation</h1>
 <p class="caption"> My personal documentation. Most sane people would keep this in a notebook, but clearly I had other ideas. Feel free to use the information found here, but please don't think that any of this documentation was written with any level of verifiable expertise. It's probably still better than what ChatGPT would have told ya' though ;) </p>
 
+<div class="filterButtons"></div>
+
 <div class="cardContainer">
     
-    <div class="essay-card">
-        <a href="/docs/powershell-and-bash/">
+    <div class="essay-card" data-subjects="windows,linux,">
+        <a href="">
             <div class="essay-title"> Powershell and Bash </div>
         </a>
         <div class="metadata">
@@ -144,8 +146,8 @@
         </div>
     </div>
     
-    <div class="essay-card">
-        <a href="/docs/new-git-branch/">
+    <div class="essay-card" data-subjects="git,">
+        <a href="">
             <div class="essay-title"> Creating a New Branch </div>
         </a>
         <div class="metadata">
@@ -180,8 +182,8 @@ git checkout -b N...
         </div>
     </div>
     
-    <div class="essay-card">
-        <a href="/docs/video-download/">
+    <div class="essay-card" data-subjects="software,webDev,wget,curl,">
+        <a href="">
             <div class="essay-title"> Downloading a Video </div>
         </a>
         <div class="metadata">
@@ -218,8 +220,8 @@ Re...
         </div>
     </div>
     
-    <div class="essay-card">
-        <a href="/docs/calibre-web-docker/">
+    <div class="essay-card" data-subjects="homelab,eBook,server,docker,">
+        <a href="">
             <div class="essay-title"> Setting up a Calibre-web Server on Linux </div>
         </a>
         <div class="metadata">
@@ -257,8 +259,8 @@ Note: Calibre-web can be ...
         </div>
     </div>
     
-    <div class="essay-card">
-        <a href="/docs/immich/">
+    <div class="essay-card" data-subjects="homelab,server,docker,">
+        <a href="">
             <div class="essay-title"> Setting up a Private Immich Server </div>
         </a>
         <div class="metadata">
@@ -290,8 +292,8 @@ sudo apt remove $(dpkg -...
         </div>
     </div>
     
-    <div class="essay-card">
-        <a href="/docs/iso-2-usb-with-pv/">
+    <div class="essay-card" data-subjects="software,OS,">
+        <a href="">
             <div class="essay-title"> Copying a ISO Image to a USB Drive </div>
         </a>
         <div class="metadata">
@@ -320,8 +322,8 @@ An ISO image (usually .iso, but the process will also work for .raw.xz, and some
         </div>
     </div>
     
-    <div class="essay-card">
-        <a href="/docs/create-your-own-git-server/">
+    <div class="essay-card" data-subjects="git,backup,security,homelab,">
+        <a href="">
             <div class="essay-title"> Creating a Private Git Server </div>
         </a>
         <div class="metadata">
@@ -356,8 +358,8 @@ A server. ...
         </div>
     </div>
     
-    <div class="essay-card">
-        <a href="/docs/flatpak-to-dmenu/">
+    <div class="essay-card" data-subjects="sofware,scripting,productivity,ricing,">
+        <a href="">
             <div class="essay-title"> Launch Any Package via Dmenu </div>
         </a>
         <div class="metadata">
@@ -391,8 +393,8 @@ By default demnu (and most other minimal app launchers) look(s) for packages ins
         </div>
     </div>
     
-    <div class="essay-card">
-        <a href="/docs/install-resolve-on-linux/">
+    <div class="essay-card" data-subjects="production,software,">
+        <a href="">
             <div class="essay-title"> Install Davinci Resolve on Linux </div>
         </a>
         <div class="metadata">
@@ -423,8 +425,8 @@ Important Note: Davinci Resolve requires a GPU with OpenCL or CUDA support. Full
         </div>
     </div>
     
-    <div class="essay-card">
-        <a href="/docs/yt-pipeline/">
+    <div class="essay-card" data-subjects="production,pipeline,editing,software,">
+        <a href="">
             <div class="essay-title"> Recording & Transcoding 2:1 Screen-caps on Linux </div>
         </a>
         <div class="metadata">
@@ -459,8 +461,8 @@ ffmpeg: For t...
         </div>
     </div>
     
-    <div class="essay-card">
-        <a href="/docs/markdown-to-manscript/">
+    <div class="essay-card" data-subjects="markdown,scripting,writing,">
+        <a href="">
             <div class="essay-title"> Converting a Markdown File to a Manuscript </div>
         </a>
         <div class="metadata">
@@ -490,8 +492,8 @@ Last year I began writing my first novel. My preferred method of writing is to u
         </div>
     </div>
     
-    <div class="essay-card">
-        <a href="/docs/simple-tailscale-setup/">
+    <div class="essay-card" data-subjects="remote,vpn,security,">
+        <a href="">
             <div class="essay-title"> Remotely Accesing a File Server with Tailscale </div>
         </a>
         <div class="metadata">
@@ -521,8 +523,8 @@ The goal is to be able to access and add files to what was originally set up as 
         </div>
     </div>
     
-    <div class="essay-card">
-        <a href="/docs/fedora-bspwm/">
+    <div class="essay-card" data-subjects="linux,GUI,OS,ricing,">
+        <a href="">
             <div class="essay-title"> Setting up BSPWM on Fedora Workstation </div>
         </a>
         <div class="metadata">
@@ -556,8 +558,8 @@ We need to first install all packages that are required by BSPWM...
         </div>
     </div>
     
-    <div class="essay-card">
-        <a href="/docs/cloning-this-site/">
+    <div class="essay-card" data-subjects="webDev,linux,software,">
+        <a href="">
             <div class="essay-title"> Cloning This Webiste & Getting Set-up for Development with Eleventy </div>
         </a>
         <div class="metadata">
@@ -585,6 +587,63 @@ We need to first install all packages that are required by BSPWM...
         </div>
     </div>
     
+
+<script>
+  const cards = document.querySelectorAll(".essay-card");
+  const filterContainer = document.querySelector(".filterButtons");
+  const subjects = new Set();
+
+  // Collect every subject from every essay
+  cards.forEach(card => {
+    const cardSubjects = card.dataset.subjects.split(",");
+
+    cardSubjects.forEach(subject => {
+      if (subject) subjects.add(subject.trim());
+    });
+  });
+
+  // Add "All" button
+  const allButton = document.createElement("button");
+  allButton.textContent = "All";
+  allButton.dataset.filter = "all";
+  allButton.classList.add("active");
+  filterContainer.appendChild(allButton);
+
+  // Create a button for every subject
+  subjects.forEach(subject => {
+    const button = document.createElement("button");
+
+    button.textContent = subject;
+    button.dataset.filter = subject;
+
+    filterContainer.appendChild(button);
+  });
+
+  // Handle filtering
+  const buttons = document.querySelectorAll(".filterButtons button");
+
+  buttons.forEach(button => {
+    button.addEventListener("click", () => {
+
+      buttons.forEach(btn => btn.classList.remove("active"));
+      button.classList.add("active");
+
+      const filter = button.dataset.filter;
+
+      cards.forEach(card => {
+        const cardSubjects = card.dataset.subjects
+          .split(",")
+          .map(subject => subject.trim());
+
+        if (filter === "all" || cardSubjects.includes(filter)) {
+          card.style.display = "";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    });
+  });
+</script>
 
     </div></main>
    <footer>

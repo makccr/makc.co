@@ -14,9 +14,11 @@ description: A collection of personal essays on film, technology, philosophy, an
 <h1>Essays</h1>
 <p class='caption'>{{ description }}</p>
 
+<div class="filterButtons"></div>
+
 <div class="cardContainer">
     {% for essay in collections.essays reversed %}
-    <div class="essay-card">
+      <div class="essay-card" data-subjects="{% for subject in essay.data.subject %}{{ subject }}{% if not loop.last %},{% endif %}{% endfor %}">
         <a href="{{ essay.url }}">
             <div class="essay-title"> {{ essay.data.title }} </div>
         </a>
@@ -38,3 +40,60 @@ description: A collection of personal essays on film, technology, philosophy, an
         </div>
     </div>
     {% endfor %}
+
+<script>
+  const cards = document.querySelectorAll(".essay-card");
+  const filterContainer = document.querySelector(".filterButtons");
+  const subjects = new Set();
+
+  // Collect every subject from every essay
+  cards.forEach(card => {
+    const cardSubjects = card.dataset.subjects.split(",");
+
+    cardSubjects.forEach(subject => {
+      if (subject) subjects.add(subject.trim());
+    });
+  });
+
+  // Add "All" button
+  const allButton = document.createElement("button");
+  allButton.textContent = "All";
+  allButton.dataset.filter = "all";
+  allButton.classList.add("active");
+  filterContainer.appendChild(allButton);
+
+  // Create a button for every subject
+  subjects.forEach(subject => {
+    const button = document.createElement("button");
+
+    button.textContent = subject;
+    button.dataset.filter = subject;
+
+    filterContainer.appendChild(button);
+  });
+
+  // Handle filtering
+  const buttons = document.querySelectorAll(".filterButtons button");
+
+  buttons.forEach(button => {
+    button.addEventListener("click", () => {
+
+      buttons.forEach(btn => btn.classList.remove("active"));
+      button.classList.add("active");
+
+      const filter = button.dataset.filter;
+
+      cards.forEach(card => {
+        const cardSubjects = card.dataset.subjects
+          .split(",")
+          .map(subject => subject.trim());
+
+        if (filter === "all" || cardSubjects.includes(filter)) {
+          card.style.display = "";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    });
+  });
+</script>
