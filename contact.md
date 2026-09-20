@@ -6,7 +6,11 @@ title: Contact
 
 <h2><i class="nf nf-md-email"></i><br><a href="mailto:m@makc.co" target="_blank">m@makc.co</a></h2>
 <h2><i class="nf nf-fa-phone"></i><br><a href="tel:936-513-6885" target="_blank">(936) 513-6885</a></h2>
+<<<<<<< HEAD
 <p class="caption">The intended use for this phone number is as a receptacle for text messages and voicemails. While you certainly <em>can</em> place a phone call, there's no chance that it will get answered.</p>
+=======
+<p class="caption">The intended use for this phone number is as a receptacle for text messages and voicemails.</p>
+>>>>>>> development
 
 ---
 ## Some Notes
