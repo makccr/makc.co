@@ -14,11 +14,7 @@ A quick guide to downloading videos that are harder than they should be to downl
 2. Swap to the *Network* tab. 
 3. Reload web page if necessary and ensure video playback has been triggered.
 4. Monitor for any video files, using URL filters andior the Media category in the Developer menu.
-<<<<<<< HEAD
-5. Select individual requests and view the headers until a url with a video file is included, the video file will often be obscured, as in the following example: `https://video.com/something.php?file=name.mp4&extra_bs`
-=======
 5. Select individual requests and view the headers until a url with a video file is included, the video file will often be obscured, as in the following example: `https://site.com/control.php?file=filename.mp4&acctoken=token`
->>>>>>> development
 
 <img class="thirds" src="img/2026-08-07.jpg" alt="Using the Network section to find a URL">
 
@@ -29,20 +25,12 @@ An example using the network tab in Firefox's Dev Tools to located a segmented v
 ## Downloading the Video File 
 1. Using either *curl* or *wget* use the full URL to download the video file. 
 ```bash
-<<<<<<< HEAD
 curl -L -O "https://video.com/something.php?file=title.mp4&token=token"
-=======
-curl -L -O "https://sie.com/control.php?file=filename.mp4&acctoken=token"
->>>>>>> development
 ```
 <p class="caption">or</p>
 
 ```bash
-<<<<<<< HEAD
 wget --content-disposition "https://video.com/something.php?file=title.mp4&token=token" 
-=======
-wget --content-disposition "https://site.com/control.php?file=filename.mp4&acctoken=token" 
->>>>>>> development
 ```
 <p class="caption"><em>ensure quotes around the video file URL are in place</em></p>
 

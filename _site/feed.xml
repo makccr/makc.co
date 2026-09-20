@@ -892,9 +892,9 @@ An example using the network tab in Firefox's Dev Tools to located a segmented v
 <ol>
 <li>Using either <em>curl</em> or <em>wget</em> use the full URL to download the video file.</li>
 </ol>
-<pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-L</span> <span class="token parameter variable">-O</span> <span class="token string">"https://sie.com/control.php?file=filename.mp4&amp;acctoken=token"</span></code></pre>
+<pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-L</span> <span class="token parameter variable">-O</span> <span class="token string">"https://video.com/something.php?file=title.mp4&amp;token=token"</span></code></pre>
 <p class="caption">or</p>
-<pre class="language-bash"><code class="language-bash"><span class="token function">wget</span> --content-disposition <span class="token string">"https://site.com/control.php?file=filename.mp4&amp;acctoken=token"</span> </code></pre>
+<pre class="language-bash"><code class="language-bash"><span class="token function">wget</span> --content-disposition <span class="token string">"https://video.com/something.php?file=title.mp4&amp;token=token"</span> </code></pre>
 <p class="caption"><em>ensure quotes around the video file URL are in place</em></p>
 <ol start="2">
 <li>Multiple attempts may be neccasary if their are multiple video files located (ads in front of video, <em>et cetera</em>), however once the curl or wget process has started the file-size is usually a pretty good giveaway (18MB vs 250MB is a pretty clear difference and easy to discriminate against).</li>
