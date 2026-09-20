@@ -65,7 +65,7 @@ footer {
     color: var(--fg-color);
     text-decoration: none;
     padding: .3rem;
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
 .socialIcons a:hover {
