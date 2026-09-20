@@ -1,8 +1,9 @@
 <a href="https://makc.co">
     <img src="https://makc.co/images/github-header.svg" alt="MAKC logo" title="MAKC" align="left" height="50" />
-</a>
+</a><br>
+<br>
 
-
+---
 
 My personal website. The goal of this site is to act as: 
 
@@ -38,8 +39,8 @@ site
 6. [Netlify](https://www.netlify.com/) to deploy on `master` and `development` branches, and handle DNS.
 
 ### Deployment Status
-**makc.co**: Deployed from `master` branch.
-   [![Netlify Status](https://api.netlify.com/api/v1/badges/65e8decd-139c-4349-901a-f77fa2183f59/deploy-status)](https://app.netlify.com/projects/makccr/deploys)
+**makc.co**: Deployed from `master` branch.<br>
+[![Netlify Status](https://api.netlify.com/api/v1/badges/65e8decd-139c-4349-901a-f77fa2183f59/deploy-status)](https://app.netlify.com/projects/makccr/deploys)
 
-**dev.makc.co**: Deployed from `development` branch.
+**dev.makc.co**: Deployed from `development` branch.<br>
 [![Netlify Status](https://api.netlify.com/api/v1/badges/2dafbe5b-4346-46f4-969c-1f6ce2cf5363/deploy-status)](https://app.netlify.com/projects/devmakccr/deploys)
