@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>MAKC.CO - Replacing my Airtable Backend with one JSON File</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/modern-normalize@v3.0.1 /modern-normalize.min.css" rel="stylesheet">
+<link rel="stylesheet" href="/bundle.css">
+<script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=67e8d81386189a0019fafdf7&product=inline-share-buttons&source=platform" async="async"></script>
+<link href="/images/favicon.ico" rel="icon" type="image/ico">
+<link href="/images/favicon.png" rel="icon" type="image/png">
+<link href="/images/apple-touch-icon.png" rel="apple-touch-icon">
+<link href="/images/ios-ipad-144x144.png" sizes="144x144" rel="apple-touch-icon-precomposed">
+<link href="/images/ios-iphone-114x144.png" sizes="114x114" rel="apple-touch-icon-precomposed">
+<link href="/images/ios-default-homescreen-57x57.png" sizes="57x57" rel="apple-touch-icon-precomposed">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "MAKC.CO",
+  "url": "https://makc.co",
+  "logo": "https://makc.co/images/favicon.png"
+}
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-7MJC70LJ18"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7MJC70LJ18');
+</script>
+
+<meta property="og:image" content="https://makc.co/images/favicon.png">
+<meta property="og:title" content="MAKC.CO - Welcome">
+<meta property="og:description" content="The personal site of Makc Criswell. A propagandist for pickled red onions, rare meat activist, barely-monetizable YouTuber and Captian of the sailling vessel Argo.">
+
+<meta name="keywords" content="art, design, tech, downloads, essay, author, youtuber, vidoes, multi-media, fonts, after, effects, vim, linux, command, line, philosophy, history, policitcs">
+<meta name="description" content="The personal website of Makc Criswell. A propagandist for pickled red onions, a rare meat activist, barely-monetizable YouTuber and Captain of the sailing vessel Argo.">
+<meta name="subject" content="Design">
+<meta name="copyright" content="Makc Criswell">
+<meta name="language" content="ES">
+<meta name="robots" content="index,follow">
+<meta name="topic" content="Design">
+<meta name="summary" content="The personal website of Makc Criswell. A propagandist for pickled red onions, a rare meat activist, barely-monetizable YouTuber and Captain of the sailing vessel Argo.">
+<meta name="Classification" content="Application">
+<meta name="author" content="Makc Criswell, m@makc.co">
+<meta name="designer" content="Makc Criswell, m@makc.co">
+<meta name="copyright" content="Makc Criswell">
+<meta name="reply-to" content="m@makc.co">
+<meta name="owner" content="Makc Criswell, m@makc.co">
+<meta name="url" content="https://makc.co">
+<meta name="identifier-URL" content="https://makc.co">
+<meta name="directory" content="submission">
+<meta name="category" content="Art">
+<meta name="coverage" content="Worldwide">
+<meta name="distribution" content="Global">
+<meta name="rating" content="General">
+<meta name="revisit-after" content="7 days">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@makccr">
+<meta name="twitter:title" content="MAKC.CO - Replacing my Airtable Backend with one JSON File">
+<meta name="twitter:description" content="Im a propagandist for pickled red onions, a rare meat activist, barely-monetizable YouTuber and Captain of the sailing vessel Knox. Ive been creating content online for well over a decade now, but delivering to a very small audience. Undoubtedly, youve discovered this website by mistake, but thanks for stopping by anyway-and, feel free to browse around.">
+<meta name="twitter:image" content="https://makc.co/images/bg-head.jpg">
+
+</head>
+<body>
+    <script>
+        function mobileMenu() {
+            var x = document.getElementById("mobile-links");
+            x.classList.toggle("active");
+        }
+    </script>
+
+    <header>
+        <div class="logo-container">
+            <a href="/index">
+                <picture><source type="image/webp" srcset="/.11ty/image/?src=images%2Fm.svg&width=1000&format=webp&via=transform 1000w"><img class="logo" src="/.11ty/image/?src=images%2Fm.svg&width=1000&format=jpeg&via=transform" alt="HOME" width="1000" height="1000"></picture>
+            </a>
+        </div>
+            <div class="bars" onclick="mobileMenu()">
+                <i class="nf nf-md-menu"></i>
+            </div>
+            <p class="links">
+                <a href="/videos">Videos</a>
+                <a href="/essays">Essays</a>
+                <a href="/docs">Documentation</a>
+                <a href="/downloads">Downloads & Apps</a>
+            </p>
+    </header>
+
+<div id="mobile-links">
+    <div class="mobile-links-container">
+        <ul>
+            <li><a href="/videos">Videos</a></li>
+            <li><a href="/essays">Essays</a></li>
+            <li><a href="/docs">Documentation</a></li>
+            <li><a href="/downloads">Downloads & Apps</a></li>
+        </ul>
+    </div>
+</div>
+    
+    <main>
+        
+<h1>Replacing my Airtable Backend with one JSON File</h1>
+<p class="caption">September 20, 2026</p>
+
+<div class="essayContainer"> 
+<p>A few years ago, I began the process of rebuilding my website using the static site generator <a href="https://11ty.dev">11ty</a>. My goal in doing this was to create a hyper-performant version of my site that i could be happy to show off on web. But I also set some fairly ambitious goals for this site, mainly to create one hub to host not only all of the <a href="https://makc.co/downloads">content that I've made available</a> for public consumption, but also all of the links to content external from this site. The most challenging to host: my personal YouTube channel, and back-log of well over one hundred videos when I started the project. Creating a website that links to YouTube would be hard enough, but around the time I started this rebuild of my site, I also decided that I needed to make sure that users could not only get links to my videos on YouTube, but also alternative platforms like <a href="https://invidious.io/">Invidious</a> and <a href="https://odysee.com/">Odysse</a>. One database to host video metadata like Title, upload date, thumnails, tags, categories, and links to view each video in at least three different locations, was no small undertaking, but I made the job even harder by choosing to use not a proper database backend, but rather <a href="https://airtable.com">Airtable</a>.</p>
+<p>My reasoning for doing this seemed sound at the time: I had been using Airtable to keep track of my video creation pipeline for a year or two now, and so already had a good chunk of the videos in an Airtable base, along with much of the metadata that I wanted. Unfortunately it turned out pretty quickly that Airtable just wasn't the right tool for the job, and ended up making a static site that routinely built in less than one second into a convoluted mess that had to call out to Airtable's API every-time I build the site whether I was messing with the <a href="https://makc.co/videos">video page</a> or not. That doesn't even mention the fact that Airtable as a database solution is actually pretty terrible. I have used plenty of database application in the past, and while most of them don't have the convenience of editing on a phone or in a browser like Airtable does, all provide a much cleaner experience for creating and updating entries. Airtable's website and phone apps were slow and horrible to use when I first started using them, but only ever got worse as Airtable, like so many others, insisted on shoving AI integration into every inch of the platform, and moved more and more features behind a paywall.</p>
+<h2>JSON &amp; Airtbale</h2>
+<p>So last week I decided that I was ditching Airtable, not matter the cost. The solution that I ended up desperately wanting to try: replacing the whole database with a JSON file. I have plenty of familiarity with 11ty, and I knew that a JSON table would me to call all of the metadata that I'd need. So I created a file in <code>_data/videos.json</code>, and populated the file with a few test items:</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">[</span>
+    <span class="token punctuation">{</span> <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Creating a Private Git Server"</span><span class="token punctuation">,</span>
+      <span class="token property">"date"</span><span class="token operator">:</span> <span class="token string">"2026-05-13"</span><span class="token punctuation">,</span>
+      <span class="token property">"ytid"</span><span class="token operator">:</span> <span class="token string">"HvklHoL7Ano"</span><span class="token punctuation">,</span>
+      <span class="token property">"category"</span><span class="token operator">:</span> <span class="token string">"System Admin"</span><span class="token punctuation">,</span>
+      <span class="token property">"odurl"</span><span class="token operator">:</span> <span class="token string">"https://odysee.com/@makc:a/creating-a-private-git-server:b"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> 
+
+    <span class="token punctuation">{</span> <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Transferring Files Remotely with SSH and a VPN Tunnel"</span><span class="token punctuation">,</span>
+      <span class="token property">"date"</span><span class="token operator">:</span> <span class="token string">"2026-01-25"</span><span class="token punctuation">,</span>
+      <span class="token property">"ytid"</span><span class="token operator">:</span> <span class="token string">"TQdmp2P93cM"</span><span class="token punctuation">,</span>
+      <span class="token property">"category"</span><span class="token operator">:</span> <span class="token string">"System Admin"</span><span class="token punctuation">,</span>
+      <span class="token property">"odurl"</span><span class="token operator">:</span> <span class="token string">"https://odysee.com/@makc:a/transferring-files-remotely-with-rsync,:6"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> 
+
+    <span class="token punctuation">{</span> <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Exporting .md to .odt with Pandoc &amp; Lua"</span><span class="token punctuation">,</span>                                       
+      <span class="token property">"date"</span><span class="token operator">:</span> <span class="token string">"2026-01-18"</span><span class="token punctuation">,</span>
+      <span class="token property">"ytid"</span><span class="token operator">:</span> <span class="token string">"8ORPbeFyzeU"</span><span class="token punctuation">,</span>
+      <span class="token property">"category"</span><span class="token operator">:</span> <span class="token string">"CLI &amp; Scripting"</span><span class="token punctuation">,</span>
+      <span class="token property">"odurl"</span><span class="token operator">:</span> <span class="token string">"https://odysee.com/@makc:a/exporting-markdown-to-openoffice-with:2"</span> <span class="token punctuation">}</span>
+<span class="token punctuation">]</span></code></pre>
+<p>I was then able to easily call this JSON file on the videos page of my site with: <code>\{\% for video in videos \%\}</code> (minus the backslashes that I had to put there so the code didn't execute on this page). I figured out that I could build (1) a link to the YouTube thumbnail, (2) a YouTube link, and (3)an Invidious link all with just a YouTube ID, so the only metadata I ended up actually needing to pull was:</p>
+<ol>
+<li>Video Title</li>
+<li>Upload Date</li>
+<li>YouTube ID</li>
+<li>Category/Topic</li>
+<li>Odysee URL</li>
+</ol>
+<p>From that point I could assemble the whole thing in a pretty succinct <em>card</em> that would automatically populate on my videos page with all that data I needed:</p>
+<pre class="language-html"><code class="language-html">/{/% for video in videos /%/}
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">data-category</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/{/{ video.category /}/}<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>video-card<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://youtube.com/watch?v=/{/{ video.ytid /}/}<span class="token punctuation">"</span></span> <span class="token attr-name">target</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>_blank<span class="token punctuation">"</span></span> <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>YouTube<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://i.ytimg.com/vi//{/{ video.ytid }}/maxresdefault.jpg<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Hero image<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>metadata<span class="token punctuation">'</span></span><span class="token punctuation">></span></span>/{/{ video.date | displayDate /}/} • /{/{ video.category /}/}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>videos<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>platform-select<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+            Watch on:  
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://youtube.com/watch?v=/{/{ video.ytid /}/}<span class="token punctuation">"</span></span> <span class="token attr-name">target</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>_blank<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>YouTube, <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">target</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>_blank<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Odysee, <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span> or
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://inv.nadeko.net/watch?v=/{/{ video.ytid /}/}<span class="token punctuation">"</span></span> <span class="token attr-name">target</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>_blank<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Invidious<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span> 
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+/{/% endfor /%/}
+
+<span class="token comment">&lt;!-- Adding backslashes again so the code doesn't execute when I build the site --></span></code></pre>
+<p><strong>Note</strong>: I did also create one little filter, <code>displayDate</code> in my elventy config to convert the ISO date YYYY-MM-DD to a more human readable format. I liked the precision of keeping the ISO format in the JSON file, even if it was just being treated as a string on build, but didn't love dates being rendered as 2026-09-05 on the live site.</p>
+<pre class="language-javascript"><code class="language-javascript">eleventyConfig<span class="token punctuation">.</span><span class="token function">addFilter</span><span class="token punctuation">(</span><span class="token string">"displayDate"</span><span class="token punctuation">,</span> <span class="token parameter">dateString</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> DateTime<span class="token punctuation">.</span><span class="token function">fromISO</span><span class="token punctuation">(</span>dateString<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toFormat</span><span class="token punctuation">(</span><span class="token string">"LLLL d, yyyy"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h2>Creating My New Database</h2>
+<p>However getting a JSON file to work with 11ty is only one part of the story, and, at the risk to being a bit dismissive, it's kind of the least interesting part of it. After all 11ty was specifically designed work with basically every file-type a web developer might want to work with, JSON included.
+What took far longer during this process, and what I found to be much more interesting was the process of actually creating a single file that could list every single video that I've every made.</p>
+<h3>Migrating Airtable to JSON</h3>
+<p>Despite the fact that I had been using my half-ass Airtable solution for at least a year, I hadn't actually put in the work to consolidate all the metadata on the platform. I did manage to create Airtable entries for about 176 out of 242 videos that I have uploaded to YouTube however, so I wasn't exactly eager to abandon my Airtable database all together. But I needed to get the data off of Airtable and into a format that I could manipulate. Unfortunately, the only real way to do this with Airtable was by exporting a base as a CSV file.</p>
+<picture><source type="image/webp" srcset="/.11ty/image/?src=essays%2Fimg%2F2026-09-21-airtable.jpg&width=2049&format=webp&via=transform 2049w"><img src="/.11ty/image/?src=essays%2Fimg%2F2026-09-21-airtable.jpg&width=2049&format=jpeg&via=transform" class="half" alt="Airtable option to export CSV" width="2049" height="1171"></picture>
+<p class="caption"> 
+Exporting my Airtable base as Comma Seperated Values (a CSV file)
+</p>
+<p>I was then able to open the CSV in Libre Office Calc and strip away all but the metadata that I actually needed. I removed all the rows containing videos that hadn't been completed yet, or that I didn't want to display on my site, and then I removed all of the columns with metadata that I didn't need. I made sure to leave the first cell in each column as a title for the field, and ended up with a clean CSV file that I could export to JSON with a python's built in CSV library:</p>
+<pre class="language-python"><code class="language-python">python <span class="token operator">-</span>c 
+<span class="token string">'import csv,json,sys; print(json.dumps(list(csv.DictReader(open(sys.argv[1], newline="", encoding="utf-8"))), indent=2))'</span> 
+AIRTABLE<span class="token punctuation">.</span>csv <span class="token operator">></span> NEW<span class="token punctuation">.</span>json</code></pre>
+<picture><source type="image/webp" srcset="/.11ty/image/?src=essays%2Fimg%2F2026-09-21-csv.jpg&width=3840&format=webp&via=transform 3840w"><img src="/.11ty/image/?src=essays%2Fimg%2F2026-09-21-csv.jpg&width=3840&format=jpeg&via=transform" class="thirds" alt="My cleaned up CSV file" width="3840" height="2160"></picture>
+<p class="caption"> 
+My cleaned up CSV file
+</p>
+<h4>Cleaning Everything Up</h4>
+<p>Of course, nothing be as simple as it seems from the outside, I pretty quickly noticed some weird artifacts that had made their way into my new JSON file, most notably, every <code>&quot;title&quot;:</code> filed had a string of random characters (<code>&quot;\ufefftitle&quot;:</code>) in front of the field. Luckily however a little bit of Vim magic was able to clean this all up. If you're unfamiliar with Vim's macros, one can record a macro by pressing: <code>qX</code> and then execute that macro <em>n</em> number of times with: <code>n@X</code>. I was able to record a macro with: <code>qa</code>, fix on field, and move the cursor to the next error, close the recording with: <code>q</code>, and then watch Vim fix the whole document with: <code>174@a</code>.</p>
+<picture><source type="image/webp" srcset="/.11ty/image/?src=downloads%2F2026-09-21-vim.gif&width=1278&format=webp&via=transform 1278w"><img src="/.11ty/image/?src=downloads%2F2026-09-21-vim.gif&width=1278&format=jpeg&via=transform" class="thirds" alt="Vim magic" width="1278" height="718"></picture>
+<p class="caption"> 
+Vim cleaning up my new JSON file for me
+</p>
+<p>There were a few other miscellaneous artifacts that came from symbols being rendered incorrectly by the python conversion. I found that virtually all of these artifacts could be located by searching for a proceeding backslash, or a leading space after a quote. It took me no longer than a few minutes in Vim however to manually fix all the weirdness and have a clean JSON file with roughly 70% of my content library ready to go.</p>
+<h3>Google Takeout</h3>
+
+</div> 
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+<div class="post-navigation" style="margin-top: 3em; text-align: center;">
+  
+  
+<div class="rss">
+  
+    
+    <a href="/essays/blowing-up-to-blow-up/" class="prev-post"><button><i class="nf nf-fa-arrow_left"></i></button></a>
+  
+  <a href="/rss"><button><i class="nf nf-fa-rss"></i></button></a>
+  
+</div>
+
+    </div></main>
+   <footer>
+        <ul>
+            <li><a href="/terms">TOS & Privacy</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/ai">AI Disclosure</a></li>
+            <li><a href="https://ko-fi.com/makccr" target="_blank">Donate</a></li>
+        </ul>
+        <div class="socialIcons"> 
+            <a title="Github" target="_blank" href="https://github.com/makccr">
+                <i class="nf nf-dev-github"></i>
+            </a>
+            <a title="YouTube" target="_blank" href="https://www.youtube.com/@makc">
+                <i class="nf nf-fa-youtube"></i>
+            </a>
+            <a title="Hacker News" target="_blank" href="https://news.ycombinator.com/user?id=makc">
+                <i class="nf nf-fa-square_hacker_news"></i>
+            </a>
+            <a title="Codeberg" target="_blank" href="https://codeberg.org/makccr">
+                <i class="nf nf-linux-codeberg"></i>
+            </a>
+            <a title="Sitemap" target="_blank" href="https://makc.co/sitemap.xml">
+                <i class="nf nf-fa-sitemap"></i>
+            </a>
+            
+            <a title="RSS" href="/rss">
+                <i class="nf nf-fa-rss"></i>
+            </a>
+        </div>
+        <p>&copy; 2012-<script>document.write(/\d{4}/.exec(Date())[0])</script> <i>Mackenzie Criswell</i>.</p>
+    </footer>
+</body>
+</html>
