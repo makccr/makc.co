@@ -5,7 +5,7 @@
 <title>MAKC.CO - Replacing my Airtable Backend with One JSON File</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link href="https://cdn.jsdelivr.net/npm/modern-normalize@v3.0.1 /modern-normalize.min.css" rel="stylesheet">
-<link rel="stylesheet" href="/bundle.css">
+<link rel="stylesheet" href="/_style/bundle.css">
 <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=67e8d81386189a0019fafdf7&product=inline-share-buttons&source=platform" async="async"></script>
 <link href="/images/favicon.ico" rel="icon" type="image/ico">
 <link href="/images/favicon.png" rel="icon" type="image/png">
@@ -81,7 +81,7 @@
     <header>
         <div class="logo-container">
             <a href="/index">
-                <picture><source type="image/avif" srcset="/img/NYoRKBl56f-1000.avif 1000w"><source type="image/webp" srcset="/img/NYoRKBl56f-1000.webp 1000w"><img class="logo" src="/img/NYoRKBl56f-1000.gif" alt="HOME" width="1000" height="1000"></picture>
+                <picture><source type="image/webp" srcset="/img/Es_hZy2Cb8-1000.webp 1000w"><img class="logo" src="/img/Es_hZy2Cb8-1000.jpeg" alt="HOME" width="1000" height="1000"></picture>
             </a>
         </div>
             <div class="bars" onclick="mobileMenu()">
@@ -169,7 +169,7 @@
 <p>Getting a JSON file to work with liquid and create dynamic HTML is only one part of the story, and, at the risk of being a bit dismissive, it's the least interesting part of it. After all, Eleventy was specifically designed to work with basically every file-type a web developer might want to work with, JSON included. What took far longer during this process, and what I found to be a much more interesting challenge, was the process of actually creating a single file that could list every single video that I've ever made and all the metadata associated with it.</p>
 <h3>Migrating Airtable to JSON</h3>
 <p>Despite the fact that I had been using my half-assed Airtable solution for at least a year, I hadn't actually put in the work to consolidate all the metadata on the platform. However, I did manage to create Airtable entries for 176 out of the 242 videos that I have uploaded to YouTube and made public. So I wasn't exactly eager to abandon my Airtable database altogether. But I needed to get the data off of Airtable and into a format that I could manipulate. Unfortunately, the only real way to do this with Airtable was by exporting the base as a CSV file.</p>
-<picture><source type="image/avif" srcset="/essays/airtable-to-JSON/gOF21mwUTv-2049.avif 2049w"><source type="image/webp" srcset="/essays/airtable-to-JSON/gOF21mwUTv-2049.webp 2049w"><source type="image/gif" srcset="/essays/airtable-to-JSON/gOF21mwUTv-2049.gif 2049w"><img src="/essays/airtable-to-JSON/gOF21mwUTv-2049.jpeg" class="half" alt="Airtable option to export CSV" width="2049" height="1171"></picture>
+<picture><source type="image/webp" srcset="/essays/airtable-to-JSON/TAGe3jB0lb-2049.webp 2049w"><img src="/essays/airtable-to-JSON/TAGe3jB0lb-2049.jpeg" class="half" alt="Airtable option to export CSV" width="2049" height="1171"></picture>
 <p class="caption"> 
 Exporting my Airtable base as Comma Separated Values (a CSV file)
 </p>
@@ -177,7 +177,7 @@ Exporting my Airtable base as Comma Separated Values (a CSV file)
 <pre class="language-python"><code class="language-python">python <span class="token operator">-</span>c 
 <span class="token string">'import csv,json,sys; print(json.dumps(list(csv.DictReader(open(sys.argv[1], newline="", encoding="utf-8"))), indent=2))'</span> 
 AIRTABLE<span class="token punctuation">.</span>csv <span class="token operator">></span> NEW<span class="token punctuation">.</span>json</code></pre>
-<picture><source type="image/avif" srcset="/essays/airtable-to-JSON/wCHvmzFUUy-3840.avif 3840w"><source type="image/webp" srcset="/essays/airtable-to-JSON/wCHvmzFUUy-3840.webp 3840w"><source type="image/gif" srcset="/essays/airtable-to-JSON/wCHvmzFUUy-3840.gif 3840w"><img src="/essays/airtable-to-JSON/wCHvmzFUUy-3840.jpeg" class="thirds" alt="My cleaned up CSV file" width="3840" height="2160"></picture>
+<picture><source type="image/webp" srcset="/essays/airtable-to-JSON/eMNfEyQID_-3840.webp 3840w"><img src="/essays/airtable-to-JSON/eMNfEyQID_-3840.jpeg" class="thirds" alt="My cleaned up CSV file" width="3840" height="2160"></picture>
 <p class="caption"> 
 My cleaned up CSV file
 </p>
@@ -188,7 +188,7 @@ My cleaned up CSV file
 <p>There were a few other miscellaneous artifacts that came from symbols being rendered incorrectly by the Python conversion. I found that virtually all of these artifacts could be located by searching for a preceding backslash, or a leading space after a quote. It took me no longer than a few minutes in Vim to manually fix all the weirdness and have a clean JSON file with roughly 70% of my content library ready to go.</p>
 <h3>Google Takeout</h3>
 <p>But what to do about the remaining 30% of my video catalog? I considered just opening up Creator Studio and manually updating my JSON table. After all, I am one of those weird people who finds database creation to be a pretty calming process, even if it is comically time-consuming. But before I started to do that I remembered a little project called <em>Google Takeout</em>. A few minutes of research and I had confirmed that the same tool Google made to let users export search history and YouTube watch history could also be used to export precisely the precious metadata that I needed to build out the rest of my video catalog. Unfortunately, when I first attempted to export this data, I simply selected the <em>YouTube &amp; YouTube Music</em> export option, which, when ready for export, gave me well over 200GiB worth of .zip files to download.</p>
-<picture><source type="image/avif" srcset="/essays/airtable-to-JSON/5kfgaqdEFd-1744.avif 1744w"><source type="image/webp" srcset="/essays/airtable-to-JSON/5kfgaqdEFd-1744.webp 1744w"><source type="image/gif" srcset="/essays/airtable-to-JSON/5kfgaqdEFd-1744.gif 1744w"><img src="/essays/airtable-to-JSON/5kfgaqdEFd-1744.jpeg" class="half" alt="Exporting Google Takeout Data" width="1744" height="1475"></picture>
+<picture><source type="image/webp" srcset="/essays/airtable-to-JSON/61IKN3P3YU-1744.webp 1744w"><img src="/essays/airtable-to-JSON/61IKN3P3YU-1744.jpeg" class="half" alt="Exporting Google Takeout Data" width="1744" height="1475"></picture>
 <p class="caption"> 
 Google Takeout defaulting to exporting every single video I've ever uploaded, not just the metadata
 </p>
@@ -206,7 +206,7 @@ Google Takeout defaulting to exporting every single video I've ever uploaded, no
             │ video texts.csv
             │ videos<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>.csv
             │ videos.csv <span class="token comment"># &lt;-- Contained all the metadata I needed</span></code></pre>
-<picture><source type="image/avif" srcset="/essays/airtable-to-JSON/Fo2u9CUQvV-1630.avif 1630w"><source type="image/webp" srcset="/essays/airtable-to-JSON/Fo2u9CUQvV-1630.webp 1630w"><source type="image/gif" srcset="/essays/airtable-to-JSON/Fo2u9CUQvV-1630.gif 1630w"><img src="/essays/airtable-to-JSON/Fo2u9CUQvV-1630.jpeg" class="half" alt="Exporting Google Takeout Data only metadata" width="1630" height="1832"></picture>
+<picture><source type="image/webp" srcset="/essays/airtable-to-JSON/rBWvzvdegX-1630.webp 1630w"><img src="/essays/airtable-to-JSON/rBWvzvdegX-1630.jpeg" class="half" alt="Exporting Google Takeout Data only metadata" width="1630" height="1832"></picture>
 <p class="caption"> 
 The option in Google Takeout to export only video metadata
 </p>

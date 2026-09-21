@@ -44,17 +44,11 @@ export default function (eleventyConfig) {
   });
 
   // Plugins & passthrough
-  eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
-    formats: ["avif", "webp", "jpeg", "gif"],
-    sharpOptions: {
-        animated: true,
-    },
-  });
-  eleventyConfig.addPassthroughCopy("bundle.css");
+  eleventyConfig.addPlugin(eleventyImageTransformPlugin);
+  eleventyConfig.addPassthroughCopy("_style");
   eleventyConfig.addPassthroughCopy("images");
   eleventyConfig.addPassthroughCopy("_redirects");
   eleventyConfig.addPassthroughCopy("downloads");
-  eleventyConfig.addPassthroughCopy("style");
 
   // Filters
     eleventyConfig.addFilter("postDate", dateObj => {

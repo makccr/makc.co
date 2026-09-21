@@ -1,0 +1,132 @@
+@import url('_style/color.css');
+
+/* CONFIGURING SITE LOGO */
+.logo {
+    padding: 1rem;
+    width: 5rem;
+    height: 5rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+} 
+
+.logo-container { 
+    text-align: center; 
+}
+
+/* CONFIGURING DESKTOP LINKS*/
+header .links {
+    text-align: center; 
+    margin-top: 0rem;
+    padding-top: 0rem;
+}
+
+header .links a {
+    position: relative;
+    display: inline-block;
+    padding-left: .5rem; 
+    padding-right: .5rem; 
+    font-family: 'Open Sans', sans-serif; 
+    font-size: 1rem; 
+    font-weight: 600; 
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--fg-color);
+    transition: 0.3s; 
+}
+
+header .links a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -.1rem;;
+    width: 0;
+    height: 2px;
+    background: var(--button-hover);
+    transition: width 0.3s ease;
+    transform: translateX(-50%);
+}
+
+header .links a:hover {
+    color: var(--button-hover);
+}
+
+header .links a:hover::after {
+    width: 70%;
+}
+
+
+/* CONFIGURING MOBILE LINKS*/
+.bars {
+    display: none;
+}
+
+#mobile-links {
+    position: fixed; 
+    top: 5rem; 
+    right: 0;
+    width: 100%; 
+    height: calc(100vh - 5rem);
+
+    background: var(--header-bg);
+    backdrop-filter: blur(20px); 
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 999; 
+    transform: translateX(100%);
+    transition: transform 0.3s ease; 
+}
+
+#mobile-links ul {
+    list-style-type: none;
+    list-style-position:inside;
+    margin:0;
+    padding:0;
+}
+
+#mobile-links li {
+    text-transform: uppercase; 
+    font-size: 1.3rem; 
+    padding: 1rem 0;
+}
+
+#mobile-links {
+    text-align: right; 
+    padding: 1rem;
+}
+
+#mobile-links a {
+    font-family: 'Open Sans', sans-serif; 
+    color: var(--fg-color); 
+}
+
+#mobile-links a:hover {
+    color: var(--button-hover);
+}
+
+
+/* CONFIGURING HEADER STYLES*/
+header {
+    background-color: var(--header-bg); 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%;
+    backdrop-filter: blur(20px); 
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 1000; 
+    border-bottom: .1rem solid var(--bg-color-lighter);
+}
+
+@media only screen and (max-width: 640px) {
+    header .links { display: none; } 
+    #mobile-links.active { transform: translateX(0); }
+    .bars {
+        display: block; 
+        position: fixed; 
+        top: 1rem; 
+        right: 2rem;
+        color: var(--fg2-color);
+        font-size: 2.3rem;
+    }
+
+}

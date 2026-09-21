@@ -1,0 +1,442 @@
+@import url('_style/color.css');
+
+/* SITE-WIDE COLORS & FONTS*/
+html {
+    background-color: var(--bg-color); 
+} /* Page background color control */
+
+main {
+    padding-top: 8rem;
+}
+
+h1 {
+    color: var(--fg-color); 
+    font-family: 'Montserrat', sans-serif;
+}
+
+h2,h3,h4,h5,h6,th {
+    color: var(--fg-color);
+    font-family: 'Inconsolata', monospace; 
+} /* Setting all headers to primary foreground color */
+
+h2,h3,h4,h5,h6 { padding-top: 3rem; }
+
+p, li, td {
+    color: var(--fg2-color);
+    font-family: 'Open Sans', sans-serif; 
+} /* Setting paragraph to secondary foreground color */
+
+a {
+    text-decoration: none; 
+}
+
+/* SPACING & WIDTH*/
+main {
+    width: 70%;
+    margin-right: auto; 
+    margin-left: auto; 
+    padding-bottom: 5rem;
+}
+
+/* HEADERS, Ps & As*/
+h1 {
+    text-align: center; 
+    font-size: 2.5rem; 
+    margin-top: 10rem;
+    font-weight: 100;
+}
+
+h2 { text-align: center; }
+h2, h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.15rem; }
+h6 { font-size: 1rem; }
+
+main p {
+    line-height: 1.75rem;
+    font-size: 1.1rem;
+    padding: 1rem 0rem;
+}
+
+main p a, 
+main td a, 
+main li a, 
+main h1 a, 
+main h2 a, 
+main h3 a, 
+main h4 a, 
+main h5 a, 
+main h6 a {
+    text-decoration: none;
+    color: var(--button-hover);
+    transition: 0.3s;
+}
+
+main p a:hover, 
+main td a:hover, 
+main li a:hover, 
+main h1 a:hover,
+main h2 a:hover,
+main h3 a:hover,
+main h4 a:hover,
+main h5 a:hover,
+main h6 a:hover {
+    text-decoration: underline 3px var(--button-hover); 
+    color: var(--fg-color);
+    transition: 0.3s;
+}
+
+li {
+    line-height: 1.5rem;
+}
+
+/* ELEMENTS */
+/* CODE BLOCKS*/
+pre code {
+    color: var(--fg-color);
+    display: block;
+    padding: 1rem;
+}
+
+code {
+    white-space: pre-wrap; 
+    word-break: break-word; 
+    overflow-wrap: break-word; 
+    font-family: 'Inconsolata', monospace ; 
+    font-size: 1rem; 
+    background-color: var(--bg-color-lighter); 
+    border-radius: .3rem; 
+    border: 1px solid var(--mid-accent); 
+    padding: .2rem;
+}
+
+
+/* TABLES */
+table {
+    border-collapse: collapse; 
+    overflow: visible; 
+    margin: auto; 
+    text-align: center;
+    max-width: 100%; 
+    overflow-x: auto; 
+    -webkit-overflow-scrolling: touch; 
+}
+
+th, td {
+    border: 0px; 
+    text-align: left; 
+    padding: 1rem; 
+}
+
+th { border-bottom: .2rem solid var(--mid-accent); }
+td { border-bottom: .1rem solid var(--bg-color-lighter); }
+
+
+/* LINE BREAK */
+hr {
+    margin: 5rem 10rem ;
+    color: var(--bg-color-lighter);
+}
+
+/* BLOCKQUOTE & ATTRIBUTION */
+blockquote {
+    margin: 0rem 5rem; 
+    text-align: center;
+}
+
+blockquote p {
+    font-family: 'IM Fell English', serif;
+    color: var(--fg-color);
+    font-size: 1.25rem;
+    line-height: 1.7rem;
+}
+
+.attr {
+    text-transform: uppercase; 
+    text-align: center; 
+    padding: 0;
+    margin: 0 0 4rem;
+    position: relative; 
+    font-size: .9rem; 
+    font-family: 'Inconsolata', monospace;
+}
+
+.attr::before, .attr::after {
+    content: ""; 
+    display: block; 
+    width: 15rem; 
+    height: .1em; 
+    background: var(--mid-accent); 
+    margin: 0 auto; 
+}
+
+.attr::after {
+    margin-top: 0;
+}
+
+.attr::before {
+    margin-bottom: .5rem;
+}
+
+.attr::after {
+    margin-top: .5rem;
+}
+
+
+
+/* BUTTONS */
+button {
+    color: #cfe5ff;
+    font-family: 'Open Sans', sans-serif; 
+    font-weight: 500;
+    font-size: .9rem;
+    background-color: var(--button-color);
+    border: 0; 
+    padding: .5rem 1rem;
+    border-radius: .5rem;
+    transition: 0.3s ease;
+    margin: .25rem;
+    border: .1rem solid var(--bg-color);
+}
+
+button:hover {
+    border: .1rem solid var(--button-hover);
+    background-color: var(--bg-color);
+    scale: 103%; 
+    color: var(--button-hover);
+}
+
+/* IMAGES */
+.full , .thirds, .half {
+    width: 100%;
+    height: auto; 
+    border-radius: 1rem;
+    border: .1rem solid var(--mid-accent);
+    display: block;
+    margin-left: auto; 
+    margin-right: auto; 
+}
+
+.thirds { width: 70%; }
+.half { width: 50%; }
+
+/* CAPTION */
+.caption {
+    text-align: center; 
+    width: 60%;
+    margin: 0rem; 
+    padding; 0rem;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Miscellaneous NF symbols*/
+.nf-fa-check { color: var(--code-green); }
+.nf-fa-xmark { color: var(--code-red); }
+
+
+/* Video page card and container */
+.filterButtons {
+    text-align: center; 
+    width: 60%; 
+    margin-left: auto; 
+    margin-right: auto;
+    margin-bottom: 4rem;
+}
+
+.VIDcardContainer {
+    text-align: center; 
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+.video-card {
+    width: 25rem;
+    display: inline-block;
+    padding: .5rem; 
+}
+
+.video-card img {
+    width: 100%; 
+    height: auto;
+    border-radius: .5rem; 
+    border: .1rem solid var(--mid-accent);
+}
+
+.video-card img:hover {
+    scale: 103%;
+    border: .05rem solid var(--button-hover);
+    transition: 0.3s ease;
+}
+
+.video-card p {
+    margin: 0; 
+    padding: 0;
+    font-size: var(--fg-color);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: left; 
+}
+
+.metadata, .platform-select {
+    color: var(--fg2-color);
+    margin: 0; 
+    padding: 0; 
+    font-size: 0.8rem;
+    margin-top: .1rem;
+    text-align: left; 
+}
+
+.platform-select a {
+    color: var(--button-hover);
+    margin-bottom: 1rem;
+}
+
+.platform-select a:hover {
+    text-decoration: underline 3px var(--button-hover); 
+    color: var(--fg-color);
+    transition: 0.3s ease;
+}
+
+/* ESSAY CARDS AND CONTAINER*/
+.essay-card {
+    margin: 1rem;
+    border-radius: .5rem; 
+    border: .1rem solid var(--bg-color-lighter);
+    width: 30rem; 
+    display: inline-block;
+}
+
+.essay-card:hover {
+    transition: 0.3s ease; 
+    scale: 103%; 
+    border: .1rem solid var(--button-hover);
+}
+
+.essay-card .metadata { text-align: center; }
+
+.essay-card .essay-title {
+    font-size: 1.2rem; 
+    line-height: 1.4;
+    height: 2.8rem; 
+    box-sizing: content-box; 
+    color: var(--fg-color);
+    padding: .5rem; 
+    margin-top: 1rem; 
+    font-family: 'Montserrat', sans-serif; 
+    font-weight: 600;
+}
+
+.essay-card .essay-preview {
+    font-size: .9rem; 
+    color: var(--fg2-color);
+    padding: 1rem; 
+    margin-bottom: 1rem; 
+    font-family: 'Open Sans', sans-serif; 
+    text-align: left;
+}
+
+.essay-card .subject {
+    color: var(--button-hover);
+}
+
+.essay-card .essay-preview a {
+    color: var(--button-hover);
+}
+
+.essay-card .essay-preview a:hover {
+    text-decoration: underline 3px var(--button-hover); 
+    color: var(--fg-color);
+    transition: 0.3s;
+}
+
+/* DOWNLOADS PAGE CARDS*/
+
+.cardContainer { 
+    text-align: center; 
+    vertical-align: center; 
+    display: inline-block;
+    align: center;
+}
+
+.card {
+  width: 25rem; 
+  display: inline-block; 
+  margin: 1em; 
+  padding: 0em;
+  border: .1rem solid var(--bg-color-lighter);
+  border-radius: .5rem;
+  text-align: center;
+  transition: 0.3s ease; 
+} 
+
+.card:hover {
+    border: .1rem solid var(--button-hover); 
+    scale: 103%;
+}
+
+.card img {
+  width: 100%; 
+  max-height: 13em;
+  min-height: 13em;
+  border-top-right-radius: .5rem;
+  border-top-left-radius: .5rem;
+  object-fit: cover;
+  padding: 0em; 
+  margin: 0em;
+}
+
+.card h2 {
+    padding: 1rem .25rem; 
+    margin: 0;
+    font-size: 1.3rem; 
+    font-family: 'Montserrat', sans-serif; 
+    font-weight: 600; 
+}
+
+.card button, .post-navigation button {
+    padding: 1rem 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.card .dwnld-preview {
+    font-size: .9rem; 
+    height: 2rem; 
+    box-sizing: content-box; 
+    color: var(--fg2-color);
+    padding: 0 2rem; 
+    margin-bottom: 1rem; 
+    font-family: 'Open Sans', sans-serif; 
+    text-align: center;
+}
+
+
+/* MOBILE SITE CUSTOMIZATIONS*/
+
+@media only screen and (max-width: 640px) { /* Main phone settings */
+    main { width: 90%; }
+    table { display: block; }
+    blockquote { margin: 0rem; }
+    .thirds { width: 100%; }
+    .half { width: 70%; }
+    .caption { width: 95%; }
+    hr { margin: 5rem 2rem ; }
+    .filterButtons { width: 95%; }
+
+    .video-card { 
+        width: 100%; 
+        display: block; 
+    }
+
+    .card {
+        width: 90%; 
+        display: block;
+    }
+
+    .essay-card {
+        width: 90%;
+    }
+}

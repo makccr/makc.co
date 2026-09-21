@@ -5,7 +5,7 @@
 <title>MAKC.CO - Converting a Markdown File to a Manuscript</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link href="https://cdn.jsdelivr.net/npm/modern-normalize@v3.0.1 /modern-normalize.min.css" rel="stylesheet">
-<link rel="stylesheet" href="/bundle.css">
+<link rel="stylesheet" href="/_style/bundle.css">
 <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=67e8d81386189a0019fafdf7&product=inline-share-buttons&source=platform" async="async"></script>
 <link href="/images/favicon.ico" rel="icon" type="image/ico">
 <link href="/images/favicon.png" rel="icon" type="image/png">
@@ -81,7 +81,7 @@
     <header>
         <div class="logo-container">
             <a href="/index">
-                <picture><source type="image/avif" srcset="/img/NYoRKBl56f-1000.avif 1000w"><source type="image/webp" srcset="/img/NYoRKBl56f-1000.webp 1000w"><img class="logo" src="/img/NYoRKBl56f-1000.gif" alt="HOME" width="1000" height="1000"></picture>
+                <picture><source type="image/webp" srcset="/img/Es_hZy2Cb8-1000.webp 1000w"><img class="logo" src="/img/Es_hZy2Cb8-1000.jpeg" alt="HOME" width="1000" height="1000"></picture>
             </a>
         </div>
             <div class="bars" onclick="mobileMenu()">
@@ -152,13 +152,13 @@ brew update <span class="token operator">&amp;&amp;</span> brew upgrade <span cl
 <pre class="language-bash"><code class="language-bash">pandoc INPUT.md <span class="token parameter variable">-o</span> OUTPUT.odt </code></pre>
 <p>Open the exported <em>.odt</em> file in Libre Office and edit each paragraph style that is utilized. This can be done by opening the paragraph style menu, and using the drop down menu to edit each style individually. I have made the template I use <a href="https://makc.co/downloads/reference.zip">available for download</a>.</p>
 <p>Store this <em>reference.odt</em> file in an easy to access location, I put a copy of the template in the root directory of any writing project I'm embark on.</p>
-<picture><source type="image/avif" srcset="/docs/markdown-to-manscript/zvvgzqSFW6-854.avif 854w"><source type="image/webp" srcset="/docs/markdown-to-manscript/zvvgzqSFW6-854.webp 854w"><source type="image/gif" srcset="/docs/markdown-to-manscript/zvvgzqSFW6-854.gif 854w"><img src="/docs/markdown-to-manscript/zvvgzqSFW6-854.jpeg" alt="Libre Office Style's List" class="half" width="854" height="445"></picture>
+<picture><source type="image/webp" srcset="/docs/markdown-to-manscript/AdjSnXgsGT-854.webp 854w"><img src="/docs/markdown-to-manscript/AdjSnXgsGT-854.jpeg" alt="Libre Office Style's List" class="half" width="854" height="445"></picture>
 <p class="caption">
 Libre Office's style's list
 </p>
 <h3>.lua Filter</h3>
 <p>A problem I encountered early on involved my use of Markdown’s horizontal rule feature. When exporting to an Office format, Pandoc, quite reasonably, renders the horizontal rule as a visible line. However, in my document this element is intended to mark a scene break, which follows specific formatting conventions in a manuscript.</p>
-<picture><source type="image/avif" srcset="/docs/markdown-to-manscript/LIaNWKE9wk-1652.avif 1652w"><source type="image/webp" srcset="/docs/markdown-to-manscript/LIaNWKE9wk-1652.webp 1652w"><source type="image/gif" srcset="/docs/markdown-to-manscript/LIaNWKE9wk-1652.gif 1652w"><img src="/docs/markdown-to-manscript/LIaNWKE9wk-1652.jpeg" alt="Libre Office Style's List" class="full" width="1652" height="498"></picture>
+<picture><source type="image/webp" srcset="/docs/markdown-to-manscript/SMy3Q-jc8m-1652.webp 1652w"><img src="/docs/markdown-to-manscript/SMy3Q-jc8m-1652.jpeg" alt="Libre Office Style's List" class="full" width="1652" height="498"></picture>
 <p class="caption">
 A before and after of the horizontal rule conversion via the lua filter
 </p>
