@@ -170,6 +170,13 @@
     <priority>0.6</priority>
   </url>
 
+  <url>
+    <loc>https://makc.co/essays/airtable-to-JSON/</loc>
+    <lastmod>September 20, 2026</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 
   <url>
     <loc>https://makc.co/docs/cloning-this-site/</loc>
@@ -265,6 +272,13 @@
   <url>
     <loc>https://makc.co/docs/powershell-and-bash/</loc>
     <lastmod>September 6, 2026</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://makc.co/docs/csv-to-json/</loc>
+    <lastmod>September 20, 2026</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>

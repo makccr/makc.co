@@ -5,8 +5,117 @@
     <link>https://makc.co/</link>
     <description>All of the writing published on MAKC.CO.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 15 Aug 2026 19:00:00 CDT</lastBuildDate>
+    <lastBuildDate>Sun, 20 Sep 2026 19:00:00 CDT</lastBuildDate>
 
+    
+      <item>
+        <title>Replacing my Airtable Backend with One JSON File</title>
+        <link>https://makc.co/essays/airtable-to-JSON/</link>
+        <guid>https://makc.co/essays/airtable-to-JSON/</guid>
+        <pubDate>Sun, 20 Sep 2026 19:00:00 CDT</pubDate>
+        <description><![CDATA[<p>A few years ago, I began the process of rebuilding my website using the static site generator <a href="https://11ty.dev">11ty</a>. My goal in doing this was to create a hyper-performant version of my site that I could proudly show off on the world wide web. But I also set some fairly ambitious goals for this site, mainly to create one hub to host not only all of the <a href="https://makc.co/downloads">content that I've made available</a> for public consumption, but also links to all the external content I've created. The most challenging part: my personal YouTube channel, and it's backlog of a little over two hundred videos when I started the project. Creating a website that links to YouTube would be hard enough, but around the time I started this rebuild of my site, I also decided that I needed to make sure that users could not only get links to my videos on YouTube, but also alternative platforms like <a href="https://invidious.io/">Invidious</a> and <a href="https://odysee.com/">Odysse</a>. One database to host video metadata like title, upload date, thumbnails, tags, categories, and links to view each video in at least three different locations, was no small undertaking, but I made the job even harder by refusing to use a proper database application or CMS solution and instead insisting on using <a href="https://airtable.com">Airtable</a> for the job.</p>
+<p>My reasoning for doing this seemed sound at the time: I had been using Airtable to keep track of my video creation pipeline for the past few years, and already had a good chunk of the videos in an Airtable base, along with much of the metadata that I wanted. Unfortunately it soon became clear that Airtable simply wasn't the right tool for the job. My Airtable integration ended up making a static site that routinely built in less than one second into a convoluted mess that had to call out to Airtable's API every time I compiled the site whether I was messing with the <a href="https://makc.co/videos">video page</a> or not. Of course, Airtable as a database solution is also pretty terrible. I have used plenty of database applications in the past, and while most of them don't have the convenience of editing on a phone or in a browser like Airtable, all provide a much cleaner experience for creating and updating entries, not to mention a faster one. Airtable's website and phone apps were slow and clunky when I first started using them, but only ever got worse as Airtable, like so many others, insisted on shoving AI integration into every inch of the platform, and moved more and more features behind a paywall.</p>
+<h2>JSON &amp; Airtbale</h2>
+<p>So, last week I decided that I was done with Airtable, no matter the cost. The solution that I ended up wanting to try first: replacing the whole database with a single JSON file. I have plenty of familiarity with 11ty, and I knew that a JSON table would allow me to call all of the metadata that I'd need. So I created a file in <code>_data/videos.json</code>, and populated the file with a few test items:</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">[</span>
+    <span class="token punctuation">{</span> <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Creating a Private Git Server"</span><span class="token punctuation">,</span>
+      <span class="token property">"date"</span><span class="token operator">:</span> <span class="token string">"2026-05-13"</span><span class="token punctuation">,</span>
+      <span class="token property">"ytid"</span><span class="token operator">:</span> <span class="token string">"HvklHoL7Ano"</span><span class="token punctuation">,</span>
+      <span class="token property">"category"</span><span class="token operator">:</span> <span class="token string">"System Admin"</span><span class="token punctuation">,</span>
+      <span class="token property">"odurl"</span><span class="token operator">:</span> <span class="token string">"https://odysee.com/@makc:a/creating-a-private-git-server:b"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> 
+
+    <span class="token punctuation">{</span> <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Transferring Files Remotely with SSH and a VPN Tunnel"</span><span class="token punctuation">,</span>
+      <span class="token property">"date"</span><span class="token operator">:</span> <span class="token string">"2026-01-25"</span><span class="token punctuation">,</span>
+      <span class="token property">"ytid"</span><span class="token operator">:</span> <span class="token string">"TQdmp2P93cM"</span><span class="token punctuation">,</span>
+      <span class="token property">"category"</span><span class="token operator">:</span> <span class="token string">"System Admin"</span><span class="token punctuation">,</span>
+      <span class="token property">"odurl"</span><span class="token operator">:</span> <span class="token string">"https://odysee.com/@makc:a/transferring-files-remotely-with-rsync,:6"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> 
+
+    <span class="token punctuation">{</span> <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Exporting .md to .odt with Pandoc &amp; Lua"</span><span class="token punctuation">,</span>                                       
+      <span class="token property">"date"</span><span class="token operator">:</span> <span class="token string">"2026-01-18"</span><span class="token punctuation">,</span>
+      <span class="token property">"ytid"</span><span class="token operator">:</span> <span class="token string">"8ORPbeFyzeU"</span><span class="token punctuation">,</span>
+      <span class="token property">"category"</span><span class="token operator">:</span> <span class="token string">"CLI &amp; Scripting"</span><span class="token punctuation">,</span>
+      <span class="token property">"odurl"</span><span class="token operator">:</span> <span class="token string">"https://odysee.com/@makc:a/exporting-markdown-to-openoffice-with:2"</span> <span class="token punctuation">}</span>
+<span class="token punctuation">]</span></code></pre>
+<p>I was then able to easily call this JSON file on the videos page of my site with liquid: <code>{% for video in videos %}</code>. I figured out that I could build (1) a link to the YouTube thumbnail, (2) a YouTube link, and (3) an Invidious link all with just a YouTube ID, so the only metadata I ended up actually needing to pull was:</p>
+<ol>
+<li>Video Title</li>
+<li>Upload Date</li>
+<li>YouTube ID</li>
+<li>Category/Topic</li>
+<li>Odysee URL</li>
+</ol>
+<p>From that point I could assemble the whole thing in a clean and succinct <em>card</em> that would automatically populate on my videos page with all that data I needed:</p>
+<pre class="language-liquid"><code class="language-liquid">
+<span class="token liquid language-liquid"><span class="token delimiter punctuation">{%</span> <span class="token keyword">for</span> <span class="token object">video</span> <span class="token keyword">in</span> videos <span class="token delimiter punctuation">%}</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">data-category</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>{/{ video.category }}<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>video-card<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://youtube.com/watch?v=<span class="token liquid language-liquid"><span class="token delimiter punctuation">{{</span> <span class="token object">video</span><span class="token punctuation">.</span>ytid <span class="token delimiter punctuation">}}</span></span><span class="token punctuation">"</span></span> <span class="token attr-name">target</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>_blank<span class="token punctuation">"</span></span> <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>YouTube<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://i.ytimg.com/vi/<span class="token liquid language-liquid"><span class="token delimiter punctuation">{{</span> <span class="token object">video</span><span class="token punctuation">.</span>ytid <span class="token delimiter punctuation">}}</span></span>/maxresdefault.jpg<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Hero image<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>metadata<span class="token punctuation">'</span></span><span class="token punctuation">></span></span><span class="token liquid language-liquid"><span class="token delimiter punctuation">{{</span> <span class="token object">video</span><span class="token punctuation">.</span><span class="token object">date</span> <span class="token operator">|</span> <span class="token function filter">displayDate</span> <span class="token delimiter punctuation">}}</span></span> • <span class="token liquid language-liquid"><span class="token delimiter punctuation">{{</span> <span class="token object">video</span><span class="token punctuation">.</span>category <span class="token delimiter punctuation">}}</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>videos<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token liquid language-liquid"><span class="token delimiter punctuation">{{</span> <span class="token object">video</span><span class="token punctuation">.</span>title <span class="token operator">|</span> <span class="token function filter">truncate</span><span class="token operator">:</span> <span class="token number">42</span><span class="token punctuation">,</span> <span class="token string">"..."</span> <span class="token delimiter punctuation">}}</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>platform-select<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+            Watch on:  
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://youtube.com/watch?v=<span class="token liquid language-liquid"><span class="token delimiter punctuation">{{</span> <span class="token object">video</span><span class="token punctuation">.</span>ytid <span class="token delimiter punctuation">}}</span></span><span class="token punctuation">"</span></span> <span class="token attr-name">target</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>_blank<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>YouTube, <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token liquid language-liquid"><span class="token delimiter punctuation">{{</span> <span class="token object">video</span><span class="token punctuation">.</span>odurl <span class="token delimiter punctuation">}}</span></span><span class="token punctuation">"</span></span> <span class="token attr-name">target</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>_blank<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Odysee, <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span> or
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://inv.nadeko.net/watch?v=<span class="token liquid language-liquid"><span class="token delimiter punctuation">{{</span> <span class="token object">video</span><span class="token punctuation">.</span>ytid <span class="token delimiter punctuation">}}</span></span><span class="token punctuation">"</span></span> <span class="token attr-name">target</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>_blank<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Invidious<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span> 
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token liquid language-liquid"><span class="token delimiter punctuation">{%</span> <span class="token keyword">endfor</span> <span class="token delimiter punctuation">%}</span></span>
+</code></pre>
+<p><strong>Note</strong>: I did also create a <code>displayDate</code> filter in my Eleventy config to convert the ISO date (YYYY-MM-DD) to a more human readable format. I liked the precision of keeping the ISO format in the JSON file, even if it was just being treated as a string on build, but didn't love dates being rendered as 2026-09-05 on the live site.</p>
+<pre class="language-javascript"><code class="language-javascript">eleventyConfig<span class="token punctuation">.</span><span class="token function">addFilter</span><span class="token punctuation">(</span><span class="token string">"displayDate"</span><span class="token punctuation">,</span> <span class="token parameter">dateString</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> DateTime<span class="token punctuation">.</span><span class="token function">fromISO</span><span class="token punctuation">(</span>dateString<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toFormat</span><span class="token punctuation">(</span><span class="token string">"LLLL d, yyyy"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h2>Creating My New Database</h2>
+<p>Getting a JSON file to work with liquid and create dynamic HTML is only one part of the story, and, at the risk of being a bit dismissive, it's the least interesting part of it. After all, Eleventy was specifically designed to work with basically every file-type a web developer might want to work with, JSON included. What took far longer during this process, and what I found to be a much more interesting challenge, was the process of actually creating a single file that could list every single video that I've ever made and all the metadata associated with it.</p>
+<h3>Migrating Airtable to JSON</h3>
+<p>Despite the fact that I had been using my half-assed Airtable solution for at least a year, I hadn't actually put in the work to consolidate all the metadata on the platform. However, I did manage to create Airtable entries for 176 out of the 242 videos that I have uploaded to YouTube and made public. So I wasn't exactly eager to abandon my Airtable database altogether. But I needed to get the data off of Airtable and into a format that I could manipulate. Unfortunately, the only real way to do this with Airtable was by exporting the base as a CSV file.</p>
+<img src="img/2026-09-21-airtable.jpg" class="half" alt="Airtable option to export CSV">
+<p class="caption"> 
+Exporting my Airtable base as Comma Separated Values (a CSV file)
+</p>
+<p>I was then able to open the CSV in Libre Office Calc and strip away all but the metadata that I actually needed. I removed all the rows containing videos that hadn't been completed yet, or that I didn't want to display on my site, and then I removed all of the columns with metadata that I didn't need. I made sure to leave the first cell in each column as a title for the field, and ended up with a clean CSV file that I could export to JSON with Python's built-in CSV library. For more details on this part, check out the <a href="http://makc.co/docs/csv-to-json/">documentation</a> that I published in tandem with this essay.</p>
+<pre class="language-python"><code class="language-python">python <span class="token operator">-</span>c 
+<span class="token string">'import csv,json,sys; print(json.dumps(list(csv.DictReader(open(sys.argv[1], newline="", encoding="utf-8"))), indent=2))'</span> 
+AIRTABLE<span class="token punctuation">.</span>csv <span class="token operator">></span> NEW<span class="token punctuation">.</span>json</code></pre>
+<img src="img/2026-09-21-csv.jpg" class="thirds" alt="My cleaned up CSV file">
+<p class="caption"> 
+My cleaned up CSV file
+</p>
+<h4>Cleaning Everything Up</h4>
+<p>Of course, nothing can be as simple as it seems from the outside. I quickly noticed some weird artifacts that had made their way into my new JSON file, most notably, every <code>&quot;title&quot;:</code> field had a string of random characters (<code>&quot;\ufefftitle&quot;:</code>) in front of the field. Luckily, however a little bit of Vim magic was able to clean this all up. If you're unfamiliar with Vim's macros, one can record a macro by pressing: <code>qX</code> and then execute that macro <em>n</em> number of times with: <code>n@X</code>. I was able to record a macro with: <code>qa</code>, fix one field, and move the cursor to the next error, close the recording with: <code>q</code>, and then watch Vim fix the whole document with: <code>174@a</code>.</p>
+<p>Or, if you must do things the boring way, a simple find and replace action will do the same thing:</p>
+<pre class="language-vim"><code class="language-vim"><span class="token punctuation">:</span><span class="token operator">%</span>s<span class="token operator">/</span>\ufefftitle<span class="token operator">/</span><span class="token builtin">title</span><span class="token operator">/</span>g</code></pre>
+<p>There were a few other miscellaneous artifacts that came from symbols being rendered incorrectly by the Python conversion. I found that virtually all of these artifacts could be located by searching for a preceding backslash, or a leading space after a quote. It took me no longer than a few minutes in Vim to manually fix all the weirdness and have a clean JSON file with roughly 70% of my content library ready to go.</p>
+<h3>Google Takeout</h3>
+<p>But what to do about the remaining 30% of my video catalog? I considered just opening up Creator Studio and manually updating my JSON table. After all, I am one of those weird people who finds database creation to be a pretty calming process, even if it is comically time-consuming. But before I started to do that I remembered a little project called <em>Google Takeout</em>. A few minutes of research and I had confirmed that the same tool Google made to let users export search history and YouTube watch history could also be used to export precisely the precious metadata that I needed to build out the rest of my video catalog. Unfortunately, when I first attempted to export this data, I simply selected the <em>YouTube &amp; YouTube Music</em> export option, which, when ready for export, gave me well over 200GiB worth of .zip files to download.</p>
+<img src="img/2026-09-21-takeout-massive.jpg" class="half" alt="Exporting Google Takeout Data">
+<p class="caption"> 
+Google Takeout defaulting to exporting every single video I've ever uploaded, not just the metadata
+</p>
+<p>Takeout, by default, will export <em>everything</em>, including a full resolution copy of every single video I've uploaded to YouTube. This is probably a good thing, based on what the tool was designed for, but it's also far from what I wanted. Fortunately I was able to backtrack and find an option in the Takeout settings that allowed me to export only <em>video metadata</em>. A few more minutes of waiting, and I had a collection of CSV files that I was able to clean up and convert to JSON via the same Python library I employed earlier. All of the metadata that I needed ended up being in the <code>videos.csv</code> file in my takeout directory, but your mileage may vary.</p>
+<pre class="language-bash"><code class="language-bash">Takeout
+│
+└───YouTube and YouTube Music
+    │
+    └───video metadata
+        │
+        └───video metadata
+            │ video recordings<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>.csv
+            │ video recordings.csv
+            │ video texts<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>.csv
+            │ video texts.csv
+            │ videos<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>.csv
+            │ videos.csv <span class="token comment"># &lt;-- Contained all the metadata I needed</span></code></pre>
+<img src="img/2026-09-21-takeout-metadata.jpg" class="half" alt="Exporting Google Takeout Data only metadata">
+<p class="caption"> 
+The option in Google Takeout to export only video metadata
+</p>
+<h4>Odysee Links &amp; Final Steps</h4>
+<p>The final step in the process was gathering up all of the links to the remaining 80 or so videos on the Odysee platform. Odysee does provide some metadata export tools, and there's even a <a href="https://apify.com/parseforge/odysee-channel-scraper">channel scraper</a> on Apify that can help out as well. However, I found it just as easy to just copy and paste the links that I was missing into the JSON file.</p>
+<p>There was a little bit of cleanup to do after all the CSVs had been converted, and more cleanup stlll once I dropped the JSON file into my Eleventy site and started calling it on the pages where I needed to use the data. All in all, however, I ended up turning a job that I had been putting off completing for the better part of a year into something that I was able to knock out in a few hours while simultaneously being disappointed by the fourth season of <a href="https://www.youtube.com/watch?v=CAfVvSCCklw">Reacher</a>.</p>
+]]></description>
+      </item>
     
       <item>
         <title>Blowing Up, Just to Blow Up</title>
@@ -641,12 +750,93 @@ Don't get me wrong the collection is more than worth the five or six hundred buc
 
     
       <item>
+        <title>Convert a CSV file to JSON</title>
+        <link>https://makc.co/docs/csv-to-json/</link>
+        <guid>https://makc.co/docs/csv-to-json/</guid>
+        <pubDate>Sun, 20 Sep 2026 19:00:00 CDT</pubDate>
+        <description><![CDATA[<p>A guide to converting a CSV (Comma Separated Value) file to a properly formatted JSON file with python, and cleaning up any artifacts that might come up in the process.</p>
+<h2>Ensure Python is Installed</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">OS</th>
+<th>Install Python</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right"><strong>Arch Linux</strong></td>
+<td><code>sudo pacman -S python</code></td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>Ubuntu/Debian</strong></td>
+<td><code>sudo apt install python3</code></td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>Fedora</strong></td>
+<td><code>sudo dnf install python3</code></td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>macOS + Homebrew</strong></td>
+<td><code>brew install python</code></td>
+</tr>
+</tbody>
+</table>
+<h3>Clean up CSV</h3>
+<p>If necessary, use a tool like Libre Office Calc or Microsoft Excel to clean up the <code>.csv</code> file, as long as the spreadsheet app can export to CSV, use whatever you like. Remove any columns that contain unnecessary information, as we only want to convert data that we want to end up in the JSON file. Importantly: ensure that the top cell in each column is what you want to become the title of a JSON field. For example, a spreadsheet that looks like:</p>
+<table>
+<thead>
+<tr>
+<th>title</th>
+<th>date</th>
+<th>link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cool video thang</td>
+<td>YYYY-MM-DD</td>
+<td>makc.co/vid1.mov</td>
+</tr>
+<tr>
+<td>Antoher vid</td>
+<td>YYYY-MM-DD</td>
+<td>makc.co/vid2.mov</td>
+</tr>
+</tbody>
+</table>
+<p>Will become a JSON file that looks like:</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+        <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Cool video thang"</span><span class="token punctuation">,</span> 
+        <span class="token property">"date"</span><span class="token operator">:</span> <span class="token string">"YYYY-MM-DD"</span><span class="token punctuation">,</span>
+        <span class="token property">"link"</span><span class="token operator">:</span> <span class="token string">"makc.co/vid1.mov"</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+        <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Another vid"</span><span class="token punctuation">,</span> 
+        <span class="token property">"date"</span><span class="token operator">:</span> <span class="token string">"YYYY-MM-DD"</span><span class="token punctuation">,</span>
+        <span class="token property">"link"</span><span class="token operator">:</span> <span class="token string">"makc.co/vid2.mov"</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">]</span></code></pre>
+<h2>Convert to JSON</h2>
+<p>Modern versions of Python come with a CSV library built in. We can use this library to convert our <code>.csv</code> file to a <code>.json</code> database with the proper formatting:</p>
+<pre class="language-python"><code class="language-python">python <span class="token operator">-</span>c <span class="token string">'import csv,json,sys; print(json.dumps(list(csv.DictReader(open(sys.argv[1], newline="", encoding="utf-8"))), indent=4))'</span> OLD<span class="token punctuation">.</span>csv <span class="token operator">></span> NEW<span class="token punctuation">.</span>json</code></pre>
+<p class="caption">
+<strong>Note:</strong> This process is very fast, almost immediate on my test CSV file with 176 rows and 5 columns. If the process is taking more than a second or two, there is probably something wrong.
+</p>
+<h3>Clean up JSON</h3>
+<p>It may also be necessary to clean up some artifacts from the conversion process. I've found that if an artifact is going to be created, it will almost always be prefaced by either a backslash or a leading space where there shouldn't be one. Using a tool like Vim and searching for patterns like <code>/\</code>, <code>/ &quot;</code>or <code>/&quot; </code> make finding and fixing these errors very easy.</p>
+<p>On my test conversion I also found that the first field in each JSON entry was mangled. The field should have been called: <code>&quot;title&quot;:</code>, but in every instance, what was actually rendered was: <code>&quot;\ufefftitle&quot;:</code>. One again however, a simple Vim command was able to clean this up nearly instantly: <code>:%s/\ufefftitle/title/g</code>.</p>
+]]></description>
+      </item>
+    
+      <item>
         <title>Powershell and Bash</title>
         <link>https://makc.co/docs/powershell-and-bash/</link>
         <guid>https://makc.co/docs/powershell-and-bash/</guid>
         <pubDate>Sun, 06 Sep 2026 19:00:00 CDT</pubDate>
         <description><![CDATA[<p>Some basic tips and rules for navigating Windows and Linux with powershell and bash. This was made for my own personal use and does assume that any reader is pretty familiar with bash commands and mainly interested in learning how to transfer these same skills to navigating a Windows system via powershell.</p>
-<h1>Powershell eccentricitys</h1>
+<h2>Powershell eccentricitys</h2>
 <ul>
 <li>Get-Help (linux of -h or --help or man x)
 <ul>
@@ -673,7 +863,7 @@ Don't get me wrong the collection is more than worth the five or six hundred buc
 <li><code>Select-String</code> - ps version of <code>grep</code></li>
 <li><code>-Filter</code> lets you search for files in a directory, ex: <code>ls C:\ -Recurese - Filter *.exe</code> will give you so much data that you won't be able to use it for anything if you don't pipe it through <code>more</code>.</li>
 </ul>
-<h2>Escape Characters</h2>
+<h3>Escape Characters</h3>
 <ol>
 <li>In Linux <code>\</code> is the escape character.<pre class="language-bash"><code class="language-bash"><span class="token function">mkdir</span> My<span class="token punctuation">\</span> Folder</code></pre>
 </li>
@@ -687,7 +877,7 @@ Don't get me wrong the collection is more than worth the five or six hundred buc
 <pre class="language-bash"><code class="language-bash"><span class="token function">cp</span> *.jpg ~/Dowloads/
 
 <span class="token comment"># Copies all jpegs from working directory to ~/Downloads</span></code></pre>
-<h1>Linux stuff</h1>
+<h2>Linux stuff</h2>
 <ul>
 <li>/bin - stores apps</li>
 <li>/etc - system configs</li>
@@ -696,7 +886,7 @@ Don't get me wrong the collection is more than worth the five or six hundred buc
 <li>/usr - usr intalled files</li>
 <li>/var - temp stuff (sort of)</li>
 </ul>
-<h2><code>ls -l</code> broken down</h2>
+<h3><code>ls -l</code> broken down</h3>
 <table>
 <thead>
 <tr>
@@ -735,7 +925,7 @@ Don't get me wrong the collection is more than worth the five or six hundred buc
 </tr>
 </tbody>
 </table>
-<h2><code>ls -l permissions</code> broken down</h2>
+<h3><code>ls -l permissions</code> broken down</h3>
 <table>
 <thead>
 <tr>
@@ -778,7 +968,7 @@ Don't get me wrong the collection is more than worth the five or six hundred buc
 <li>The group has read and execution rights, not write rights.</li>
 <li>All other users also have read and execution rights, not write rights.</li>
 </ol>
-<h2>Viewing Files</h2>
+<h3>Viewing Files</h3>
 <ul>
 <li><code>cat</code> - prints full file</li>
 <li><code>head</code> - first 10 lines
@@ -799,7 +989,7 @@ Don't get me wrong the collection is more than worth the five or six hundred buc
 </ul>
 </li>
 </ul>
-<h2>Grep and His Powerful Friends</h2>
+<h3>Grep and His Powerful Friends</h3>
 <p>Way better than the powershell set-up (or at least less weird). Some examples follow:</p>
 <ul>
 <li><code>grep &quot;America is doomed&quot; Documents/journal/*.md</code> - finds every-time I wrote a journal entry after watching the news in 2026.
@@ -1686,7 +1876,7 @@ transmission-cli <span class="token parameter variable">-a</span> <span class="t
       </item>
     
       <item>
-        <title>Cloning This Webiste &amp; Getting Set-up for Development with Eleventy</title>
+        <title>Cloning This Webiste</title>
         <link>https://makc.co/docs/cloning-this-site/</link>
         <guid>https://makc.co/docs/cloning-this-site/</guid>
         <pubDate>Sat, 27 Dec 2025 18:00:00 CST</pubDate>

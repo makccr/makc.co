@@ -1,5 +1,5 @@
 ---
-title: "Cloning This Webiste & Getting Set-up for Development with Eleventy"
+title: "Cloning This Webiste"
 layout: docs.html
 date: 2025-12-28
 updated: 2026-09-21

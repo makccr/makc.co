@@ -9,7 +9,7 @@ subject: ["windows", "linux"]
 
 Some basic tips and rules for navigating Windows and Linux with powershell and bash. This was made for my own personal use and does assume that any reader is pretty familiar with bash commands and mainly interested in learning how to transfer these same skills to navigating a Windows system via powershell.
 
-# Powershell eccentricitys 
+## Powershell eccentricitys 
 * Get-Help (linux of -h or --help or man x)
     * `Get-Help ls` or `Get-Help ls --full`
     * `-Force` on ls is like `ls -a`
@@ -23,7 +23,7 @@ Some basic tips and rules for navigating Windows and Linux with powershell and b
 * `Select-String` - ps version of `grep`
 * `-Filter` lets you search for files in a directory, ex: `ls C:\ -Recurese - Filter *.exe` will give you so much data that you won't be able to use it for anything if you don't pipe it through `more`.
 
-## Escape Characters 
+### Escape Characters 
 1. In Linux `\` is the escape character. 
     ```bash
     mkdir My\ Folder
@@ -40,7 +40,7 @@ cp *.jpg ~/Dowloads/
 # Copies all jpegs from working directory to ~/Downloads
 ```
 
-# Linux stuff
+## Linux stuff
 * /bin - stores apps
 * /etc - system configs
 * /home - duh
@@ -48,14 +48,14 @@ cp *.jpg ~/Dowloads/
 * /usr - usr intalled files
 * /var - temp stuff (sort of) 
 
-## `ls -l` broken down
+### `ls -l` broken down
 | permissions | # of links | file owner group | size | date of modification | Name      |
 | ----------- | ---------- | ---------------- | ---- | -------------------- | --------- |
 | drwxr-xr-x  | 2          | makc makc        | 3    | Sep  3 19:00         | Desktop   |
 | drwxr-xr-x  | 13         | makc makc        | 14   | Sep  6 17:49         | Documents | 
 | drwxr-xr-x  | 4          | makc makc        | 5    | Sep  6 21:22         | Downloads |
 
-## `ls -l permissions` broken down
+### `ls -l permissions` broken down
 | d | rwx | r-x | r-x | 
 | - | --- | --- | --- | 
 | filetype | owner rights | group rights | everyone elses rights | 
@@ -81,7 +81,7 @@ The next nine characters are broken into three categories, permissions for the:
 3. The group has read and execution rights, not write rights.
 3. All other users also have read and execution rights, not write rights.
 
-## Viewing Files
+### Viewing Files
 * `cat` - prints full file
 * `head` - first 10 lines
     * `head -n 1 FILE` - prints specific number of lines (10 is just a default) 
@@ -92,7 +92,7 @@ The next nine characters are broken into three categories, permissions for the:
 * `less` - fills window with text file
     * Bash also has the legacy `more` command, but why bother if you don't have to? 
 
-## Grep and His Powerful Friends
+### Grep and His Powerful Friends
 Way better than the powershell set-up (or at least less weird). Some examples follow: 
 * `grep "America is doomed" Documents/journal/*.md` - finds every-time I wrote a journal entry after watching the news in 2026.
     * `grep "America is doomed" Documents/journal/*.md | less` - give me an output that I can actually parse easily.

@@ -31,7 +31,7 @@ description: My entire catalog of video content. Over a decade of content rangin
         {% for video in videos %}
     <div data-category="{{ video.category }}" class="video-card">
         <a href="https://youtube.com/watch?v={{ video.ytid }}" target="_blank" title="YouTube">
-        <img src="https://i.ytimg.com/vi/{{ video.ytid }}/maxresdefault.jpg" alt="Hero image"/>
+        <img src="https://i.ytimg.com/vi/{{ video.ytid }}/maxresdefault.jpg" alt="Hero image" loading="lazy" decoding="async"/>
         </a>
         <div class='metadata'>{{ video.date | displayDate }} • {{ video.category }}</div>
         <p class="videos">{{ video.title | truncate: 42, "..." }}</p>

@@ -81,7 +81,7 @@
     <header>
         <div class="logo-container">
             <a href="/index">
-                <picture><source type="image/webp" srcset="/img/Es_hZy2Cb8-1000.webp 1000w"><img class="logo" src="/img/Es_hZy2Cb8-1000.jpeg" alt="HOME" width="1000" height="1000"></picture>
+                <picture><source type="image/avif" srcset="/img/NYoRKBl56f-1000.avif 1000w"><source type="image/webp" srcset="/img/NYoRKBl56f-1000.webp 1000w"><img class="logo" src="/img/NYoRKBl56f-1000.gif" alt="HOME" width="1000" height="1000"></picture>
             </a>
         </div>
             <div class="bars" onclick="mobileMenu()">
@@ -114,7 +114,7 @@
 
 <div class="essayContainer"> 
 <p>Some basic tips and rules for navigating Windows and Linux with powershell and bash. This was made for my own personal use and does assume that any reader is pretty familiar with bash commands and mainly interested in learning how to transfer these same skills to navigating a Windows system via powershell.</p>
-<h1>Powershell eccentricitys</h1>
+<h2>Powershell eccentricitys</h2>
 <ul>
 <li>Get-Help (linux of -h or --help or man x)
 <ul>
@@ -141,7 +141,7 @@
 <li><code>Select-String</code> - ps version of <code>grep</code></li>
 <li><code>-Filter</code> lets you search for files in a directory, ex: <code>ls C:\ -Recurese - Filter *.exe</code> will give you so much data that you won't be able to use it for anything if you don't pipe it through <code>more</code>.</li>
 </ul>
-<h2>Escape Characters</h2>
+<h3>Escape Characters</h3>
 <ol>
 <li>In Linux <code>\</code> is the escape character.<pre class="language-bash"><code class="language-bash"><span class="token function">mkdir</span> My<span class="token punctuation">\</span> Folder</code></pre>
 </li>
@@ -155,7 +155,7 @@
 <pre class="language-bash"><code class="language-bash"><span class="token function">cp</span> *.jpg ~/Dowloads/
 
 <span class="token comment"># Copies all jpegs from working directory to ~/Downloads</span></code></pre>
-<h1>Linux stuff</h1>
+<h2>Linux stuff</h2>
 <ul>
 <li>/bin - stores apps</li>
 <li>/etc - system configs</li>
@@ -164,7 +164,7 @@
 <li>/usr - usr intalled files</li>
 <li>/var - temp stuff (sort of)</li>
 </ul>
-<h2><code>ls -l</code> broken down</h2>
+<h3><code>ls -l</code> broken down</h3>
 <table>
 <thead>
 <tr>
@@ -203,7 +203,7 @@
 </tr>
 </tbody>
 </table>
-<h2><code>ls -l permissions</code> broken down</h2>
+<h3><code>ls -l permissions</code> broken down</h3>
 <table>
 <thead>
 <tr>
@@ -246,7 +246,7 @@
 <li>The group has read and execution rights, not write rights.</li>
 <li>All other users also have read and execution rights, not write rights.</li>
 </ol>
-<h2>Viewing Files</h2>
+<h3>Viewing Files</h3>
 <ul>
 <li><code>cat</code> - prints full file</li>
 <li><code>head</code> - first 10 lines
@@ -267,7 +267,7 @@
 </ul>
 </li>
 </ul>
-<h2>Grep and His Powerful Friends</h2>
+<h3>Grep and His Powerful Friends</h3>
 <p>Way better than the powershell set-up (or at least less weird). Some examples follow:</p>
 <ul>
 <li><code>grep &quot;America is doomed&quot; Documents/journal/*.md</code> - finds every-time I wrote a journal entry after watching the news in 2026.
@@ -335,6 +335,8 @@ Documents/journal/volume-07.md:22</code></pre>
     
   
 
+  
+
 
 <div class="post-navigation" style="margin-top: 3em; text-align: center;">
   
@@ -345,6 +347,9 @@ Documents/journal/volume-07.md:22</code></pre>
     <a href="/docs/new-git-branch/" class="prev-post"><button><i class="nf nf-fa-arrow_left"></i></button></a>
   
   <a href="/rss"><button><i class="nf nf-fa-rss"></i></button></a>
+  
+    
+    <a href="/docs/csv-to-json/" class="next-post"><button><i class="nf nf-fa-arrow_right"></i></button></a>
   
 </div>
 

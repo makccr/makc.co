@@ -44,7 +44,12 @@ export default function (eleventyConfig) {
   });
 
   // Plugins & passthrough
-  eleventyConfig.addPlugin(eleventyImageTransformPlugin);
+  eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
+    formats: ["avif", "webp", "jpeg", "gif"],
+    sharpOptions: {
+        animated: true,
+    },
+  });
   eleventyConfig.addPassthroughCopy("bundle.css");
   eleventyConfig.addPassthroughCopy("images");
   eleventyConfig.addPassthroughCopy("_redirects");

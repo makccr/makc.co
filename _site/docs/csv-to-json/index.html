@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>MAKC.CO - Convert a CSV file to JSON</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/modern-normalize@v3.0.1 /modern-normalize.min.css" rel="stylesheet">
+<link rel="stylesheet" href="/bundle.css">
+<script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=67e8d81386189a0019fafdf7&product=inline-share-buttons&source=platform" async="async"></script>
+<link href="/images/favicon.ico" rel="icon" type="image/ico">
+<link href="/images/favicon.png" rel="icon" type="image/png">
+<link href="/images/apple-touch-icon.png" rel="apple-touch-icon">
+<link href="/images/ios-ipad-144x144.png" sizes="144x144" rel="apple-touch-icon-precomposed">
+<link href="/images/ios-iphone-114x144.png" sizes="114x114" rel="apple-touch-icon-precomposed">
+<link href="/images/ios-default-homescreen-57x57.png" sizes="57x57" rel="apple-touch-icon-precomposed">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "MAKC.CO",
+  "url": "https://makc.co",
+  "logo": "https://makc.co/images/favicon.png"
+}
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-7MJC70LJ18"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7MJC70LJ18');
+</script>
+
+<meta property="og:image" content="https://makc.co/images/favicon.png">
+<meta property="og:title" content="MAKC.CO - Welcome">
+<meta property="og:description" content="The personal site of Makc Criswell. A propagandist for pickled red onions, rare meat activist, barely-monetizable YouTuber and Captian of the sailling vessel Argo.">
+
+<meta name="keywords" content="art, design, tech, downloads, essay, author, youtuber, vidoes, multi-media, fonts, after, effects, vim, linux, command, line, philosophy, history, policitcs">
+<meta name="description" content="The personal website of Makc Criswell. A propagandist for pickled red onions, a rare meat activist, barely-monetizable YouTuber and Captain of the sailing vessel Argo.">
+<meta name="subject" content="Design">
+<meta name="copyright" content="Makc Criswell">
+<meta name="language" content="ES">
+<meta name="robots" content="index,follow">
+<meta name="topic" content="Design">
+<meta name="summary" content="The personal website of Makc Criswell. A propagandist for pickled red onions, a rare meat activist, barely-monetizable YouTuber and Captain of the sailing vessel Argo.">
+<meta name="Classification" content="Application">
+<meta name="author" content="Makc Criswell, m@makc.co">
+<meta name="designer" content="Makc Criswell, m@makc.co">
+<meta name="copyright" content="Makc Criswell">
+<meta name="reply-to" content="m@makc.co">
+<meta name="owner" content="Makc Criswell, m@makc.co">
+<meta name="url" content="https://makc.co">
+<meta name="identifier-URL" content="https://makc.co">
+<meta name="directory" content="submission">
+<meta name="category" content="Art">
+<meta name="coverage" content="Worldwide">
+<meta name="distribution" content="Global">
+<meta name="rating" content="General">
+<meta name="revisit-after" content="7 days">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@makccr">
+<meta name="twitter:title" content="MAKC.CO - Convert a CSV file to JSON">
+<meta name="twitter:description" content="Im a propagandist for pickled red onions, a rare meat activist, barely-monetizable YouTuber and Captain of the sailing vessel Knox. Ive been creating content online for well over a decade now, but delivering to a very small audience. Undoubtedly, youve discovered this website by mistake, but thanks for stopping by anyway-and, feel free to browse around.">
+<meta name="twitter:image" content="https://makc.co/images/bg-head.jpg">
+
+</head>
+<body>
+    <script>
+        function mobileMenu() {
+            var x = document.getElementById("mobile-links");
+            x.classList.toggle("active");
+        }
+    </script>
+
+    <header>
+        <div class="logo-container">
+            <a href="/index">
+                <picture><source type="image/avif" srcset="/img/NYoRKBl56f-1000.avif 1000w"><source type="image/webp" srcset="/img/NYoRKBl56f-1000.webp 1000w"><img class="logo" src="/img/NYoRKBl56f-1000.gif" alt="HOME" width="1000" height="1000"></picture>
+            </a>
+        </div>
+            <div class="bars" onclick="mobileMenu()">
+                <i class="nf nf-md-menu"></i>
+            </div>
+            <p class="links">
+                <a href="/videos">Videos</a>
+                <a href="/essays">Essays</a>
+                <a href="/docs">Documentation</a>
+                <a href="/downloads">Downloads & Apps</a>
+            </p>
+    </header>
+
+<div id="mobile-links">
+    <div class="mobile-links-container">
+        <ul>
+            <li><a href="/videos">Videos</a></li>
+            <li><a href="/essays">Essays</a></li>
+            <li><a href="/docs">Documentation</a></li>
+            <li><a href="/downloads">Downloads & Apps</a></li>
+        </ul>
+    </div>
+</div>
+    
+    <main>
+        
+<h1>Convert a CSV file to JSON</h1>
+<p class="caption"><strong>Originally Posted:</strong> September 20, 2026<br>
+<strong>Last Updated:</strong> September 20, 2026</p>
+
+<div class="essayContainer"> 
+<p>A guide to converting a CSV (Comma Separated Value) file to a properly formatted JSON file with python, and cleaning up any artifacts that might come up in the process.</p>
+<h2>Ensure Python is Installed</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">OS</th>
+<th>Install Python</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right"><strong>Arch Linux</strong></td>
+<td><code>sudo pacman -S python</code></td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>Ubuntu/Debian</strong></td>
+<td><code>sudo apt install python3</code></td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>Fedora</strong></td>
+<td><code>sudo dnf install python3</code></td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>macOS + Homebrew</strong></td>
+<td><code>brew install python</code></td>
+</tr>
+</tbody>
+</table>
+<h3>Clean up CSV</h3>
+<p>If necessary, use a tool like Libre Office Calc or Microsoft Excel to clean up the <code>.csv</code> file, as long as the spreadsheet app can export to CSV, use whatever you like. Remove any columns that contain unnecessary information, as we only want to convert data that we want to end up in the JSON file. Importantly: ensure that the top cell in each column is what you want to become the title of a JSON field. For example, a spreadsheet that looks like:</p>
+<table>
+<thead>
+<tr>
+<th>title</th>
+<th>date</th>
+<th>link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cool video thang</td>
+<td>YYYY-MM-DD</td>
+<td>makc.co/vid1.mov</td>
+</tr>
+<tr>
+<td>Antoher vid</td>
+<td>YYYY-MM-DD</td>
+<td>makc.co/vid2.mov</td>
+</tr>
+</tbody>
+</table>
+<p>Will become a JSON file that looks like:</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+        <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Cool video thang"</span><span class="token punctuation">,</span> 
+        <span class="token property">"date"</span><span class="token operator">:</span> <span class="token string">"YYYY-MM-DD"</span><span class="token punctuation">,</span>
+        <span class="token property">"link"</span><span class="token operator">:</span> <span class="token string">"makc.co/vid1.mov"</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+        <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Another vid"</span><span class="token punctuation">,</span> 
+        <span class="token property">"date"</span><span class="token operator">:</span> <span class="token string">"YYYY-MM-DD"</span><span class="token punctuation">,</span>
+        <span class="token property">"link"</span><span class="token operator">:</span> <span class="token string">"makc.co/vid2.mov"</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">]</span></code></pre>
+<h2>Convert to JSON</h2>
+<p>Modern versions of Python come with a CSV library built in. We can use this library to convert our <code>.csv</code> file to a <code>.json</code> database with the proper formatting:</p>
+<pre class="language-python"><code class="language-python">python <span class="token operator">-</span>c <span class="token string">'import csv,json,sys; print(json.dumps(list(csv.DictReader(open(sys.argv[1], newline="", encoding="utf-8"))), indent=4))'</span> OLD<span class="token punctuation">.</span>csv <span class="token operator">></span> NEW<span class="token punctuation">.</span>json</code></pre>
+<p class="caption">
+<strong>Note:</strong> This process is very fast, almost immediate on my test CSV file with 176 rows and 5 columns. If the process is taking more than a second or two, there is probably something wrong.
+</p>
+<h3>Clean up JSON</h3>
+<p>It may also be necessary to clean up some artifacts from the conversion process. I've found that if an artifact is going to be created, it will almost always be prefaced by either a backslash or a leading space where there shouldn't be one. Using a tool like Vim and searching for patterns like <code>/\</code>, <code>/ &quot;</code>or <code>/&quot; </code> make finding and fixing these errors very easy.</p>
+<p>On my test conversion I also found that the first field in each JSON entry was mangled. The field should have been called: <code>&quot;title&quot;:</code>, but in every instance, what was actually rendered was: <code>&quot;\ufefftitle&quot;:</code>. One again however, a simple Vim command was able to clean this up nearly instantly: <code>:%s/\ufefftitle/title/g</code>.</p>
+
+</div> 
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+<div class="post-navigation" style="margin-top: 3em; text-align: center;">
+  
+  
+<div class="rss">
+  
+    
+    <a href="/docs/powershell-and-bash/" class="prev-post"><button><i class="nf nf-fa-arrow_left"></i></button></a>
+  
+  <a href="/rss"><button><i class="nf nf-fa-rss"></i></button></a>
+  
+</div>
+
+    </div></main>
+   <footer>
+        <ul>
+            <li><a href="/terms">TOS & Privacy</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/ai">AI Disclosure</a></li>
+            <li><a href="https://ko-fi.com/makccr" target="_blank">Donate</a></li>
+        </ul>
+        <div class="socialIcons"> 
+            <a title="Github" target="_blank" href="https://github.com/makccr">
+                <i class="nf nf-dev-github"></i>
+            </a>
+            <a title="YouTube" target="_blank" href="https://www.youtube.com/@makc">
+                <i class="nf nf-fa-youtube"></i>
+            </a>
+            <a title="Hacker News" target="_blank" href="https://news.ycombinator.com/user?id=makc">
+                <i class="nf nf-fa-square_hacker_news"></i>
+            </a>
+            <a title="Codeberg" target="_blank" href="https://codeberg.org/makccr">
+                <i class="nf nf-linux-codeberg"></i>
+            </a>
+            <a title="Sitemap" target="_blank" href="https://makc.co/sitemap.xml">
+                <i class="nf nf-fa-sitemap"></i>
+            </a>
+            
+            <a title="RSS" href="/rss">
+                <i class="nf nf-fa-rss"></i>
+            </a>
+        </div>
+        <p>&copy; 2012-<script>document.write(/\d{4}/.exec(Date())[0])</script> <i>Mackenzie Criswell</i>.</p>
+    </footer>
+</body>
+</html>

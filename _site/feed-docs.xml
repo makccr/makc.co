@@ -5,8 +5,89 @@
     <link>https://makc.co/docs/</link>
     <description>My personal documentation. Most sane people would keep this in a notebook, but clearly I had other ideas. Feel free to use the information found here, but please don't think that any of this documentation was written with any level of verifiable expertise. It's probably still better than what ChatGPT would have told ya' though ;)</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 06 Sep 2026 19:00:00 CDT</lastBuildDate>
+    <lastBuildDate>Sun, 20 Sep 2026 19:00:00 CDT</lastBuildDate>
 
+    
+      <item>
+        <title>Convert a CSV file to JSON</title>
+        <link>https://makc.co/docs/csv-to-json/</link>
+        <guid>https://makc.co/docs/csv-to-json/</guid>
+        <pubDate>Sun, 20 Sep 2026 19:00:00 CDT</pubDate>
+        <description><![CDATA[<p>A guide to converting a CSV (Comma Separated Value) file to a properly formatted JSON file with python, and cleaning up any artifacts that might come up in the process.</p>
+<h2>Ensure Python is Installed</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">OS</th>
+<th>Install Python</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right"><strong>Arch Linux</strong></td>
+<td><code>sudo pacman -S python</code></td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>Ubuntu/Debian</strong></td>
+<td><code>sudo apt install python3</code></td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>Fedora</strong></td>
+<td><code>sudo dnf install python3</code></td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>macOS + Homebrew</strong></td>
+<td><code>brew install python</code></td>
+</tr>
+</tbody>
+</table>
+<h3>Clean up CSV</h3>
+<p>If necessary, use a tool like Libre Office Calc or Microsoft Excel to clean up the <code>.csv</code> file, as long as the spreadsheet app can export to CSV, use whatever you like. Remove any columns that contain unnecessary information, as we only want to convert data that we want to end up in the JSON file. Importantly: ensure that the top cell in each column is what you want to become the title of a JSON field. For example, a spreadsheet that looks like:</p>
+<table>
+<thead>
+<tr>
+<th>title</th>
+<th>date</th>
+<th>link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cool video thang</td>
+<td>YYYY-MM-DD</td>
+<td>makc.co/vid1.mov</td>
+</tr>
+<tr>
+<td>Antoher vid</td>
+<td>YYYY-MM-DD</td>
+<td>makc.co/vid2.mov</td>
+</tr>
+</tbody>
+</table>
+<p>Will become a JSON file that looks like:</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+        <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Cool video thang"</span><span class="token punctuation">,</span> 
+        <span class="token property">"date"</span><span class="token operator">:</span> <span class="token string">"YYYY-MM-DD"</span><span class="token punctuation">,</span>
+        <span class="token property">"link"</span><span class="token operator">:</span> <span class="token string">"makc.co/vid1.mov"</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+        <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Another vid"</span><span class="token punctuation">,</span> 
+        <span class="token property">"date"</span><span class="token operator">:</span> <span class="token string">"YYYY-MM-DD"</span><span class="token punctuation">,</span>
+        <span class="token property">"link"</span><span class="token operator">:</span> <span class="token string">"makc.co/vid2.mov"</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">]</span></code></pre>
+<h2>Convert to JSON</h2>
+<p>Modern versions of Python come with a CSV library built in. We can use this library to convert our <code>.csv</code> file to a <code>.json</code> database with the proper formatting:</p>
+<pre class="language-python"><code class="language-python">python <span class="token operator">-</span>c <span class="token string">'import csv,json,sys; print(json.dumps(list(csv.DictReader(open(sys.argv[1], newline="", encoding="utf-8"))), indent=4))'</span> OLD<span class="token punctuation">.</span>csv <span class="token operator">></span> NEW<span class="token punctuation">.</span>json</code></pre>
+<p class="caption">
+<strong>Note:</strong> This process is very fast, almost immediate on my test CSV file with 176 rows and 5 columns. If the process is taking more than a second or two, there is probably something wrong.
+</p>
+<h3>Clean up JSON</h3>
+<p>It may also be necessary to clean up some artifacts from the conversion process. I've found that if an artifact is going to be created, it will almost always be prefaced by either a backslash or a leading space where there shouldn't be one. Using a tool like Vim and searching for patterns like <code>/\</code>, <code>/ &quot;</code>or <code>/&quot; </code> make finding and fixing these errors very easy.</p>
+<p>On my test conversion I also found that the first field in each JSON entry was mangled. The field should have been called: <code>&quot;title&quot;:</code>, but in every instance, what was actually rendered was: <code>&quot;\ufefftitle&quot;:</code>. One again however, a simple Vim command was able to clean this up nearly instantly: <code>:%s/\ufefftitle/title/g</code>.</p>
+]]></description>
+      </item>
     
       <item>
         <title>Powershell and Bash</title>
@@ -14,7 +95,7 @@
         <guid>https://makc.co/docs/powershell-and-bash/</guid>
         <pubDate>Sun, 06 Sep 2026 19:00:00 CDT</pubDate>
         <description><![CDATA[<p>Some basic tips and rules for navigating Windows and Linux with powershell and bash. This was made for my own personal use and does assume that any reader is pretty familiar with bash commands and mainly interested in learning how to transfer these same skills to navigating a Windows system via powershell.</p>
-<h1>Powershell eccentricitys</h1>
+<h2>Powershell eccentricitys</h2>
 <ul>
 <li>Get-Help (linux of -h or --help or man x)
 <ul>
@@ -41,7 +122,7 @@
 <li><code>Select-String</code> - ps version of <code>grep</code></li>
 <li><code>-Filter</code> lets you search for files in a directory, ex: <code>ls C:\ -Recurese - Filter *.exe</code> will give you so much data that you won't be able to use it for anything if you don't pipe it through <code>more</code>.</li>
 </ul>
-<h2>Escape Characters</h2>
+<h3>Escape Characters</h3>
 <ol>
 <li>In Linux <code>\</code> is the escape character.<pre class="language-bash"><code class="language-bash"><span class="token function">mkdir</span> My<span class="token punctuation">\</span> Folder</code></pre>
 </li>
@@ -55,7 +136,7 @@
 <pre class="language-bash"><code class="language-bash"><span class="token function">cp</span> *.jpg ~/Dowloads/
 
 <span class="token comment"># Copies all jpegs from working directory to ~/Downloads</span></code></pre>
-<h1>Linux stuff</h1>
+<h2>Linux stuff</h2>
 <ul>
 <li>/bin - stores apps</li>
 <li>/etc - system configs</li>
@@ -64,7 +145,7 @@
 <li>/usr - usr intalled files</li>
 <li>/var - temp stuff (sort of)</li>
 </ul>
-<h2><code>ls -l</code> broken down</h2>
+<h3><code>ls -l</code> broken down</h3>
 <table>
 <thead>
 <tr>
@@ -103,7 +184,7 @@
 </tr>
 </tbody>
 </table>
-<h2><code>ls -l permissions</code> broken down</h2>
+<h3><code>ls -l permissions</code> broken down</h3>
 <table>
 <thead>
 <tr>
@@ -146,7 +227,7 @@
 <li>The group has read and execution rights, not write rights.</li>
 <li>All other users also have read and execution rights, not write rights.</li>
 </ol>
-<h2>Viewing Files</h2>
+<h3>Viewing Files</h3>
 <ul>
 <li><code>cat</code> - prints full file</li>
 <li><code>head</code> - first 10 lines
@@ -167,7 +248,7 @@
 </ul>
 </li>
 </ul>
-<h2>Grep and His Powerful Friends</h2>
+<h3>Grep and His Powerful Friends</h3>
 <p>Way better than the powershell set-up (or at least less weird). Some examples follow:</p>
 <ul>
 <li><code>grep &quot;America is doomed&quot; Documents/journal/*.md</code> - finds every-time I wrote a journal entry after watching the news in 2026.
@@ -1054,7 +1135,7 @@ transmission-cli <span class="token parameter variable">-a</span> <span class="t
       </item>
     
       <item>
-        <title>Cloning This Webiste &amp; Getting Set-up for Development with Eleventy</title>
+        <title>Cloning This Webiste</title>
         <link>https://makc.co/docs/cloning-this-site/</link>
         <guid>https://makc.co/docs/cloning-this-site/</guid>
         <pubDate>Sat, 27 Dec 2025 18:00:00 CST</pubDate>
