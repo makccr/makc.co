@@ -1,6 +1,7 @@
 ---
 layout: main.html
 title: AI Disclosure
+description: My statements on my use of AI and commitment's reguarding future use.
 ---
 <h1>{{ title }}</h1>
 

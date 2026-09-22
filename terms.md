@@ -1,6 +1,7 @@
 ---
 layout: main.html
 title: Terms of Service and Privacy Policy
+description: The Terms of Service and Privacy Policy for this Site & All of it's sub-domains
 ---
 # {{ title }}
 <p class='caption'>

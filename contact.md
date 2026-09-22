@@ -1,6 +1,7 @@
 ---
 layout: main.html
 title: Contact
+description: It's a contact page, I think the title says it all. 
 ---
 <h1>{{ title }}</h1>
 
