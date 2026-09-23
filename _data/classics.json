@@ -1,0 +1,80 @@
+[
+  {
+    "title": "Airplane!",
+    "img": "/images/now/airplane.jpg"
+  }, 
+  {
+    "title": "Barge Haulers on the Volga",
+    "img": "/images/now/barge-haulers-on-the-volga.jpg"
+  }, 
+  {
+    "title": "Inglorious Basterds",
+    "img": "/images/now/basterds.jpg"
+  },
+  {
+    "title": "Cosmos Factory",
+    "img": "images/now/cosmos-factory.jpg"
+  },
+
+  {
+    "title": "Nicholas Winding Refn's Drive",
+    "img": "images/now/drive.jpg"
+  },
+
+  {
+    "title": "The Freewheelin' Bob Dylan",
+    "img": "images/now/freewheelin.jpg"
+  },
+  {
+    "title": "The Gulag Archipelago",
+    "img": "images/now/gulag.jpg"
+  },
+  {
+    "title": "The Big Lebowski",
+    "img": "images/now/lebowski.jpg"
+  },
+  {
+    "title": "Let it Bleed",
+    "img": "images/now/let-it-bleed.jpeg"
+  },
+  {
+    "title": "Nashville Skyline",
+    "img": "images/now/nashville-skyline.jpg"
+  },
+  {
+    "title": "Nicomachean Ethics",
+    "img": "/images/now/nicomachean-ethics.jpg"
+  },
+  {
+    "title": "No Country for Old Men",
+    "img": "images/now/no-country-for-old-men.jpg"
+  },
+  {
+    "title": "Platoon",
+    "img": "images/now/platoon.jpg"
+  },
+  {
+    "title": "Rebecca",
+    "img": "images/now/rebecca.jpg"
+  },
+  {
+    "title": "The Brothers Karmazov",
+    "img": "images/now/the-brothers-k.jpg"
+  },
+  {
+    "title": "The Fratricides",
+    "img": "images/now/the-fraticides.jpg"
+  },
+  {
+    "title": "The Old Man and The Sea",
+    "img": "images/now/old-man.jpg"
+  },
+  {
+    "title": "The World We Knew",
+    "img": "images/now/world-we-knew.jpg"
+  },
+  {
+    "title": "Zorba the Greek",
+    "img": "images/now/zorba-the-greek.jpg"
+  }
+]

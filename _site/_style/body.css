@@ -413,10 +413,39 @@ button:hover {
     text-align: center;
 }
 
+.now-carousel {
+    width: 100%;
+    overflow: hidden;
+}
+
+.now-track {
+    display: flex;
+    width: max-content;
+    animation: now-scroll 45s linear infinite;
+}
+
+.now-track img {
+    flex: 0 0 auto;
+    height: 18rem;
+    width: auto;
+    padding: .5rem;
+    box-sizing: border-box;
+}
+
+@keyframes now-scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-40%);
+    }
+}
+
 
 /* MOBILE SITE CUSTOMIZATIONS*/
 
-@media only screen and (max-width: 640px) { /* Main phone settings */
+@media only screen and (max-width: 600px) { /* Main phone settings */
     main { width: 90%; }
     table { display: block; }
     blockquote { margin: 0rem; }
@@ -438,5 +467,9 @@ button:hover {
 
     .essay-card {
         width: 90%;
+    }
+    .now-track img {
+        height: 15rem;
+        padding: .3rem;
     }
 }

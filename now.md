@@ -48,3 +48,26 @@ A big part of my life is the art that I engage with, so I like to leave some lin
 * More recently I also had a chance to check out Medium Build's newest album, [King of Having Fun](https://www.mediumbuildmusic.com/music/#/). It is also very good. 
 * I'm never not listening to Frank Sinatra and Bob Dylan albums.
 * I rediscovered [John Martin's](https://en.wikipedia.org/wiki/John_Martin_(painter)) paintings. [Pandemonium](https://upload.wikimedia.org/wikipedia/commons/0/08/John_Martin_Le_Pandemonium_Louvre.JPG) in particular is nearly impossible to look away from. It's a Romantic-style interpretation of Pandemonium as it's described in John Milton's [Paradise Lost](https://www.poetryfoundation.org/poems/45718/paradise-lost-book-1-1674-version) poem, and it's obviously vibrant and beautiful, but as is the case with most great paintings, I can't quite articulate what I find so fascinating about it.
+
+<h2>
+Some all-time favorites
+</h2>
+
+<div class="now-carousel">
+    <div class="now-track">
+        {% for classic in classics %}
+            <img src="{{ classic.img }}"
+                 alt="{{ classic.title }}"
+                 loading="lazy"
+                 decoding="async">
+        {% endfor %}
+
+        {% for classic in classics %}
+            <img src="{{ classic.img }}"
+                 alt=""
+                 aria-hidden="true"
+                 loading="lazy"
+                 decoding="async">
+        {% endfor %}
+    </div>
+</div>
