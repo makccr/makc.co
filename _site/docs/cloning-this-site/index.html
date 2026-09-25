@@ -137,7 +137,9 @@
 or
 <span class="token function">git</span> clone https://github.com/makccr/makc.co</code></pre>
 <h3>Install 11ty &amp; Required Plugins</h3>
-<pre class="language-shell"><code class="language-shell"><span class="token function">npm</span> <span class="token function">install</span> @11ty/eleventy @11ty/eleventy-img striptags @11ty/eleventy-plugin-rss @11ty/eleventy-plugin-syntaxhighlight<span class="token punctuation">;</span> <span class="token function">npm</span> <span class="token function">install</span> luxon --save-dev</code></pre>
+<pre class="language-shell"><code class="language-shell"><span class="token function">npm</span> <span class="token function">install</span></code></pre>
+<p>Or, to install the specific versions currently in use, stored in `package-lock.json':</p>
+<pre class="language-shell"><code class="language-shell"><span class="token function">npm</span> ci</code></pre>
 <h3>Verify the New Instance is Ready for Development</h3>
 <p>The easiest way to verify that everything is working properly, is simply to attempt to compile and serve the eleventy site:</p>
 <pre class="language-shell"><code class="language-shell">npx @11ty/eleventy <span class="token parameter variable">--serve</span></code></pre>

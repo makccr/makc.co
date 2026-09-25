@@ -36,7 +36,12 @@ git clone https://github.com/makccr/makc.co
 
 ### Install 11ty & Required Plugins
 ```shell
-npm install @11ty/eleventy @11ty/eleventy-img striptags @11ty/eleventy-plugin-rss @11ty/eleventy-plugin-syntaxhighlight; npm install luxon --save-dev
+npm install
+```
+
+Or, to install the specific versions currently in use, stored in `package-lock.json': 
+```shell
+npm ci
 ```
 
 ### Verify the New Instance is Ready for Development
