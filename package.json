@@ -20,15 +20,15 @@
   "homepage": "https://github.com/makccr/makccr.github.io#readme",
   "type": "module",
   "dependencies": {
-    "@11ty/eleventy": "^3.1.5",
+    "@11ty/eleventy": "^3.1.6",
     "@11ty/eleventy-cache-assets": "^2.3.0",
-    "@11ty/eleventy-img": "^6.0.4",
-    "@11ty/eleventy-plugin-rss": "^2.0.4",
+    "@11ty/eleventy-img": "^7.0.0",
+    "@11ty/eleventy-plugin-rss": "^3.0.0",
     "@quasibit/eleventy-plugin-sitemap": "^2.2.0",
     "airtable": "^0.12.2",
     "bootstrap-icons": "^1.13.1",
-    "dotenv": "^17.4.0",
-    "moment": "^2.30.1",
+    "dotenv": "^18.0.3",
+    "moment": "^2.31.0",
     "striptags": "^3.2.0"
   },
   "devDependencies": {

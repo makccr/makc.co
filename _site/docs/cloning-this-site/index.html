@@ -81,7 +81,7 @@
     <header>
         <div class="logo-container">
             <a href="/index">
-                <picture><source type="image/webp" srcset="/img/Es_hZy2Cb8-1000.webp 1000w"><img class="logo" src="/img/Es_hZy2Cb8-1000.jpeg" alt="HOME" width="1000" height="1000"></picture>
+                <picture><source type="image/webp" srcset="/img/Es_hZy2Cb8-1000.webp"><img class="logo" src="/img/Es_hZy2Cb8-1000.jpeg" alt="HOME" width="1000" height="1000"></picture>
             </a>
         </div>
             <div class="bars" onclick="mobileMenu()">
@@ -112,7 +112,7 @@
         
 <h1>Cloning This Webiste</h1>
 <p class="caption"><strong>Originally Posted:</strong> December 27, 2025<br>
-<strong>Last Updated:</strong> September 20, 2026</p>
+<strong>Last Updated:</strong> September 24, 2026</p>
 
 <div class="essayContainer"> 
 <p>A quick guide for cloning this site's repository via git &amp; getting set up for development on a new system. I use <a href="https://github.com/11ty/eleventy/">Eleventy (11ty)</a> as a static site generator &amp; <a href="https://airtable.com/">Airtable</a> as a <em>sort of a CMS solution</em>. This documentation will walk through cloning this website's repository from <a href="https://github.com/makccr/makccr.github.io">GitHub</a>, installing all required dependencies, insuring all NPM plugins are installed, and testing to ensure that the new machine is ready for further development.</p>
@@ -145,6 +145,13 @@ or
 <pre class="language-shell"><code class="language-shell">npx @11ty/eleventy</code></pre>
 <p>When ready to commit changes to the site, just use the normal git process for doing so. The site is hosted on Netlify &amp; any changes pushed to the <em>master</em> branch will go live immediately.</p>
 <pre class="language-shell"><code class="language-shell"><span class="token function">git</span> <span class="token function">add</span> -A<span class="token punctuation">;</span> <span class="token function">git</span> commit <span class="token parameter variable">-m</span> <span class="token string">"message"</span><span class="token punctuation">;</span> <span class="token function">git</span> push</code></pre>
+<h2>Updating NPM Packages</h2>
+<p>Obviously keeping packages up to date is a pretty important security practice. Luckily if packages are installed via <code>npm</code>, we can check for and install updates to 11ty packages very easily:</p>
+<pre class="language-bash"><code class="language-bash">npx npm-check-updates <span class="token parameter variable">-u</span> <span class="token comment"># Checks for updates </span>
+
+<span class="token function">npm</span> <span class="token function">install</span> <span class="token comment"># Installs updates </span>
+<span class="token function">npm</span> i <span class="token comment"># Shorthand for npm install</span></code></pre>
+<p>It may also be necessary to use the <code>npm audit</code> command to fix any issues that arise in the update process.</p>
 <hr>
 <h2>Helpful Formatting Blocks</h2>
 <h3>New Essay Header</h3>
@@ -153,7 +160,8 @@ or
 layout: essay.html
 date: YYYY-MM-DD
 tags: essay 
-subject: ["subject1", "subject2"]</span>
+subject: ["subject1", "subject2"]
+description: "WORDS"</span>
 <span class="token punctuation">---</span></span></code></pre>
 <h3>New Doc Header</h3>
 <pre class="language-markdown"><code class="language-markdown"><span class="token front-matter-block"><span class="token punctuation">---</span>
@@ -162,7 +170,14 @@ layout: docs.html
 date: YYYY-MM-DD
 updated: YYYY-MM-DD
 tags: docs
-subject: ["subject1", "subject2"]</span>
+subject: ["subject1", "subject2"]
+description: "WORDS"</span>
+<span class="token punctuation">---</span></span></code></pre>
+<h3>Generic New Page</h3>
+<pre class="language-markdown"><code class="language-markdown"><span class="token front-matter-block"><span class="token punctuation">---</span>
+<span class="token front-matter yaml language-yaml">includes: main.html 
+title: "TITLE"
+description: "WORDS"</span>
 <span class="token punctuation">---</span></span></code></pre>
 
 </div> 

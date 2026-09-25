@@ -2,7 +2,7 @@
 title: "Cloning This Webiste"
 layout: docs.html
 date: 2025-12-28
-updated: 2026-09-21
+updated: 2026-09-25
 tags: docs 
 subject: ["webDev", "linux", "software"]
 ---
@@ -58,6 +58,18 @@ When ready to commit changes to the site, just use the normal git process for do
 git add -A; git commit -m "message"; git push
 ```
 
+## Updating NPM Packages
+Obviously keeping packages up to date is a pretty important security practice. Luckily if packages are installed via `npm`, we can check for and install updates to 11ty packages very easily: 
+
+```bash
+npx npm-check-updates -u # Checks for updates 
+
+npm install # Installs updates 
+npm i # Shorthand for npm install
+```
+
+It may also be necessary to use the `npm audit` command to fix any issues that arise in the update process.
+
 --- 
 
 ## Helpful Formatting Blocks
@@ -69,6 +81,7 @@ layout: essay.html
 date: YYYY-MM-DD
 tags: essay 
 subject: ["subject1", "subject2"]
+description: "WORDS"
 ---
 ```
 ### New Doc Header
@@ -80,5 +93,14 @@ date: YYYY-MM-DD
 updated: YYYY-MM-DD
 tags: docs
 subject: ["subject1", "subject2"]
+description: "WORDS"
+---
+```
+### Generic New Page
+```markdown
+---
+includes: main.html 
+title: "TITLE"
+description: "WORDS"
 ---
 ```

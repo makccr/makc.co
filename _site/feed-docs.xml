@@ -5,14 +5,14 @@
     <link>https://makc.co/docs/</link>
     <description>My personal documentation. Most sane people would keep this in a notebook, but clearly I had other ideas. Feel free to use the information found here, but please don't think that any of this documentation was written with any level of verifiable expertise. It's probably still better than what ChatGPT would have told ya' though ;)</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 20 Sep 2026 19:00:00 CDT</lastBuildDate>
+    <lastBuildDate>Sun, 20 Sep 2026 19:00:00 -0500</lastBuildDate>
 
     
       <item>
         <title>Convert a CSV file to JSON</title>
         <link>https://makc.co/docs/csv-to-json/</link>
         <guid>https://makc.co/docs/csv-to-json/</guid>
-        <pubDate>Sun, 20 Sep 2026 19:00:00 CDT</pubDate>
+        <pubDate>Sun, 20 Sep 2026 19:00:00 -0500</pubDate>
         <description><![CDATA[<p>A guide to converting a CSV (Comma Separated Value) file to a properly formatted JSON file with python, and cleaning up any artifacts that might come up in the process.</p>
 <h2>Ensure Python is Installed</h2>
 <table>
@@ -93,7 +93,7 @@
         <title>Powershell and Bash</title>
         <link>https://makc.co/docs/powershell-and-bash/</link>
         <guid>https://makc.co/docs/powershell-and-bash/</guid>
-        <pubDate>Sun, 06 Sep 2026 19:00:00 CDT</pubDate>
+        <pubDate>Sun, 06 Sep 2026 19:00:00 -0500</pubDate>
         <description><![CDATA[<p>Some basic tips and rules for navigating Windows and Linux with powershell and bash. This was made for my own personal use and does assume that any reader is pretty familiar with bash commands and mainly interested in learning how to transfer these same skills to navigating a Windows system via powershell.</p>
 <h2>Powershell eccentricitys</h2>
 <ul>
@@ -288,7 +288,7 @@ Documents/journal/volume-07.md:22</code></pre>
         <title>Creating a New Branch</title>
         <link>https://makc.co/docs/new-git-branch/</link>
         <guid>https://makc.co/docs/new-git-branch/</guid>
-        <pubDate>Sat, 15 Aug 2026 19:00:00 CDT</pubDate>
+        <pubDate>Sat, 15 Aug 2026 19:00:00 -0500</pubDate>
         <description><![CDATA[<p>A guide for creating a new branch in a git repository.</p>
 <h2>Creating a New Branch</h2>
 <ol>
@@ -323,7 +323,7 @@ Documents/journal/volume-07.md:22</code></pre>
         <title>Downloading a Video</title>
         <link>https://makc.co/docs/video-download/</link>
         <guid>https://makc.co/docs/video-download/</guid>
-        <pubDate>Thu, 06 Aug 2026 19:00:00 CDT</pubDate>
+        <pubDate>Thu, 06 Aug 2026 19:00:00 -0500</pubDate>
         <description><![CDATA[<p>A quick guide to downloading videos that are harder than they should be to download.</p>
 <h2>Locating a File to Download</h2>
 <ol>
@@ -384,7 +384,7 @@ An example using the network tab in Firefox's Dev Tools to located a segmented v
         <title>Setting up a Calibre-web Server on Linux</title>
         <link>https://makc.co/docs/calibre-web-docker/</link>
         <guid>https://makc.co/docs/calibre-web-docker/</guid>
-        <pubDate>Sat, 13 Jun 2026 19:00:00 CDT</pubDate>
+        <pubDate>Sat, 13 Jun 2026 19:00:00 -0500</pubDate>
         <description><![CDATA[<h2>Install Docker Engine / Docker CE</h2>
 <ol>
 <li>Follow <a href="https://docs.docker.com/engine/install/#get-started">the Docker website's documentation</a>, it's solid &amp; also includes instructions to remove previous iterations of Docker on all the other supported distributions.</li>
@@ -459,7 +459,7 @@ Databse config setup in the Calibre Web UI
         <title>Setting up a Private Immich Server</title>
         <link>https://makc.co/docs/immich/</link>
         <guid>https://makc.co/docs/immich/</guid>
-        <pubDate>Tue, 09 Jun 2026 19:00:00 CDT</pubDate>
+        <pubDate>Tue, 09 Jun 2026 19:00:00 -0500</pubDate>
         <description><![CDATA[<h2>Install Docker Engine / Docker CE</h2>
 <ol>
 <li><strong>Note</strong>: <em>Docker Engine</em> is not the same thing that would generally be installed via a standard linux package manager. To remove a previously installed iteration of Docker (at least on Ubuntu), use the command below:</li>
@@ -485,7 +485,7 @@ Databse config setup in the Calibre Web UI
         <title>Copying a ISO Image to a USB Drive</title>
         <link>https://makc.co/docs/iso-2-usb-with-pv/</link>
         <guid>https://makc.co/docs/iso-2-usb-with-pv/</guid>
-        <pubDate>Thu, 04 Jun 2026 19:00:00 CDT</pubDate>
+        <pubDate>Thu, 04 Jun 2026 19:00:00 -0500</pubDate>
         <description><![CDATA[<h2>Required Items</h2>
 <ul>
 <li><a href="https://linux.die.net/man/1/pv">pv</a>. Don't use <a href="https://linux.die.net/man/1/dd">dd</a>. While it will often work, dd is a 50+ year old command, uses archaic syntax and provides little to no feedback on what it is doing.</li>
@@ -532,7 +532,7 @@ sda
         <title>Creating a Private Git Server</title>
         <link>https://makc.co/docs/create-your-own-git-server/</link>
         <guid>https://makc.co/docs/create-your-own-git-server/</guid>
-        <pubDate>Wed, 06 May 2026 19:00:00 CDT</pubDate>
+        <pubDate>Wed, 06 May 2026 19:00:00 -0500</pubDate>
         <description><![CDATA[<p>As <a href="https://github.com">GitHub</a> becomes <a href="https://mrshu.github.io/github-statuses/">increasingly less reliable</a> (not to mention riddled with AI slop), many are looking for alternatives. This documentation will walk through the process of setting up a private Git server for any non public-facing repositories.</p>
 <h2>Required Hardware</h2>
 <ul>
@@ -637,7 +637,7 @@ ssh-keygen <span class="token parameter variable">-t</span> ed25519-sk <span cla
         <title>Launch Any Package via Dmenu</title>
         <link>https://makc.co/docs/flatpak-to-dmenu/</link>
         <guid>https://makc.co/docs/flatpak-to-dmenu/</guid>
-        <pubDate>Mon, 06 Apr 2026 19:00:00 CDT</pubDate>
+        <pubDate>Mon, 06 Apr 2026 19:00:00 -0500</pubDate>
         <description><![CDATA[<p>Documentation for setting up Flatpack, Snap and other packages installed to non-standard locations to launch via dmenu and other minimal application launchers.</p>
 <h2>Issue</h2>
 <p>By default demnu (and most other minimal app launchers) look(s) for packages installed in <em>/usr/bin</em>. This is where most packages installed via <em>apt</em>, <em>pacman</em> or other package managers generally write to. However when installing apps with services like Flatpak or Canonical's Snap Store, the appImage is often placed elsewhere.</p>
@@ -666,7 +666,7 @@ ssh-keygen <span class="token parameter variable">-t</span> ed25519-sk <span cla
         <title>Install Davinci Resolve on Linux</title>
         <link>https://makc.co/docs/install-resolve-on-linux/</link>
         <guid>https://makc.co/docs/install-resolve-on-linux/</guid>
-        <pubDate>Thu, 22 Jan 2026 18:00:00 CST</pubDate>
+        <pubDate>Thu, 22 Jan 2026 18:00:00 -0600</pubDate>
         <description><![CDATA[<p>Documentation for installing Black Magic Design's Davinci Resolve or Davinci Resolve Studio on Linux.</p>
 <h2>Required Software</h2>
 <ul>
@@ -741,7 +741,7 @@ xrandr <span class="token parameter variable">--output</span> DP-2 <span class="
         <title>Recording &amp; Transcoding 2:1 Screen-caps on Linux</title>
         <link>https://makc.co/docs/yt-pipeline/</link>
         <guid>https://makc.co/docs/yt-pipeline/</guid>
-        <pubDate>Wed, 21 Jan 2026 18:00:00 CST</pubDate>
+        <pubDate>Wed, 21 Jan 2026 18:00:00 -0600</pubDate>
         <description><![CDATA[<p>Some notes on setting up a custom display resolution on X11, transcoding H.264 media using ffmpeg, editing in Davinci Resolve, and then transcoding screen capture videos to the VP9 codec for delivery to YouTube &amp; other video platforms.</p>
 <h2>Required Software</h2>
 <ul>
@@ -835,7 +835,7 @@ ffmpeg <span class="token parameter variable">-i</span> <span class="token strin
         <title>Converting a Markdown File to a Manuscript</title>
         <link>https://makc.co/docs/markdown-to-manscript/</link>
         <guid>https://makc.co/docs/markdown-to-manscript/</guid>
-        <pubDate>Fri, 16 Jan 2026 18:00:00 CST</pubDate>
+        <pubDate>Fri, 16 Jan 2026 18:00:00 -0600</pubDate>
         <description><![CDATA[<p>A guide for exporting Markdown <em>(.md)</em> files to Open Office <em>(.odt)</em> files, with <a href="https://en.wikipedia.org/w/index.php?title=Standard_manuscript_format">standard manuscript formatting</a>.</p>
 <h2>Background</h2>
 <p>Last year I began writing my first novel. My preferred method of writing is to use the <a href="https://daringfireball.net/projects/markdown/">Markdown format</a>, and <a href="https://neovim.io/">Neovim</a>. This setup is great for writing efficiently and accessing my work on any device. However, I have run into two issues:</p>
@@ -952,7 +952,7 @@ libreoffice <span class="token punctuation">\</span>
         <title>Remotely Accesing a File Server with Tailscale</title>
         <link>https://makc.co/docs/simple-tailscale-setup/</link>
         <guid>https://makc.co/docs/simple-tailscale-setup/</guid>
-        <pubDate>Thu, 15 Jan 2026 18:00:00 CST</pubDate>
+        <pubDate>Thu, 15 Jan 2026 18:00:00 -0600</pubDate>
         <description><![CDATA[<p>Set up a free and simple VPN tunnel to access and modify a remote file server in the most secure way possible, wile still being pretty lazy.</p>
 <h2>Background</h2>
 <p>The goal is to be able to access and add files to what was originally set up as a local file server, from outside of the LAN. In order to add an additional layer of security, this documentation assumes the use of an intermediate system. That is, a third system to remotely connect to, on the same LAN as the file server, that can then be used to access and manipulate the file server, without having to leave an open VPN connection on the file server itself.</p>
@@ -1083,7 +1083,7 @@ transmission-cli <span class="token parameter variable">-a</span> <span class="t
         <title>Setting up BSPWM on Fedora Workstation</title>
         <link>https://makc.co/docs/fedora-bspwm/</link>
         <guid>https://makc.co/docs/fedora-bspwm/</guid>
-        <pubDate>Sun, 28 Dec 2025 18:00:00 CST</pubDate>
+        <pubDate>Sun, 28 Dec 2025 18:00:00 -0600</pubDate>
         <description><![CDATA[<p>A guide for setting up a working instance of <a href="https://github.com/makccr/dot">my BSPWM configuration</a> on a clean install of <a href="https://fedoraproject.org/workstation/download">Fedora Workstation</a>. Note: <em>I have only tested this on version 43 and above on x86 platforms.</em></p>
 <h2>Install Required Packages</h2>
 <p>We need to first install all packages that are required by BSPWM and are referenced in my BSPWM configuration. Most packages can be installed via the dnf package manger:</p>
@@ -1138,7 +1138,7 @@ transmission-cli <span class="token parameter variable">-a</span> <span class="t
         <title>Cloning This Webiste</title>
         <link>https://makc.co/docs/cloning-this-site/</link>
         <guid>https://makc.co/docs/cloning-this-site/</guid>
-        <pubDate>Sat, 27 Dec 2025 18:00:00 CST</pubDate>
+        <pubDate>Sat, 27 Dec 2025 18:00:00 -0600</pubDate>
         <description><![CDATA[<p>A quick guide for cloning this site's repository via git &amp; getting set up for development on a new system. I use <a href="https://github.com/11ty/eleventy/">Eleventy (11ty)</a> as a static site generator &amp; <a href="https://airtable.com/">Airtable</a> as a <em>sort of a CMS solution</em>. This documentation will walk through cloning this website's repository from <a href="https://github.com/makccr/makccr.github.io">GitHub</a>, installing all required dependencies, insuring all NPM plugins are installed, and testing to ensure that the new machine is ready for further development.</p>
 <h2>Install Required Packages</h2>
 <pre class="language-shell"><code class="language-shell"><span class="token comment">#### Arch</span>
@@ -1169,6 +1169,13 @@ or
 <pre class="language-shell"><code class="language-shell">npx @11ty/eleventy</code></pre>
 <p>When ready to commit changes to the site, just use the normal git process for doing so. The site is hosted on Netlify &amp; any changes pushed to the <em>master</em> branch will go live immediately.</p>
 <pre class="language-shell"><code class="language-shell"><span class="token function">git</span> <span class="token function">add</span> -A<span class="token punctuation">;</span> <span class="token function">git</span> commit <span class="token parameter variable">-m</span> <span class="token string">"message"</span><span class="token punctuation">;</span> <span class="token function">git</span> push</code></pre>
+<h2>Updating NPM Packages</h2>
+<p>Obviously keeping packages up to date is a pretty important security practice. Luckily if packages are installed via <code>npm</code>, we can check for and install updates to 11ty packages very easily:</p>
+<pre class="language-bash"><code class="language-bash">npx npm-check-updates <span class="token parameter variable">-u</span> <span class="token comment"># Checks for updates </span>
+
+<span class="token function">npm</span> <span class="token function">install</span> <span class="token comment"># Installs updates </span>
+<span class="token function">npm</span> i <span class="token comment"># Shorthand for npm install</span></code></pre>
+<p>It may also be necessary to use the <code>npm audit</code> command to fix any issues that arise in the update process.</p>
 <hr>
 <h2>Helpful Formatting Blocks</h2>
 <h3>New Essay Header</h3>
@@ -1177,7 +1184,8 @@ or
 layout: essay.html
 date: YYYY-MM-DD
 tags: essay 
-subject: ["subject1", "subject2"]</span>
+subject: ["subject1", "subject2"]
+description: "WORDS"</span>
 <span class="token punctuation">---</span></span></code></pre>
 <h3>New Doc Header</h3>
 <pre class="language-markdown"><code class="language-markdown"><span class="token front-matter-block"><span class="token punctuation">---</span>
@@ -1186,7 +1194,14 @@ layout: docs.html
 date: YYYY-MM-DD
 updated: YYYY-MM-DD
 tags: docs
-subject: ["subject1", "subject2"]</span>
+subject: ["subject1", "subject2"]
+description: "WORDS"</span>
+<span class="token punctuation">---</span></span></code></pre>
+<h3>Generic New Page</h3>
+<pre class="language-markdown"><code class="language-markdown"><span class="token front-matter-block"><span class="token punctuation">---</span>
+<span class="token front-matter yaml language-yaml">includes: main.html 
+title: "TITLE"
+description: "WORDS"</span>
 <span class="token punctuation">---</span></span></code></pre>
 ]]></description>
       </item>

@@ -5,14 +5,14 @@
     <link>https://makc.co/</link>
     <description>All of the writing published on MAKC.CO.</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 20 Sep 2026 19:00:00 CDT</lastBuildDate>
+    <lastBuildDate>Sun, 20 Sep 2026 19:00:00 -0500</lastBuildDate>
 
     
       <item>
         <title>Replacing my Airtable Backend with One JSON File</title>
         <link>https://makc.co/essays/airtable-to-JSON/</link>
         <guid>https://makc.co/essays/airtable-to-JSON/</guid>
-        <pubDate>Sun, 20 Sep 2026 19:00:00 CDT</pubDate>
+        <pubDate>Sun, 20 Sep 2026 19:00:00 -0500</pubDate>
         <description><![CDATA[<p>A few years ago, I began the process of rebuilding my website using the static site generator <a href="https://11ty.dev">11ty</a>. My goal in doing this was to create a hyper-performant version of my site that I could proudly show off on the world wide web. But I also set some fairly ambitious goals for this site, mainly to create one hub to host not only all of the <a href="https://makc.co/downloads">content that I've made available</a> for public consumption, but also links to all the external content I've created. The most challenging part: my personal YouTube channel, and it's backlog of a little over two hundred videos when I started the project. Creating a website that links to YouTube would be hard enough, but around the time I started this rebuild of my site, I also decided that I needed to make sure that users could not only get links to my videos on YouTube, but also alternative platforms like <a href="https://invidious.io/">Invidious</a> and <a href="https://odysee.com/">Odysse</a>. One database to host video metadata like title, upload date, thumbnails, tags, categories, and links to view each video in at least three different locations, was no small undertaking, but I made the job even harder by refusing to use a proper database application or CMS solution and instead insisting on using <a href="https://airtable.com">Airtable</a> for the job.</p>
 <p>My reasoning for doing this seemed sound at the time: I had been using Airtable to keep track of my video creation pipeline for the past few years, and already had a good chunk of the videos in an Airtable base, along with much of the metadata that I wanted. Unfortunately it soon became clear that Airtable simply wasn't the right tool for the job. My Airtable integration ended up making a static site that routinely built in less than one second into a convoluted mess that had to call out to Airtable's API every time I compiled the site whether I was messing with the <a href="https://makc.co/videos">video page</a> or not. Of course, Airtable as a database solution is also pretty terrible. I have used plenty of database applications in the past, and while most of them don't have the convenience of editing on a phone or in a browser like Airtable, all provide a much cleaner experience for creating and updating entries, not to mention a faster one. Airtable's website and phone apps were slow and clunky when I first started using them, but only ever got worse as Airtable, like so many others, insisted on shoving AI integration into every inch of the platform, and moved more and more features behind a paywall.</p>
 <h2>JSON &amp; Airtbale</h2>
@@ -121,7 +121,7 @@ The option in Google Takeout to export only video metadata
         <title>Blowing Up, Just to Blow Up</title>
         <link>https://makc.co/essays/blowing-up-to-blow-up/</link>
         <guid>https://makc.co/essays/blowing-up-to-blow-up/</guid>
-        <pubDate>Sat, 15 Aug 2026 19:00:00 CDT</pubDate>
+        <pubDate>Sat, 15 Aug 2026 19:00:00 -0500</pubDate>
         <description><![CDATA[<p>Recently I began the process of moving all of my <a href="https://github.com/makcc/">GitHub repositories</a> to <a href="https://codeberg.org/makccr/">Codeberg</a>. I am far from the only person making this move in 2026; if anything, I'm well behind the curve. However, I did want to dedicate some time to detailing (a) how I am conducting my transition to Codeberg, and (b) the reasons why I felt that this move was necessary.</p>
 <p>First, for the foreseeable future my intention is to push my public facing repositories, such as my <a href="https://codeberg.org/makccr/dot">dotfiles</a>, or my <a href="https://github.com/makccr/vim2tor">Vim2tor</a> project to both GitHub and Codeberg. Largely I view Codeberg as a <em>back-up plan</em>, as I still hope that GitHub itself can return to what it, in my view, once was: a reliably easy place to find, learn about and contribute to open-source software projects. My transition to Codeberg is something that feels <em>thrust upon me</em>, rather than a deliberate choice. However, even if GitHub returns to it's former pre-Microsoft and pre-unreliable-AI-slop-farm glory, I'll likely still push to both platforms, if for no other reason than to be in compliance with the old prepper one-liner: &quot;Two is one, and one is none.&quot;</p>
 <p>The process for doing this is very simple:</p>
@@ -149,7 +149,7 @@ origin	git@codeberg.org:makccr/dot <span class="token punctuation">(</span>push<
         <title>On, Good Advice Delivered Poorly</title>
         <link>https://makc.co/essays/good-advice-delivered-poorly/</link>
         <guid>https://makc.co/essays/good-advice-delivered-poorly/</guid>
-        <pubDate>Sat, 13 Jun 2026 19:00:00 CDT</pubDate>
+        <pubDate>Sat, 13 Jun 2026 19:00:00 -0500</pubDate>
         <description><![CDATA[<p>I recently finished watching <a href="https://www.youtube.com/watch?v=8KQFgWdiudo">the conclusion</a> of Linus Tech Tips's second Linux challenge. Unsurprisingly, much of the series focused on criticizing the <em>overly-aggressive</em> online Linux community. This is by no means a new criticism, but it did become a very central theme of the series. All three of the challenge's participants for example, admitted to relying in LLM's for some amount of Linux trouble-shooting, specifically to avoid having to sift through forums or Reddit posts where they might run into the stereotypical linux-brained neck beard who silently shouts things like: &quot;RTFM!&quot;</p>
 <p>To be clear from the start: I'm not here to make the case that the online Linux community in places like Reddit or StackOverflow is some perfect utopia, which is only toxic to Windows snowflakes who just need to <em>toughen up</em> if they're going to us the world's greatest OS. It makes all the sense in the world that a user-base that makes up roughly <a href="https://gs.statcounter.com/os-market-share/desktop/worldwide">3% of desktop market-share world wide</a>, would be full of very opinionated users. MacOS itself has just over 10% of desktop market share as of May of 2026, and that community is also known for its own collection of contrarian and sycophantic members. However, I do think that this online conversation is a great lens by which to talk about the best skill I've ever developed, and one that I think everyone could benefit from: an ability to take good advice, even when it's delivered in the worst possible way.</p>
 <p>In May of 2020 I decided to catalog my own attempt to switch to Linux full-time. I had spent the last few months learning how to control my Mac from the command line, and falling in love with CLI apps like Vim. For the first time, I thought it might be advantageous for me to abandon the OSX set-up I had come to love. I made the somewhat ill-advised decision to jump straight from a proprietary child-proof OS, straight to good ol' Arch Linux. In a two-part video appropriately titled: <a href="https://youtu.be/mxTDsqcaj1o">&quot;A Clueless Arch Linux Install Guide&quot;</a> I successfully managed to get an Arch install to boot, only to read the comments below the video and realize I'd made a long list of pretty critical errors in the install process. I immediately wiped the hard drive and started over again. I say this was an ill-advised decision however, only because there wasn't anyone advising me to do it. Nearly every online listicle or thread in 2020, and in 2026 advises that new users wade into the Linux waters with something like Linux Mint or Pop!_OS rather than jumping in head first with Arch.</p>
@@ -173,7 +173,7 @@ Marcus Aurelius<br>Meditations 2:1
         <title>A Tale of AI Betrayal &amp; Snapshotting Victory!</title>
         <link>https://makc.co/essays/gpt-clusterfuck/</link>
         <guid>https://makc.co/essays/gpt-clusterfuck/</guid>
-        <pubDate>Sun, 05 Apr 2026 19:00:00 CDT</pubDate>
+        <pubDate>Sun, 05 Apr 2026 19:00:00 -0500</pubDate>
         <description><![CDATA[<p>At the beginning of this year, I decided to leave the quiet comforts of the <a href="https://aur.archlinux.org/">AUR</a>, Pacman and my purpose built, minimal system for a bit of <em>distro-hopping</em>. I've been using Linux full time for about five years now. That journey <a href="https://youtu.be/mxTDsqcaj1o">began</a> with, and has maintained Arch Linux as a constant for it's duration. So, as any readers familiar with the ins-and-outs of Linux distributions might have guessed, I spent a bit of time playing around with Ubuntu, found out that I quite liked Fedora, but by the beginning of March, was ready to return to good ol' Arch Linux. To keep things interesting (and because I was a bit pressed for time), I opted to test drive <a href="https://cachyos.org/">Cachy OS</a>, a relatively new Arch derivative that boasts some interesting features like a custom kernel tuned with the <a href="https://docs.kernel.org/scheduler/sched-eevdf.html">EEVDF scheduler</a>. This is how I ended up inadvertently setting up my first Linux box that featured automatic Snapshotting, a fact that will become relevant later.</p>
 <p>Now for an embarrassing confession: At the beginning of this year, I also began to toy around with Artificial Intelligence a good bit. I never enjoyed using ChatGPT (my drug of choice) for anything big, anytime I did something like set-up a website with a new tool, or install Arch Linux I'd reach for proper documentation or Wikis. But I did develop a habit of using ChatGPT to find <em>quick fixes</em> when I was in a pinch, and I did have it generate one <a href="https://youtu.be/FdKy0F0sVRw">YouTube thumbnail</a> for me (I'm now refusing to change the thumbnail so I'll be reminded of how dumb an idea that was every-time I see the image on my website). The disturbing truth is that I was never even convinced of AI's <em>superior intelligence</em>. I never even thought of GPT as <em>a better Google</em>, as many less sycophantic users claim it to be. Very early on in my usage, I found that these tools couldn't write, were prone to <a href="https://openai.com/index/why-language-models-hallucinate/">hallucinations</a>, and couldn't be trusted for anything mission critical (unless that mission critical thing is <a href="https://www.theguardian.com/news/2026/mar/26/ai-got-the-blame-for-the-iran-school-bombing-the-truth-is-far-more-worrying">choosing a target for missile strikes</a>). Unfortunately, I also just happened to notice that, at least when it came to small Linux eccentricis or low-level coding questions, GPT and other models were pretty good at providing a <em>good 'nough</em> style of fix, so long as the questions were well documented elsewhere on the internet and GPT could steal the answer from Stack Overflow or others.</p>
 <p>So a few weeks ago when I finally made the shift to a Wayland window manger (better late than never), and started toying around with <a href="https://https://hypr.land/">Hyprland</a>, I ended up using the GPT more than I really care to admit. To be clear, Hyprland's documentation is really solid, and I did rely on it quite heavily as well, but for anything that was an abstraction on top of Hyprland I was running to the AI for quick fixes that I knew I'd have to redo later when I learned more and realized that I'd fixed my problem in the dumbest possible way. This was precisely the kind of fix I was looking for the first time that I took my laptop to work and, upon finding my battery already run down to 17%, realized that the hypridle config I had set up was clearly not working as intended. So I ran to the AI overlords begging for a quick fix that could let me solve the problem and get on with what I had intended to use my laptop for.</p>
@@ -199,7 +199,7 @@ Marcus Aurelius<br>Meditations 2:1
         <title>Becoming an Empire</title>
         <link>https://makc.co/essays/becoming-an-empire/</link>
         <guid>https://makc.co/essays/becoming-an-empire/</guid>
-        <pubDate>Wed, 07 Jan 2026 18:00:00 CST</pubDate>
+        <pubDate>Wed, 07 Jan 2026 18:00:00 -0600</pubDate>
         <description><![CDATA[<p>A couple of days ago, Donald Trump’s administration carried out a military operation in Venezuela. A Delta Force unit was deployed to <a href="https://www.dropsitenews.com/p/united-states-venezuela-nicolas-maduro-attacks-regime-change-bombing">abduct President Nicolás Maduro</a> and his wife. The operation was accompanied by bombing inside the country, and between the airstrikes and the raid itself, roughly eighty people were killed. By all available accounts, the plan unfolded exactly as intended. Maduro was transported to New York to stand trial—though it remains unclear what, precisely, he has been charged with. Shortly thereafter, the administration announced that Venezuela’s acting leadership was being ordered to hand over up to 50 million barrels of oil to the United States. At the same time, U.S. forces <a href="https://www.dropsitenews.com/p/united-states-military-venezuela-russia-trump-administration-cabello-dhs-arrests-minneapolis">seized a Russian ship</a> that had been prevented from docking during the month-long naval blockade and bombing campaign along Venezuela’s coast.</p>
 <p>This is, objectively, one of the most absurd positions the American military has ever placed itself in. However, this moment is not an aberration, rather, a logical extension of how American political elites have understood—and justified—foreign policy since at least the end of World War II, and arguably long before that.</p>
 <p>I haven’t ever written about foreign policy before. That’s not because the subject hasn’t held my interest over the past decade. It’s because—embarrassingly—I bought into propaganda produced by people who claimed to understand the world better than the average American. I deferred to “serious” commentators. I trusted the experts.</p>
@@ -227,7 +227,7 @@ Marcus Aurelius<br>Meditations 2:1
         <title>Custom Syntax Highlighting With 11ty</title>
         <link>https://makc.co/essays/syntax-highlighting-in-11ty/</link>
         <guid>https://makc.co/essays/syntax-highlighting-in-11ty/</guid>
-        <pubDate>Tue, 30 Dec 2025 18:00:00 CST</pubDate>
+        <pubDate>Tue, 30 Dec 2025 18:00:00 -0600</pubDate>
         <description><![CDATA[<p>Unless you stalk my <a href="https://github.com/makccr">GitHub account</a> relentlessly, you are probably unaware of it, but <a href="https://makc.co">my website</a> was developed using the static site generator, <a href="https://www.11ty.dev/">Eleventy (11ty)</a>. 11ty offers incredibly easy web development, not only because of its capability to play nicely with a massive amount of different file formats, but also because of its massive library of NodeJS plugins. Throughout the process of developing and maintaining my website, I have found that adding a new feature to my site is often as simple as running <em>npm install X</em> and making a small change to the <em>eleventy.config.js</em> file in my root directory. Earlier this week, when I decided that I wanted to add syntax highlighting to HTML code blocks on my site, the process looked to be just that simple.</p>
 <p>The most complicated part of this process is solved by 11ty itself. Typically, any page that I can get away with not writing custom HTML for, I simply write in the Markdown format. Using 11ty, however, this is no problem. Once the site is compiled, Markdown is automatically converted to HTML, and I can easily style any text that was marked as code in Markdown as a class separate from the site’s normal text. Even when attempting to take the next step and add individual syntax highlighting to these code blocks, I quickly came across a tool called <a href="https://prismjs.com/">PrismJS</a> that seemed to do exactly what I needed it to. Simply running one command in the terminal and adding some text to my <em>eleventy.config.js</em> seemed like it would <em>just work</em>, just the way I’ve become accustomed to things in the 11ty ecosystem working.</p>
 <pre class="language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> @11ty/eleventy-plugin-syntaxhighlight --save-dev</code></pre>
@@ -311,7 +311,7 @@ console.log("some code");
         <title>The Death of the Internet</title>
         <link>https://makc.co/essays/the-death-of-the-internet-and-true-conenectivity-in-exchance-for-para-social-cyborgization-of-us-all/</link>
         <guid>https://makc.co/essays/the-death-of-the-internet-and-true-conenectivity-in-exchance-for-para-social-cyborgization-of-us-all/</guid>
-        <pubDate>Tue, 23 Sep 2025 19:00:00 CDT</pubDate>
+        <pubDate>Tue, 23 Sep 2025 19:00:00 -0500</pubDate>
         <description><![CDATA[<p>I got my first computer when I was eight years old. It wasn’t anything fancy, an old Windows 95 box that barely worked. But when my parents decided to upgrade to a shiny, new, Dell Machine running Windows XP, I was more than happy to do whatever it took to get my hands on the old family PC. The deal that I struck up with them took place in early February of my seventh year. They agreed that if I kept my room clean for the remainder of the year, that come Christmas Day, the computer would be mine. Needless to say, there wasn’t so much as a sock on the floor of my room for the rest of the year. At the time I shared a room with my younger brother, and I specifically remember having to work twice as hard, cleaning up not only my own mess, but his as well. Come Christmas day though, all the work paid off and the computer was all mine.</p>
 <p>If you lived through this era of computing, I probably don’t need to tell you there wasn’t a whole hell of a lot that I could actually do with the machine. A lone Windows 95 Box without an internet connection in the middle of the south Texas woods in 2005 or 2006 wasn’t exactly a portal to anything dangerous or exciting. But for an eight year old me, it was more than enough to capture my attention. I spent hours on end sitting in front of that old PC, toying around, learning everything I could about it. I spend days cataloging every CD in the house. Ripping individual CDs, manually adding all the metadata that was available to add in an early version of Windows Media Player. I toyed around with the screen savers (particularly the <a href="https://inv.nadeko.net/watch?v=oRL5durPleI">maze screen saver</a>), breaking random things, painstakingly fixing them - I even managed to convince myself that I had drawn the attention of law enforcement one night when I tried to print without a printer attached, and got the dreaded message:</p>
 <img src="img/2025-09-24-A.png" alt="Windows 95 Illegal Operation Error Message" class="half">
@@ -337,7 +337,7 @@ console.log("some code");
         <title>Consequences</title>
         <link>https://makc.co/essays/consequences/</link>
         <guid>https://makc.co/essays/consequences/</guid>
-        <pubDate>Mon, 21 Jul 2025 19:00:00 CDT</pubDate>
+        <pubDate>Mon, 21 Jul 2025 19:00:00 -0500</pubDate>
         <description><![CDATA[<p>What would have happened if, when Rosa Parks made her protest and sat at the front of the bus, no one tried to stop her? No police. No outrage. Just silence. Would we still remember her name? More importantly, would the decades-long civil rights battle that her quiet act helped ignite have ever begun?</p>
 <p>There are plenty of absurd laws still technically on the books in America—and in every other country. Remnants from another time, they persist, yet no one thinks of enforcing them. But there is no natural expiration date for a law, no guarantee that it will quietly vanish just because it’s unjust, irrelevant, or plainly stupid. Even today, despite forty states legalizing marijuana for medical use, the drug remains classified as Schedule I on the federal level. That contradiction alone proves that injustice can sit in plain sight, uncorrected, indefinitely.</p>
 <p>The strange and unsettling truth is this: the reaction to a protest is often more important than the protest itself. That may sound cynical—but history offers few counterexamples.</p>
@@ -358,7 +358,7 @@ console.log("some code");
         <title>My Two Million Dollar Spending Spree</title>
         <link>https://makc.co/essays/1-million-dollar-spending-spree/</link>
         <guid>https://makc.co/essays/1-million-dollar-spending-spree/</guid>
-        <pubDate>Thu, 17 Jul 2025 19:00:00 CDT</pubDate>
+        <pubDate>Thu, 17 Jul 2025 19:00:00 -0500</pubDate>
         <description><![CDATA[<p>Over the past few weeks, I’ve been laser-focused on getting my finances in order. Like many Americans over eighteen, I’ve accumulated more than my fair share of debt—along with the bad spending habits that come with it. Credit cards, a car loan that’s longer than it should be—everything short of payday loans and collections—I’ve got it.</p>
 <p>Fortunately, I caught the problem early enough to turn it around. I did what every financial advisor suggests: built a strict budget that includes only essentials. To my surprise, I found myself in a decent position—able to put at least $500 a month toward debt. In short, six months of disciplined effort could wipe out the worst of it, and another six to eight could have me completely debt-free, car and all.</p>
 <p>Everything was going smoothly—until last week.</p>
@@ -385,7 +385,7 @@ console.log("some code");
         <title>Barge Haulers on the Volga</title>
         <link>https://makc.co/essays/barge-haulers/</link>
         <guid>https://makc.co/essays/barge-haulers/</guid>
-        <pubDate>Wed, 16 Jul 2025 19:00:00 CDT</pubDate>
+        <pubDate>Wed, 16 Jul 2025 19:00:00 -0500</pubDate>
         <description><![CDATA[<img src="img/2025-07-17-A.jpg" alt="Ilya Repin's: Barge Haulers on The Volga" class="full">
 <p class="caption">Ilya Repin's "Barge Haulers on The Volga</p>
 <p>Above is, without question, my favorite painting of all time. <em>Barge Haulers on the Volga</em> is a nineteenth-century work by Russian painter <a href="https://www.britannica.com/biography/Ilya-Yefimovich-Repin">Ilya Repin</a>. It comes as no surprise to me that I was immediately drawn to it, as, like so many others, I’ve long been captivated by the cultural output of the Russian Empire and its many political incarnations: the Soviet Union, the Russian Federation, the RSFSR. Whether it’s Dostoevsky, Tolstoy, Rachmaninoff, or even Solzhenitsyn’s bleak documentation of the Soviet-era prison system in <em>The Gulag Archipelago</em>, Russian art has been some of the most intellectually and emotionally formative material I’ve encountered in recent years. Repin’s painting more than earns its spot in that canon: deeply human, brutally honest, and impossible to forget.</p>
@@ -402,7 +402,7 @@ console.log("some code");
         <title>The Art of Virtue</title>
         <link>https://makc.co/essays/the-art-of-virtue/</link>
         <guid>https://makc.co/essays/the-art-of-virtue/</guid>
-        <pubDate>Sun, 13 Jul 2025 19:00:00 CDT</pubDate>
+        <pubDate>Sun, 13 Jul 2025 19:00:00 -0500</pubDate>
         <description><![CDATA[<p>Without a doubt, the best book I’ve read this year is <em>The Autobiography of Benjamin Franklin</em>. I only opened it because it leads off The Harvard Classics—a 51‑volume anthology I describe in a separate essay—but I was pleasantly surprised by how readable, engaging, and practical it is.</p>
 <p>The most discussed section is The Art of Virtue, where Franklin lays out 13 qualities he believed make a “good human specimen”:</p>
 <ol>
@@ -446,7 +446,7 @@ console.log("some code");
         <title>John Woolman was Kind of a Dick</title>
         <link>https://makc.co/essays/woolman-was-a-dick/</link>
         <guid>https://makc.co/essays/woolman-was-a-dick/</guid>
-        <pubDate>Mon, 31 Mar 2025 19:00:00 CDT</pubDate>
+        <pubDate>Mon, 31 Mar 2025 19:00:00 -0500</pubDate>
         <description><![CDATA[<p>Having just finished reading <em>The Journal of John Woolman</em>, I was struck by a few different things, the foremost: just how early an anti-slavery campaigner Woolman was. I knew that the guy wrote about the evils of slavery around the time of the American Revolution. What I did not realize is that Woolman actually died in 1774, 2 years before <em>The Declaration of Independence</em> was even signed. To say that the guy was &quot;ahead of his time&quot; is one of the most egregious understatements in history. At a time when virtually everyone owned slaves, including virtually all of our first presidents - this guy was actually running around successfully convincing people, on an individual level, to just straight up grant freedom to slaves they had already paid for.</p>
 <p>This does beg a bit of an interesting question: Why, if Woolman was running around as a powerful anti-slavery advocate, well before our nation was even formed, did it take so damn long for us to outlaw slavery?</p>
 <p><em>One possible theory:</em> Woolman was a bit of a dick.</p>
@@ -473,7 +473,7 @@ The Journal of John Woolman
         <title>The Only Way Out is Through</title>
         <link>https://makc.co/essays/the-only-way-out-is-through/</link>
         <guid>https://makc.co/essays/the-only-way-out-is-through/</guid>
-        <pubDate>Sat, 29 Mar 2025 19:00:00 CDT</pubDate>
+        <pubDate>Sat, 29 Mar 2025 19:00:00 -0500</pubDate>
         <description><![CDATA[<p>The first exposure I had to this line of thinking, at least as far as I can remember, was in Nikos Kazantzakis' novel: <em>Zorba the Greek</em> (which, interestingly enough, might have since become my favorite book). The original quote is said by Zorba to the protagonist: &quot;How do you expect to get the better of a devil ... if you don't turn into a devil and a half yourself?&quot; Kazantzakis is far from the only one to make this philosophical suggestion, but this was my first exposure to the idea, and thus, I think it always sort of rings the loudest in my head when I am contemplating the idea.</p>
 <p>Embracing evil with full force, as opposed to running from evil, is the only true way that I have found to mitigate the effects of the evil we all must contend with. The interesting thing, however, is that it seems not to matter what form the evil is taking. When we phrase things in nigh apocalyptic terms, we tend to think of the application of this kind of logic on a massive scale. Clearly, this logic works here: If you want to avoid falling prey to mass societal acceptances of evil, you have no chance of being able to do so if you can not identify the evil, and even less of a shot if you simply dig your head in the sand and pretend that you simply are not capable of doing an evil thing. That last idea: <em>pretending that you simply are not capable of true evil</em>, is one of the most pervasive bad ideas that society has ever developed. If you are not capable of evil, then by definition, everything you do will <em>not be evil</em>. You'll find yourself personally filling the chamber with <em>Zyklon B</em>, all the while still telling yourself that pervasive lie: &quot;I'm simply not capable of that kind of evil.”</p>
 <p>But, importantly, embracing evil can be used to defeat even the smallest forms of evil, the ones that are annoying more than murderous. In particular, I'm referring to vice, but I do not want to limit the train of thought. Interestingly enough, the thing that finally got me to quit smoking cigarettes was smoking more than I had ever smoked in my entire life. I had a job where I smoked damn near a pack of cigarettes a day, if not more. If I were driving, it would be impossible that I didn't have a cigarette in my mouth. If I were on break, same situation. Even when getting home from a sixteen-hour shift, I could not go inside and go to sleep until I smoked a cigarette. I became so reliant on nicotine that I was smoking cigarettes with nicotine pouches in my mouth and nicotine patches on my arm (only a mild exaggeration).</p>
@@ -486,7 +486,7 @@ The Journal of John Woolman
         <title>The Best Bargain in the History of Literature</title>
         <link>https://makc.co/essays/harvard-classics/</link>
         <guid>https://makc.co/essays/harvard-classics/</guid>
-        <pubDate>Fri, 14 Mar 2025 19:00:00 CDT</pubDate>
+        <pubDate>Fri, 14 Mar 2025 19:00:00 -0500</pubDate>
         <description><![CDATA[<p>I can't remember exactly when or how I first came across <em>The Harvard Classics</em>, but ever since that day I have been on a mission to get a copy of the collection for myself. The Classics, originally published as: <em>Dr. Elliot's Five Foot Shelf of Books</em> are an absolutely massive, fifty-one volume collection of novels, poetry, history, philosophy, scientific writing, historical documents, and anything else that Dr. Elliot deemed necessary reading to establish a well-rounded liberal education. But the size of the collection isn't what's really special about it. Any fool could copy and paste 200 books into a Word Document, hit print, and self-publish in an effort to profit off of someone else's contributions to the world.</p>
 <p>Fortunately, I can say with a high degree of confidence that <em>The Harvard Classics</em> is actually the most unique and complete collection of literature I've every encountered. The collection was put together by Charles William Elliot, who was the President of Harvard from 1869 to 1909; a man who established himself as a real <em>stuffy nerd</em> when he tried to ban the playing of football at Harvard, and was later quoted claiming that <a target="_blank" href="https://www.nytimes.com/1906/11/28/archives/eliot-against-basket-ball-harvard-president-says-rowing-and-tennis.html">Rowing and Tennis were the only &quot;clean sports&quot;</a>. Despite his anti-sporting rhetoric, Elliot was a prominent member of American Academia at a time when it was much better respected, and objectively more effective than it is today. Plenty of people would argue that the 1950's and 1960's were the true Golden of Age of American Academia; and while I'm not going to argue that they weren't; I will say that Eliot was one of the men best placed in history and proximity to Academia to be able to accurately make decisions about what would fit into the category of <em>required reading</em>. It honestly shouldn't be surprising at all then that this collection contain virtually all of the most influential works of the past three centuries (at least up to 1909 that is), as well as a massive amount of literature pre-dating America itself.</p>
 <p>Just as a thought experiment, a few days ago I opened up the table of contents, and made a note of everything that I had either read previously and thought was valuable, or had heard of in high esteem and earmarked for future reading. That list ended up being so long that it's probably a bad idea to put it here in it's entirety; but I can think of no better way to actually prove the point that I'm trying to make:</p>
@@ -598,7 +598,7 @@ Don't get me wrong the collection is more than worth the five or six hundred buc
         <title>Vim: The Best Markdown Editor</title>
         <link>https://makc.co/essays/vim-the-best-markdown-editor/</link>
         <guid>https://makc.co/essays/vim-the-best-markdown-editor/</guid>
-        <pubDate>Wed, 04 Dec 2019 18:00:00 CST</pubDate>
+        <pubDate>Wed, 04 Dec 2019 18:00:00 -0600</pubDate>
         <description><![CDATA[<p>Before I start writing any opinions here, I’d like to take a second to talk about why I think I’m qualified to say what the best markdown editor is, and what my criteria in choosing a markdown editor looks like. There is no shortage of blogs and articles out there that seek to answer this very question, so I wouldn’t expect anyone to just be taking my word for it, without knowing if my word has any value to you, or the way that you want to work.</p>
 <p>Also, if you’re not familiar with Markdown, the rest of this will make no sense whatsoever. Sorry.</p>
 <h2>Who Am I To Judge</h2>
@@ -648,7 +648,7 @@ Don't get me wrong the collection is more than worth the five or six hundred buc
         <title>The Crusade for a Better Dark Mode</title>
         <link>https://makc.co/essays/the-crusade-for-a-better-darkmode/</link>
         <guid>https://makc.co/essays/the-crusade-for-a-better-darkmode/</guid>
-        <pubDate>Mon, 01 Jul 2019 19:00:00 CDT</pubDate>
+        <pubDate>Mon, 01 Jul 2019 19:00:00 -0500</pubDate>
         <description><![CDATA[<p>I couldn’t exactly tell you why, but I care a great deal about the progress of dark modes on modern software platforms. But I kind of always have hated the way that this feature is baked into software and websites. Almost always, you open a new app or website, and at some point, you realize you’d like to go into dark mode; so you fish around in the settings and menus looking for a button to do just that for you, or maybe you even get desperate and just Google the answer — the point is, it’s a frustrating process. Every app, every website, every OS has a manual button that you, the user, have to go and track down. Of course, that’s just the process for enabling the dark mode; turning it back off is equally annoying.</p>
 <p>Apple actually did make a really great move back with the release of macOS Whatever It Was, when they first implemented a system-wide dark mode. They baked in one button that would change the theming for every system app and every little piece of UI (with a few tiny exceptions). Then Apple did the really smart thing, and gave developers a quick and easy way to sort of tap into that theme switching within their apps (and seriously, it actually is really easy, I’ve only ever used Xcode in short spurts, working on iOS apps, but even I feel confident after reading the Documentation that I could get this working).</p>
 <p>Then, after a little delay, Apple also handed this feature over to web developers. If you’re interested,d you can build a website that will follow the system-wide theme without any need to reload the page, or enable any weird features, it just works.</p>
@@ -696,7 +696,7 @@ Don't get me wrong the collection is more than worth the five or six hundred buc
         <title>Watch “The Incredible Hulk” Before “Avengers: Endgame”</title>
         <link>https://makc.co/essays/why-you-should-watch-the-incredible-hulk-before-you-watch-avengers-endgame/</link>
         <guid>https://makc.co/essays/why-you-should-watch-the-incredible-hulk-before-you-watch-avengers-endgame/</guid>
-        <pubDate>Mon, 29 Apr 2019 19:00:00 CDT</pubDate>
+        <pubDate>Mon, 29 Apr 2019 19:00:00 -0500</pubDate>
         <description><![CDATA[<p>I just got back from Avengers: Endgame, and it was pretty incredible. It took advantage of its three-hour run time in a way I never expected, and formed itself into a quiet contemplation of the MCU’s past events. But what surprised me about the film more than anything else was the way that no single character felt short shrifted in the film. Of course, the biggest complaint that I heard about the penultimate film, “Avengers: Infinity War”, was how the film moved quickly and glossed over important character moments. But somehow, in a film with perhaps more characters in the script than any other film in history, this was not the case with “Avengers: Endgame”.</p>
 <p>You could make a case that the bulk of the characters that came back after Hulk’s snap weren’t given enough time to shine, but at least the main characters, the original six Avengers, all had very complete story arcs. Whether it was Iron Man’s journey from loss to security, to risk, and ultimately his decision to sacrifice himself; or Black Widow’s very similar journey; or Captain America’s journey to be done with the world, and go back in time to live out his days with Peggy Carter, everyone seemed to have a fully fleshed out story. What I found most odd about these character arcs is that, rather than rebuild a narrative arc to fit their film, Markus &amp; McFeely instead built on what was already there in previous films, no matter how deeply it was hidden.</p>
 <p>Of course, the best example, or at least the most obvious example of this, was the way that the film heavily leaned on “Thor: The Dark World”, an almost universally despised part of the MCU. There was plenty of material to work with from Thor’s past experiences, most notably in his most recent solo outing, “Thor: Ragnarok”, however, the screenwriters seemed happy to give themselves a bigger challenge. But I don’t want to talk about that; plenty of other people already are. I want to talk about Hulk.</p>
@@ -725,7 +725,7 @@ Don't get me wrong the collection is more than worth the five or six hundred buc
         <title>Is “The Prisoner of Azkaban” the Best “Harry Potter” Movie</title>
         <link>https://makc.co/essays/why-the-prisoner-of-azkaban-is-the-worst-movie/</link>
         <guid>https://makc.co/essays/why-the-prisoner-of-azkaban-is-the-worst-movie/</guid>
-        <pubDate>Thu, 18 Oct 2018 19:00:00 CDT</pubDate>
+        <pubDate>Thu, 18 Oct 2018 19:00:00 -0500</pubDate>
         <description><![CDATA[<p>If you have read any reviews for the Harry Potter films online, you probably know that Harry Potter and the Prisoner of Azkaban is widely considered to be the best of the films. The praise for this movie is off the charts. It has 91% on Rotten Tomatoes (a score beaten only by The Deathly Hallows Pt.2, at 94%), Roger Ebert gave it 3.5/4 starts, the film has high reviews on basically every movie rating platform out there, MetaCritic, IMDb, ext. If you google the movie, the top voted tags, are “magical”, “must watch”, “clever”, and “intense”; one of my favorite YouTuber’s, the Nerd Writer even made a <a href="https://www.youtube.com/watch?v=3hZ_ZyzCO24">video</a> about why he believes The Prisoner of Azkaban to be the best movie.</p>
 <p>I’m coming at this piece with a lot of opposition, so let me explain a few things. First of all, I am writing this as a fan of the books first, who is also a pretty big fan of the movies. Anytime I need a distraction or white noise, Harry Potter is my go-to. I’ve seen all of the Harry Potter movies, as many times as a Netflix addict has seen all the episodes of The Office. I do like all of the movies. I also like all of the books, though I have a much harder time ranking them. Technically speaking, The Prisoner of Azkaban is a very well-made movie. If I were rating the movies on that principle alone, I think I would likely put it at the top of my list. But I’m not. I also don’t know that I think The Prisoner of Azkaban is actually “the worst movie” in the series. I just don’t think it’s the best. I actually think it should be pretty low in the list. Perhaps not #8, but certainly no higher than #5; if you’re looking for a numeric breakdown.</p>
 <p>So, what follows is, simply put, a breakdown of a few of my biggest issues with the film. These issues don’t really ruin the movie for me; I still get excited when it’s time for movie three, in my never-ending binge-watching sessions. But I think that has more to do with what the movie does for the series as a whole, re-casting some essential characters, and largely changing the tone of the movie to make them dramatically more interesting and fun to watch, than it has to do with the movie itself.</p>
@@ -753,7 +753,7 @@ Don't get me wrong the collection is more than worth the five or six hundred buc
         <title>Convert a CSV file to JSON</title>
         <link>https://makc.co/docs/csv-to-json/</link>
         <guid>https://makc.co/docs/csv-to-json/</guid>
-        <pubDate>Sun, 20 Sep 2026 19:00:00 CDT</pubDate>
+        <pubDate>Sun, 20 Sep 2026 19:00:00 -0500</pubDate>
         <description><![CDATA[<p>A guide to converting a CSV (Comma Separated Value) file to a properly formatted JSON file with python, and cleaning up any artifacts that might come up in the process.</p>
 <h2>Ensure Python is Installed</h2>
 <table>
@@ -834,7 +834,7 @@ Don't get me wrong the collection is more than worth the five or six hundred buc
         <title>Powershell and Bash</title>
         <link>https://makc.co/docs/powershell-and-bash/</link>
         <guid>https://makc.co/docs/powershell-and-bash/</guid>
-        <pubDate>Sun, 06 Sep 2026 19:00:00 CDT</pubDate>
+        <pubDate>Sun, 06 Sep 2026 19:00:00 -0500</pubDate>
         <description><![CDATA[<p>Some basic tips and rules for navigating Windows and Linux with powershell and bash. This was made for my own personal use and does assume that any reader is pretty familiar with bash commands and mainly interested in learning how to transfer these same skills to navigating a Windows system via powershell.</p>
 <h2>Powershell eccentricitys</h2>
 <ul>
@@ -1029,7 +1029,7 @@ Documents/journal/volume-07.md:22</code></pre>
         <title>Creating a New Branch</title>
         <link>https://makc.co/docs/new-git-branch/</link>
         <guid>https://makc.co/docs/new-git-branch/</guid>
-        <pubDate>Sat, 15 Aug 2026 19:00:00 CDT</pubDate>
+        <pubDate>Sat, 15 Aug 2026 19:00:00 -0500</pubDate>
         <description><![CDATA[<p>A guide for creating a new branch in a git repository.</p>
 <h2>Creating a New Branch</h2>
 <ol>
@@ -1064,7 +1064,7 @@ Documents/journal/volume-07.md:22</code></pre>
         <title>Downloading a Video</title>
         <link>https://makc.co/docs/video-download/</link>
         <guid>https://makc.co/docs/video-download/</guid>
-        <pubDate>Thu, 06 Aug 2026 19:00:00 CDT</pubDate>
+        <pubDate>Thu, 06 Aug 2026 19:00:00 -0500</pubDate>
         <description><![CDATA[<p>A quick guide to downloading videos that are harder than they should be to download.</p>
 <h2>Locating a File to Download</h2>
 <ol>
@@ -1125,7 +1125,7 @@ An example using the network tab in Firefox's Dev Tools to located a segmented v
         <title>Setting up a Calibre-web Server on Linux</title>
         <link>https://makc.co/docs/calibre-web-docker/</link>
         <guid>https://makc.co/docs/calibre-web-docker/</guid>
-        <pubDate>Sat, 13 Jun 2026 19:00:00 CDT</pubDate>
+        <pubDate>Sat, 13 Jun 2026 19:00:00 -0500</pubDate>
         <description><![CDATA[<h2>Install Docker Engine / Docker CE</h2>
 <ol>
 <li>Follow <a href="https://docs.docker.com/engine/install/#get-started">the Docker website's documentation</a>, it's solid &amp; also includes instructions to remove previous iterations of Docker on all the other supported distributions.</li>
@@ -1200,7 +1200,7 @@ Databse config setup in the Calibre Web UI
         <title>Setting up a Private Immich Server</title>
         <link>https://makc.co/docs/immich/</link>
         <guid>https://makc.co/docs/immich/</guid>
-        <pubDate>Tue, 09 Jun 2026 19:00:00 CDT</pubDate>
+        <pubDate>Tue, 09 Jun 2026 19:00:00 -0500</pubDate>
         <description><![CDATA[<h2>Install Docker Engine / Docker CE</h2>
 <ol>
 <li><strong>Note</strong>: <em>Docker Engine</em> is not the same thing that would generally be installed via a standard linux package manager. To remove a previously installed iteration of Docker (at least on Ubuntu), use the command below:</li>
@@ -1226,7 +1226,7 @@ Databse config setup in the Calibre Web UI
         <title>Copying a ISO Image to a USB Drive</title>
         <link>https://makc.co/docs/iso-2-usb-with-pv/</link>
         <guid>https://makc.co/docs/iso-2-usb-with-pv/</guid>
-        <pubDate>Thu, 04 Jun 2026 19:00:00 CDT</pubDate>
+        <pubDate>Thu, 04 Jun 2026 19:00:00 -0500</pubDate>
         <description><![CDATA[<h2>Required Items</h2>
 <ul>
 <li><a href="https://linux.die.net/man/1/pv">pv</a>. Don't use <a href="https://linux.die.net/man/1/dd">dd</a>. While it will often work, dd is a 50+ year old command, uses archaic syntax and provides little to no feedback on what it is doing.</li>
@@ -1273,7 +1273,7 @@ sda
         <title>Creating a Private Git Server</title>
         <link>https://makc.co/docs/create-your-own-git-server/</link>
         <guid>https://makc.co/docs/create-your-own-git-server/</guid>
-        <pubDate>Wed, 06 May 2026 19:00:00 CDT</pubDate>
+        <pubDate>Wed, 06 May 2026 19:00:00 -0500</pubDate>
         <description><![CDATA[<p>As <a href="https://github.com">GitHub</a> becomes <a href="https://mrshu.github.io/github-statuses/">increasingly less reliable</a> (not to mention riddled with AI slop), many are looking for alternatives. This documentation will walk through the process of setting up a private Git server for any non public-facing repositories.</p>
 <h2>Required Hardware</h2>
 <ul>
@@ -1378,7 +1378,7 @@ ssh-keygen <span class="token parameter variable">-t</span> ed25519-sk <span cla
         <title>Launch Any Package via Dmenu</title>
         <link>https://makc.co/docs/flatpak-to-dmenu/</link>
         <guid>https://makc.co/docs/flatpak-to-dmenu/</guid>
-        <pubDate>Mon, 06 Apr 2026 19:00:00 CDT</pubDate>
+        <pubDate>Mon, 06 Apr 2026 19:00:00 -0500</pubDate>
         <description><![CDATA[<p>Documentation for setting up Flatpack, Snap and other packages installed to non-standard locations to launch via dmenu and other minimal application launchers.</p>
 <h2>Issue</h2>
 <p>By default demnu (and most other minimal app launchers) look(s) for packages installed in <em>/usr/bin</em>. This is where most packages installed via <em>apt</em>, <em>pacman</em> or other package managers generally write to. However when installing apps with services like Flatpak or Canonical's Snap Store, the appImage is often placed elsewhere.</p>
@@ -1407,7 +1407,7 @@ ssh-keygen <span class="token parameter variable">-t</span> ed25519-sk <span cla
         <title>Install Davinci Resolve on Linux</title>
         <link>https://makc.co/docs/install-resolve-on-linux/</link>
         <guid>https://makc.co/docs/install-resolve-on-linux/</guid>
-        <pubDate>Thu, 22 Jan 2026 18:00:00 CST</pubDate>
+        <pubDate>Thu, 22 Jan 2026 18:00:00 -0600</pubDate>
         <description><![CDATA[<p>Documentation for installing Black Magic Design's Davinci Resolve or Davinci Resolve Studio on Linux.</p>
 <h2>Required Software</h2>
 <ul>
@@ -1482,7 +1482,7 @@ xrandr <span class="token parameter variable">--output</span> DP-2 <span class="
         <title>Recording &amp; Transcoding 2:1 Screen-caps on Linux</title>
         <link>https://makc.co/docs/yt-pipeline/</link>
         <guid>https://makc.co/docs/yt-pipeline/</guid>
-        <pubDate>Wed, 21 Jan 2026 18:00:00 CST</pubDate>
+        <pubDate>Wed, 21 Jan 2026 18:00:00 -0600</pubDate>
         <description><![CDATA[<p>Some notes on setting up a custom display resolution on X11, transcoding H.264 media using ffmpeg, editing in Davinci Resolve, and then transcoding screen capture videos to the VP9 codec for delivery to YouTube &amp; other video platforms.</p>
 <h2>Required Software</h2>
 <ul>
@@ -1576,7 +1576,7 @@ ffmpeg <span class="token parameter variable">-i</span> <span class="token strin
         <title>Converting a Markdown File to a Manuscript</title>
         <link>https://makc.co/docs/markdown-to-manscript/</link>
         <guid>https://makc.co/docs/markdown-to-manscript/</guid>
-        <pubDate>Fri, 16 Jan 2026 18:00:00 CST</pubDate>
+        <pubDate>Fri, 16 Jan 2026 18:00:00 -0600</pubDate>
         <description><![CDATA[<p>A guide for exporting Markdown <em>(.md)</em> files to Open Office <em>(.odt)</em> files, with <a href="https://en.wikipedia.org/w/index.php?title=Standard_manuscript_format">standard manuscript formatting</a>.</p>
 <h2>Background</h2>
 <p>Last year I began writing my first novel. My preferred method of writing is to use the <a href="https://daringfireball.net/projects/markdown/">Markdown format</a>, and <a href="https://neovim.io/">Neovim</a>. This setup is great for writing efficiently and accessing my work on any device. However, I have run into two issues:</p>
@@ -1693,7 +1693,7 @@ libreoffice <span class="token punctuation">\</span>
         <title>Remotely Accesing a File Server with Tailscale</title>
         <link>https://makc.co/docs/simple-tailscale-setup/</link>
         <guid>https://makc.co/docs/simple-tailscale-setup/</guid>
-        <pubDate>Thu, 15 Jan 2026 18:00:00 CST</pubDate>
+        <pubDate>Thu, 15 Jan 2026 18:00:00 -0600</pubDate>
         <description><![CDATA[<p>Set up a free and simple VPN tunnel to access and modify a remote file server in the most secure way possible, wile still being pretty lazy.</p>
 <h2>Background</h2>
 <p>The goal is to be able to access and add files to what was originally set up as a local file server, from outside of the LAN. In order to add an additional layer of security, this documentation assumes the use of an intermediate system. That is, a third system to remotely connect to, on the same LAN as the file server, that can then be used to access and manipulate the file server, without having to leave an open VPN connection on the file server itself.</p>
@@ -1824,7 +1824,7 @@ transmission-cli <span class="token parameter variable">-a</span> <span class="t
         <title>Setting up BSPWM on Fedora Workstation</title>
         <link>https://makc.co/docs/fedora-bspwm/</link>
         <guid>https://makc.co/docs/fedora-bspwm/</guid>
-        <pubDate>Sun, 28 Dec 2025 18:00:00 CST</pubDate>
+        <pubDate>Sun, 28 Dec 2025 18:00:00 -0600</pubDate>
         <description><![CDATA[<p>A guide for setting up a working instance of <a href="https://github.com/makccr/dot">my BSPWM configuration</a> on a clean install of <a href="https://fedoraproject.org/workstation/download">Fedora Workstation</a>. Note: <em>I have only tested this on version 43 and above on x86 platforms.</em></p>
 <h2>Install Required Packages</h2>
 <p>We need to first install all packages that are required by BSPWM and are referenced in my BSPWM configuration. Most packages can be installed via the dnf package manger:</p>
@@ -1879,7 +1879,7 @@ transmission-cli <span class="token parameter variable">-a</span> <span class="t
         <title>Cloning This Webiste</title>
         <link>https://makc.co/docs/cloning-this-site/</link>
         <guid>https://makc.co/docs/cloning-this-site/</guid>
-        <pubDate>Sat, 27 Dec 2025 18:00:00 CST</pubDate>
+        <pubDate>Sat, 27 Dec 2025 18:00:00 -0600</pubDate>
         <description><![CDATA[<p>A quick guide for cloning this site's repository via git &amp; getting set up for development on a new system. I use <a href="https://github.com/11ty/eleventy/">Eleventy (11ty)</a> as a static site generator &amp; <a href="https://airtable.com/">Airtable</a> as a <em>sort of a CMS solution</em>. This documentation will walk through cloning this website's repository from <a href="https://github.com/makccr/makccr.github.io">GitHub</a>, installing all required dependencies, insuring all NPM plugins are installed, and testing to ensure that the new machine is ready for further development.</p>
 <h2>Install Required Packages</h2>
 <pre class="language-shell"><code class="language-shell"><span class="token comment">#### Arch</span>
@@ -1910,6 +1910,13 @@ or
 <pre class="language-shell"><code class="language-shell">npx @11ty/eleventy</code></pre>
 <p>When ready to commit changes to the site, just use the normal git process for doing so. The site is hosted on Netlify &amp; any changes pushed to the <em>master</em> branch will go live immediately.</p>
 <pre class="language-shell"><code class="language-shell"><span class="token function">git</span> <span class="token function">add</span> -A<span class="token punctuation">;</span> <span class="token function">git</span> commit <span class="token parameter variable">-m</span> <span class="token string">"message"</span><span class="token punctuation">;</span> <span class="token function">git</span> push</code></pre>
+<h2>Updating NPM Packages</h2>
+<p>Obviously keeping packages up to date is a pretty important security practice. Luckily if packages are installed via <code>npm</code>, we can check for and install updates to 11ty packages very easily:</p>
+<pre class="language-bash"><code class="language-bash">npx npm-check-updates <span class="token parameter variable">-u</span> <span class="token comment"># Checks for updates </span>
+
+<span class="token function">npm</span> <span class="token function">install</span> <span class="token comment"># Installs updates </span>
+<span class="token function">npm</span> i <span class="token comment"># Shorthand for npm install</span></code></pre>
+<p>It may also be necessary to use the <code>npm audit</code> command to fix any issues that arise in the update process.</p>
 <hr>
 <h2>Helpful Formatting Blocks</h2>
 <h3>New Essay Header</h3>
@@ -1918,7 +1925,8 @@ or
 layout: essay.html
 date: YYYY-MM-DD
 tags: essay 
-subject: ["subject1", "subject2"]</span>
+subject: ["subject1", "subject2"]
+description: "WORDS"</span>
 <span class="token punctuation">---</span></span></code></pre>
 <h3>New Doc Header</h3>
 <pre class="language-markdown"><code class="language-markdown"><span class="token front-matter-block"><span class="token punctuation">---</span>
@@ -1927,7 +1935,14 @@ layout: docs.html
 date: YYYY-MM-DD
 updated: YYYY-MM-DD
 tags: docs
-subject: ["subject1", "subject2"]</span>
+subject: ["subject1", "subject2"]
+description: "WORDS"</span>
+<span class="token punctuation">---</span></span></code></pre>
+<h3>Generic New Page</h3>
+<pre class="language-markdown"><code class="language-markdown"><span class="token front-matter-block"><span class="token punctuation">---</span>
+<span class="token front-matter yaml language-yaml">includes: main.html 
+title: "TITLE"
+description: "WORDS"</span>
 <span class="token punctuation">---</span></span></code></pre>
 ]]></description>
       </item>
