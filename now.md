@@ -1,13 +1,14 @@
 ---
 layout: main.html
 title: Now 
-description: Inspired by <a href="https://sive.rs/nowff" target="_blank">Derek Sivers</a> and the <a href="https://nownownow.com/" target="_blank">nownownow website</a>, this page aims to serve two simple purposes; (1) let people know what I'm working on at any given moment & (2) keep me centered and remind me what I'm meant to be working on.
+description: Inspired by Derek Sivers and the nownownow website, this page aims to serve two simple purposes; (1) let people know what I'm working on at any given moment & (2) keep me centered and remind me what I'm meant to be working on.
 ---
+
 <h1>{{ title }}</h1>
 
 <p class="caption">
-    {{ description }}<br>•<br>
-    <strong>Last Updated: </strong>22 September 2026<br>
+    Inspired by <a href="https://sive.rs/nowff" target="_blank">Derek Sivers</a> and the <a href="https://nownownow.com/" target="_blank">nownownow website</a>, this page aims to serve two simple purposes; (1) let people know what I'm working on at any given moment & (2) keep me centered and remind me what I'm meant to be working on.
+    <br><br><strong>Last Updated: </strong>22 September 2026<br>
 </p>
 
 ## Projects
