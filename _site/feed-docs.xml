@@ -5,8 +5,109 @@
     <link>https://makc.co/docs/</link>
     <description>My personal documentation. Most sane people would keep this in a notebook, but clearly I had other ideas. Feel free to use the information found here, but please don't think that any of this documentation was written with any level of verifiable expertise. It's probably still better than what ChatGPT would have told ya' though ;)</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 20 Sep 2026 19:00:00 -0500</lastBuildDate>
+    <lastBuildDate>Tue, 29 Sep 2026 19:00:00 -0500</lastBuildDate>
 
+    
+      <item>
+        <title>Tmux for Lazy Folks</title>
+        <link>https://makc.co/docs/tmux-for-lazy-folks/</link>
+        <guid>https://makc.co/docs/tmux-for-lazy-folks/</guid>
+        <pubDate>Tue, 29 Sep 2026 19:00:00 -0500</pubDate>
+        <description><![CDATA[<p>Some basic tmux commands, as well as some shortcuts for people who just want a quick multiplexer, but don't want to think about it to much.</p>
+<h2>Ensure Tmux is Installed</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">OS</th>
+<th>Install Python</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right"><strong>Arch Linux</strong></td>
+<td><code>sudo pacman -S tmux</code></td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>Ubuntu/Debian</strong></td>
+<td><code>sudo apt install tmux</code></td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>Fedora</strong></td>
+<td><code>sudo dnf install tmux</code></td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>macOS + Homebrew</strong></td>
+<td><code>brew install tmux</code></td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>FreeBSD</strong></td>
+<td><code>su &amp;&amp; pkg install tmux</code></td>
+</tr>
+</tbody>
+</table>
+<h3>Create a Main/Master Session andior Connect to It</h3>
+<p>There are many benefits to using tmux, but perhaps the most salient is the ability to attach and detach from the same terminal session over several machines or several different points in time. For this reason, it's common to create a master or main session in which a user can always connect to. The standard syntax for creating a new tmux session is:</p>
+<pre class="language-bash"><code class="language-bash">tmux new <span class="token parameter variable">-s</span> main</code></pre>
+<p>However we can also use the command below to either:</p>
+<ol>
+<li>Create a session called <code>main</code>, or</li>
+<li>Attach to a previously existing session with the name: <code>main</code>.</li>
+</ol>
+<pre class="language-bash"><code class="language-bash">tmux new <span class="token parameter variable">-A</span> <span class="token parameter variable">-s</span> main</code></pre>
+<p class="caption">
+If one desired to do so, this would be a pretty great usecase for a bash or <a href="https://youtube.com/watch?v=KBh8lM3jeeE" target="_blank">zsh alias.</a>
+</p>
+<p>The command above (<code>new -A -s main</code>) can be used to connect to a pre-existing connection, but it should also be noted that the standard syntax for doing this is:</p>
+<pre class="language-bash"><code class="language-bash">tmux attach <span class="token parameter variable">-t</span> main</code></pre>
+<h3>Disconnecting from Main/Master Session</h3>
+<p><code>Ctrl+b</code>, then <code>d</code>.</p>
+<p>Tmux will keep sessions alive if a SSH session disconnects (another feature), but it's not great practice to just kill a terminal window with a tmux session running.</p>
+<h3>Some Movements and Tiling Stuffs</h3>
+<table>
+<thead>
+<tr>
+<th>Keybinding</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Ctrl+b</code>, then <code>arrow keys</code></td>
+<td>Navigate up, down, left and right.</td>
+</tr>
+<tr>
+<td><code>Ctrl+b</code>, then <code>%</code></td>
+<td>Tile session vertically.</td>
+</tr>
+<tr>
+<td><code>Ctrl+b</code>, then <code>&quot;</code></td>
+<td>Tile session horizontaly.</td>
+</tr>
+<tr>
+<td><code>Ctrl+b</code>, then <code>x</code></td>
+<td>Close selection pane.</td>
+</tr>
+<tr>
+<td><code>Ctrl+b</code>, then <code>c</code></td>
+<td>New window.</td>
+</tr>
+<tr>
+<td><code>Ctrl+b</code>, then <code>n</code></td>
+<td>Cycle windows.</td>
+</tr>
+<tr>
+<td><code>Ctrl+b</code>, then <code>&amp;</code></td>
+<td>Close current window.</td>
+</tr>
+<tr>
+<td><code>Ctrl+b</code>, then <code>d</code></td>
+<td>Fully detach tmux session.</td>
+</tr>
+</tbody>
+</table>
+<p>In case you didn't figure it out, <code>Ctrl+b</code> is the leader for just about every keybinding in tmux.</p>
+]]></description>
+      </item>
     
       <item>
         <title>Convert a CSV file to JSON</title>

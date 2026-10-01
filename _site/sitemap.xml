@@ -283,4 +283,11 @@
     <priority>0.6</priority>
   </url>
 
+  <url>
+    <loc>https://makc.co/docs/tmux-for-lazy-folks/</loc>
+    <lastmod>September 29, 2026</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>
