@@ -177,6 +177,13 @@
     <priority>0.6</priority>
   </url>
 
+  <url>
+    <loc>https://makc.co/essays/writerdeck/</loc>
+    <lastmod>October 4, 2026</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 
   <url>
     <loc>https://makc.co/docs/cloning-this-site/</loc>
