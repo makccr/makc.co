@@ -188,7 +188,7 @@ set-option <span class="token parameter variable">-g</span> status-style <span c
 My TMUX status bar with the configurations detailed here. 
 </p>
 <p>Next, we can use Tmux to generate keybindings for brightness control, as the quickest way to run down even a good battery is by running the display at 100% when there is no reason to do so. The <code>brightnessctl</code> app in the pacman repositories will add this functionality:</p>
-<pre class="language-sudo"><code class="language-sudo">pacman -Syu brightnessctl</code></pre>
+<pre class="language-sudo"><code class="language-sudo">sudo pacman -Syu brightnessctl</code></pre>
 <p>We can then add some keybindings to our pre-existing Tmux config. By default every keybinding in tmux uses <code>Ctrl+b</code> as a leader key, but we can bypass this with the <code>-n</code> option, and have the brightness increase with <code>F9</code> and decrease with <code>F8</code>.</p>
 <pre class="language-bash"><code class="language-bash"><span class="token builtin class-name">bind</span> <span class="token parameter variable">-n</span> F8 run-shell <span class="token string">'brightnessctl -q set 5%-'</span>
 <span class="token builtin class-name">bind</span> <span class="token parameter variable">-n</span> F9 run-shell <span class="token string">'brightnessctl -q set +5%'</span></code></pre>

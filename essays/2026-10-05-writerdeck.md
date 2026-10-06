@@ -121,7 +121,7 @@ My TMUX status bar with the configurations detailed here.
 Next, we can use Tmux to generate keybindings for brightness control, as the quickest way to run down even a good battery is by running the display at 100% when there is no reason to do so. The `brightnessctl` app in the pacman repositories will add this functionality: 
 
 ```sudo
-pacman -Syu brightnessctl
+sudo pacman -Syu brightnessctl
 ```
 
 We can then add some keybindings to our pre-existing Tmux config. By default every keybinding in tmux uses `Ctrl+b` as a leader key, but we can bypass this with the `-n` option, and have the brightness increase with `F9` and decrease with `F8`.
