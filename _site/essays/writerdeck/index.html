@@ -81,7 +81,7 @@
     <header>
         <div class="logo-container">
             <a href="/index">
-                <picture><source type="image/webp" srcset="/img/Es_hZy2Cb8-1000.webp"><img class="logo" src="/img/Es_hZy2Cb8-1000.jpeg" alt="HOME" width="1000" height="1000"></picture>
+                <picture><source type="image/webp" srcset="/.11ty/image/?src=images%2Fm.svg&width=1000&format=webp&via=transform"><img class="logo" src="/.11ty/image/?src=images%2Fm.svg&width=1000&format=jpeg&via=transform" alt="HOME" width="1000" height="1000"></picture>
             </a>
         </div>
             <div class="bars" onclick="mobileMenu()">
@@ -179,7 +179,7 @@ set-option <span class="token parameter variable">-g</span> status-style <span c
 <p>By default the tmux status bar displays active windows on the left side and the time and data on the right side of the status bar. All I want to do is add the battery to the right side of the status bar with the word-salad looking line that I'll explain below:</p>
 <pre class="language-bash"><code class="language-bash">set-window-option <span class="token parameter variable">-g</span> status-right <span class="token string">"#[bg=green,fg=black] %a %d #[bg=blue] %H:%M #[bg=cyan] #(acpi -b | grep -m1 -o -P '.{0,2}%') "</span></code></pre>
 <p><code>set-window-option -g status-right</code> tells the config that we want to edit the right side of the status bar. The sections that include <code>#[bg=X,fg=X]</code> are setting background and foreground colors based on the colors as we defined them in the kmscon config earlier. Since we previously set the status bar to black, the entire status bar will be black until we change that with: <code>#[bg=green,fg=black]</code>. The status bar will then change to a green background and black text for the command <code>%a %d</code> which displays the date and day of the week as <strong>Day 00</strong>. We then change the background the blue with <code>#[bg=blue]</code>and print the time in HH:MM format (the black text inherited from the earlier definition). Finally we change the background to cyan and display the battery life with: <code>#(acpi -b | grep -m1 -o -P '.{0,2}%') </code>. The grep syntax is a little tricky to wrap your head around, but essentially all this is doing is removing the first part of the <code>acpi</code> command's output, and truncating it, so that all that is actually displayed is the battery percentage. By default the command output would look something like: <code>Battery 0: Discharging, 4%, 00:13:11 remaining</code></p>
-<picture><source type="image/webp" srcset="/img/iAsBgmJksm-3836.webp"><img class="thirds" alt="My TMUX status bar customized." src="/img/iAsBgmJksm-3836.jpeg" width="3836" height="270"></picture>
+<picture><source type="image/webp" srcset="/.11ty/image/?src=essays%2Fimg%2F2026-10-05.jpg&width=3836&format=webp&via=transform"><img class="thirds" alt="My TMUX status bar customized." src="/.11ty/image/?src=essays%2Fimg%2F2026-10-05.jpg&width=3836&format=jpeg&via=transform" width="3836" height="270"></picture>
 <p class="caption">
 My TMUX status bar with the configurations detailed here. 
 </p>
