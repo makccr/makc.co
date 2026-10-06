@@ -24,6 +24,10 @@
 <li>Battery life</li>
 </ol>
 <p>There are a whole lot of laptops to consider, and a lot of trade-offs to be made. MacBooks for example will offer supreme battery life, but not without sacrificing keyboard quality. Also much of the battery life gains are lost if replacing MacOS with Linux, and I'm not willing to run MacOS on a writing machine. Old Thinkpads have amazing keyboards (for a laptop), but have limited battery life and are pretty cumbersome when compared with anything even close to modern. E-ink laptops are an interesting consideration, as battery life is almost guaranteed to be great, but build quality is often lacking here. Truth be told I have yet to find the perfect device for a dedicated writerdeck, and have opted to just use my EDC laptop of choice, the Thinkpad P1 as a general purpose laptop, and a writerdeck for the time being. This laptop is not ideal, as it has a fifteen inch screen (a bit bigger than I'd like), dedicated graphics and an older Intel chipset that isn't nearly as efficient as modern options. It's OLED screen and reasonably large built in battery however, make it more than acceptable for temporary use.</p>
+<img class="full" alt="My writerdeck" src="/essays/img/2026-10-05-deck.jpg"/>
+<p class="caption">
+My writerdeck in action on the front porch of a cabin in the middle of the woods. 
+</p>
 <h3>Operating System</h3>
 <p>As far as I'm concerned the only real option for OS is Linux (maybe a BSD flavor if you just really wanted native zfs). The whole point of a writerdeck is to foster a distraction free writing environment for one's self, and there's nothing better for this, than a CLI only system. Linux alone as an OS offers the freedom to uninstall a GUI and create the perfect environment. Since we'd be uninstalling a GUI anyway, one of the most compelling choices here is to use <a href="https://archlinux.org/">Arch Linux</a>, as we can just never install a GUI to begin with. For my part, my Thinkpad P1 as already running CachyOS (an Arch derivate), so I just chose to employ Linux's virtual terminals to easily swap over into my writerdeck environment. For readers unfamiliar, nearly ever Linux distribution allows easy swapping between multiple virtual TTYs using the keybinding: <code>Ctrl+Alt+F*</code>. For example: <code>Ctrl+Alt+F3</code> will load <code>TTY3</code> and <code>Ctril+Alt+F4</code> will load <code>TTY4</code>. Generally, Linux distributions will load the GUI and user space into TTY1 or TTY2, so using TTY3 or above is a safe bet</p>
 <h4>KMSCON and TTY Customization</h4>
@@ -92,6 +96,28 @@ My TMUX status bar with the configurations detailed here.
     <span class="token builtin class-name">exec</span> tmux new <span class="token parameter variable">-A</span> <span class="token parameter variable">-s</span> main
 <span class="token keyword">fi</span></code></pre>
 <p>Adding this to the top of our shell config with check the <code>$XDG_SESSION_ID</code> to make sure that we are in a new TTY and not a virtual terminal like would be spawned when launching alacritty or foot. After this is verified, Tmux is launched with the <code>tmux new -A -s main</code> command. This will either attach to the session called <code>main</code> if it exists, or create the <code>main</code> session if it does not. For my workflow, I almost always use a main/master session in Tmux, so this will also allow me to start work in my standard userspace and pick things up where I left of in TTY3.</p>
+<p>The full Tmux config that I use is below:</p>
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># Setting a quick way to reload config</span>
+<span class="token builtin class-name">bind</span> r source-file ~/.tmux.conf
+
+<span class="token comment"># Allowing mouse control, moving status bar to top</span>
+<span class="token builtin class-name">set</span> <span class="token parameter variable">-g</span> mouse on
+<span class="token builtin class-name">set</span> <span class="token parameter variable">-s</span> escape-time <span class="token number">0</span>
+<span class="token builtin class-name">set</span> <span class="token parameter variable">-g</span> status-position <span class="token function">top</span>
+
+<span class="token comment"># Customizing status bar colors &amp; adding battery percentage to status bar</span>
+set-option <span class="token parameter variable">-g</span> status-style <span class="token string">"bg=black"</span>
+set-window-option <span class="token parameter variable">-g</span> status-right <span class="token string">"#[bg=green,fg=black] %a %d #[bg=blue] %H:%M #[bg=cyan] #(acpi -b | grep -m1 -o -P '.{0,2}%') "</span>
+
+<span class="token comment"># Vim keys for navigating panes</span>
+<span class="token builtin class-name">bind</span> h select-pane <span class="token parameter variable">-L</span>
+<span class="token builtin class-name">bind</span> j select-pane <span class="token parameter variable">-D</span>
+<span class="token builtin class-name">bind</span> k select-pane <span class="token parameter variable">-U</span>
+<span class="token builtin class-name">bind</span> l select-pane <span class="token parameter variable">-R</span>
+
+<span class="token comment"># Adding keybindings for adjusting brightness</span>
+<span class="token builtin class-name">bind</span> <span class="token parameter variable">-n</span> F8 run-shell <span class="token string">'brightnessctl -q set 5%-'</span>
+<span class="token builtin class-name">bind</span> <span class="token parameter variable">-n</span> F9 run-shell <span class="token string">'brightnessctl -q set +5%'</span></code></pre>
 <h4>Networking and Synchronization</h4>
 <p>To wrap things up, networking is probably something that will be essential for most writers. If your laptop has an ethernet port, simply installing an enabling <code>dhcpcd</code> will be more than enough, and it might be worth actively not enabling WiFi on a trail bases to restrict the writerdeck ever further. However, I'm assuming that I and just about everyone else will eventually want to enable WiFi connectivity for syncing or pushing a git repository.</p>
 <pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> pacman <span class="token parameter variable">-Syu</span> networkmanager</code></pre>

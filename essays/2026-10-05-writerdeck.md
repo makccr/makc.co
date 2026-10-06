@@ -22,6 +22,12 @@ There are two giant factors that must be considered when selecting one's laptop 
 
 There are a whole lot of laptops to consider, and a lot of trade-offs to be made. MacBooks for example will offer supreme battery life, but not without sacrificing keyboard quality. Also much of the battery life gains are lost if replacing MacOS with Linux, and I'm not willing to run MacOS on a writing machine. Old Thinkpads have amazing keyboards (for a laptop), but have limited battery life and are pretty cumbersome when compared with anything even close to modern. E-ink laptops are an interesting consideration, as battery life is almost guaranteed to be great, but build quality is often lacking here. Truth be told I have yet to find the perfect device for a dedicated writerdeck, and have opted to just use my EDC laptop of choice, the Thinkpad P1 as a general purpose laptop, and a writerdeck for the time being. This laptop is not ideal, as it has a fifteen inch screen (a bit bigger than I'd like), dedicated graphics and an older Intel chipset that isn't nearly as efficient as modern options. It's OLED screen and reasonably large built in battery however, make it more than acceptable for temporary use.
 
+<img class="full" alt="My writerdeck" src="/essays/img/2026-10-05-deck.jpg"/>
+
+<p class="caption">
+My writerdeck in action on the front porch of a cabin in the middle of the woods. 
+</p>
+
 ### Operating System
 As far as I'm concerned the only real option for OS is Linux (maybe a BSD flavor if you just really wanted native zfs). The whole point of a writerdeck is to foster a distraction free writing environment for one's self, and there's nothing better for this, than a CLI only system. Linux alone as an OS offers the freedom to uninstall a GUI and create the perfect environment. Since we'd be uninstalling a GUI anyway, one of the most compelling choices here is to use [Arch Linux](https://archlinux.org/), as we can just never install a GUI to begin with. For my part, my Thinkpad P1 as already running CachyOS (an Arch derivate), so I just chose to employ Linux's virtual terminals to easily swap over into my writerdeck environment. For readers unfamiliar, nearly ever Linux distribution allows easy swapping between multiple virtual TTYs using the keybinding: `Ctrl+Alt+F*`. For example: `Ctrl+Alt+F3` will load `TTY3` and `Ctril+Alt+F4` will load `TTY4`. Generally, Linux distributions will load the GUI and user space into TTY1 or TTY2, so using TTY3 or above is a safe bet
 
@@ -134,6 +140,32 @@ fi
 ```
 
 Adding this to the top of our shell config with check the `$XDG_SESSION_ID` to make sure that we are in a new TTY and not a virtual terminal like would be spawned when launching alacritty or foot. After this is verified, Tmux is launched with the `tmux new -A -s main` command. This will either attach to the session called `main` if it exists, or create the `main` session if it does not. For my workflow, I almost always use a main/master session in Tmux, so this will also allow me to start work in my standard userspace and pick things up where I left of in TTY3.
+
+The full Tmux config that I use is below:
+
+```bash
+# Setting a quick way to reload config
+bind r source-file ~/.tmux.conf
+
+# Allowing mouse control, moving status bar to top
+set -g mouse on
+set -s escape-time 0
+set -g status-position top
+
+# Customizing status bar colors & adding battery percentage to status bar
+set-option -g status-style "bg=black"
+set-window-option -g status-right "#[bg=green,fg=black] %a %d #[bg=blue] %H:%M #[bg=cyan] #(acpi -b | grep -m1 -o -P '.{0,2}%') "
+
+# Vim keys for navigating panes
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
+
+# Adding keybindings for adjusting brightness
+bind -n F8 run-shell 'brightnessctl -q set 5%-'
+bind -n F9 run-shell 'brightnessctl -q set +5%'
+```
 
 #### Networking and Synchronization
 To wrap things up, networking is probably something that will be essential for most writers. If your laptop has an ethernet port, simply installing an enabling `dhcpcd` will be more than enough, and it might be worth actively not enabling WiFi on a trail bases to restrict the writerdeck ever further. However, I'm assuming that I and just about everyone else will eventually want to enable WiFi connectivity for syncing or pushing a git repository.
