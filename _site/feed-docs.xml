@@ -1239,7 +1239,7 @@ transmission-cli <span class="token parameter variable">-a</span> <span class="t
         <title>Cloning This Webiste</title>
         <link>https://makc.co/docs/cloning-this-site/</link>
         <guid>https://makc.co/docs/cloning-this-site/</guid>
-        <pubDate>Sat, 27 Dec 2025 18:00:00 -0600</pubDate>
+        <pubDate>Sun, 28 Dec 2025 18:00:00 -0600</pubDate>
         <description><![CDATA[<p>A quick guide for cloning this site's repository via git &amp; getting set up for development on a new system. I use <a href="https://github.com/11ty/eleventy/">Eleventy (11ty)</a> as a static site generator &amp; <a href="https://airtable.com/">Airtable</a> as a <em>sort of a CMS solution</em>. This documentation will walk through cloning this website's repository from <a href="https://github.com/makccr/makccr.github.io">GitHub</a>, installing all required dependencies, insuring all NPM plugins are installed, and testing to ensure that the new machine is ready for further development.</p>
 <h2>Install Required Packages</h2>
 <pre class="language-shell"><code class="language-shell"><span class="token comment">#### Arch</span>

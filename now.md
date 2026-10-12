@@ -8,7 +8,7 @@ description: Inspired by Derek Sivers and the nownownow website, this page aims 
 
 <p class="caption">
     Inspired by <a href="https://sive.rs/nowff" target="_blank">Derek Sivers</a> and the <a href="https://nownownow.com/" target="_blank">nownownow website</a>, this page aims to serve two simple purposes; (1) let people know what I'm working on at any given moment & (2) keep me centered and remind me what I'm meant to be working on.
-    <br><br><strong>Last Updated: </strong>22 September 2026<br>
+    <br><br><strong>Last Updated: <br></strong>11th of October 2026<br>
 </p>
 
 ## Projects
@@ -43,32 +43,10 @@ A big part of my life is the art that I engage with, so I like to leave some lin
 * I watched [Dr. Strangelove](https://www.imdb.com/title/tt0057012/) for the first time a few months ago, I know it's a shame that I hadn't seen it until 2026. This reminded me of all the things I like about Kubrick's work and set me down the path of rewatching all of Stanley Kubrick's films. [Paths of Glory](https://www.imdb.com/title/tt0050825/), in my opinion, is the most underrated.
 * I've been rewatching a lot of British comedies, everything from [Fawlty Towers](https://www.imdb.com/title/tt0072500/) to [The Cornetto Trilogy](https://en.wikipedia.org/wiki/Three_Flavours_Cornetto). The sense of humor is different enough that it's a nice change of pace from time to time.
 * Like everyone else, I was mesmerized by Nolan's [The Odyssey](https://www.imdb.com/title/tt33764258/) when it came out. I don't think it's his best film by any means, but that didn't stop me from watching it four times in theaters.
+* Confoundingly, apparently, I'm a pretty big fan of Alejandro Iñárritu latest film: [Digger](https://www.imdb.com/title/tt31450459/). I know the movie bombed pretty hard at the box office, and was basically universally panned by critics, but I [thought it was pretty solid](http://makc.co/essays/digger-is-not-that-bad/). 
 
 ### Music & Other stuff
 * Since its release, Noah Kahan's album [The Great Divide](https://noahkahan.com/collections/the-great-divide) has been on repeat. 
 * More recently I also had a chance to check out Medium Build's newest album, [King of Having Fun](https://www.mediumbuildmusic.com/music/#/). It is also very good. 
 * I'm never not listening to Frank Sinatra and Bob Dylan albums.
 * I rediscovered [John Martin's](https://en.wikipedia.org/wiki/John_Martin_(painter)) paintings. [Pandemonium](https://upload.wikimedia.org/wikipedia/commons/0/08/John_Martin_Le_Pandemonium_Louvre.JPG) in particular is nearly impossible to look away from. It's a Romantic-style interpretation of Pandemonium as it's described in John Milton's [Paradise Lost](https://www.poetryfoundation.org/poems/45718/paradise-lost-book-1-1674-version) poem, and it's obviously vibrant and beautiful, but as is the case with most great paintings, I can't quite articulate what I find so fascinating about it.
-
-<h2>
-Some all-time favorites
-</h2>
-
-<div class="now-carousel">
-    <div class="now-track">
-        {% for classic in classics %}
-            <img src="{{ classic.img }}"
-                 alt="{{ classic.title }}"
-                 loading="lazy"
-                 decoding="async">
-        {% endfor %}
-
-        {% for classic in classics %}
-            <img src="{{ classic.img }}"
-                 alt=""
-                 aria-hidden="true"
-                 loading="lazy"
-                 decoding="async">
-        {% endfor %}
-    </div>
-</div>
