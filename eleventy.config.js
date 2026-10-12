@@ -48,6 +48,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("_style");
   eleventyConfig.addPassthroughCopy("images");
   eleventyConfig.addPassthroughCopy("_redirects");
+  eleventyConfig.addPassthroughCopy("netlify.toml");
   eleventyConfig.addPassthroughCopy("downloads");
 
   // Filters
