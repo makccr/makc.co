@@ -81,7 +81,7 @@
     <header>
         <div class="logo-container">
             <a href="/index">
-                <picture><source type="image/webp" srcset="/img/Es_hZy2Cb8-1000.webp"><img class="logo" src="/img/Es_hZy2Cb8-1000.jpeg" alt="HOME" width="1000" height="1000"></picture>
+                <picture><source type="image/webp" srcset="/.11ty/image/?src=images%2Fm.svg&width=1000&format=webp&via=transform"><img class="logo" src="/.11ty/image/?src=images%2Fm.svg&width=1000&format=jpeg&via=transform" alt="HOME" width="1000" height="1000"></picture>
             </a>
         </div>
             <div class="bars" onclick="mobileMenu()">
@@ -125,7 +125,7 @@
 <li>Battery life</li>
 </ol>
 <p>There are a whole lot of laptops to consider, and a lot of trade-offs to be made. MacBooks for example will offer supreme battery life, but not without sacrificing keyboard quality. Also much of the battery life gains are lost if replacing MacOS with Linux, and I'm not willing to run MacOS on a writing machine. Old Thinkpads have amazing keyboards (for a laptop), but have limited battery life and are pretty cumbersome when compared with anything even close to modern. E-ink laptops are an interesting consideration, as battery life is almost guaranteed to be great, but build quality is often lacking here. Truth be told, I have yet to find the perfect device for a dedicated writerdeck, and have opted to just use my EDC laptop of choice, the Thinkpad P1 as a general purpose laptop, and a writerdeck for the time being. This laptop is not ideal, as it has a fifteen inch screen (a bit bigger than I'd like), dedicated graphics, and an older Intel chipset that isn't nearly as efficient as modern options. It's OLED screen and reasonably large built in battery however, make it more than acceptable for temporary use.</p>
-<picture><source type="image/webp" srcset="/img/2_Y2pNKbrU-4032.webp"><img class="full" alt="My writerdeck" src="/img/2_Y2pNKbrU-4032.jpeg" width="4032" height="3024"></picture>
+<picture><source type="image/webp" srcset="/.11ty/image/?src=essays%2Fimg%2F2026-10-05-deck.jpg&width=4032&format=webp&via=transform"><img class="full" alt="My writerdeck" src="/.11ty/image/?src=essays%2Fimg%2F2026-10-05-deck.jpg&width=4032&format=jpeg&via=transform" width="4032" height="3024"></picture>
 <p class="caption">
 My writerdeck in action on the front porch of a cabin in the middle of the woods. 
 </p>
@@ -189,7 +189,7 @@ set-option <span class="token parameter variable">-g</span> status-style <span c
 <pre class="language-bash"><code class="language-bash">set-window-option <span class="token parameter variable">-g</span> status-right <span class="token string">"#[bg=green,fg=black] %a %d #[bg=blue] %H:%M #[bg=cyan] #(acpi -b | grep -m1 -o -P '.{0,2}%') "</span></code></pre>
 <p><code>set-window-option -g status-right</code> tells the config that we want to edit the right side of the status bar. The sections that include <code>#[bg=X,fg=X]</code> are setting background and foreground colors based on the colors as we defined them in the kmscon config earlier. Since we previously set the status bar to black, the entire status bar will be black until we change that with: <code>#[bg=green,fg=black]</code>. The status bar will then change to a green background and black text for the command <code>%a %d</code> which displays the date and day of the week as <strong>Day 00</strong>. We then change the background the blue with <code>#[bg=blue]</code>and print the time in <strong>HH:MM</strong> format (the black text inherited from the earlier definition). Finally, we change the background to cyan and display the battery life with: <code>#(acpi -b | grep -m1 -o -P '.{0,2}%') </code>. The grep syntax is a little tricky to wrap your head around, but essentially all this is doing is removing the first part of the <code>acpi</code> command's output, and truncating it, so that all that's actually displayed is the battery percentage.</p>
 <p>By default the command output would look something like: <code>Battery 0: Discharging, 4%, 00:13:11 remaining</code></p>
-<picture><source type="image/webp" srcset="/img/iAsBgmJksm-3836.webp"><img class="thirds" alt="My TMUX status bar customized." src="/img/iAsBgmJksm-3836.jpeg" width="3836" height="270"></picture>
+<picture><source type="image/webp" srcset="/.11ty/image/?src=essays%2Fimg%2F2026-10-05.jpg&width=3836&format=webp&via=transform"><img class="thirds" alt="My TMUX status bar customized." src="/.11ty/image/?src=essays%2Fimg%2F2026-10-05.jpg&width=3836&format=jpeg&via=transform" width="3836" height="270"></picture>
 <p class="caption">
 My TMUX status bar with the configurations detailed here. 
 </p>
