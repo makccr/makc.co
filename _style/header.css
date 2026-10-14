@@ -26,9 +26,9 @@ header .links a {
     display: inline-block;
     padding-left: .5rem; 
     padding-right: .5rem; 
-    font-family: 'Open Sans', sans-serif; 
+    font-family: '3270NerdFont-Condensed', monospace; 
+    src: url(/_fonts/3270NerdFont-Condensed.ttf) format(ttf);
     font-size: 1rem; 
-    font-weight: 600; 
     text-transform: uppercase;
     text-decoration: none;
     color: var(--fg-color);
@@ -85,7 +85,7 @@ header .links a:hover::after {
 
 #mobile-links li {
     text-transform: uppercase; 
-    font-size: 1.3rem; 
+    font-size: 1.5rem; 
     padding: 1rem 0;
 }
 
@@ -95,7 +95,9 @@ header .links a:hover::after {
 }
 
 #mobile-links a {
-    font-family: 'Open Sans', sans-serif; 
+    font-family: '3270NerdFont-Condensed', monospace; 
+    src: url(/_fonts/3270NerdFont-Condensed.ttf) format(ttf);
+    font-weight: 300;
     color: var(--fg-color); 
 }
 

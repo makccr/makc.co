@@ -11,12 +11,13 @@ main {
 
 h1 {
     color: var(--fg-color); 
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Jost Light', sans-serif;
 }
 
 h2,h3,h4,h5,h6,th {
     color: var(--fg-color);
-    font-family: 'Inconsolata', monospace; 
+    font-family: '3270', monospace; 
+    font-weight: 300; 
 } /* Setting all headers to primary foreground color */
 
 h2,h3,h4,h5,h6 { padding-top: 3rem; }
@@ -102,8 +103,8 @@ code {
     white-space: pre-wrap; 
     word-break: break-word; 
     overflow-wrap: break-word; 
-    font-family: 'Inconsolata', monospace ; 
-    font-size: 1rem; 
+    font-family: '3270', monospace; 
+    font-size: .9rem; 
     background-color: var(--bg-color-lighter); 
     border-radius: .3rem; 
     border: 1px solid var(--mid-accent); 
@@ -145,20 +146,19 @@ blockquote {
 }
 
 blockquote p {
-    font-family: 'IM Fell English', serif;
+    font-family: 'IM Fell English Regular', serif;
     color: var(--fg-color);
     font-size: 1.25rem;
     line-height: 1.7rem;
 }
 
 .attr {
-    text-transform: uppercase; 
     text-align: center; 
     padding: 0;
     margin: 0 0 4rem;
     position: relative; 
-    font-size: .9rem; 
-    font-family: 'Inconsolata', monospace;
+    font-size: 1rem; 
+    font-family: 'IM Fell English Italic', serif; 
 }
 
 .attr::before, .attr::after {
@@ -227,9 +227,11 @@ button:hover {
     margin: 0rem; 
     padding; 0rem;
     margin-bottom: 2rem;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     margin-left: auto;
     margin-right: auto;
+    line-height: 1.2rem; 
+    font-family: '3270', monospace; 
 }
 
 /* Miscellaneous NF symbols*/
@@ -275,8 +277,8 @@ button:hover {
     margin: 0; 
     padding: 0;
     font-size: var(--fg-color);
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1rem;
+    font-family: 'Jost Regular', sans-serif;
+    font-size: 1.1rem;
     font-weight: 500;
     text-align: left; 
 }
@@ -325,9 +327,8 @@ button:hover {
     box-sizing: content-box; 
     color: var(--fg-color);
     padding: .5rem; 
-    margin-top: 1rem; 
-    font-family: 'Montserrat', sans-serif; 
-    font-weight: 600;
+    margin-top: 1.1rem; 
+    font-family: 'Jost Regular', sans-serif; 
 }
 
 .essay-card .essay-preview {
@@ -393,8 +394,7 @@ button:hover {
     padding: 1rem .25rem; 
     margin: 0;
     font-size: 1.3rem; 
-    font-family: 'Montserrat', sans-serif; 
-    font-weight: 600; 
+    font-family: 'Jost Regular', sans-serif; 
 }
 
 .card button, .post-navigation button {

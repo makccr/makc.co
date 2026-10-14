@@ -39,7 +39,7 @@ This site utilizes third party services in the construction and deployment of it
 | Eleventy (11ty) | <i class='nf nf-fa-xmark'></i> | <i class='nf nf-fa-check'></i> [Privacy Policy](https://www.11ty.dev/docs/privacy/) | <i class='nf nf-fa-xmark'></i> | A static site generator used to build and deploy this site.
 | GitHub | <i class='nf nf-fa-check'></i> [Terms of Service](https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) | <i class='nf nf-fa-check'></i> [Privacy Satement](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement) | <i class='nf nf-fa-xmark'></i> | The CI/CD platform that I use to keep the wesbite's source code and VCS public. |
 | Nerd Fonts | <i class='nf nf-fa-xmark'></i> | <i class='nf nf-fa-xmark'></i> | <i class='nf nf-fa-xmark'></i> | The iconic font aggregator that provides symbols for my terminal and my website. |
-| Google Analytics & Google Fonts | <i class='nf nf-fa-check'></i> [Terms of Service](https://policies.google.com/terms) | <i class='nf nf-fa-check'></i> [Privacy Policy](https://policies.google.com/privacy) | <i class='nf nf-fa-xmark'></i> | Used to track number of site visitors and serve fonts. | 
+| Google Analytics | <i class='nf nf-fa-check'></i> [Terms of Service](https://policies.google.com/terms) | <i class='nf nf-fa-check'></i> [Privacy Policy](https://policies.google.com/privacy) | <i class='nf nf-fa-xmark'></i> | Used to track number of site visitors and serve fonts. | 
 <p class='caption'>
     *<em>Note:</em> I'm on the fence about removing Google Analytics. If anyone has any thoughts on this, or knows of good FOSS alternatives, please feel free to <a href='/contact'>contact me</a>.
 </p>

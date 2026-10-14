@@ -18,9 +18,9 @@ footer li a {
     display: inline-block;
     padding-left: .5rem; 
     padding-right: .5rem; 
-    font-family: 'Inconsolata', monospace; 
-    font-size: 1.2rem; 
-    font-weight: 600; 
+    font-family: '3270NerdFont-Regular', monospace; 
+    src: url(/_fonts/3270NerdFont-Regular.ttf) format(ttf); 
+    font-size: 1rem; 
     text-transform: uppercase;
     text-decoration: none;
     color: var(--fg-color);

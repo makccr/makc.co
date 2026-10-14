@@ -46,6 +46,7 @@ export default function (eleventyConfig) {
   // Plugins & passthrough
   eleventyConfig.addPlugin(eleventyImageTransformPlugin);
   eleventyConfig.addPassthroughCopy("_style");
+  eleventyConfig.addPassthroughCopy("_fonts");
   eleventyConfig.addPassthroughCopy("images");
   eleventyConfig.addPassthroughCopy("_redirects");
   eleventyConfig.addPassthroughCopy("netlify.toml");

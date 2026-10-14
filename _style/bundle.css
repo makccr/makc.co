@@ -2,3 +2,20 @@
 @import url('header.css');
 @import url('footer.css');
 @import url('body.css');
+
+@font-face {
+    font-family: 'IM Fell English Italic'; 
+    src: url(/_fonts/IMFellEnglish-Italic.ttf) format(truetype); 
+    font-family: 'IM Fell English Regular'; 
+    src: url(/_fonts/IMFellEnglish-Regular.ttf) format(truetype); 
+    font-family: '3270'; 
+    src: url(/_fonts/3270NerdFont-Regular.ttf) format(truetype); 
+    font-family: 'Jost Light'; 
+    src: url(/_fonts/Jost-ExtraLight.ttf) format(truetype); 
+    font-family: 'Jost Regular'; 
+    src: url(/_fonts/Jost-Regular.ttf) format(truetype); 
+    font-family: 'Open Sans'; 
+    src: url(/_fonts/OpenSans-Regular.ttf) format(truetype); 
+    font-family: 'Cormorant Garamond'; 
+    src: url(/_fonts/CormorantGaramond-Regular.ttf) format(truetype); 
+}

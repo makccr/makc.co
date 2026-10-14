@@ -25,7 +25,7 @@ Additionally there are a few dependencies that are crucial to the running of thi
 | Netlify | [Terms of Service](https://www.netlify.com/legal/terms-of-use/) | [Privacy Policy](https://www.netlify.com/privacy/) |
 | Eleventy (11ty) | <i class='nf nf-fa-xmark'></i> | [Privacy Policy](https://www.11ty.dev/docs/privacy/) |
 | GitHub | [Terms of Service](https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) | [Privacy Satement](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement) |
-| Google Fonts/Analytics | [Terms of Service](https://policies.google.com/terms) | [Privacy Policy](https://policies.google.com/privacy) |
+| Google Analytics | [Terms of Service](https://policies.google.com/terms) | [Privacy Policy](https://policies.google.com/privacy) |
 | YouTube | [Terms of Service](https://www.youtube.com/t/terms) | [Privacy Policy](https://www.youtube.com/howyoutubeworks/our-commitments/protecting-user-data/) |
 
 ### What I Have Used in the Past
