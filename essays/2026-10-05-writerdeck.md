@@ -79,15 +79,6 @@ palette-magenta=180,142,173
 palette-cyan=136,192,208
 palette-light-grey=229,233,240
 
-palette-dark-grey=76,86,106
-palette-light-red=191,97,106
-palette-light-green=163,190,140
-palette-light-yellow=235,203,139
-palette-light-blue=129,161,193
-palette-light-magenta=180,142,173
-palette-light-cyan=136,192,208
-palette-white=229,233,240
-
 palette-foreground=216,222,233
 palette-background=0,0,0
 ```

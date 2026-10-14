@@ -111,7 +111,7 @@
     <main>
         
 <style>
-main p {
+main p, main li {
     font-family: 'Cormorant Garamond', sans-serif; 
     font-size: 1.3rem; 
     line-height: 2.3rem; 
@@ -176,15 +176,6 @@ palette<span class="token operator">-</span>magenta<span class="token operator">
 palette<span class="token operator">-</span>cyan<span class="token operator">=</span><span class="token number">136</span><span class="token punctuation">,</span><span class="token number">192</span><span class="token punctuation">,</span><span class="token number">208</span>
 palette<span class="token operator">-</span>light<span class="token operator">-</span>grey<span class="token operator">=</span><span class="token number">229</span><span class="token punctuation">,</span><span class="token number">233</span><span class="token punctuation">,</span><span class="token number">240</span>
 
-palette<span class="token operator">-</span>dark<span class="token operator">-</span>grey<span class="token operator">=</span><span class="token number">76</span><span class="token punctuation">,</span><span class="token number">86</span><span class="token punctuation">,</span><span class="token number">106</span>
-palette<span class="token operator">-</span>light<span class="token operator">-</span>red<span class="token operator">=</span><span class="token number">191</span><span class="token punctuation">,</span><span class="token number">97</span><span class="token punctuation">,</span><span class="token number">106</span>
-palette<span class="token operator">-</span>light<span class="token operator">-</span>green<span class="token operator">=</span><span class="token number">163</span><span class="token punctuation">,</span><span class="token number">190</span><span class="token punctuation">,</span><span class="token number">140</span>
-palette<span class="token operator">-</span>light<span class="token operator">-</span>yellow<span class="token operator">=</span><span class="token number">235</span><span class="token punctuation">,</span><span class="token number">203</span><span class="token punctuation">,</span><span class="token number">139</span>
-palette<span class="token operator">-</span>light<span class="token operator">-</span>blue<span class="token operator">=</span><span class="token number">129</span><span class="token punctuation">,</span><span class="token number">161</span><span class="token punctuation">,</span><span class="token number">193</span>
-palette<span class="token operator">-</span>light<span class="token operator">-</span>magenta<span class="token operator">=</span><span class="token number">180</span><span class="token punctuation">,</span><span class="token number">142</span><span class="token punctuation">,</span><span class="token number">173</span>
-palette<span class="token operator">-</span>light<span class="token operator">-</span>cyan<span class="token operator">=</span><span class="token number">136</span><span class="token punctuation">,</span><span class="token number">192</span><span class="token punctuation">,</span><span class="token number">208</span>
-palette<span class="token operator">-</span>white<span class="token operator">=</span><span class="token number">229</span><span class="token punctuation">,</span><span class="token number">233</span><span class="token punctuation">,</span><span class="token number">240</span>
-
 palette<span class="token operator">-</span>foreground<span class="token operator">=</span><span class="token number">216</span><span class="token punctuation">,</span><span class="token number">222</span><span class="token punctuation">,</span><span class="token number">233</span>
 palette<span class="token operator">-</span>background<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span></code></pre>
 <h4>Tmux</h4>
@@ -197,7 +188,7 @@ set-option <span class="token parameter variable">-g</span> status-style <span c
 <pre class="language-bash"><code class="language-bash">set-window-option <span class="token parameter variable">-g</span> status-right <span class="token string">"#[bg=green,fg=black] %a %d #[bg=blue] %H:%M #[bg=cyan] #(acpi -b | grep -m1 -o -P '.{0,2}%') "</span></code></pre>
 <p><code>set-window-option -g status-right</code> tells the config that we want to edit the right side of the status bar. The sections that include <code>#[bg=X,fg=X]</code> are setting background and foreground colors based on the colors as we defined them in the kmscon config earlier. Since we previously set the status bar to black, the entire status bar will be black until we change that with: <code>#[bg=green,fg=black]</code>. The status bar will then change to a green background and black text for the command <code>%a %d</code> which displays the date and day of the week as <strong>Day 00</strong>. We then change the background the blue with <code>#[bg=blue]</code>and print the time in <strong>HH:MM</strong> format (the black text inherited from the earlier definition). Finally, we change the background to cyan and display the battery life with: <code>#(acpi -b | grep -m1 -o -P '.{0,2}%') </code>. The grep syntax is a little tricky to wrap your head around, but essentially all this is doing is removing the first part of the <code>acpi</code> command's output, and truncating it, so that all that's actually displayed is the battery percentage.</p>
 <p>By default the command output would look something like: <code>Battery 0: Discharging, 4%, 00:13:11 remaining</code></p>
-<picture><source type="image/webp" srcset="/img/iAsBgmJksm-3836.webp"><img class="thirds" alt="My TMUX status bar customized." src="/img/iAsBgmJksm-3836.jpeg" width="3836" height="270"></picture>
+<picture><source type="image/webp" srcset="/img/fgQCYDaPHh-820.webp"><img class="thirds" alt="My TMUX status bar customized." src="/img/fgQCYDaPHh-820.jpeg" width="820" height="270"></picture>
 <p class="caption">
 My TMUX status bar with the configurations detailed here. 
 </p>
