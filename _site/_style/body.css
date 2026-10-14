@@ -104,7 +104,7 @@ code {
     word-break: break-word; 
     overflow-wrap: break-word; 
     font-family: '3270', monospace; 
-    font-size: .9rem; 
+    font-size: 1rem; 
     background-color: var(--bg-color-lighter); 
     border-radius: .3rem; 
     border: 1px solid var(--mid-accent); 
@@ -227,7 +227,7 @@ button:hover {
     margin: 0rem; 
     padding; 0rem;
     margin-bottom: 2rem;
-    font-size: 0.8rem;
+    font-size: 1rem;
     margin-left: auto;
     margin-right: auto;
     line-height: 1.2rem; 
@@ -287,7 +287,8 @@ button:hover {
     color: var(--fg2-color);
     margin: 0; 
     padding: 0; 
-    font-size: 0.8rem;
+    font-size: 0.9rem;
+    font-family: '3270', monospace;
     margin-top: .1rem;
     text-align: left; 
 }
