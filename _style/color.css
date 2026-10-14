@@ -14,7 +14,7 @@
     font-family: 'Open Sans'; 
     src: url(/_fonts/OpenSans-Regular.ttf) format(truetype); 
     font-family: 'Cormorant Garamond'; 
-    src: url(/_fonts/CormorantGaramond-Regular.ttf) format(truetype); 
+    src: url(../_fonts/CormorantGaramond-Medium.ttf) format(truetype); 
 }
 
 /*Dark Mode is the default color scheme*/
