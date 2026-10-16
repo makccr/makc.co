@@ -8,7 +8,7 @@ description: Inspired by Derek Sivers and the nownownow website, this page aims 
 
 <p class="caption">
     Inspired by <a href="https://sive.rs/nowff" target="_blank">Derek Sivers</a> and the <a href="https://nownownow.com/" target="_blank">nownownow website</a>, this page aims to serve two simple purposes; (1) let people know what I'm working on at any given moment & (2) keep me centered and remind me what I'm meant to be working on.
-    <br><br><strong>Last Updated: <br></strong>11th of October 2026<br>
+    <br><br><strong>Last Updated: <br></strong>{{ page.inputPath | lastModified }}<br>
 </p>
 
 ## Projects

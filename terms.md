@@ -5,7 +5,7 @@ description: The Terms of Service and Privacy Policy for this Site & All of it's
 ---
 # {{ title }}
 <p class='caption'>
-    <strong>Last Updated:</strong> 18 Septmeber 2026<br>
+    <strong>Last Updated:</strong><br>{{ page.inputPath | lastModified }}<br><br>
     The full history of changes to these terms can be tracked <a href="https://github.com/makccr/makc.co/commits/master/terms.md" target="_blank">here</a>.
 </p>
 

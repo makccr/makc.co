@@ -5,9 +5,10 @@ description: My statements on my use of AI and commitment's reguarding future us
 ---
 <h1>{{ title }}</h1>
 
-<p class="caption">
-    <strong>Last Updated:</strong> 18 June 2026<br>
-    The full history of changes to this page can be tracked <a href="https://github.com/makccr/makc.co/commits/master/ai.md" target="_blank">here</a>.
+<p class='caption'>
+    <strong>Last Updated:</strong><br>{{ page.inputPath | lastModified }}<br><br>
+    The full history of changes to these terms can be tracked <a href="https://github.com/makccr/mak
+c.co/commits/master/ai.md" target="_blank">here</a>.                     
 </p>
 
 I have noticed an increase in honest online content creators creating "AI Disclosure" pages on their websites or social media accounts. I think this is a great trend, and would very much like to participate in disclosing to anyone who consumes the content I put out, exactly what it is that they are consuming. This page attempts to make clear (a) What I do and do not currently use AI for, (b) what I have used AI for in the past, (c) how I intend to use AI going forward, and (d) my rational. I have tried to be as thorough as possible, but as always, I'm happy to [answer any questions](/contact) that might not have been addressed here.

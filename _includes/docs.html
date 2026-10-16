@@ -4,7 +4,7 @@ layout: main.html
 
 <h1>{{ title | default: "Essays" }}</h1>
 <p class="caption"><strong>Originally Posted:</strong> {{ date | postDate }}<br>
-<strong>Last Updated:</strong> {{ updated | postDate }}</p>
+<strong>Last Updated:</strong> {{ page.inputPath | lastModified }}</p>
 
 <div class="essayContainer"> 
 {{ content }}

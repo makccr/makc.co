@@ -1,4 +1,4 @@
-import fs from "fs";
+import fs from "node:fs";
 import path from "path";
 import { createRequire } from "module";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
@@ -54,11 +54,17 @@ export default function (eleventyConfig) {
 
   // Filters
     eleventyConfig.addFilter("postDate", dateObj => {
-        return DateTime.fromJSDate(dateObj).toFormat("LLLL d, yyyy");
+        return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("d LLLL yyyy");
     });
 
-    eleventyConfig.addFilter("displayDate", dateString => {
-        return DateTime.fromISO(dateString).toFormat("LLLL d, yyyy");
+    eleventyConfig.addFilter("displayDate", dateObj => {
+        return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("d LLLL yyyy");
+    });
+
+    eleventyConfig.addFilter("lastModified", inputPath => {
+        const stats = fs.statSync(inputPath);
+        return DateTime.fromJSDate(stats.mtime, { zone: "utc" })
+            .toFormat("d LLLL yyyy");
     });
 
   return {
