@@ -57,8 +57,8 @@ export default function (eleventyConfig) {
         return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("d LLLL yyyy");
     });
 
-    eleventyConfig.addFilter("displayDate", dateObj => {
-        return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("d LLLL yyyy");
+    eleventyConfig.addFilter("displayDate", dateString => {
+        return DateTime.fromISO(dateString).toFormat("d LLLL yyyy");
     });
 
     eleventyConfig.addFilter("lastModified", inputPath => {
