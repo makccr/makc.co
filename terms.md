@@ -50,9 +50,12 @@ This site utilizes third party services in the construction and deployment of it
 | Codeberg | <i class='icon icon-check'></i> [FAQ](https://docs.codeberg.org/getting-started/faq/) | <i class='icon icon-xmark'></i> |
 | Ko-Fi | <i class='icon icon-check'></i> [Terms and Conditions of Use](https://more.ko-fi.com/terms) | <i class='icon icon-check'></i> [Privacy Policy and Cookie Policy](https://more.ko-fi.com/privacy) |
 
-<p class="caption">
-Additionally, I have created a page on my site to track 
-<p>
+Additionally, I have created a page to track all changes made to my web development stack. Every time I replace a bloated, AI-injected or otherwise compromised tool, I document it so that others can follow along if they are so inclined. 
+<div class="filterButtons">
+    <a href="/alternatives" title="Link to Alternatives Page">
+        <button>View Alternative Service History</button>
+    </a>
+</div>
 
 ---
 

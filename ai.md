@@ -29,6 +29,13 @@ Additionally there are a few dependencies that are crucial to the running of thi
 | Umami | [Terms of Service](https://umami.is/terms) | [Privacy Policy](https://umami.is/privacy) |
 | YouTube | [Terms of Service](https://www.youtube.com/t/terms) | [Privacy Policy](https://www.youtube.com/howyoutubeworks/our-commitments/protecting-user-data/) |
 
+Additionally, I have created a page to track all changes made to my web development stack. Every time I replace a bloated, AI-injected or otherwise compromised tool, I document it so that others can follow along if they are so inclined. 
+<div class="filterButtons">                                                                         
+    <a href="/alternatives" title="Link to Alternatives Page">                                      
+        <button>View Alternative Service History</button>                                           
+    </a>                                                                                            
+</div>
+
 ### What I Have Used in the Past
 For just about everything I have ever put out on my [website](https://makc.co), [GitHub](https://github.com/makccr) or [YouTube channel](https://www.youtube.com/@makc), I have had a policy of not using LLM's, AI Agents or any other form of Artificial Intelligence to create or enhance my work. There have however been a few examples in which I have broken my own rules, and used a LLM to generate content: 
 * The thumbnail for my YouTube video: ["The Best Value in the History of Literature"](https://www.youtube.com/watch?v=FdKy0F0sVRw) was generated with OpenAI's [GPT-4o image generation](https://openai.com/index/introducing-4o-image-generation/). My original intention was to use the AI generated image as a reference to build my own, *better* thumbnail in Gimp. But I got annoyed with using Gimp, because Gimp is terrible, and instead just took the lazy route, added some title text to the thumbnail and hit upload. I'm now refusing to change the thumbnail so I'm reminded of how stupid of an idea this was every-time I scroll through my YouTube videos.

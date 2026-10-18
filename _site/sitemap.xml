@@ -191,6 +191,13 @@
     <priority>0.6</priority>
   </url>
 
+  <url>
+    <loc>https://makc.co/essays/fossing-my-site/</loc>
+    <lastmod>18 October 2026</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 
   <url>
     <loc>https://makc.co/docs/cloning-this-site/</loc>
