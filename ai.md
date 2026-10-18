@@ -7,7 +7,7 @@ description: My statements on my use of AI and commitment's reguarding future us
 
 <p class='caption'>
     <strong>Last Updated:</strong><br>{{ page.inputPath | lastModified }}<br><br>
-    The full history of changes to these terms can be tracked <a href="https://github.com/makccr/mak
+    The full history of changes to this page can be tracked <a href="https://github.com/makccr/mak
 c.co/commits/master/ai.md" target="_blank">here</a>.                     
 </p>
 
@@ -26,7 +26,7 @@ Additionally there are a few dependencies that are crucial to the running of thi
 | Netlify | [Terms of Service](https://www.netlify.com/legal/terms-of-use/) | [Privacy Policy](https://www.netlify.com/privacy/) |
 | Eleventy (11ty) | <i class='nf nf-fa-xmark'></i> | [Privacy Policy](https://www.11ty.dev/docs/privacy/) |
 | GitHub | [Terms of Service](https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) | [Privacy Satement](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement) |
-| Google Analytics | [Terms of Service](https://policies.google.com/terms) | [Privacy Policy](https://policies.google.com/privacy) |
+| Umami | [Terms of Service](https://umami.is/terms) | [Privacy Policy](https://umami.is/privacy) |
 | YouTube | [Terms of Service](https://www.youtube.com/t/terms) | [Privacy Policy](https://www.youtube.com/howyoutubeworks/our-commitments/protecting-user-data/) |
 
 ### What I Have Used in the Past
