@@ -30,10 +30,9 @@ description: My entire catalog of video content. Over a decade of content rangin
         <div class='metadata'>{{ video.date | displayDate }} • {{ video.category }}</div>
         <p class="videos">{{ video.title | truncate: 42, "..." }}</p>
         <div class="platform-select">
-            Watch on:  
-            <a href="https://youtube.com/watch?v={{ video.ytid }}" target="_blank">YouTube, </a>
-            <a href="{{ video.odurl }}" target="_blank">Odysee, </a> or 
-            <a href="https://inv.nadeko.net/watch?v={{ video.ytid }}" target="_blank">Invidious</a>
+            <a href="https://youtube.com/watch?v={{ video.ytid }}" target="_blank" title="YouTube"><i class="icon icon-youtube"></i></a>
+            <a href="{{ video.odurl }}" target="_blank" title="Odysee"><i class="icon icon-odysee"></i></a>
+            <a href="https://inv.nadeko.net/watch?v={{ video.ytid }}" target="_blank" title="Invidious"><i class="icon icon-invidious"></i></a>
         </div>
     </div>
         {% endfor %}

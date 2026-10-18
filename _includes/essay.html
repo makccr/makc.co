@@ -2,13 +2,6 @@
 layout: main.html 
 ---
 
-<style>
-main p, main li {
-    font-family: 'Cormorant Garamond', sans-serif; 
-    font-size: 1.3rem; 
-    line-height: 2.3rem; 
-}
-</style> 
 
 <h1>{{ title | default: "Essays" }}</h1>
 <p class="caption">{{ date | postDate }}</p>
@@ -30,11 +23,11 @@ main p, main li {
 <div class="rss">
   {% if prevIndex >= 0 %}
     {% assign prevPost = allPosts[prevIndex] %}
-    <a href="{{ prevPost.url }}" class="prev-post"><button><i class="nf nf-fa-arrow_left"></i></button></a>
+    <a href="{{ prevPost.url }}" class="prev-post"><button><i class="icon icon-left"></i></button></a>
   {% endif %}
-  <a href="/rss"><button><i class="nf nf-fa-rss"></i></button></a>
+  <a href="/rss"><button><i class="icon icon-rss"></i></button></a>
   {% if nextIndex < allPosts.size %}
     {% assign nextPost = allPosts[nextIndex] %}
-    <a href="{{ nextPost.url }}" class="next-post"><button><i class="nf nf-fa-arrow_right"></i></button></a>
+    <a href="{{ nextPost.url }}" class="next-post"><button><i class="icon icon-right"></i></button></a>
   {% endif %}
 </div>

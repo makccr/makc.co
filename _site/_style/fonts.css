@@ -1,0 +1,138 @@
+/*Defining & Importing Fonts*/
+@font-face {
+    font-family: 'IM Fell English Italic'; 
+    src: url('/_fonts/IMFellEnglish-Italic.ttf') format('truetype'); 
+}
+@font-face {
+    font-family: 'IM Fell English Regular'; 
+    src: url('/_fonts/IMFellEnglish-Regular.ttf') format('truetype'); 
+}
+@font-face {
+    font-family: '3270'; 
+    src: url('/_fonts/3270NerdFont-Regular.ttf') format('truetype'); 
+}
+@font-face {
+    font-family: 'Jost Light'; 
+    src: url('/_fonts/Jost-ExtraLight.ttf') format('truetype'); 
+}
+@font-face {
+    font-family: 'Jost Regular'; 
+    src: url('/_fonts/Jost-Regular.ttf') format('truetype'); 
+}
+@font-face {
+    font-family: 'Open Sans'; 
+    src: url('/_fonts/OpenSans-Regular.ttf') format('truetype'); 
+}
+@font-face {
+    font-family: 'Cormorant Garamond'; 
+    src: url('/_fonts/CormorantGaramond-Medium.ttf') format('truetype'); 
+}
+
+/* Defining Icons*/
+@font-face {
+  font-display: auto;
+  font-family: "MAKC Icons";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/_fonts/makc-icons.ttf") format('truetype');
+}
+
+[class="icon"], [class^="icon-"], [class*=" icon-"] {
+  display: inline-block;
+  font-family: "MAKC Icons" !important;
+  font-weight: 400;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: inherit; 
+  vertical-align: middle; 
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.icon-youtube:before {
+  content: "\e000";
+}
+
+.icon-xmark:before {
+  content: "\e001";
+}
+
+.icon-sitemap:before {
+  content: "\e002";
+}
+
+.icon-rss:before {
+  content: "\e003";
+}
+
+.icon-phone:before {
+  content: "\e004";
+}
+
+.icon-odysee:before {
+  content: "\e005";
+}
+
+.icon-invidious:before {
+  content: "\e006";
+}
+
+.icon-home:before {
+  content: "\e007";
+}
+
+.icon-hacker-news:before {
+  content: "\e008";
+}
+
+.icon-github:before {
+  content: "\e009";
+}
+
+.icon-folder:before {
+  content: "\e00a";
+}
+
+.icon-exit:before {
+  content: "\e00b";
+}
+
+.icon-email:before {
+  content: "\e00c";
+}
+
+.icon-download:before {
+  content: "\e00d";
+}
+
+.icon-codeberg:before {
+  content: "\e00e";
+}
+
+.icon-check:before {
+  content: "\e00f";
+}
+
+.icon-after-effects:before {
+  content: "\e010";
+}
+
+.icon-makc:before {
+  content: "\e011";
+}
+
+.icon-right:before {
+  content: "\e012";
+}
+
+.icon-left:before {
+  content: "\e013";
+}
+
+.icon-menu:before {
+  content: "\e014";
+}
+.icon-copy:before {
+  content: "\e015";
+}

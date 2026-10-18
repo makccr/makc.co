@@ -35,21 +35,24 @@ This site utilizes third party services in the construction and deployment of it
 ##### Services Used in the Building and Deployment of this Site
 | Service | Terms | Privacy | GDPR/CCPA | Description| 
 | ------------ | ----- | --------| --------- | -----------|
-| Netlify | <i class='nf nf-fa-check'></i> [Terms of Service](https://www.netlify.com/legal/terms-of-use/) | <i class='nf nf-fa-check'></i> [Privacy Policy](https://www.netlify.com/privacy/) | <i class='nf nf-fa-check'></i> [GDPR/CCPA](https://www.netlify.com/gdpr-ccpa/) | My web hosting solution & DNS provider.
-| Eleventy (11ty) | <i class='nf nf-fa-xmark'></i> | <i class='nf nf-fa-check'></i> [Privacy Policy](https://www.11ty.dev/docs/privacy/) | <i class='nf nf-fa-xmark'></i> | A static site generator used to build and deploy this site.
-| GitHub | <i class='nf nf-fa-check'></i> [Terms of Service](https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) | <i class='nf nf-fa-check'></i> [Privacy Satement](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement) | <i class='nf nf-fa-xmark'></i> | The CI/CD platform that I use to keep the wesbite's source code and VCS public. |
-| Nerd Fonts | <i class='nf nf-fa-xmark'></i> | <i class='nf nf-fa-xmark'></i> | <i class='nf nf-fa-xmark'></i> | The iconic font aggregator that provides symbols for my terminal and my website. |
-| Umami | [Terms of Service](https://umami.is/terms) | [Privacy Policy](https://umami.is/privacy) | <i class='nf nf-fa-xmark'></i> | A FOSS alternative to Google Analytics that I quite like. |
+| Netlify | <i class='icon icon-check'></i> [Terms of Service](https://www.netlify.com/legal/terms-of-use/) | <i class='icon icon-check'></i> [Privacy Policy](https://www.netlify.com/privacy/) | <i class='icon icon-check'></i> [GDPR/CCPA](https://www.netlify.com/gdpr-ccpa/) | My web hosting solution & DNS provider.
+| Eleventy (11ty) | <i class='icon icon-xmark'></i> | <i class='icon icon-check'></i> [Privacy Policy](https://www.11ty.dev/docs/privacy/) | <i class='icon icon-xmark'></i> | A static site generator used to build and deploy this site.
+| GitHub | <i class='icon icon-check'></i> [Terms of Service](https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) | <i class='icon icon-check'></i> [Privacy Satement](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement) | <i class='icon icon-xmark'></i> | The CI/CD platform that I use to keep the wesbite's source code and VCS public. |
+| Umami | [Terms of Service](https://umami.is/terms) | [Privacy Policy](https://umami.is/privacy) | <i class='icon icon-xmark'></i> | A FOSS alternative to Google Analytics that I quite like. |
 
 ##### External Services Linked to from this Site
 | Service | Terms | Privacy |
 | ------- | ----- | ------- | 
-| YouTube | <i class='nf nf-fa-check'></i> [Terms of Service](https://www.youtube.com/t/terms) | <i class='nf nf-fa-check'></i> [Privacy Policy](https://www.youtube.com/howyoutubeworks/our-commitments/protecting-user-data/) |
-| Odysee | <i class='nf nf-fa-check'></i> [Terms of Service](https://odysee.com/$/tos) | <i class='nf nf-fa-check'></i> [Community Guidelines](https://help.odysee.tv/communityguidelines/) |
-| Invidioius | <i class='nf nf-fa-xmark'></i> | <i class='nf nf-fa-check'></i> [Privacy Policy](https://inv.nadeko.net/privacy) |
-| Hacker News | <i class='nf nf-fa-check'></i> [Legal](https://www.ycombinator.com/legal/) | <i class='nf nf-fa-xmark'></i> |
-| Codeberg | <i class='nf nf-fa-check'></i> [FAQ](https://docs.codeberg.org/getting-started/faq/) | <i class='nf nf-fa-xmark'></i> |
-| Ko-Fi | <i class='nf nf-fa-check'></i> [Terms and Conditions of Use](https://more.ko-fi.com/terms) | <i class='nf nf-fa-check'></i> [Privacy Policy and Cookie Policy](https://more.ko-fi.com/privacy) |
+| YouTube | <i class='icon icon-check'></i> [Terms of Service](https://www.youtube.com/t/terms) | <i class='icon icon-check'></i> [Privacy Policy](https://www.youtube.com/howyoutubeworks/our-commitments/protecting-user-data/) |
+| Odysee | <i class='icon icon-check'></i> [Terms of Service](https://odysee.com/$/tos) | <i class='icon icon-check'></i> [Community Guidelines](https://help.odysee.tv/communityguidelines/) |
+| Invidioius | <i class='icon icon-xmark'></i> | <i class='icon icon-check'></i> [Privacy Policy](https://inv.nadeko.net/privacy) |
+| Hacker News | <i class='icon icon-check'></i> [Legal](https://www.ycombinator.com/legal/) | <i class='icon icon-xmark'></i> |
+| Codeberg | <i class='icon icon-check'></i> [FAQ](https://docs.codeberg.org/getting-started/faq/) | <i class='icon icon-xmark'></i> |
+| Ko-Fi | <i class='icon icon-check'></i> [Terms and Conditions of Use](https://more.ko-fi.com/terms) | <i class='icon icon-check'></i> [Privacy Policy and Cookie Policy](https://more.ko-fi.com/privacy) |
+
+<p class="caption">
+Additionally, I have created a page on my site to track 
+<p>
 
 ---
 

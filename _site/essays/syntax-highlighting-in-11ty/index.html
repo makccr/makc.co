@@ -74,11 +74,11 @@
     <header>
         <div class="logo-container">
             <a href="/index">
-                <picture><source type="image/webp" srcset="/.11ty/image/?src=images%2Fm.svg&width=1000&format=webp&via=transform"><img class="logo" src="/.11ty/image/?src=images%2Fm.svg&width=1000&format=jpeg&via=transform" alt="HOME" width="1000" height="1000"></picture>
+                <picture><source type="image/webp" srcset="/img/Es_hZy2Cb8-1000.webp"><img class="logo" src="/img/Es_hZy2Cb8-1000.jpeg" alt="HOME" width="1000" height="1000"></picture>
             </a>
         </div>
             <div class="bars" onclick="mobileMenu()">
-                <i class="nf nf-md-menu"></i>
+                <i class="icon icon-menu"></i>
             </div>
             <p class="links">
                 <a href="/videos">Videos</a>
@@ -103,13 +103,6 @@
     
     <main>
         
-<style>
-main p, main li {
-    font-family: 'Cormorant Garamond', sans-serif; 
-    font-size: 1.3rem; 
-    line-height: 2.3rem; 
-}
-</style> 
 
 <h1>Custom Syntax Highlighting With 11ty</h1>
 <p class="caption">31 December 2025</p>
@@ -137,7 +130,7 @@ console.log("some code");
 console.log("some code");
 '''</code></pre>
 <p>It turns out that the syntax highlighting plugin from 11ty only supports the third option: a full code block with a label at the top line declaring the language to which the syntax highlighting needs to be applied. Unfortunately for me, this is how I had already formatted damn near all of my code blocks site-wide. So I went ahead and took a closer look:</p>
-<picture><source type="image/webp" srcset="/.11ty/image/?src=essays%2Fimg%2F2025-12-31-A.jpg&width=1374&format=webp&via=transform"><img src="/.11ty/image/?src=essays%2Fimg%2F2025-12-31-A.jpg&width=1374&format=jpeg&via=transform" alt="Firefox inspector window proving that the plugin was working" class="thirds" width="1374" height="720"></picture>
+<picture><source type="image/webp" srcset="/essays/syntax-highlighting-in-11ty/SodShE-7yq-1374.webp"><img src="/essays/syntax-highlighting-in-11ty/SodShE-7yq-1374.jpeg" alt="Firefox inspector window proving that the plugin was working" class="thirds" width="1374" height="720"></picture>
 <p>After taking a look at the inspector window in Firefox, it became clear to me that the PrismJS plugin was doing quite a bit. When rendering the HTML document for my site, 11ty no longer was simply putting all of the text in a generic <em>code</em> block, but was instead creating individual CSS classes for <em>language-javascript</em>, <em>language-shell</em>, and so on - as well as breaking down the contents of the block even further into classes for <em>punctuation, string, operator, comment</em> and several other elements that made up the blocks. The only problem? The text in the code block was still the same color as generic text, no styling at all. This was odd, but it also wasn’t the worst thing in the world. Knowing myself, I knew I’d eventually want a way to customize the colors and makeup of the individual elements myself anyway, so I began the process of trying to compile a concrete list of every class that the syntax highlighting plugin would create for every single one of the nearly 300 languages that PrismJS supports -- no easy task.</p>
 <p>But, before I break down how I solved that problem, it is worth noting that 11ty’s plugin should automatically add syntax highlighting when it is installed. I have since confirmed that the only reason this was not happening on my site is that I had previously added customization to the “<em>code”</em> and “<em>pre”</em> CSS classes, changing the text color. After removing that customization, the syntax highlighting worked as expected. But unfortunately, I didn’t confirm that this was the case until after I had already spent nearly a full workday figuring out a way more complex workaround, which just happens to add a higher level of customization.</p>
 <p>It only took me a matter of minutes to find a way to isolate every one of these class names that PrismJS was creating. Simply opening the Console in Firefox and typing the following showed me every class being rendered on an individual page.</p>
@@ -245,12 +238,12 @@ console.log("some code");
 <div class="rss">
   
     
-    <a href="/essays/the-death-of-the-internet-and-true-conenectivity-in-exchance-for-para-social-cyborgization-of-us-all/" class="prev-post"><button><i class="nf nf-fa-arrow_left"></i></button></a>
+    <a href="/essays/the-death-of-the-internet-and-true-conenectivity-in-exchance-for-para-social-cyborgization-of-us-all/" class="prev-post"><button><i class="icon icon-left"></i></button></a>
   
-  <a href="/rss"><button><i class="nf nf-fa-rss"></i></button></a>
+  <a href="/rss"><button><i class="icon icon-rss"></i></button></a>
   
     
-    <a href="/essays/becoming-an-empire/" class="next-post"><button><i class="nf nf-fa-arrow_right"></i></button></a>
+    <a href="/essays/becoming-an-empire/" class="next-post"><button><i class="icon icon-right"></i></button></a>
   
 </div>
 
@@ -264,23 +257,32 @@ console.log("some code");
         </ul>
         <div class="socialIcons"> 
             <a title="Github" target="_blank" href="https://github.com/makccr">
-                <i class="nf nf-dev-github"></i>
-            </a>
-            <a title="YouTube" target="_blank" href="https://www.youtube.com/@makc">
-                <i class="nf nf-fa-youtube"></i>
-            </a>
-            <a title="Hacker News" target="_blank" href="https://news.ycombinator.com/user?id=makc">
-                <i class="nf nf-fa-square_hacker_news"></i>
+                <i class="icon icon-github"></i>
             </a>
             <a title="Codeberg" target="_blank" href="https://codeberg.org/makccr">
-                <i class="nf nf-linux-codeberg"></i>
+                <i class="icon icon-codeberg"></i>
             </a>
+            &nbsp;
+            <a title="YouTube" target="_blank" href="https://www.youtube.com/@makc">
+                <i class="icon icon-youtube"></i>
+            </a>
+            <a title="Odysee" target="_blank" href="https://odysee.com/@makc:a">
+                <i class="icon icon-odysee"></i>
+            </a>
+            <a title="Invidious" target="_blank" href="https://inv.nadeko.net/channel/UCWh6YtclgTAzReTASc4uSKw">
+                <i class="icon icon-invidious"></i>
+            </a>
+            &nbsp; 
+            <a title="Hacker News" target="_blank" href="https://news.ycombinator.com/user?id=makc">
+                <i class="icon icon-hacker-news"></i>
+            </a>
+            &nbsp; 
             <a title="Sitemap" target="_blank" href="https://makc.co/sitemap.xml">
-                <i class="nf nf-fa-sitemap"></i>
+                <i class="icon icon-sitemap"></i>
             </a>
             
             <a title="RSS" href="/rss">
-                <i class="nf nf-fa-rss"></i>
+                <i class="icon icon-rss"></i>
             </a>
         </div>
         <p>&copy; 2012-<script>document.write(/\d{4}/.exec(Date())[0])</script> <i>Mackenzie Criswell</i>.</p>

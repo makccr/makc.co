@@ -235,8 +235,8 @@ button:hover {
 }
 
 /* Miscellaneous NF symbols*/
-.nf-fa-check { color: var(--code-green); }
-.nf-fa-xmark { color: var(--code-red); }
+.icon-check { color: var(--code-green); }
+.icon-xmark { color: var(--code-red); }
 
 
 /* Video page card and container */
@@ -296,6 +296,7 @@ button:hover {
 .platform-select a {
     color: var(--button-hover);
     margin-bottom: 1rem;
+    font-size: 1.5rem; 
 }
 
 .platform-select a:hover {
