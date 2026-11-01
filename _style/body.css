@@ -428,6 +428,37 @@ button:hover {
     text-align: center;
 }
 
+.linksCard {
+    text-align: center; 
+    align: center;
+    margin-top: 7rem;
+}
+
+#site {
+    margin: 0rem;
+    padding: 0rem;
+    font-size: 1.3rem;
+}
+
+#caption {
+    margin: 0rem;
+    padding: 0rem;
+    font-size: .9rem; 
+    font-family: "3270", monospace;
+    color: var(--button-hover);
+}
+
+#description {
+    margin: 0rem;
+    padding: .5rem;
+    font-size: .9rem;
+    padding-bottom: 1rem;
+}
+
+.linksCard button {
+    margin: 0; 
+}
+
 /* MOBILE SITE CUSTOMIZATIONS*/
 
 @media only screen and (max-width: 600px) { /* Main phone settings */

@@ -1,0 +1,50 @@
+---
+layout: main.html
+title: Links
+description: In an effort to bring back the old internet and share quality content site to site, rather than relying on search engines and algorithms, I have created this page to share several of the sites that I enjoy to interact with. You will notice a strong bias towards independent writers and bloggers, as I don't enjoy reading news andior editorial content from large organizations who's loyalties can be difficult to nail down.
+---
+
+<h1>{{ title }}</h1>
+<p>
+{{ description }}
+<br><br>
+I heavily utilize RSS to get updates from all of the sites below, and if you desire to do so you can simply download the full <code>.ompl</code> file that I've exported from my RSS reader of choice: <a href="https://netnewswire.com/" target="_blank">Net News Wire</a>.
+</p>
+
+<a href="/downloads/subscriptions.ompl" target="_blank">
+    <button>Download OMPL File&nbsp; <i class="icon icon-download"></i></button>
+</a>
+
+<script>
+    function copyRSS(button) {
+        const rss = button.dataset.rss;
+        if (!rss) return;
+
+        navigator.clipboard.writeText(rss).then(() => {
+            // Optional: give the user feedback
+            const original = button.innerHTML;
+            button.innerHTML = 'Copied!';
+            setTimeout(() => button.innerHTML = original, 1500);
+        }).catch(err => {
+            console.error('Failed to copy:', err);
+        });
+    }
+</script>
+
+<div class="linksContainer">
+{% for link in links %}
+    <div class="linksCard">
+        <h2 id="site">{{ link.title }}</h2>
+        <p id="caption">{{ link.category }}</p>
+        <p id="description">{{ link.description }}</p>
+        <a href="{{ link.url }}" target="_blank">
+            <button>Visit Site &nbsp;<i class="icon icon-exit"></i></button>
+        </a>
+        <button onclick="copyRSS(this)" data-rss="{{ link.rss }}">
+            Copy RSS &nbsp;<i class="icon icon-rss"></i>
+        </button>
+    </div>
+{% endfor %}
+</div>
+
+<br><br><br>

@@ -1,0 +1,72 @@
+[
+  {
+    "title": "Arch Linux: New & Updates",
+    "category": "Linux",
+    "description": "The Official Arch Linux new and update blog feed.",
+	"url": "https://archlinux.org",
+	"rss": "https://archlinux.org/feeds/news/"
+  },
+  {
+    "title": "Brennen Puth",
+    "category": "Technology",
+    "description": "A fellow nerd who frequently writes about Computer Science and Cyber Operations",
+	"url": "https://brennenputh.me",
+	"rss": "https://brennenputh.me/rss.xml"
+  },
+  {
+    "title": "Drop Site News",
+    "category": "Politics",
+    "description": "Independent journalism about American foreign policy and adjacent topics.",
+	"url": "https://dropsitenews.com",
+	"rss": "https://dropsitenews.com/feed"
+  },
+  {
+    "title": "JRS Systems",
+    "category": "System Administration",
+    "description": "A blog focused on System Administration and technology.",
+	"url": "https://jrs-s.net/",
+	"rss": "https://jrs-s.net/feed/"
+  },
+  {
+    "title": "Klara Systems",
+    "category": "System Administration",
+    "description": "The article feed of Klara Systems, a company that specializes in zfs.",
+	"url": "https://klarasystems.com",
+	"rss": "http://klarasystems.com/feed/"
+  },
+  {
+    "title": "SerCe's Blog",
+    "category": "Software Engineering",
+    "description": "A software engineer at Canva who writes about precisely what you'd expect.",
+	"url": "https://serce.me",
+	"rss": "https://serce.me/feed.xml"
+  },
+  {
+    "title": "Techmint",
+    "category": "Linux",
+    "description": "Linux Howtos, Tutorials & Guides",
+	"url": "https://www.tecmint.com",
+	"rss": "https://www.tecmint.com/feed/"
+  },
+  {
+    "title": "The Intercept",
+    "category": "Politics",
+    "description": "Independent journalism about American politics, privacy and other stuff worth knowing about.",
+	"url": "https://theintercept.com",
+	"rss": "https://theintercept.com/feed/"
+  },
+  {
+    "title": "Unixmen",
+    "category": "Linux",
+    "description": "Unix news and reviews, as the name would imply.",
+	"url": "https://unixmen.com",
+	"rss": "https://www.unixmen.com/feed/"
+  },
+  {
+    "title": "XKCD",
+    "category": "Comedy",
+    "description": "The classic comic strip about science, tech and anything vaguely nerdy and humorous.",
+	"url": "https://xkcd.com",
+	"rss": "https://xkcd.com/rss.xml"
+  }
+]
