@@ -83,9 +83,18 @@
         --link-color: #1288ef;
         --link-hover: #1288ef;
         --bg-color: #fff;
-        --mid-accent: #ccc;
-        --bg-color-lighter: #e8e8e8;
+        --mid-accent: #ddd;
+        --bg-color-lighter: #f0f0f0;
         --header-bg: rgba(255,255,255,0.5);
+
+        --code-aqua: #397f9a; 
+        --code-green: #557d44;
+        --code-purple: #694469; 
+        --code-blue: #345983; 
+        --code-yellow: #bb8e43; 
+        --code-red: #771f26; 
+        --code-orange: #db3602; 
+        --code-gray: #494e50; 
     }
 }
 
