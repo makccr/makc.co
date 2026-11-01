@@ -4,7 +4,7 @@ layout: docs.html
 date: 2026-08-16
 updated: 2026-08-16
 tags: docs 
-subject: ["git"]
+subject: ["Git"]
 ---
 
 A guide for creating a new branch in a git repository.

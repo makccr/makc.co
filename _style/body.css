@@ -11,7 +11,7 @@ main {
 
 h1 {
     color: var(--fg-color); 
-    font-family: 'Jost Light', sans-serif;
+    font-family: 'Lato Thin', sans-serif;
 }
 
 h2,h3,h4,h5,h6,th {
@@ -106,7 +106,7 @@ code {
     font-family: '3270', monospace; 
     font-size: 1rem; 
     background-color: var(--bg-color-lighter); 
-    border-radius: .3rem; 
+    border-radius: var(--corner); 
     border: 1px solid var(--mid-accent); 
     padding: .2rem;
 }
@@ -193,7 +193,7 @@ button {
     background-color: var(--button-color);
     border: 0; 
     padding: .5rem 1rem;
-    border-radius: .5rem;
+    border-radius: var(--corner);
     transition: 0.3s ease;
     margin: .25rem;
     border: .1rem solid var(--bg-color);
@@ -210,8 +210,7 @@ button:hover {
 .full , .thirds, .half {
     width: 100%;
     height: auto; 
-    border-radius: 1rem;
-    border: .1rem solid var(--mid-accent);
+    border-radius: var(--corner);
     display: block;
     margin-left: auto; 
     margin-right: auto; 
@@ -263,8 +262,8 @@ button:hover {
 .video-card img {
     width: 100%; 
     height: auto;
-    border-radius: .5rem; 
-    border: .1rem solid var(--mid-accent);
+    border-radius: var(--corner); 
+    border: .1rem solid var(--bg-color);
 }
 
 .video-card img:hover {
@@ -277,7 +276,7 @@ button:hover {
     margin: 0; 
     padding: 0;
     font-size: var(--fg-color);
-    font-family: 'Jost Regular', sans-serif;
+    font-family: 'Lato Thin', sans-serif;
     font-size: 1.1rem;
     font-weight: 500;
     text-align: left; 
@@ -308,7 +307,7 @@ button:hover {
 /* ESSAY CARDS AND CONTAINER*/
 .essay-card {
     margin: 1rem;
-    border-radius: .5rem; 
+    border-radius: var(--corner); 
     border: .1rem solid var(--bg-color-lighter);
     width: 30rem; 
     display: inline-block;
@@ -330,7 +329,7 @@ button:hover {
     color: var(--fg-color);
     padding: .5rem; 
     margin-top: 1.1rem; 
-    font-family: 'Jost Regular', sans-serif; 
+    font-family: 'Lato Thin', sans-serif; 
 }
 
 .essay-card .essay-preview {
@@ -371,7 +370,7 @@ button:hover {
   margin: 1em; 
   padding: 0em;
   border: .1rem solid var(--bg-color-lighter);
-  border-radius: .5rem;
+  border-radius: var(--corner);
   text-align: center;
   transition: 0.3s ease; 
 } 
@@ -385,8 +384,8 @@ button:hover {
   width: 100%; 
   max-height: 13em;
   min-height: 13em;
-  border-top-right-radius: .5rem;
-  border-top-left-radius: .5rem;
+  border-top-right-radius: var(--corner);
+  border-top-left-radius: var(--corner);
   object-fit: cover;
   padding: 0em; 
   margin: 0em;
@@ -396,7 +395,7 @@ button:hover {
     padding: 1rem .25rem; 
     margin: 0;
     font-size: 1.3rem; 
-    font-family: 'Jost Regular', sans-serif; 
+    font-family: 'Lato Thin', sans-serif; 
 }
 
 .card button, .post-navigation button {

@@ -3,7 +3,7 @@ title: "On, Good Advice Delivered Poorly"
 layout: essay.html
 date: 2026-06-14
 tags: essay 
-subject: ["philosophy"]
+subject: ["Philosophy"]
 ---
 
 I recently finished watching [the conclusion](https://www.youtube.com/watch?v=8KQFgWdiudo) of Linus Tech Tips's second Linux challenge. Unsurprisingly, much of the series focused on criticizing the *overly-aggressive* online Linux community. This is by no means a new criticism, but it did become a very central theme of the series. All three of the challenge's participants for example, admitted to relying in LLM's for some amount of Linux trouble-shooting, specifically to avoid having to sift through forums or Reddit posts where they might run into the stereotypical linux-brained neck beard who silently shouts things like: "RTFM!"

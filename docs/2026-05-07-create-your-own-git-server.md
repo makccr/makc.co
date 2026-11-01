@@ -4,7 +4,7 @@ layout: docs.html
 date: 2026-05-07
 updated: 2026-05-13
 tags: docs
-subject: ["git", "backup", "security", "homelab"]
+subject: ["System Administration"]
 ---
 
 As [GitHub](https://github.com) becomes [increasingly less reliable](https://mrshu.github.io/github-statuses/) (not to mention riddled with AI slop), many are looking for alternatives. This documentation will walk through the process of setting up a private Git server for any non public-facing repositories.

@@ -3,7 +3,7 @@ title: "My Writerdeck"
 layout: essay.html
 date: 2026-10-05
 tags: essay 
-subject: ["CLI", "writing"]
+subject: ["Writing"]
 description: "Based pretty heavily on a Writerdeck concept from Veronica Explains using Debian Trixie in a CLI only mode as a writerdeck, I detail how I use various CLI and TUI tools to create a distraction free writing environment."
 ---
 

@@ -3,7 +3,7 @@ title: "Replacing my Airtable Backend with One JSON File"
 layout: essay.html
 date: 2026-09-21
 category: essay 
-subject: ["webDev", "database"] 
+subject: ["Web Development"] 
 ---
 
 A few years ago, I began the process of rebuilding my website using the static site generator [11ty](https://11ty.dev). My goal in doing this was to create a hyper-performant version of my site that I could proudly show off on the world wide web. But I also set some fairly ambitious goals for this site, mainly to create one hub to host not only all of the [content that I've made available](https://makc.co/downloads) for public consumption, but also links to all the external content I've created. The most challenging part: my personal YouTube channel, and it's backlog of a little over two hundred videos when I started the project. Creating a website that links to YouTube would be hard enough, but around the time I started this rebuild of my site, I also decided that I needed to make sure that users could not only get links to my videos on YouTube, but also alternative platforms like [Invidious](https://invidious.io/) and [Odysse](https://odysee.com/). One database to host video metadata like title, upload date, thumbnails, tags, categories, and links to view each video in at least three different locations, was no small undertaking, but I made the job even harder by refusing to use a proper database application or CMS solution and instead insisting on using [Airtable](https://airtable.com) for the job. 

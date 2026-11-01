@@ -27,6 +27,14 @@
     font-family: 'Cormorant Garamond'; 
     src: url('/_fonts/CormorantGaramond-Medium.ttf') format('truetype'); 
 }
+@font-face {
+    font-family: 'Lato Thin'; 
+    src: url('../_fonts/Lato-Light.ttf') format('truetype'); 
+}
+@font-face {
+    font-family: 'Lato Regular'; 
+    src: url('../_fonts/Lato-Regular.ttf') format('truetype'); 
+}
 
 /* Defining Icons*/
 @font-face {

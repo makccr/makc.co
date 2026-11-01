@@ -3,7 +3,7 @@ title: "Barge Haulers on the Volga"
 layout: essay.html
 date: 2025-07-17
 tags: essay 
-subject: ["art"]
+subject: ["Art"]
 ---
 
 <img src="img/2025-07-17-A.jpg" alt="Ilya Repin's: Barge Haulers on The Volga" class="full">

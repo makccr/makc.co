@@ -3,7 +3,7 @@ title: "The Art of Virtue"
 layout: essay.html
 date: 2025-07-14
 tags: essay 
-subject: ["history", "philosophy", "productivity"]
+subject: ["Philosophy"]
 ---
 
 Without a doubt, the best book I’ve read this year is *The Autobiography of Benjamin Franklin*. I only opened it because it leads off The Harvard Classics—a 51‑volume anthology I describe in a separate essay—but I was pleasantly surprised by how readable, engaging, and practical it is.

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>MAKC.CO - Automatic File Backups with Rsync and Cron</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/modern-normalize@v3.0.1 /modern-normalize.min.css" rel="stylesheet">
+<link rel="stylesheet" href="/_style/bundle.css">
+<script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=67e8d81386189a0019fafdf7&product=inline-share-buttons&source=platform" async="async"></script>
+<link href="/images/favicon.ico" rel="icon" type="image/ico">
+<link href="/images/favicon.png" rel="icon" type="image/png">
+<link href="/images/apple-touch-icon.png" rel="apple-touch-icon">
+<link href="/images/ios-ipad-144x144.png" sizes="144x144" rel="apple-touch-icon-precomposed">
+<link href="/images/ios-iphone-114x144.png" sizes="114x114" rel="apple-touch-icon-precomposed">
+<link href="/images/ios-default-homescreen-57x57.png" sizes="57x57" rel="apple-touch-icon-precomposed">
+
+<!-- Analytic tracking with Umami-->
+<script defer="" src="https://cloud.umami.is/script.js" data-website-id="3c7e0009-f2f2-489a-892e-1d2918e822c2"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "MAKC.CO",
+  "url": "https://makc.co",
+  "logo": "https://makc.co/images/favicon.png"
+}
+</script>
+
+<meta property="og:image" content="https://makc.co/images/favicon.png">
+<meta property="og:title" content="MAKC.CO - Welcome">
+<meta property="og:description" content="A guide to creating a system for automatic backups using rsync and cron.">
+
+<meta name="keywords" content="art, design, tech, downloads, essay, author, youtuber, vidoes, multi-media, fonts, after, effects, vim, linux, command, line, philosophy, history, policitcs">
+<meta name="description" content="A guide to creating a system for automatic backups using rsync and cron.">
+<meta name="subject" content="Design">
+<meta name="copyright" content="Makc Criswell">
+<meta name="language" content="ES">
+<meta name="robots" content="index,follow">
+<meta name="topic" content="Design">
+<meta name="summary" content="A guide to creating a system for automatic backups using rsync and cron.">
+<meta name="Classification" content="Application">
+<meta name="author" content="Makc Criswell, m@makc.co">
+<meta name="designer" content="Makc Criswell, m@makc.co">
+<meta name="copyright" content="Makc Criswell">
+<meta name="reply-to" content="m@makc.co">
+<meta name="owner" content="Makc Criswell, m@makc.co">
+<meta name="url" content="https://makc.co">
+<meta name="identifier-URL" content="https://makc.co">
+<meta name="directory" content="submission">
+<meta name="category" content="Art">
+<meta name="coverage" content="Worldwide">
+<meta name="distribution" content="Global">
+<meta name="rating" content="General">
+<meta name="revisit-after" content="7 days">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@makccr">
+<meta name="twitter:title" content="MAKC.CO - Automatic File Backups with Rsync and Cron">
+<meta name="twitter:description" content="A guide to creating a system for automatic backups using rsync and cron.">
+<meta name="twitter:image" content="https://makc.co/images/bg-head.jpg">
+
+</head>
+<body>
+    <script>
+        function mobileMenu() {
+            var x = document.getElementById("mobile-links");
+            x.classList.toggle("active");
+        }
+    </script>
+
+    <header>
+        <div class="logo-container">
+            <a href="/index">
+                <picture><source type="image/webp" srcset="/img/Es_hZy2Cb8-1000.webp"><img class="logo" src="/img/Es_hZy2Cb8-1000.jpeg" alt="HOME" width="1000" height="1000"></picture>
+            </a>
+        </div>
+            <div class="bars" onclick="mobileMenu()">
+                <i class="icon icon-menu"></i>
+            </div>
+            <p class="links">
+                <a href="/videos">Videos</a>
+                <a href="/essays">Essays</a>
+                <a href="/docs">Documentation</a>
+                <a href="/downloads">Downloads & Apps</a>
+                <a href="/now">Now</a>
+            </p>
+    </header>
+
+<div id="mobile-links">
+    <div class="mobile-links-container">
+        <ul>
+            <li><a href="/videos">Videos</a></li>
+            <li><a href="/essays">Essays</a></li>
+            <li><a href="/docs">Documentation</a></li>
+            <li><a href="/downloads">Downloads & Apps</a></li>
+            <li><a href="/now">Now</a></li>
+        </ul>
+    </div>
+</div>
+    
+    <main>
+        
+<h1>Automatic File Backups with Rsync and Cron</h1>
+<p class="caption"><strong>Posted:</strong> 1 November 2026<br>
+
+</p><div class="essayContainer"> 
+<p>This documentation will walk through the process of creating an automatic backup system for a specific folder on a Unix or unix-like system. Specifically this information uses <code>rsync</code> and <code>cronie</code> to create a backup of an <a href="https://makc.co/docs/immich/">Immich server</a> on an Arch Linux server, and send it to a FreeBSD sever, but the information should be broad enough that it can be translated to different scenarios with ease.</p>
+<h2>Installing and Starting Applications</h2>
+<ol>
+<li>Install both <code>rsync</code> and <code>cronie</code> on the machine that will be sending the backup.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">Distribution</th>
+<th>Install Rsync and Cronie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">Arch Linux</td>
+<td><code>sudo pacman -Syu cronie rsync</code></td>
+</tr>
+<tr>
+<td style="text-align:right">Ubuntu/Debian</td>
+<td><code>sudo apt update &amp;&amp; sudo apt install cron rsync</code></td>
+</tr>
+<tr>
+<td style="text-align:right">Fedora</td>
+<td><code>sudo dnf install cronie rsync</code></td>
+</tr>
+</tbody>
+</table>
+<ol start="2">
+<li>Enable <code>cronie</code> to run as a system service.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">Distribution</th>
+<th>Enable Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">Arch Linux</td>
+<td><code>sudo systemctl enable --now cronie</code></td>
+</tr>
+<tr>
+<td style="text-align:right">Ubuntu/Debian</td>
+<td><code>sudo systemctl enable --now cron</code></td>
+</tr>
+<tr>
+<td style="text-align:right">Fedora</td>
+<td><code>sudo systemctl enable --now crond</code></td>
+</tr>
+</tbody>
+</table>
+<ol start="3">
+<li>Optionally check the status of the cron process with either: <code>crontab -l</code> or <code>systemctl status cron/cronie/crond</code>.</li>
+</ol>
+<h2>Creating a Backup Script</h2>
+<p>I'll be using a very simple backup script that I adapted a bit, but mostly stole from <a href="https://www.siberoloji.com/how-to-set-up-automatic-backups-with-rsync-on-arch-linux/">İbrahim Korucuoğlu</a>.</p>
+<pre class="language-bash"><code class="language-bash"><span class="token shebang important">#!/bin/bash</span>
+
+<span class="token comment"># Source / Destination</span>
+<span class="token assign-left variable">SOURCE</span><span class="token operator">=</span><span class="token string">"<span class="token environment constant">$HOME</span>/immich-app/"</span>
+<span class="token assign-left variable">DEST</span><span class="token operator">=</span><span class="token string">"USER@BACKUP.SERVER.IP:/folder/on/server/backups/"</span>
+
+<span class="token comment"># Logfile </span>
+<span class="token assign-left variable">LOGFILE</span><span class="token operator">=</span><span class="token string">"<span class="token environment constant">$HOME</span>/.backup_logs/immich_backup_<span class="token variable"><span class="token variable">$(</span><span class="token function">date</span> +<span class="token string">'%Y-%m-%d_%H-%M-%S'</span><span class="token variable">)</span></span>.log"</span>
+
+<span class="token comment"># rsync Magic</span>
+<span class="token function">rsync</span> <span class="token parameter variable">-avh</span> <span class="token parameter variable">--partial</span> <span class="token parameter variable">--delete</span> <span class="token string">"<span class="token variable">$SOURCE</span>"</span> <span class="token string">"<span class="token variable">$DEST</span>"</span> <span class="token operator">&amp;></span> <span class="token string">"<span class="token variable">$LOGFILE</span>"</span></code></pre>
+<p><strong>Some Notes:</strong></p>
+<ul>
+<li>Here <code>SOURCE=</code> is set to the location of my Immich server, simply a folder in the main user's home directory, and the <code>DEST=</code> is set to the location of where I want to send my backup.</li>
+<li>The <code>--delete</code> syntax in the <code>rsync</code> command removes any files that have been deleted while backing up, <code>-a</code> tells rsync to move the entire directory.</li>
+<li>Flags like <code>-v</code> and <code>-h</code> make the output more readable to humans, these are not strictly speaking necessary, but including these flags make reading the output of the logfile easier.</li>
+<li>The script will also create logfiles in <code>~/.backup_logs/</code> so that we can ensure the backups are taking place and troubleshoot if need be.</li>
+<li>Both of these servers are on the same LAN, so I can backup simply by passing the IP address of the destination server to <code>rsync</code>, if this were not the case it would be necessary to employ a VPN or reverse proxy set-up in order to backup remotely.</li>
+</ul>
+<h2>Testing &amp; SSH Key Set-up</h2>
+<p>To make the script executable, use <code>chmod</code>:</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">chmod</span> +x script_name.sh</code></pre>
+<p>If a folder to store logs in does not already exist (it probably doesn't), it can be created with:</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">mkdir</span> .backup_logs/</code></pre>
+<p>The script can then be run with:</p>
+<pre class="language-bash"><code class="language-bash">./script_name.sh</code></pre>
+<p>The immediate issue that will be hit, is that running the script will require password authentication by default. Since I am not completely insane, all the users on any servers on my LAN have passwords. However, having to manually authenticate with each backup, defeats the entire point of having an automated backup process in the first place. Since both of these servers exist on my LAN and don't connect to the outside world via anything but a VPN tunnel, I'm comfortable using a password-less SSH key in order to enable the transfer without authentication.</p>
+<ol>
+<li>Create an SSH key with:</li>
+</ol>
+<pre class="language-bash"><code class="language-bash">ssh-keygen <span class="token parameter variable">-t</span> ed25519 <span class="token parameter variable">-a</span> <span class="token number">100</span> <span class="token parameter variable">-C</span> <span class="token string">"you@mail.com"</span></code></pre>
+<p>When prompted press <code>[ENTER]</code> to create a key with no passphrase.</p>
+<ol start="2">
+<li>Copy the SSH key to the destination server:</li>
+</ol>
+<pre class="language-bash"><code class="language-bash">ssh-copy-id user@DEST-SERVER</code></pre>
+<ol start="3">
+<li>Test the connection to make sure that you can SSH into the destination server without any additional authentication.</li>
+</ol>
+<pre><code>ssh user@DEST-SERVER
+</code></pre>
+<p>If everything worked well, we now have a script hat will backup our full Immich library anytime it is ran.</p>
+<h2>Automation with Cron/Cronie</h2>
+<ol>
+<li>Run <code>crontab -e</code> to create a new process. This command uses <code>vi</code> as the default editor, so it might be necessary to install it with <code>sudo pacman -Syu vi</code>.</li>
+<li>Edit the file to run the script at a designated time every-day (0200 in my case):</li>
+</ol>
+<pre class="language-bash"><code class="language-bash"><span class="token number">0</span> <span class="token number">2</span> * * * /home/yourusername/backup.sh</code></pre>
+<h3>Crontab Time Explained</h3>
+<p>The <code>0 2 * * *</code> in front of the previous command is what sets our script to run at 0200 every morning, but it's not always clear how this actually works if a user is unfamiliar with the crontab syntax. There are existing projects like <a href="https://croncalculator.com/">Cron Calculator</a> that will abstract away this knowledge, but it's reasonably easy to understand if readers wan't to do so. Some examples that should be self-explanatory are below:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">Frequency</th>
+<th>Expression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right"><strong>Daily at 0200</strong></td>
+<td><code>0 2 * * * PATH-TO-SCRIPT.sh</code></td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>Weekdays at 0900</strong></td>
+<td><code>0 9 * * 1-5 PATH-TO-SCRIPT.sh</code></td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>Monthly at 0000 on 1st of Month</strong></td>
+<td><code>0 0 1 * * PATH-TO-SCRIPT.sh</code></td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>Every 15 Minues</strong></td>
+<td><code>*/15 * * * * PATH-TO-SCRIPT.sh</code></td>
+</tr>
+</tbody>
+</table>
+<h4>Verbose Definitions</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Minute</th>
+<th style="text-align:center">Hour</th>
+<th style="text-align:center">Day of Month</th>
+<th style="text-align:center">Month</th>
+<th style="text-align:center">Day of Week</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">*</td>
+<td style="text-align:center">*</td>
+<td style="text-align:center">*</td>
+<td style="text-align:center">*</td>
+<td style="text-align:center">*</td>
+</tr>
+</tbody>
+</table>
+
+</div> 
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+<div class="post-navigation" style="margin-top: 3em; text-align: center;">
+  
+  
+<div class="rss">
+  
+    
+    <a href="/docs/tmux-for-lazy-folks/" class="prev-post"><button><i class="icon icon-left"></i></button></a>
+  
+  <a href="/rss"><button><i class="icon icon-rss"></i></button></a>
+  
+</div>
+
+    </div></main>
+   <footer>
+        <ul>
+            <li><a href="/terms">TOS & Privacy</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/ai">AI Disclosure</a></li>
+            <li><a href="https://ko-fi.com/makccr" target="_blank">Donate</a></li>
+        </ul>
+        <div class="socialIcons"> 
+            <a title="Github" target="_blank" href="https://github.com/makccr">
+                <i class="icon icon-github"></i>
+            </a>
+            <a title="Codeberg" target="_blank" href="https://codeberg.org/makccr">
+                <i class="icon icon-codeberg"></i>
+            </a>
+            &nbsp;
+            <a title="YouTube" target="_blank" href="https://www.youtube.com/@makc">
+                <i class="icon icon-youtube"></i>
+            </a>
+            <a title="Odysee" target="_blank" href="https://odysee.com/@makc:a">
+                <i class="icon icon-odysee"></i>
+            </a>
+            <a title="Invidious" target="_blank" href="https://inv.nadeko.net/channel/UCWh6YtclgTAzReTASc4uSKw">
+                <i class="icon icon-invidious"></i>
+            </a>
+            &nbsp; 
+            <a title="Sitemap" target="_blank" href="https://makc.co/sitemap.xml">
+                <i class="icon icon-sitemap"></i>
+            </a>
+            
+            <a title="RSS" href="/rss">
+                <i class="icon icon-rss"></i>
+            </a>
+        </div>
+        <p>&copy; 2012-<script>document.write(/\d{4}/.exec(Date())[0])</script> <i>Mackenzie Criswell</i>.</p>
+    </footer>
+</body>
+</html>

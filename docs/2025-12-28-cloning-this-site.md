@@ -4,7 +4,7 @@ layout: docs.html
 date: 2025-12-29
 updated: 2026-09-26
 tags: docs 
-subject: ["webDev", "linux", "software"]
+subject: ["Web Development"]
 ---
 
 A quick guide for cloning this site's repository via git & getting set up for development on a new system. I use [Eleventy (11ty)](https://github.com/11ty/eleventy/) as a static site generator & [Airtable](https://airtable.com/) as a *sort of a CMS solution*. This documentation will walk through cloning this website's repository from [GitHub](https://github.com/makccr/makccr.github.io), installing all required dependencies, insuring all NPM plugins are installed, and testing to ensure that the new machine is ready for further development.

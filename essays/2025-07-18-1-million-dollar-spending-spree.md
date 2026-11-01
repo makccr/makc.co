@@ -3,7 +3,7 @@ title: "My Two Million Dollar Spending Spree"
 layout: essay.html
 date: 2025-07-18
 tags: essay 
-subject: ["finance", "webDev"]
+subject: ["Personal Finance"]
 ---
 
 Over the past few weeks, I’ve been laser-focused on getting my finances in order. Like many Americans over eighteen, I’ve accumulated more than my fair share of debt—along with the bad spending habits that come with it. Credit cards, a car loan that’s longer than it should be—everything short of payday loans and collections—I’ve got it.

@@ -3,6 +3,17 @@ title: "TITLE TEXT"
 layout: essay.html
 date: YYYY-MM-DD
 tags: essay 
-subject: ["subject1", "subject2"]
+subject: [
+"Web Development"
+"Film"
+"Writing"
+"Technology"
+"Philosophy"
+"Politics"
+"Personal Finance"
+"Art"
+"Satire"
+"Education"
+]
 description: "WORDS"
 ---

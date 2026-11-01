@@ -3,7 +3,7 @@ title: "Custom Syntax Highlighting With 11ty"
 layout: essay.html
 date: 2025-12-31
 tags: essay 
-subject: ["webDev"]
+subject: ["Web Development"]
 ---
 
 Unless you stalk my [GitHub account](https://github.com/makccr) relentlessly, you are probably unaware of it, but [my website](https://makc.co) was developed using the static site generator, [Eleventy (11ty)](https://www.11ty.dev/). 11ty offers incredibly easy web development, not only because of its capability to play nicely with a massive amount of different file formats, but also because of its massive library of NodeJS plugins. Throughout the process of developing and maintaining my website, I have found that adding a new feature to my site is often as simple as running _npm install X_ and making a small change to the _eleventy.config.js_ file in my root directory. Earlier this week, when I decided that I wanted to add syntax highlighting to HTML code blocks on my site, the process looked to be just that simple.

@@ -2,9 +2,9 @@
 title: "Tmux for Lazy Folks"
 layout: docs.html
 date: 2026-09-30
-updated: 2026-09-30
 tags: docs 
-subject: ["cli", "linux"]
+updated: {{ page.inputPath }}
+subject: ["Command Line Tools"]
 ---
 
 Some basic tmux commands, as well as some shortcuts for people who just want a quick multiplexer, but don't want to think about it to much.

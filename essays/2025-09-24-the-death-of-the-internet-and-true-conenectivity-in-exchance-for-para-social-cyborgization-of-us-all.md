@@ -3,7 +3,7 @@ title: "The Death of the Internet"
 layout: essay.html
 date: 2025-09-24
 tags: essay 
-subject: ["technology", "history"]
+subject: ["Technology"]
 ---
 
 I got my first computer when I was eight years old. It wasn’t anything fancy, an old Windows 95 box that barely worked. But when my parents decided to upgrade to a shiny, new, Dell Machine running Windows XP, I was more than happy to do whatever it took to get my hands on the old family PC. The deal that I struck up with them took place in early February of my seventh year. They agreed that if I kept my room clean for the remainder of the year, that come Christmas Day, the computer would be mine. Needless to say, there wasn’t so much as a sock on the floor of my room for the rest of the year. At the time I shared a room with my younger brother, and I specifically remember having to work twice as hard, cleaning up not only my own mess, but his as well. Come Christmas day though, all the work paid off and the computer was all mine.

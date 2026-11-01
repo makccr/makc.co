@@ -3,7 +3,7 @@ title: "John Woolman was Kind of a Dick"
 layout: essay.html
 date: 2025-04-01
 tags: essay 
-subject: ["history", "satire"]
+subject: ["Satire"]
 ---
 
 Having just finished reading _The Journal of John Woolman_, I was struck by a few different things, the foremost: just how early an anti-slavery campaigner Woolman was. I knew that the guy wrote about the evils of slavery around the time of the American Revolution. What I did not realize is that Woolman actually died in 1774, 2 years before _The Declaration of Independence_ was even signed. To say that the guy was "ahead of his time" is one of the most egregious understatements in history. At a time when virtually everyone owned slaves, including virtually all of our first presidents - this guy was actually running around successfully convincing people, on an individual level, to just straight up grant freedom to slaves they had already paid for.

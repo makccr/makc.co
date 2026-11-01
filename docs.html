@@ -23,7 +23,6 @@ description: My personal documentation. Most sane people would keep this in a no
         </a>
         <div class="metadata">
             <strong>Posted:</strong> {{ essay.data.date | postDate }}<br>
-            <strong>Updated:</strong> {{ essay.data.updated | postDate }}<br>
             {% for subject in essay.data.subject %}
                 <span class="subject">
                     {{ subject }}

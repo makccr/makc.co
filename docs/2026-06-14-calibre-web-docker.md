@@ -4,7 +4,7 @@ layout: docs.html
 date: 2026-06-14
 updated: 2026-06-14
 tags: docs 
-subject: ["homelab", "eBook", "server", "docker"]
+subject: ["System Administration"]
 ---
 
 ## Install Docker Engine / Docker CE

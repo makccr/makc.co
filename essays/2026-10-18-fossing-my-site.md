@@ -3,7 +3,7 @@ title: "Open-Sourcing My Open-Source Website"
 layout: essay.html
 date: 2026-10-18
 tags: essay 
-subject: ["webDev"]
+subject: ["Web Development"]
 description: "An essay discussing my crusade to swap off of all bloated, AI-injected or otherwise compromised pieces of my web development toolkit, in favor of open-source solutions to the problems."
 ---
 

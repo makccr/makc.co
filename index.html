@@ -82,8 +82,7 @@ description: I'm a propagandist for pickled red onions, a rare meat activist, an
             <div class="essay-title"> {{ essay.data.title }} </div>
         </a>
         <div class="metadata">
-            <strong>Posted:</strong> {{ essay.data.date | postDate }}<br>
-            <strong>Updated:</strong> {{ essay.data.updated | postDate }}<br>
+            {{ essay.data.date | postDate }}<br>
             {% for subject in essay.data.subject %}
                 <span class="subject">
                     {{ subject }}

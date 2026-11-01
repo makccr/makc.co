@@ -3,6 +3,16 @@ title: "TITLE"
 layout: docs.html
 date: YYYY-MM-DD
 tags: docs
-subject: ["subject1", "subject2"]
+subject: [
+"System Administration" 
+"Command Line Tools"
+"File Manipulation"
+"Git"
+"Fresh Install Set-up"
+"Software Installation"
+"Video Production"
+"Scripting"
+"Web Development"
+]
 description: "WORDS"
 ---

@@ -4,7 +4,7 @@ layout: docs.html
 date: 2026-04-07
 updated: 2026-04-07
 tags: docs
-subject: ["sofware", "scripting", "productivity", "ricing"]
+subject: ["Fresh Install Set-up"]
 ---
 
 Documentation for setting up Flatpack, Snap and other packages installed to non-standard locations to launch via dmenu and other minimal application launchers.

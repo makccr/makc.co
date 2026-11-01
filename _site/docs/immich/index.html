@@ -104,18 +104,23 @@
     <main>
         
 <h1>Setting up a Private Immich Server</h1>
-<p class="caption"><strong>Originally Posted:</strong> 10 June 2026<br>
-<strong>Last Updated:</strong> 12 October 2026</p>
+<p class="caption"><strong>Posted:</strong> 10 June 2026<br>
 
-<div class="essayContainer"> 
-<h2>Install Docker Engine / Docker CE</h2>
+</p><div class="essayContainer"> 
+<h2>Install Docker Compose</h2>
+<p>Docker Compose has packages available for Ubuntu, Debian, RHEL &amp; Fedora, and instructions can be found in the <a href="https://docs.docker.com/desktop/setup/install/linux/">Docker Docs</a>. I however use Arch Linux for my server, but luckily there is an unsupported package in pacman.</p>
 <ol>
-<li><strong>Note</strong>: <em>Docker Engine</em> is not the same thing that would generally be installed via a standard linux package manager. To remove a previously installed iteration of Docker (at least on Ubuntu), use the command below:</li>
+<li>Install <code>docker</code> and <code>docker-compose</code>.</li>
 </ol>
-<pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> remove <span class="token variable"><span class="token variable">$(</span>dpkg --get-selections docker.io <span class="token function">docker-compose</span> docker-compose-v2 docker-doc podman-docker containerd runc <span class="token operator">|</span> <span class="token function">cut</span> <span class="token parameter variable">-f1</span><span class="token variable">)</span></span></code></pre>
+<pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> pacman <span class="token parameter variable">-Syu</span> <span class="token function">docker</span> <span class="token function">docker-compose</span></code></pre>
 <ol start="2">
-<li>Follow <a href="https://docs.docker.com/engine/install/#get-started">the Docker website's documentation</a>, it's solid &amp; also includes instructions to remove previous iterations of Docker on all the other supported distributions.</li>
+<li>Start the <code>systemctl</code> process to make sure Docker Compose is always running.</li>
 </ol>
+<pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> systemctl <span class="token builtin class-name">enable</span>  <span class="token parameter variable">--now</span> docker.service</code></pre>
+<ol start="3">
+<li>This can be verified with:</li>
+</ol>
+<pre class="language-bash"><code class="language-bash"><span class="token function">docker</span> compose version</code></pre>
 <h2>Install Immich</h2>
 <ol>
 <li>Use <a href="https://docs.immich.app/install/docker-compose">the Immich website's documentation</a> for installing and running with Docker Compose; once again, this documentation is more than good enough.</li>
@@ -126,6 +131,8 @@
 <li>Follow the prompts to set up an admin &amp; some user accounts &amp; use <a href="https://docs.immich.app/install/post-install">Immich's documentation</a> if stuck.</li>
 <li>There are a few different ways to remotely access an Immich server, but one of the easiest &amp; most secure is <a href="https://makc.co/docs/create-your-own-git-server/">via a VPN</a> - just do that unless there's a really good reason not to.</li>
 </ol>
+<h2>Backups</h2>
+<p>The Immich application is very wise to scream at users the moment they login about setting up a 3-2-1 backup solution. This documentation does not cover the back-up of an Immich library, but I have created <a href="http://makc.co/docs/automatic-rsync-backup/">separate documentation</a> that does. I would highly recommend backing up anything and everything you self-host to the best of your ability. Even if a proper off-site back-up is not something that is financially feasible, just having a copy on two machines rather than one is enough to find a way to restore, should the worst happen.</p>
 
 </div> 
 
@@ -165,6 +172,8 @@
 
   
 
+  
+
 
 <div class="post-navigation" style="margin-top: 3em; text-align: center;">
   
@@ -172,12 +181,12 @@
 <div class="rss">
   
     
-    <a href="/docs/iso-2-usb-with-pv/" class="prev-post"><button><i class="nf nf-fa-arrow_left"></i></button></a>
+    <a href="/docs/iso-2-usb-with-pv/" class="prev-post"><button><i class="icon icon-left"></i></button></a>
   
-  <a href="/rss"><button><i class="nf nf-fa-rss"></i></button></a>
+  <a href="/rss"><button><i class="icon icon-rss"></i></button></a>
   
     
-    <a href="/docs/calibre-web-docker/" class="next-post"><button><i class="nf nf-fa-arrow_right"></i></button></a>
+    <a href="/docs/calibre-web-docker/" class="next-post"><button><i class="icon icon-right"></i></button></a>
   
 </div>
 

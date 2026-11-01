@@ -4,7 +4,7 @@ layout: docs.html
 date: 2026-09-21
 updated: 2026-09-21
 tags: docs 
-subject: ["database", "linux"]
+subject: ["File Manipulation"]
 ---
 
 A guide to converting a CSV (Comma Separated Value) file to a properly formatted JSON file with python, and cleaning up any artifacts that might come up in the process.

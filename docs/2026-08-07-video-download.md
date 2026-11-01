@@ -4,7 +4,7 @@ layout: docs.html
 date: 2026-08-07
 updated: 2026-09-19
 tags: docs 
-subject: ["software", "webDev", "wget", "curl"]
+subject: ["Command Line Tools"]
 ---
 
 A quick guide to downloading videos that are harder than they should be to download.

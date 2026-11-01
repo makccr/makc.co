@@ -4,7 +4,7 @@ layout: docs.html
 date: 2026-09-07
 updated: 2026-09-20
 tags: docs 
-subject: ["windows", "linux"]
+subject: ["Command Line Tools"]
 ---
 
 Some basic tips and rules for navigating Windows and Linux with powershell and bash. This was made for my own personal use and does assume that any reader is pretty familiar with bash commands and mainly interested in learning how to transfer these same skills to navigating a Windows system via powershell.

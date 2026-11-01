@@ -4,7 +4,7 @@ layout: docs.html
 date: 2026-01-17
 updated: 2026-01-17
 tags: docs
-subject: ["markdown", "scripting", "writing"]
+subject: ["Scripting"]
 ---
 
 A guide for exporting Markdown *(.md)* files to Open Office *(.odt)* files, with [standard manuscript formatting](https://en.wikipedia.org/w/index.php?title=Standard_manuscript_format).

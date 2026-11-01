@@ -4,7 +4,7 @@ layout: docs.html
 date: 2026-01-16
 updated: 2026-06-10
 tags: docs 
-subject: ["remote", "vpn", "security"]
+subject: ["System Administration"]
 ---
 
 Set up a free and simple VPN tunnel to access and modify a remote file server in the most secure way possible, wile still being pretty lazy. 

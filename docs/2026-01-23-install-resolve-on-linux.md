@@ -4,7 +4,7 @@ layout: docs.html
 date: 2026-01-23
 updated: 2026-01-23
 tags: docs
-subject: ["production", "software"]
+subject: ["Software Installation"]
 ---
 
 Documentation for installing Black Magic Design's Davinci Resolve or Davinci Resolve Studio on Linux.

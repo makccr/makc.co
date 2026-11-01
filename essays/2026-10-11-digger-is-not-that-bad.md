@@ -3,7 +3,7 @@ title: "Digger is Actually Pretty Good"
 layout: essay.html
 date: 2026-10-11
 tags: essay 
-subject: ["film"]
+subject: ["Film"]
 description: "I saw the recent callaboration between producer/actor Tom Cruise and director Alejandro G. Iñárritu, and found it to be not half as bad as everyone else seems to think it was."
 ---
 
