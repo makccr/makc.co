@@ -1,13 +1,14 @@
 /*Dark Mode is the default color scheme*/
 :root { /*Basic colors*/
     --fg-color: #eee;
-    --fg2-color: #D1D5DB;
+    --fg2-color: #c1c5cB;
     --link-color: #1288ef;
     --link-hover: #1288ef;
     --mid-accent: #404040;
     --bg-color: #000;
     --bg-color-lighter: #181818;
     --button-color: #1269c7;
+    --platform-color: #101d2b;
     --button-hover: #1288ef;
     --button-text: #fff; 
     --button-text-hover: #def; 
@@ -23,7 +24,7 @@
     --code-orange: #fe8019; 
     --code-gray: #999; 
 
-    --corner: 0rem; 
+    --corner: .3rem; 
 } /* Defining color scheme */
 
 

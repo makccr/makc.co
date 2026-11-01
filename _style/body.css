@@ -274,9 +274,10 @@ button:hover {
 
 .video-card p {
     margin: 0; 
-    padding: 0;
-    font-size: var(--fg-color);
-    font-family: 'Lato Thin', sans-serif;
+    padding-top: .3rem;
+    padding-bottom: .3rem;
+    color: var(--fg-color);
+    font-family: 'Lato Regular', sans-serif;
     font-size: 1.1rem;
     font-weight: 500;
     text-align: left; 
@@ -292,16 +293,29 @@ button:hover {
     text-align: left; 
 }
 
+.platform-select {
+    font-size: 1.1rem;
+}
+
 .platform-select a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.7rem;
+    height: 1.7rem;
+
     color: var(--button-hover);
     margin-bottom: 1rem;
-    font-size: 1.5rem; 
+    font-size: 1rem; 
+    background-color: var(--platform-color);
+    border: 0.05rem solid var(--bg-color);
+    border-radius: var(--corner); 
+    padding: .3rem; 
 }
 
 .platform-select a:hover {
-    text-decoration: underline 3px var(--button-hover); 
-    color: var(--fg-color);
-    transition: 0.3s ease;
+    transition: 0.3s ease; 
+    border: 0.05rem solid var(--button-hover);
 }
 
 /* ESSAY CARDS AND CONTAINER*/

@@ -38,19 +38,19 @@ description: I'm a propagandist for pickled red onions, a rare meat activist, an
     {% for video in recentVid %}
     <div data-category="{{ video.category }}" class="video-card">
         <a href="https://youtube.com/watch?v={{ video.ytid }}" target="_blank" title="YouTube">
-        <img src="https://i.ytimg.com/vi/{{ video.ytid }}/maxresdefault.jpg" alt="Hero image"/>
+        <img src="https://i.ytimg.com/vi/{{ video.ytid }}/maxresdefault.jpg" alt="Hero image" loading="lazy" decoding="async"/>
         </a>
         <div class='metadata'>{{ video.date | displayDate }} • {{ video.category }}</div>
         <p class="videos">{{ video.title | truncate: 42, "..." }}</p>
         <div class="platform-select">
+            Watch On:
             <a href="https://youtube.com/watch?v={{ video.ytid }}" target="_blank" title="YouTube"><i class="icon icon-youtube"></i></a>
             <a href="{{ video.odurl }}" target="_blank" title="Odysee"><i class="icon icon-odysee"></i></a>
             <a href="https://inv.nadeko.net/watch?v={{ video.ytid }}" target="_blank" title="Invidious"><i class="icon icon-invidious"></i></a>
         </div>
     </div>
-    {% endfor %}
+        {% endfor %}
 </div>
-
 
 <h2>Writing</h2>
 <div class="cardContainer">
