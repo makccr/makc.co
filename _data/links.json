@@ -14,11 +14,25 @@
 	"rss": "https://brennenputh.me/rss.xml"
   },
   {
+    "title": "Breaking Points",
+    "category": "Politics",
+    "description": "An independent iteration of the Left vs. Right news show with people who aren't complete morons.",
+	"url": "https://breakingpoints.com/",
+	"rss": "https://www.iheart.com/podcast/867-breaking-points-with-kryst-83441143/"
+  },
+  {
     "title": "Drop Site News",
     "category": "Politics",
     "description": "Independent journalism about American foreign policy and adjacent topics.",
 	"url": "https://dropsitenews.com",
 	"rss": "https://dropsitenews.com/feed"
+  },
+  {
+    "title": "Hacker News &/ Hacker Newsletter",
+    "category": "Technology",
+    "description": "Probably the only social media site I actually use, paired with a newsletter than makes it so that I don't even have to actually use it.",
+	"url": "https://news.ycombinator.com/?success=true",
+	"rss": "https://hackernewsletter.com/"
   },
   {
     "title": "JRS Systems",
@@ -33,6 +47,13 @@
     "description": "The article feed of Klara Systems, a company that specializes in zfs.",
 	"url": "https://klarasystems.com",
 	"rss": "http://klarasystems.com/feed/"
+  },
+  {
+    "title": "Rob Knight",
+    "category": "Software Engineering",
+    "description": "A developer on EchoFeed and nerd who writes about things in which I am interested.",
+	"url": "https://rknight.me/",
+	"rss": "https://rknight.me/subscribe/posts/atom.xml"
   },
   {
     "title": "SerCe's Blog",
@@ -61,6 +82,13 @@
     "description": "Unix news and reviews, as the name would imply.",
 	"url": "https://unixmen.com",
 	"rss": "https://www.unixmen.com/feed/"
+  },
+  {
+    "title": "Veronica Explains",
+    "category": "Linux",
+    "description": "A fellow linux and technology nerd to writes stuff and does stuff.",
+	"url": "https://veronicaexplains.net/",
+	"rss": "https://veronicaexplains.net/rss/"
   },
   {
     "title": "XKCD",
