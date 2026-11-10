@@ -1,11 +1,16 @@
 ---
 layout: main.html
 title: Videos
-description: My entire catalog of video content. Over a decade of content ranging tech, motion graphics, web design, video essays and much more. Now available on <a href="https://www.youtube.com/@makc" target="_blank">YouTube</a>, <a href="https://inv.nadeko.net/channel/UCWh6YtclgTAzReTASc4uSKw" target="_blank">Invidious</a> or <a href="https://odysee.com/@makc:a" target="_blank">Odysee</a>
+description: My entire catalog of video content. Over a decade of content ranging tech, motion graphics, web design, video essays and much more. Now available on YouTube, Invidious or Odysee.
 ---
 
 <h1>{{ title }}</h1>
-<p class="caption">{{ description }}</p>
+<p class="caption">
+My entire catalog of video content. Over a decade of content on technology, design, web development, linux or whatever video essay I felt like making in any given moment. Now available for viewing on 
+<a href="https://www.youtube.com/@makc" target="_blank">YouTube</a>, 
+<a href="https://inv.nadeko.net/channel/UCWh6YtclgTAzReTASc4uSKw" target="_blank">Invidious</a> or 
+<a href="https://odysee.com/@makc:a" target="_blank">Odysee</a>.
+</p>
 
 {% assign categories = "" | split: "" %}
 {% for video in videos %}
