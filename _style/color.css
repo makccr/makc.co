@@ -13,6 +13,7 @@
     --button-text: #fff; 
     --button-text-hover: #def; 
     --header-bg: rgba(0,0,0,0.3);
+    --header-border: rgba(255,255,255,0.1); 
     
     /*Code colors (material ocean)*/
     --code-aqua: #88c0d0; 
@@ -88,6 +89,7 @@
         --bg-color-lighter: #f0f0f0;
         --header-bg: rgba(255,255,255,0.5);
         --platform-color: #ddeeff;
+        --header-border: rgba(0,0,0,0.1); 
 
         --code-aqua: #397f9a; 
         --code-green: #557d44;

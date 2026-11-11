@@ -9,11 +9,17 @@ import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight"; // ✅ ADDE
 
 const require = createRequire(import.meta.url);
 const striptags = require("striptags");
+const wordStats = require("@photogabble/eleventy-plugin-word-stats");
 
 export default function (eleventyConfig) {
 
   // ✅ Syntax highlighting
-  eleventyConfig.addPlugin(syntaxHighlight);
+    eleventyConfig.addPlugin(syntaxHighlight);
+
+    // Word Count
+    eleventyConfig.addPlugin(wordStats, {
+        output: (stats) => `${stats.words} words`
+    });
 
   // ✅ Add striptags filter
   eleventyConfig.addFilter("striptags", striptags);

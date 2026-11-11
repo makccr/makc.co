@@ -1,4 +1,4 @@
-/** @type {Record<string, string|null>} */
+/** @type {Record<string, string | null>} */
 export const normal = {
   'en-gb-oed': 'en-GB-oxendict',
   'i-ami': 'ami',

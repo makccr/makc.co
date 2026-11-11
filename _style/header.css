@@ -114,7 +114,7 @@ header {
     backdrop-filter: blur(20px); 
     -webkit-backdrop-filter: blur(20px);
     z-index: 1000; 
-    border-bottom: .1rem solid var(--bg-color-lighter);
+    border-bottom: .1rem solid var(--header-border);
 }
 
 @media only screen and (max-width: 640px) {

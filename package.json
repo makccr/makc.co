@@ -24,7 +24,9 @@
     "@11ty/eleventy-cache-assets": "^2.3.0",
     "@11ty/eleventy-img": "^7.0.0",
     "@11ty/eleventy-plugin-rss": "^3.0.0",
+    "@photogabble/eleventy-plugin-word-stats": "^1.0.1",
     "@quasibit/eleventy-plugin-sitemap": "^2.2.0",
+    "jsdom": "^31.0.0",
     "moment": "^2.31.0",
     "striptags": "^3.2.0"
   },

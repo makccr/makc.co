@@ -74,38 +74,3 @@ npm i # Shorthand for npm install
 ```
 
 It may also be necessary to use the `npm audit` command to fix any issues that arise in the update process.
-
---- 
-
-## Helpful Formatting Blocks
-### New Essay Header
-```markdown
----
-title: "TITLE TEXT"
-layout: essay.html
-date: YYYY-MM-DD
-tags: essay 
-subject: ["subject1", "subject2"]
-description: "WORDS"
----
-```
-### New Doc Header
-```markdown
----
-title: "TITLE"
-layout: docs.html
-date: YYYY-MM-DD
-updated: YYYY-MM-DD
-tags: docs
-subject: ["subject1", "subject2"]
-description: "WORDS"
----
-```
-### Generic New Page
-```markdown
----
-includes: main.html 
-title: "TITLE"
-description: "WORDS"
----
-```

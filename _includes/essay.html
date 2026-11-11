@@ -3,7 +3,7 @@ layout: main.html
 ---
 
 <style>
-    main p {
+    main p, main li {
         font-family: 'Cormorant Garamond', serif; 
         font-size: 1.3rem; 
         line-height: 2rem; 
@@ -11,7 +11,8 @@ layout: main.html
 </style> 
 
 <h1>{{ title | default: "Essays" }}</h1>
-<p class="caption">{{ date | postDate }}</p>
+<p class="caption">{{ date | postDate }}<br> 
+{{ content | wordStats }}</p>
 
 <div class="essayContainer"> 
 {{ content }}
