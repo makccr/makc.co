@@ -15,4 +15,5 @@ subject: [
 "Web Development"
 ]
 description: "WORDS"
+tags: ["tag1", "tag2"]
 ---

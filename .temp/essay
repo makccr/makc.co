@@ -16,4 +16,5 @@ subject: [
 "Education"
 ]
 description: "WORDS"
+tags: ["tag1", "tag2"]
 ---
