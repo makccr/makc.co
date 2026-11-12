@@ -1,3 +1,4 @@
+import { execSync } from "node:child_process"; 
 import fs from "node:fs";
 import path from "path";
 import { createRequire } from "module";
@@ -21,15 +22,32 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter("firstLine", content => {
     if (!content) return "";
     return content.split("\n")[0];
-  });
+    });
+
     eleventyConfig.addFilter("lastModified", (inputPath) => {
-        if (!inputPath) return null;
-        try {
-          return fs.statSync(inputPath).mtime;
-        } catch {
-          return null;
+      if (!inputPath) return null;
+
+      try {
+        // Prefer the real last Git commit that touched this file
+        const dateStr = execSync(
+          `git log -1 --pretty=format:%ci -- "${inputPath}"`,
+          { encoding: "utf8" }
+        ).trim();
+
+        if (dateStr) {
+          return new Date(dateStr);
         }
-      });
+      } catch (err) {
+        // Fall through to filesystem if Git fails
+      }
+
+      // Fallback for brand-new untracked files
+      try {
+        return fs.statSync(inputPath).mtime;
+      } catch {
+        return null;
+      }
+    });
 
       eleventyConfig.addGlobalData("eleventyComputed", {
         lastModified: (data) => {
