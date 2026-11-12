@@ -7,7 +7,7 @@ description: This page is dedicated to tracking alternatives that I have swapped
 
 <p class='caption'>
 This page was originally adapted from an <a href="http://makc.co/essays/fossing-my-site/">essay that I wrote</a> on the 18th of October in 2026. I created this page to maintain one source where I can track all the services that I end up replacing over this site's history.<br><br>
-    <strong>Last Updated:</strong><br>{{ lastModified | modDate }}<br><br>
+    <strong>Last Updated:</strong><br>{{ lastModified | readableDate }}<br><br>
     The full history of changes to this page can be tracked <a href="https://github.com/makccr/mak
 c.co/commits/master/alternatives.md" target="_blank">here</a>.                     
 </p>

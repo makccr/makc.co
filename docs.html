@@ -22,8 +22,8 @@ description: My personal documentation. Most sane people would keep this in a no
             <div class="essay-title"> {{ essay.data.title }} </div>
         </a>
         <div class="metadata">
-            <strong>Created:</strong> {{ essay.data.date | postDate }}<br>
-            <strong>Updated:</strong> {{ essay.inputPath | lastModified | modDate }}<br>
+            <strong>Created:</strong> {{ essay.data.date | readableDate }}<br>
+            <strong>Updated:</strong> {{ essay.inputPath | lastModified | readableDate }}<br><br>
             {% for subject in essay.data.subject %}
                 <span class="subject">
                     {{ subject }}

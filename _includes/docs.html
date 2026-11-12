@@ -3,8 +3,8 @@ layout: main.html
 ---
 
 <h1>{{ title | default: "Essays" }}</h1>
-<p class="caption"><strong>Created:</strong> {{ date | postDate }}<br>
-<strong>Updated:</strong> {{ lastModified | modDate }}<br></p>
+<p class="caption"><strong>Created:</strong> {{ date | readableDate }}<br>
+<strong>Updated:</strong> {{ lastModified | readableDate }}<br></p>
 
 <div class="essayContainer"> 
 {{ content }}

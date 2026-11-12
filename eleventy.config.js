@@ -66,17 +66,25 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("downloads");
 
   // Filters
-    eleventyConfig.addFilter("postDate", dateObj => {
-        return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("d LLLL yyyy");
-    });
+    eleventyConfig.addFilter("readableDate", (date) => {
+      if (!date) return "";
 
-    eleventyConfig.addFilter("displayDate", dateString => {
-        return DateTime.fromISO(dateString).toFormat("d LLLL yyyy");
-    });
+      // Handle both JS Date objects and ISO strings
+      const dt = date instanceof Date
+        ? DateTime.fromJSDate(date, { zone: "utc" })
+        : DateTime.fromISO(date, { zone: "utc" });
 
-    eleventyConfig.addFilter("modDate", (dateObj) => {
-      if (!dateObj) return "";
-      return DateTime.fromJSDate(dateObj).toFormat("d MMMM yyyy");
+      if (!dt.isValid) return "";
+
+      const day = dt.day;
+
+      const getOrdinal = (n) => {
+        const s = ["th", "st", "nd", "rd"];
+        const v = n % 100;
+        return n + (s[(v - 20) % 10] || s[v] || s[0]);
+      };
+
+      return `${getOrdinal(day)} of ${dt.toFormat("MMMM yyyy")}`;
     });
 
   return {

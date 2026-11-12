@@ -23,7 +23,8 @@ description: A collection of personal essays on film, technology, philosophy, an
             <div class="essay-title"> {{ essay.data.title }} </div>
         </a>
         <div class="metadata">
-            {{ essay.data.date | postDate }} • {{ essay.templateContent | wordStats }}<br>
+            {{ essay.data.date | readableDate }}<br>
+            {{ essay.templateContent | wordStats }}<br><br>
             {% for subject in essay.data.subject %}
                 <span class="subject">
                     {{ subject }}

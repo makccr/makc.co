@@ -57,7 +57,7 @@ layout: null
 {% for post in collections.essays %}
   <url>
     <loc>https://makc.co{{ post.url }}</loc>
-    <lastmod>{{ post.date | postDate }}</lastmod>
+    <lastmod>{{ post.date | readableDate }}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -65,7 +65,7 @@ layout: null
 {% for post in collections.docs %}
   <url>
     <loc>https://makc.co{{ post.url }}</loc>
-    <lastmod>{{ post.date | postDate }}</lastmod>
+    <lastmod>{{ post.date | readableDate }}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>

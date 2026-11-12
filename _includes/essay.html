@@ -11,7 +11,7 @@ layout: main.html
 </style> 
 
 <h1>{{ title | default: "Essays" }}</h1>
-<p class="caption">{{ date | postDate }}<br> 
+<p class="caption">{{ date | readableDate }}<br> 
 {{ content | wordStats }}</p>
 
 <div class="essayContainer"> 
