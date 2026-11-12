@@ -13,38 +13,45 @@ const wordStats = require("@photogabble/eleventy-plugin-word-stats");
 
 export default function (eleventyConfig) {
 
-  // ✅ Syntax highlighting
     eleventyConfig.addPlugin(syntaxHighlight);
-
-    // Word Count
     eleventyConfig.addPlugin(wordStats, {
         output: (stats) => `${stats.words} words`
     });
-
-  // ✅ Add striptags filter
   eleventyConfig.addFilter("striptags", striptags);
-
   eleventyConfig.addFilter("firstLine", content => {
     if (!content) return "";
     return content.split("\n")[0];
   });
+    eleventyConfig.addFilter("lastModified", (inputPath) => {
+        if (!inputPath) return null;
+        try {
+          return fs.statSync(inputPath).mtime;
+        } catch {
+          return null;
+        }
+      });
 
-  // ✅ Add RSS plugin
+      eleventyConfig.addGlobalData("eleventyComputed", {
+        lastModified: (data) => {
+          const inputPath = data.page?.inputPath;
+          if (!inputPath) return null;
+          try {
+            return fs.statSync(inputPath).mtime;
+          } catch {
+            return null;
+          }
+        },
+      });
+
   eleventyConfig.addPlugin(pluginRss);
-
-  // ✅ Optional plugin-based sitemap
   eleventyConfig.addPlugin(pluginSitemap, {
     sitemap: {
       hostname: "https://makc.co",
     },
   });
-
-  // ✅ Custom collection: all essays
   eleventyConfig.addCollection("essays", (collectionApi) => {
     return collectionApi.getFilteredByGlob("essays/*.md");
   });
-
-  // ✅ Custom collection: all docs
   eleventyConfig.addCollection("docs", (collectionApi) => {
     return collectionApi.getFilteredByGlob("docs/*.md");
   });
@@ -67,10 +74,9 @@ export default function (eleventyConfig) {
         return DateTime.fromISO(dateString).toFormat("d LLLL yyyy");
     });
 
-    eleventyConfig.addFilter("lastModified", inputPath => {
-        const stats = fs.statSync(inputPath);
-        return DateTime.fromJSDate(stats.mtime, { zone: "utc" })
-            .toFormat("d LLLL yyyy");
+    eleventyConfig.addFilter("modDate", (dateObj) => {
+      if (!dateObj) return "";
+      return DateTime.fromJSDate(dateObj).toFormat("d MMMM yyyy");
     });
 
   return {
