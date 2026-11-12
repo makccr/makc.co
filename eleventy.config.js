@@ -80,6 +80,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("_fonts");
   eleventyConfig.addPassthroughCopy("images");
   eleventyConfig.addPassthroughCopy("_redirects");
+  eleventyConfig.addPassthroughCopy("_data/quotes.json");
   eleventyConfig.addPassthroughCopy("netlify.toml");
   eleventyConfig.addPassthroughCopy("downloads");
 

@@ -133,6 +133,31 @@
 
 <hr>
 
+<a href="/quotes" <div="" class="linksContainer">
+      <p id="quote-text">Loading a thought…</p>
+      <p class="caption" id="quote-author"></p>
+    
+</a>
+
+<hr>
+
+<script>
+  (async () => {
+    try {
+      const response = await fetch("/_data/quotes.json");
+      const quotes = await response.json();
+
+      const random = quotes[Math.floor(Math.random() * quotes.length)];
+
+      document.getElementById("quote-text").textContent = random.quote;
+      document.getElementById("quote-author").textContent = "" + random.author;
+    } catch (err) {
+      document.getElementById("quote-text").textContent = "Stay curious.";
+      document.getElementById("quote-author").textContent = "";
+    }
+  })();
+</script>
+
 <h2>New Videos</h2>
 <div class="cardContainer">
     
@@ -180,6 +205,8 @@
     </div>
         
 </div>
+
+<hr>
 
 <h2>Writing</h2>
 <div class="cardContainer">
@@ -304,7 +331,7 @@ I saw director Alejandro G. Iñárritu's newest film &quot;Digger&quot; on a whi
     </div>
     
 
-
+<hr>
 
 <h2>Projects Worth Checking Out</h2>
 <div class="cardContainer">
@@ -344,6 +371,7 @@ I saw director Alejandro G. Iñárritu's newest film &quot;Digger&quot; on a whi
             <li><a href="/terms">TOS & Privacy</a></li>
             <li><a href="/contact">Contact</a></li>
             <li><a href="/ai">AI Disclosure</a></li>
+            <li><a href="/quotes">Quotes</a></li>
             <li><a href="https://ko-fi.com/makccr" target="_blank">Donate</a></li>
         </ul>
         <div class="socialIcons"> 
