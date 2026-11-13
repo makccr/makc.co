@@ -222,6 +222,29 @@
 <h3>Contact</h3>
 <p>Any questions or concerns can be directed to the webmaster and data protection officer, me (Mackenzie Criswell) via my email address: <a href="mailto:m@makc.co">m@makc.co</a>.</p>
 
+
+<script>
+  (async () => {
+    try {
+      const response = await fetch("/_data/quotes.json");
+      const quotes = await response.json();
+
+      const random = quotes[Math.floor(Math.random() * quotes.length)];
+
+      document.getElementById("quote-text").textContent = random.quote;
+      document.getElementById("quote-author").textContent = "" + random.author;
+    } catch (err) {
+      document.getElementById("quote-text").textContent = "Stay curious.";
+      document.getElementById("quote-author").textContent = "";
+    }
+  })();
+</script>
+<a href="/quotes">
+<div class="quoteContainer">
+      <p id="quote-text">Loading a thought…</p>
+      <p id="quote-author"></p>
+</div>
+</a>
     </main>
    <footer>
         <ul>

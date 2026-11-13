@@ -30,33 +30,6 @@ description: I'm a propagandist for pickled red onions, a rare meat activist, an
 <h1>{{ title }}</h1>
 <p class="caption">{{ description }}</p>
 
-<hr></hr>
-
-<a href="/quotes"
-    <div class="linksContainer">
-      <p id="quote-text">Loading a thought…</p>
-      <p class="caption" id="quote-author"></p>
-    </div>
-</a>
-
-<hr></hr>
-
-<script>
-  (async () => {
-    try {
-      const response = await fetch("/_data/quotes.json");
-      const quotes = await response.json();
-
-      const random = quotes[Math.floor(Math.random() * quotes.length)];
-
-      document.getElementById("quote-text").textContent = random.quote;
-      document.getElementById("quote-author").textContent = "" + random.author;
-    } catch (err) {
-      document.getElementById("quote-text").textContent = "Stay curious.";
-      document.getElementById("quote-author").textContent = "";
-    }
-  })();
-</script>
 
 <h2>New Videos</h2>
 <div class=cardContainer>
@@ -77,8 +50,6 @@ description: I'm a propagandist for pickled red onions, a rare meat activist, an
     </div>
         {% endfor %}
 </div>
-
-<hr></hr>
 
 <h2>Writing</h2>
 <div class="cardContainer">
@@ -125,8 +96,6 @@ description: I'm a propagandist for pickled red onions, a rare meat activist, an
     </div>
     {% endfor %}
 
-<hr></hr>
-
 <h2>Projects Worth Checking Out</h2>
 <div class=cardContainer>
     <div class=card data-category="App / Web App">
@@ -158,3 +127,4 @@ description: I'm a propagandist for pickled red onions, a rare meat activist, an
         <a href="https://github.com/makccr/wallpapers" target=_blank><button><i class="icon icon-github"></i></button></a>
     </div>
 </div>
+

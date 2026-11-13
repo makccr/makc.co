@@ -123,6 +123,29 @@
 <p>I am currently working as a Network Technician in the Houston area. It's a job that pays reasonably well, let's me work in tech, but not end up stuck in any office all day or answering phone calls on a helpdesk. I spend most of my days pulling and terminating CAT cable, setting up switches in server rooms, and troubleshooting why the cable labeled E36 isn't lighting up when I plug it into the port 36 on the patch panel labeled &quot;E&quot;.</p>
 <p>For anyone interested, jobs as a Network Tech (also called Low Voltage Tech, Network Installer, and probably fourteen other things) are pretty easy to get started in. There isn't any required schooling or certifications generally speaking, though you might need to do a brief apprenticeship at some companies. There is also a whole lot of cross-over between similar job types: Security Tech, A/V Techs, Access Control Installer, ext. I got started as an A/V Tech, and swapped over to a Network/Low-Voltage Tech when I figured out there was way more work available. The only annoying thing is that most construction jobs require employees to have their own tools, and these jobs are generally no different. Expect to spend a few hundred dollars up front if you don't have any basic tools when you start (electrician shears, a drill, RJ45 crimper, that kind of stuff).</p>
 
+
+<script>
+  (async () => {
+    try {
+      const response = await fetch("/_data/quotes.json");
+      const quotes = await response.json();
+
+      const random = quotes[Math.floor(Math.random() * quotes.length)];
+
+      document.getElementById("quote-text").textContent = random.quote;
+      document.getElementById("quote-author").textContent = "" + random.author;
+    } catch (err) {
+      document.getElementById("quote-text").textContent = "Stay curious.";
+      document.getElementById("quote-author").textContent = "";
+    }
+  })();
+</script>
+<a href="/quotes">
+<div class="quoteContainer">
+      <p id="quote-text">Loading a thought…</p>
+      <p id="quote-author"></p>
+</div>
+</a>
     </main>
    <footer>
         <ul>

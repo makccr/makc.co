@@ -113,6 +113,29 @@
 <h4>Social Media Accounts</h4>
 <p>You are more than welcome to contact me via any of the social media accounts that are linked to from this site in the form of direct message or a public post. Just know that I have a pretty spotty at best record when it come to actually responding to or even seeing messages on these accounts. TLDR: The best way to contact me (if your goal is the fastest response) will almost always be good ol' fashioned <a href="mailto:m@makc.co" target="_blank">e-mail</a>.</p>
 
+
+<script>
+  (async () => {
+    try {
+      const response = await fetch("/_data/quotes.json");
+      const quotes = await response.json();
+
+      const random = quotes[Math.floor(Math.random() * quotes.length)];
+
+      document.getElementById("quote-text").textContent = random.quote;
+      document.getElementById("quote-author").textContent = "" + random.author;
+    } catch (err) {
+      document.getElementById("quote-text").textContent = "Stay curious.";
+      document.getElementById("quote-author").textContent = "";
+    }
+  })();
+</script>
+<a href="/quotes">
+<div class="quoteContainer">
+      <p id="quote-text">Loading a thought…</p>
+      <p id="quote-author"></p>
+</div>
+</a>
     </main>
    <footer>
         <ul>

@@ -434,8 +434,28 @@ button:hover {
     margin-top: 7rem;
 }
 
-.linksContainer {
+.quoteContainer {
     white-space: pre-line;
+    width: 50%; 
+    display: block; 
+    text-align: center; 
+    margin: auto; 
+    padding-top: 5rem;
+}
+
+.quoteContainer p {
+    padding: 0rem; 
+    margin: 0rem; 
+}
+
+#quote-author, .quoteAuthor{
+    font-family: '3270', monospace; 
+    color: var(--button-hover); 
+}
+
+#quote-text, .quoteText {
+    font-family: 'IM Fell English Regular', serif; 
+    font-size: 1.4rem; 
 }
 
 #site {
@@ -474,6 +494,10 @@ button:hover {
     .caption { width: 95%; }
     hr { margin: 5rem 2rem ; }
     .filterButtons { width: 95%; }
+
+    .quoteContainer {
+        width: 95%; 
+    }
 
     .video-card { 
         width: 100%; 

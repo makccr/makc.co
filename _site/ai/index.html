@@ -177,6 +177,29 @@ c.co/commits/master/ai.md" target="_blank">here</a>.
 <p>To be clear, as of the writing of this article (a) I have yet to actually set up any local AI solution on my own hardware, and (b) local AI models do not solve all of the issues present within the field of AI. Local AI models are just as likely to hallucinate and are likely to be just as inaccurate in all the ways that industrialized AI models are. Of course this does not even mention my most salient point from earlier: the anti-human aims of AI and particularly the AGI that we're being promised by heads of companies who have a vested interest in lying to us about the timeline andior possibility of AGI.</p>
 <p>That being said, it seems worth mentioning that I am not <em>uninterested</em> in the possibilities of locally managed AI agents and LLMs. The ability to train these AIs on a data set of one's choosing and assurance that my use of a local AI agent isn't taking someone's job if I control the AI are great points in favor of this form of the technology. However there are still enough points against the technology to have prevented me from setting up my own AI models locally thus far; though some of this might also be due to the rapidly increasing storage, GPU and memory prices preventing me from building an AI rig of my own. In any case, it seems unlikely that any application I would have for local AI would find it's way into the pipeline that I use to publish material online, so it's probably a moot point anyways.</p>
 
+
+<script>
+  (async () => {
+    try {
+      const response = await fetch("/_data/quotes.json");
+      const quotes = await response.json();
+
+      const random = quotes[Math.floor(Math.random() * quotes.length)];
+
+      document.getElementById("quote-text").textContent = random.quote;
+      document.getElementById("quote-author").textContent = "" + random.author;
+    } catch (err) {
+      document.getElementById("quote-text").textContent = "Stay curious.";
+      document.getElementById("quote-author").textContent = "";
+    }
+  })();
+</script>
+<a href="/quotes">
+<div class="quoteContainer">
+      <p id="quote-text">Loading a thought…</p>
+      <p id="quote-author"></p>
+</div>
+</a>
     </main>
    <footer>
         <ul>
