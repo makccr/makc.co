@@ -483,6 +483,74 @@ button:hover {
     margin: 0; 
 }
 
+/*Contact Form*/
+.contact-form {
+    max-width: 36rem;
+    margin: 3rem auto 0;
+    padding: 0 1rem;
+}
+
+.contact-form .form-group {
+    margin-bottom: 1.75rem;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-family: '3270', monospace;
+    font-size: 1.05rem;
+    color: var(--fg-color);
+    letter-spacing: 0.02em;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    color: var(--fg-color);
+    background-color: var(--bg-color-lighter);
+    border: 1px solid var(--mid-accent);
+    border-radius: var(--corner);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 9rem;
+    line-height: 1.5;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: var(--fg2-color);
+    opacity: 0.7;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--button-hover);
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--button-hover) 25%, transparent);
+}
+
+.contact-form button[type="submit"] {
+    display: block;
+    margin-top: 0.5rem;
+    padding: 0.85rem 1.5rem;
+    font-size: 1rem;
+    margin: auto; 
+    text-align: center; 
+}
+
+.contact-form .hidden {
+    display: none;
+}
+
 /* MOBILE SITE CUSTOMIZATIONS*/
 
 @media only screen and (max-width: 600px) { /* Main phone settings */
@@ -494,6 +562,11 @@ button:hover {
     .caption { width: 95%; }
     hr { margin: 5rem 2rem ; }
     .filterButtons { width: 95%; }
+
+    .contact-form {
+        max-width: 100%;
+        padding: 0;
+    }
 
     .quoteContainer {
         width: 95%; 
