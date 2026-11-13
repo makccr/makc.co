@@ -6,7 +6,7 @@ description: My statements on my use of AI and commitment's reguarding future us
 <h1>{{ title }}</h1>
 
 <p class='caption'>
-    <strong>Last Updated:</strong><br>{{ lastModified | readableDate }}<br><br>
+    <strong>Last Updated:</strong><br>{{ page.inputPath | lastModified | readableDate }}<br><br>
     The full history of changes to this page can be tracked <a href="https://github.com/makccr/mak
 c.co/commits/master/ai.md" target="_blank">here</a>.                     
 </p>
