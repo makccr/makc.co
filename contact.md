@@ -32,7 +32,7 @@ description: It's a contact page, I think the title says it all.
     <textarea id="message" name="message" rows="6" required placeholder="What’s on your mind?"></textarea>
   </div>
 
-  <button type="submit">Submit that Thang</button>
+  <button type="submit">Send It</button>
 </form>
 
 <p class="caption">
