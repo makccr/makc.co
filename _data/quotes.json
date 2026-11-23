@@ -20,7 +20,7 @@
     "author": "@m_eye_nd"
     },
     {
-    "quote": "Do not go gentle into that good night, Old age should burn and rave at close of day; Rage, rage against the dying of the light.",
+    "quote": "Do not go gentle into that good night,\nOld age should burn and rave at close of day;\nRage, rage against the dying of the light.",
     "author": "Dylan Thomas"
     },
     {
@@ -212,19 +212,7 @@
     "author": "Marcus Aurelius"
     },
     {
-    "quote": "Pass on your way, then, with a smiling face, under the smile of him who bids you go.",
-    "author": "Marcus Aurelius"
-    },
-    {
     "quote": "No one does the wrong thing deliberately.",
-    "author": "Marcus Aurelius"
-    },
-    {
-    "quote": "Choose not to be harmed-and you won't feel harmed. Don't feel harmed-and you haven't been.",
-    "author": "Marcus Aurelius"
-    },
-    {
-    "quote": "It can ruin your life only if it ruins your character.",
     "author": "Marcus Aurelius"
     },
     {
@@ -232,11 +220,7 @@
     "author": "Marcus Aurelius"
     },
     {
-    "quote": "...When you have trouble getting out of bed, tell yourself: I have to go to work--as a human being. What do I have to complain of, if I'm going to do what I was born for--the things I was brought into the world to do? Or is this what I was created for? To huddle under the blankets and stay warm? --But it's nicer here... So you were born to feel 'nice'? Instead of doing things and experiencing them? Don't you see the plants, the birds, the ants and spiders and bees going about their individual tasks, putting the world in order, as best they can? And you're not willing to do your job as a human being? Why aren't you running to do what your nature demands?",
-    "author": "Marcus Aurelius"
-    },
-    {
-    "quote": "You don't love yourself enough. Or you'd love your nature too, and what it demands of you.",
+    "quote": "When you have trouble getting out of bed, tell yourself: I have to go to work--as a human being. What do I have to complain of, if I'm going to do what I was born for--the things I was brought into the world to do? Or is this what I was created for? To huddle under the blankets and stay warm?\n--But it's nicer here...\nSo you were born to feel 'nice'? Instead of doing things and experiencing them? Don't you see the plants, the birds, the ants and spiders and bees going about their individual tasks, putting the world in order, as best they can? And you're not willing to do your job as a human being? Why aren't you running to do what your nature demands?",
     "author": "Marcus Aurelius"
     },
     {
@@ -253,14 +237,6 @@
     },
     {
     "quote": "Think of yourself as dead. You have lived your life. Now take what's left and live it properly.",
-    "author": "Marcus Aurelius"
-    },
-    {
-    "quote": "Whatever happens to you has been waiting to happen since the beginning of time.",
-    "author": "Marcus Aurelius"
-    },
-    {
-    "quote": "What benefits the whole can't harm the parts.",
     "author": "Marcus Aurelius"
     },
     {
@@ -356,7 +332,7 @@
     "author": "Nikos Kazantzakis"
     },
     {
-    "quote": "Nothing to fear in God. Nothing to feel in death. Good can be attained. Evil can be endured.",
+    "quote": "Nothing to fear in God.\nNothing to feel in death.\nGood can be attained.\nEvil can be endured.",
     "author": "Diogenes of Oenoanda"
     },
     {
@@ -414,5 +390,9 @@
     {
     "quote": "Never mistake motion for action.",
     "author": "Ernest Hemingway"
+    },
+    {
+    "quote": "Who are you gonna believe? Me or your own eyes?",
+    "author": "Warren T. Rat"
     }
 ]
