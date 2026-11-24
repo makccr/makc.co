@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>MAKC.CO - New Release: JSON Fortune</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/modern-normalize@v3.0.1 /modern-normalize.min.css" rel="stylesheet">
+<link rel="stylesheet" href="/_style/bundle.css">
+<script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=67e8d81386189a0019fafdf7&product=inline-share-buttons&source=platform" async="async"></script>
+<link href="/images/favicon.ico" rel="icon" type="image/ico">
+<link href="/images/favicon.png" rel="icon" type="image/png">
+<link href="/images/apple-touch-icon.png" rel="apple-touch-icon">
+<link href="/images/ios-ipad-144x144.png" sizes="144x144" rel="apple-touch-icon-precomposed">
+<link href="/images/ios-iphone-114x144.png" sizes="114x114" rel="apple-touch-icon-precomposed">
+<link href="/images/ios-default-homescreen-57x57.png" sizes="57x57" rel="apple-touch-icon-precomposed">
+
+<!-- Analytic tracking with Umami-->
+<script defer="" src="https://cloud.umami.is/script.js" data-website-id="3c7e0009-f2f2-489a-892e-1d2918e822c2"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "MAKC.CO",
+  "url": "https://makc.co",
+  "logo": "https://makc.co/images/favicon.png"
+}
+</script>
+
+<meta property="og:image" content="https://makc.co/images/favicon.png">
+<meta property="og:title" content="MAKC.CO - Welcome">
+<meta property="og:description" content="Some details on a new bash script that I'm rleasing to make using JSON databases with the fortune app easier.">
+
+<meta name="keywords" content="art, design, tech, downloads, essay, author, youtuber, vidoes, multi-media, fonts, after, effects, vim, linux, command, line, philosophy, history, policitcs">
+<meta name="description" content="Some details on a new bash script that I'm rleasing to make using JSON databases with the fortune app easier.">
+<meta name="subject" content="Design">
+<meta name="copyright" content="Makc Criswell">
+<meta name="language" content="ES">
+<meta name="robots" content="index,follow">
+<meta name="topic" content="Design">
+<meta name="summary" content="Some details on a new bash script that I'm rleasing to make using JSON databases with the fortune app easier.">
+<meta name="Classification" content="Application">
+<meta name="author" content="Makc Criswell, m@makc.co">
+<meta name="designer" content="Makc Criswell, m@makc.co">
+<meta name="copyright" content="Makc Criswell">
+<meta name="reply-to" content="m@makc.co">
+<meta name="owner" content="Makc Criswell, m@makc.co">
+<meta name="url" content="https://makc.co">
+<meta name="identifier-URL" content="https://makc.co">
+<meta name="directory" content="submission">
+<meta name="category" content="Art">
+<meta name="coverage" content="Worldwide">
+<meta name="distribution" content="Global">
+<meta name="rating" content="General">
+<meta name="revisit-after" content="7 days">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@makccr">
+<meta name="twitter:title" content="MAKC.CO - New Release: JSON Fortune">
+<meta name="twitter:description" content="Some details on a new bash script that I'm rleasing to make using JSON databases with the fortune app easier.">
+<meta name="twitter:image" content="https://makc.co/images/bg-head.jpg">
+
+</head>
+<body>
+    <script>
+        function mobileMenu() {
+            var x = document.getElementById("mobile-links");
+            x.classList.toggle("active");
+        }
+    </script>
+
+    <header>
+        <div class="logo-container">
+            <a href="/index">
+                <picture><source type="image/webp" srcset="/.11ty/image/?src=images%2Fm.svg&width=1000&format=webp&via=transform"><img class="logo" src="/.11ty/image/?src=images%2Fm.svg&width=1000&format=jpeg&via=transform" alt="HOME" width="1000" height="1000"></picture>
+            </a>
+        </div>
+            <div class="bars" onclick="mobileMenu()">
+                <i class="icon icon-menu"></i>
+            </div>
+            <p class="links">
+                <a href="/videos">Videos</a>
+                <a href="/essays">Essays</a>
+                <a href="/docs">Documentation</a>
+                <a href="/downloads">Downloads & Apps</a>
+                <a href="/now">Now</a>
+                <a href="/links">Links</a>
+            </p>
+    </header>
+
+<div id="mobile-links">
+    <div class="mobile-links-container">
+        <ul>
+            <li><a href="/videos">Videos</a></li>
+            <li><a href="/essays">Essays</a></li>
+            <li><a href="/docs">Documentation</a></li>
+            <li><a href="/downloads">Downloads & Apps</a></li>
+            <li><a href="/now">Now</a></li>
+            <li><a href="/links">Links</a></li>
+        </ul>
+    </div>
+</div>
+    
+    <main>
+        
+<style>
+    main p, main li {
+        font-family: 'Cormorant Garamond', serif; 
+        font-size: 1.3rem; 
+        line-height: 2rem; 
+    }
+</style> 
+
+<h1>New Release: JSON Fortune</h1>
+<p class="caption">24th of November 2026<br> 
+205 words</p>
+
+<div class="essayContainer"> 
+<h2>TLDR</h2>
+<p>I made a little bash script that I'm releasing to allow users to run <code>fortune</code> with a custom database built on JSON, as opposed to the <code>.dat</code> file generated with <code>strfile</code> that vanilla <code>fortune-mod</code> expects when piping in a custom path. The card below provides links to both Codeberg and Github where downloads and install instructions are available.</p>
+<center> 
+<div class="cardContainer">
+    <div class="card" data-category="Bash Script">
+        <picture><source type="image/webp" srcset="/.11ty/image/?src=images%2Fdownloads%2Ffortune-json.jpg&width=1280&format=webp&via=transform"><img src="/.11ty/image/?src=images%2Fdownloads%2Ffortune-json.jpg&width=1280&format=jpeg&via=transform" alt="hero image" width="1280" height="720"></picture> 
+        <h2 class="essays">JSON Fortune</h2>
+        <div class="dwnld-preview">
+            A script that allows users to run fortune with a custom JSON database.
+        </div>
+        <a href="https://codeberg.org/makccr/fortune-json" target="_blank"><button>Codeberg &nbsp;<i class="icon icon-codeberg"></i></button></a>
+        <a href="https://github.com/makccr/fortune-json" target="_blank"><button>Github &nbsp;<i class="icon icon-github"></i></button></a>
+    </div>
+</div>
+</center>
+<h3>Install Instructions</h3>
+<ol>
+<li>Install dependencies:</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Distribution</th>
+<th>Install Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Arch Linux</td>
+<td><code>sudo pacman -Syu git make jq cowfortune</code></td>
+</tr>
+<tr>
+<td>Fedora</td>
+<td><code>sudo dnf install cowsay fortune-mod git make</code></td>
+</tr>
+<tr>
+<td>Ubuntu</td>
+<td><code>sudo apt update; sudo apt install cowsay fortune-mod git make</code></td>
+</tr>
+</tbody>
+</table>
+<ol start="2">
+<li>Clone a repository:</li>
+</ol>
+<pre class="language-bash"><code class="language-bash"><span class="token function">git</span> clone https://github.com/makccr/fortune-json</code></pre>
+<ol start="3">
+<li>Build from source:</li>
+</ol>
+<pre class="language-bash"><code class="language-bash"><span class="token builtin class-name">cd</span> fortune-json <span class="token operator">&amp;&amp;</span>
+makepkg <span class="token parameter variable">-si</span></code></pre>
+<ol start="4">
+<li><em>Optionally</em> download and use my JSON quotes file:</li>
+</ol>
+<pre class="language-bash"><code class="language-bash">fortune-json ~/Downloads/quotes.json</code></pre>
+<hr>
+
+</div> 
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+<div class="post-navigation" style="margin-top: 3em; text-align: center;">
+  
+  
+<div class="rss">
+  
+    
+    <a href="/essays/sense-and-sensibility/" class="prev-post"><button><i class="icon icon-left"></i></button></a>
+  
+  <a href="/rss"><button><i class="icon icon-rss"></i></button></a>
+  
+</div>
+
+
+<script>
+  (async () => {
+    try {
+      const response = await fetch("/_data/quotes.json");
+      const quotes = await response.json();
+
+      const random = quotes[Math.floor(Math.random() * quotes.length)];
+
+      document.getElementById("quote-text").textContent = random.quote;
+      document.getElementById("quote-author").textContent = "" + random.author;
+    } catch (err) {
+      document.getElementById("quote-text").textContent = "Stay curious.";
+      document.getElementById("quote-author").textContent = "";
+    }
+  })();
+</script>
+<a href="/quotes" title="View More Quotes">
+<div class="quoteContainer">
+      <p id="quote-text">Loading a thought…</p>
+      <p id="quote-author"></p>
+</div>
+</a>
+    </div></main>
+   <footer>
+        <ul>
+            <li><a href="/terms">TOS & Privacy</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/ai">AI Disclosure</a></li>
+            <li><a href="/quotes">Quotes</a></li>
+            <li><a href="https://ko-fi.com/makccr" target="_blank">Donate</a></li>
+        </ul>
+        <div class="socialIcons"> 
+            <a title="Github" target="_blank" href="https://github.com/makccr">
+                <i class="icon icon-github"></i>
+            </a>
+            <a title="Codeberg" target="_blank" href="https://codeberg.org/makccr">
+                <i class="icon icon-codeberg"></i>
+            </a>
+            &nbsp;
+            <a title="YouTube" target="_blank" href="https://www.youtube.com/@makc">
+                <i class="icon icon-youtube"></i>
+            </a>
+            <a title="Odysee" target="_blank" href="https://odysee.com/@makc:a">
+                <i class="icon icon-odysee"></i>
+            </a>
+            <a title="Invidious" target="_blank" href="https://inv.nadeko.net/channel/UCWh6YtclgTAzReTASc4uSKw">
+                <i class="icon icon-invidious"></i>
+            </a>
+            &nbsp; 
+            <a title="Sitemap" target="_blank" href="https://makc.co/sitemap.xml">
+                <i class="icon icon-sitemap"></i>
+            </a>
+            
+            <a title="RSS" href="/rss">
+                <i class="icon icon-rss"></i>
+            </a>
+        </div>
+        <p>&copy; 2012-<script>document.write(/\d{4}/.exec(Date())[0])</script> <i>(MAKC) Mackenzie Criswell</i>.</p>
+    </footer>
+</body>
+</html>
