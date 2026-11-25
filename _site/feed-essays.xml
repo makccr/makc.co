@@ -66,7 +66,8 @@ makepkg <span class="token parameter variable">-si</span></code></pre>
 <ol start="4">
 <li><em>Optionally</em> download and use my JSON quotes file:</li>
 </ol>
-<pre class="language-bash"><code class="language-bash">fortune-json ~/Downloads/quotes.json</code></pre>
+<pre class="language-bash"><code class="language-bash"><span class="token function">wget</span> httpS://makc.co/_data/quotes.json <span class="token operator">&amp;&amp;</span>
+fortune-json ~/Downloads/quotes.json</code></pre>
 <hr>
 <h2>How Did We Get Here?</h2>
 <p>Several years ago now (seven years based on the timeline of the <a href="https://youtube.com/watch?v=ZVXIJfyVbRE">YouTube video</a> I made on the subject), I discovered the <code>forrtune</code> command line app. This was all the way back in the days before I swapped over to running Linux, and simply happened upon an app that could display randomly generated quotes. It wasn't long before I figured out what a <code>.bashprofile</code> was, and had a random quote generated every time I opened a terminal window, and only slightly longer before I figured out how to use <code>strfile</code> to create a custom database of my own quotes and pipe that into fortune. That discovery led me down the path of linux ricing, and planted the shell that turned into one of my favorite hobbies, and though it may sound a bit absurd, was a not insignificant stepping stone on the path towards swapping off of MacOS and onto Linux, getting into tiling window mangers, and much more. But also, for the last seven years I've consistently had a nice little piece of wisdom or sarcasm to greet me, every time I spawn a new TTY.</p>

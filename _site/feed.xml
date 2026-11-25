@@ -66,7 +66,8 @@ makepkg <span class="token parameter variable">-si</span></code></pre>
 <ol start="4">
 <li><em>Optionally</em> download and use my JSON quotes file:</li>
 </ol>
-<pre class="language-bash"><code class="language-bash">fortune-json ~/Downloads/quotes.json</code></pre>
+<pre class="language-bash"><code class="language-bash"><span class="token function">wget</span> httpS://makc.co/_data/quotes.json <span class="token operator">&amp;&amp;</span>
+fortune-json ~/Downloads/quotes.json</code></pre>
 <hr>
 <h2>How Did We Get Here?</h2>
 <p>Several years ago now (seven years based on the timeline of the <a href="https://youtube.com/watch?v=ZVXIJfyVbRE">YouTube video</a> I made on the subject), I discovered the <code>forrtune</code> command line app. This was all the way back in the days before I swapped over to running Linux, and simply happened upon an app that could display randomly generated quotes. It wasn't long before I figured out what a <code>.bashprofile</code> was, and had a random quote generated every time I opened a terminal window, and only slightly longer before I figured out how to use <code>strfile</code> to create a custom database of my own quotes and pipe that into fortune. That discovery led me down the path of linux ricing, and planted the shell that turned into one of my favorite hobbies, and though it may sound a bit absurd, was a not insignificant stepping stone on the path towards swapping off of MacOS and onto Linux, getting into tiling window mangers, and much more. But also, for the last seven years I've consistently had a nice little piece of wisdom or sarcasm to greet me, every time I spawn a new TTY.</p>
@@ -1128,6 +1129,39 @@ Don't get me wrong the collection is more than worth the five or six hundred buc
       </item>
     
 
+    
+      <item>
+        <title>Wipe Out a Hard Drive with PV</title>
+        <link>https://makc.co/docs/wipe-with-pv/</link>
+        <guid>https://makc.co/docs/wipe-with-pv/</guid>
+        <pubDate>Mon, 23 Nov 2026 18:00:00 -0600</pubDate>
+        <description><![CDATA[<p>A guide to using simple linux tools to wipe data off a drive. Tools like <a href="https://dban.org/">Derrick's Boot &amp; Nuke</a> or <a href="https://shredos.net/">ShredOS</a> claim to do a great job of wiping data off used hard drives. The problem is that, ensuring data is erased from a used drive via any method other than sending a drill bit through the platter, isn't going to do what it claims. Dban and ShredOS function by writing several series of data over top of the pre-existing data, which is a cumbersome and long process that may or may not, but definitely won't do anything more than simply writing over all data with zeros using a tool like <code>pv</code>. It's also worth noting that while this method is quick and easy, as of 2026 there has yet to be an example of any advanced forensic data recovery method actually managing to recover data from a drive that was written over with zeros.</p>
+<h2>Identifying the Drive in Question</h2>
+<p>The first step is to identify the drive in question. The easiest way to do this is to list all drives attached to a system in question, <code>lsblk</code> is installed by default on nearly every Linux distribution and can be run with the <code>-f</code> flag to list all drives, their label, mountpoint, file system and other information:</p>
+<pre class="language-bash"><code class="language-bash">lsblk <span class="token parameter variable">-f</span>
+
+NAME        FSTYPE   FSVER LABEL     UUID               FSAVAIL FSUSE% MOUNTPOINTS
+zram0       swap     <span class="token number">1</span>     zram0     AAAA-AAAA-AAAA                    <span class="token punctuation">[</span>SWAP<span class="token punctuation">]</span>
+nvme0n1                                                                                  
+├─nvme0n1p1 vfat     FAT32           BBBB-BBBB-BBBB        <span class="token number">3</span>.5G    <span class="token number">11</span>% /boot
+└─nvme0n1p2 zfs_memb <span class="token number">5000</span>  zpcachyos CCCC-CCCC-CCCC
+sda
+└─sda1      btrfs    <span class="token number">5000</span>            DDDD-DDDD-DDDD       <span class="token number">16</span>.8G    01%</code></pre>
+<p>Using a bit of deduction and common sense we can generally figure out which drives we are looking at. In the example above we have a nvme SSD with two partitions, and a SATA drive attached with one parition. The SATA drive has a bit over 16GiB available, and we can safely assume this is a flash drive. If we were looking to wipe the system drive in the laptop, we would pretty easily figure out that were wanting to target <code>/dve/nvme0n1</code>, and not <code>/dev/sda</code>. <code>lsblk</code> does not make it clear, but a link to all drives is stored in <code>/dev</code> and we can target it with the path: <code>/dev/drive_label</code>.</p>
+<h3>Accessing the Drive to Wipe</h3>
+<p>As one might imagine, wiping a drive while that drive is running the OS and storing the very application that we are trying to wipe the drive with, is a pretty precarious situation to find oneself in. Luckily we can mitigate this by simply launching TailsOS, or some live linux image. Since both <code>lbslk</code> and <code>pv</code> are ubiquitous and available on most Linux distros by default, we can grab just about any image that supports live boot and roll with it. I have personally used this technique on a Ubuntu image, Manjaro image, the Arch Linux installer and TailsOS. I typically carry a USB key with TailsOS installed, and this works perfectly well for this application.</p>
+<h2>Using <code>pv</code> to Wipe Drives</h2>
+<p>We can then use <code>pv</code> to wipe a drive in question. This process will work by writing over all of the data on the drive with zeros. Essentially every bit on the drive will be flipped to a zero and that will make data difficult to read. <strong>IMPORTANT</strong>: This is not meant as a permenant way to destroy data on a drive, no software means of wiping data is going to work the same way as physically bricking a hard drive via some means. This software process does however have at least a few advantages:</p>
+<ul>
+<li>Making new OS install easier as there will be <em>no data</em> on the drive.</li>
+<li>Testing the performance of a drive, as we can watch the speed at which <code>pv</code> completes its operation and make some reasonable assumptions about drive performance.</li>
+</ul>
+<p>To actually wipe the drive, simply run <code>pv</code> with the <code>-o</code> flag and using <code>/dev/zero</code> as input. (a) <code>-o</code> tells <code>pv</code> to write the data to a drive, and (b) <code>/dev/zero</code> tell pv to write nothing but zeros to the drive.</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">pv</span> /dev/zero <span class="token parameter variable">-o</span> /dev/nvme0n1
+
+<span class="token comment"># Replace "/dev/nvme0n1" with your drive's label</span></code></pre>
+]]></description>
+      </item>
     
       <item>
         <title>Automatic File Backups with Rsync and Cron</title>

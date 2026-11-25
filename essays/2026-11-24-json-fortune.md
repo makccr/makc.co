@@ -42,7 +42,8 @@ cd fortune-json &&
 makepkg -si
 ```
 4. *Optionally* download and use my JSON quotes file: 
-```bash wget httpS://makc.co/_data/quotes.json &&
+```bash 
+wget httpS://makc.co/_data/quotes.json &&
 fortune-json ~/Downloads/quotes.json
 ```
 
