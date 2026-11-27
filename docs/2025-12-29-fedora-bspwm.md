@@ -2,7 +2,6 @@
 title: "Setting up BSPWM on Fedora Workstation"
 layout: docs.html
 date: 2025-12-29
-updated: 2025-12-29
 tags: docs 
 subject: ["Fresh Install Set-up"]
 ---

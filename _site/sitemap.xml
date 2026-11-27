@@ -215,7 +215,7 @@
 
   <url>
     <loc>https://makc.co/docs/cloning-this-site/</loc>
-    <lastmod>29th of December 2025</lastmod>
+    <lastmod>28th of December 2025</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -335,6 +335,13 @@
   <url>
     <loc>https://makc.co/docs/wipe-with-pv/</loc>
     <lastmod>24th of November 2026</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://makc.co/docs/data-integrity/</loc>
+    <lastmod>25th of November 2026</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>

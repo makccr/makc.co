@@ -15,7 +15,7 @@
     --header-bg: rgba(0,0,0,0.3);
     --header-border: rgba(255,255,255,0.1); 
     
-    /*Code colors (material ocean)*/
+    /*Code colors (material ocean)
     --code-aqua: #88c0d0; 
     --code-green: #a3be8c;
     --code-purple: #b48ead; 
@@ -23,7 +23,17 @@
     --code-yellow: #ebcb8b; 
     --code-red: #bf616a; 
     --code-orange: #fe8019; 
-    --code-gray: #999; 
+    --code-gray: #999; */
+
+    /*Code colors (gruvbox)*/
+    --code-aqua: #689d6a; 
+    --code-green: #98971a;
+    --code-purple: #b16286; 
+    --code-blue: #458588; 
+    --code-yellow: #d79921; 
+    --code-red: #cc241d; 
+    --code-orange: #d65d0e; 
+    --code-gray: #a89984; 
 
     --corner: .3rem; 
 } /* Defining color scheme */
@@ -90,7 +100,8 @@
         --header-bg: rgba(255,255,255,0.5);
         --platform-color: #ddeeff;
         --header-border: rgba(0,0,0,0.1); 
-
+        
+        /* Material Ocean
         --code-aqua: #397f9a; 
         --code-green: #557d44;
         --code-purple: #694469; 
@@ -98,7 +109,17 @@
         --code-yellow: #bb8e43; 
         --code-red: #771f26; 
         --code-orange: #db3602; 
-        --code-gray: #494e50; 
+        --code-gray: #494e50; */
+
+        /* Gruvbox */
+        --code-aqua: #689d68; 
+        --code-green: #989718;
+        --code-purple: #b16286; 
+        --code-blue: #458588; 
+        --code-yellow: #d79921; 
+        --code-red: #cc241d; 
+        --code-orange: #d65d03; 
+        --code-gray: #7c6f64;
     }
 }
 

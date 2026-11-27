@@ -2,7 +2,6 @@
 title: "Remotely Accesing a File Server with Tailscale"
 layout: docs.html
 date: 2026-01-16
-updated: 2026-06-10
 tags: docs 
 subject: ["System Administration"]
 ---

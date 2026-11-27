@@ -1,8 +1,7 @@
 ---
 title: "Cloning This Webiste"
 layout: docs.html
-date: 2025-12-29
-updated: 2026-09-26
+date: 2025-12-28
 tags: docs 
 subject: ["Web Development"]
 ---
